@@ -1,0 +1,70 @@
+\newcommand{\Z}{\mathcal{Z}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Ent}{\mathcal{S}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\e}{\mathit{e}}
+\newcommand{\RP}{\mathbb{R}\text{P}}
+
+\newtheoremstyle{defstyle}
+	{\topsep} 											% ABOVESPACE
+	{\topsep} 											% BELOWSPACE
+	{}													% BODYFONT
+	{}													% INDENT (empty value is the same as 0pt)
+	{\bfseries}{}										% HEADFONT
+	{\newline}											% HEADPUNCT
+	{\thmname{#1}~\thmnumber{#2}\thmnote{\ -\ #3}}%		% CUSTOM HEAD SPEC
+
+\newtheoremstyle{normalstyle}
+	{\topsep} 											% ABOVESPACE
+	{\topsep} 											% BELOWSPACE
+	{}													% BODYFONT
+	{}													% INDENT (empty value is the same as 0pt)
+	{\bfseries}{}										% HEADFONT
+	{\newline}											% HEADPUNCT
+	{\thmname{#1}~\thmnumber{#2}\thmnote{\ -\ #3}}%		% CUSTOM HEAD SPEC
+
+\newtheoremstyle{remarkstyle}
+	{\topsep} 											% ABOVESPACE
+	{\topsep} 											% BELOWSPACE
+	{}													% BODYFONT
+	{}													% INDENT (empty value is the same as 0pt)
+	{\itshape}{}										% HEADFONT
+	{\newline}											% HEADPUNCT
+	{\thmname{#1}~\thmnumber{#2}\thmnote{\ -\ #3}}%		% CUSTOM HEAD SPEC
+
+\newtheoremstyle{postulatestyle}
+	{\topsep} 											% ABOVESPACE
+	{\topsep} 											% BELOWSPACE
+	{}													% BODYFONT
+	{}													% INDENT (empty value is the same as 0pt)
+	{\bfseries}{}										% HEADFONT
+	{\newline}											% HEADPUNCT
+	{\thmname{#1}\thmnote{ #3}}%		% CUSTOM HEAD SPEC
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define how Theorems and Stuff work
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Get rid of points after theorem names.
+% \makeatletter
+% \g@addto@macro\th@defstyle{\thm@headpunct{:}}
+% \makeatother
+
+% Define different theorem environments.
+\theoremstyle{normalstyle}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remarkstyle}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{defstyle}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{postulatestyle}
+\newtheorem*{postulate}{Postulate}
+
+% Define a different numbering for enumerate environments
+\renewcommand{\labelenumi}{\roman{enumi})}

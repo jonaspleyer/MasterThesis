@@ -1,0 +1,241 @@
+\begin{section}{Contact Formulation of Thermodynamics}
+\begin{subsection}{Motivation}
+Concepts and basic definitions can be read in the book \cite{eschrigTopologyGeometryPhysics2011} by Eschrig. The work in this chapter is mainly motivated by \cite{mrugalaGeometricalFormulationEquilibrium1978, mrugalaContactStructureThermodynamic1991,weinholdMetricGeometryEquilibrium1975}. Throughout this section we will if not otherwise mentioned assume smoothness of manifolds and mappings. Also the Einstein summing convention will be used.\\
+The theory of thermodynamics relates extensive quantities (eg. volume $V$, particle number $N$ or entropy $S$) to a potential function $\Phi$ that resembles a form of energy of the thermodynamic system. In thermal equilibrium, the first law of thermodynamics states that
+\begin{equation}
+	dU = \delta Q + \delta W
+\end{equation}
+where $U$ refers to the internal energy, $Q$ to the heat of the system and $W$ the work done. In physicists notation the $\delta$-symbol is used to indicate that the 1-form considered here is not a exact differential. On the other hand, $dU$ is postulated to be a exact differential of the internal energy $U$. In a thermodynamic system with variables $(S,V,U,T,p)$ the first law can be expressed as
+\begin{equation}
+	dU=TdS-pdV.
+\end{equation}
+By writing down this equation, we see that $\partial U/\partial S = T$ and $\partial U/\partial V=-p$. This relates intensive parameters like $p,T$ to extensive parameters $V,S$ via derivatives. Considering the canonical ensemble, a potential function is given by the free energy
+\begin{equation}
+	F = U-TS
+\end{equation}
+from which all intensive parameters can be obtained by differentiating, for example
+\begin{equation}
+	\frac{\partial F}{\partial V} = -p.
+\end{equation}
+If we want to consider the intensive parameters as independent variables, we run into problems, since if $U$ depends on $X_n$ extensive and $P_n$ intensive parameters, we have
+\begin{equation}
+	dU = \frac{\partial U}{\partial X^i}dX^i + \frac{\partial U}{\partial P^i}dP^i = P_idX^i + \frac{\partial U}{\partial P^i}dP^i.
+\end{equation}
+But since the first law requires $dU=P_idX^i\Rightarrow U = P_iX^i$, we obtain
+\begin{equation}
+	0 = X_idP^i \Rightarrow X_i = 0.
+\end{equation}
+This poses the question on which space and in what manner these concepts can be defined rigidly. Clearly, since we are dealing with total derivatives, the aim is to consider a manifold on which the variables live. When considering variables $(U,X^1,\dots,X^n,P^1,\dots,P^n)$, one promptly notices that the system is overdefined since $U$ is directly dependent on the other variables. However this only holds in thermal equilibrium and thus thermal equilibrium is a submanifold of the collection of these variables. Mathematical rigor of these statements is the aim of the next section.
+\end{subsection}
+\newpage
+%
+%
+%
+\begin{subsection}{Formal Definitions}
+\begin{definition}[Distribution, Contact Element]
+	A smooth distribution $\Delta$ of dimension $m$ on a manifold $M^n$ assigns at each point $p\in M$ a $m$-dimensional ($m\leq n$) subspace $\Delta_p\subseteq T_pM$ in such a way that for a neighborhood $U$ of $p$ there exist smooth vector fields $X_1,\dots,X_m$ such that for every point $y\in U$ the subspace $\Delta_y=\text{span}(X_1(y),\dots,X_m(y))$. The set of smooth vector fields is called a local base of $\Delta$. A tangent vector $X$ is said to belong to $\Delta$ if $X(p)\in\Delta_p$ for all $p\in M$.\\
+	A smooth distribution of dimension $n-1$ on a $n$-dimensional Manifold is called a contact element.
+\end{definition}
+\begin{definition}[Involutive Distribution, Integral Manifold]
+	A distribution is called involutive if for two vector fields $X,Y$ belonging to $\Delta$, the Lie bracket $[X,Y]$ also belongs to $\Delta$. A connected submanifold $N$ with its natural embedding $\iota:N\hookrightarrow M$ is called integral manifold of a distribution $\Delta$ on $N$ if $\iota_*^p(T_pM)=\Delta_{\iota(p)}$. That means that at any point $p\in N$, the tangent space $T_pN$ which is a subspace of $T_pM$ is given by $\Delta_{\iota(p)}=\Delta_p$ (since $\iota(p)=p$ for all $p\in N$).
+\end{definition}
+\begin{corollary}
+	Every contact element can be given locally by the kernel of a 1-form $\omega$. As a direct consequence every distribution of dimension $m<n$ can be given locally by the intersection of the kernels of $m$ linear independent 1-forms. On the other hand a (global) 1-form defines a distribution at any point $p\in M$.
+\end{corollary}
+\begin{example}
+	In the space of thermodynamic variables $M^{2n+1}$ that is locally given by the coordinates $(\Phi,X^1,\dots,X^n,P^1,\dots,P^n)$ the 1-form
+	\begin{equation}
+		\theta = d\Phi - P_idX^i
+	\end{equation}
+	defines a contact element via $\theta=0$. The contact element is the subspace of $T_pM$ on which
+	\begin{equation}
+		d\Phi = P_idX^i.
+	\end{equation}
+	We see that the 1-form chosen satisfies the important relation $\theta\wedge(d\theta)^n\neq0$ this will be used to define what a contact form is on a manifold.
+\end{example}
+The next statement will be the Frobenius theorem. It will be the justification why a geometric theory of thermodynamics must be formulated with contact manifolds.
+\begin{theorem}[Frobenius Theorem]
+		Let $\Delta$ be a $m$-dimensional distribution on a manifold $M^n$ with $1\leq m\leq n$. There is a uniquely defined maximal connected integral manifold $(N_p,\iota_p)$ through every point $p\in M$ if and only if $\Delta$ is involutive.
+\end{theorem}
+\begin{theorem}[``Dual'' Frobenius Theorem]
+	Given a $m$-dimensional distribution $\Delta$ in a sufficiently small neighborhood $U$ of $p$ there is an $(n-m)$-dimensional annihilator subspace of $T^*_pM$ given by the dual of the orthogonal complement of $\Delta_p$. This space $D^\perp_p$ is spanned by $n-m$ linearly independent differential 1-forms $\omega_{m+1},\dots,\omega_n$ which can be completed by addition of forms to form a complete basis of $T_pM$ for points $p\in U$. The set $D^\perp_p$ can be characterised by the equation
+	\begin{equation}
+		\omega^i_j(p)dx^j = 0
+	\end{equation}
+	for all $i>m$ and $p\in U$. The statement of the theorem then says that this system of equations describes a submanifold $\iota:N\hookrightarrow M$ if and only if for $i>m$
+	\begin{equation}
+		d\omega^i\wedge\omega^{m+1}\wedge\dots\wedge\omega^n=0.
+		\label{1-GeneralDefinitions-FrobeniusTheoremIntegrabilityCond}
+	\end{equation}
+	In this case the system is said to be completely integrable. A proof of both forms of this theorem can be found in \cite[p. 78]{eschrigTopologyGeometryPhysics2011}.
+\end{theorem}
+\begin{example}[Adiabatic Submanifolds]
+	The heat exchange 1-form of a thermodynamical system $M^{2n+1}$ with local coordinates $(\Phi,S,X^2,\dots,X^n,T,P^2,\dots,P^n)$ for $n-1$ other (in principle here not relevant) extensive and intensive quantities $X^i,P^i$ is given by
+	\begin{equation}
+		\delta Q=TdS.
+	\end{equation}
+	Adiabaticity of a thermodynamic system means no exchange of heat $\delta Q=0$. This characterises a distribution of dimension $2n$ and simultaneously states that the differential forms defining $D^\perp_p$ are given by this equation and in this case is solely $TdS=0$. To obtain a basis of $T_pM$ we take the canonical differential 1-forms $dX^i,dT,dP^i$. Then, it is clear that
+	\begin{equation}
+		d\delta Q\wedge dX^2\wedge\dots\wedge dX^n\wedge dT\wedge dP^2\wedge\dots\wedge dP^n = 0
+	\end{equation}
+	since $d\delta Q=dT\wedge dS$ and $dT$ appears again in the $\wedge$-product, the whole term vanishes. Thus the requirements for the Frobenius theorem are satisfied and there exists a $2n$-dimensional submanifold $N\subset M$ on which adiabatic processes take place.
+\end{example}
+% TODO Add another good reference for Darboux's Theorem - especially the proof in contact geometry. Possible success in: P. Libermann and C.-M. Maxle
+Another important theorem is the Darboux Theorem \cite{darbouxProblemePfaffPar1882} which gives us a standard coordinate representation for any contact structure later introduced.
+\begin{theorem}[Darboux's Theorem]
+	To a 1-form $\omega$ on a $n$-dimensional manifold $M^n$ that satisfies 
+	\begin{equation}
+		\omega\wedge(d\omega)^p = \omega\wedge d\omega\wedge\dots\wedge d\omega = 0
+	\end{equation}
+	there exist local coordinates $(x^1,\dots,x^{n-p},y^1,\dots,y^p)$ such that $\omega$ can be written as
+	\begin{equation}
+		\omega = x^i dy^i = x^1dy^1+\dots+x^pdy^p.
+	\end{equation}
+	A 1-form that fulfills
+	\begin{equation}
+		\omega\wedge(d\omega)^p\neq0
+	\end{equation}
+	can be equipped with local coordinates $(x^0,\dots,x^{n-p-1},y^1,\dots,y^p)$ such that
+	\begin{equation}
+		\omega = dx^0 + x^i dy^i = dx^0 + x^1dy^1+\dots+x^pdy^p.
+	\end{equation}
+\end{theorem}
+\begin{lemma}
+	A 1-form on a $2n+1$-dimensional manifold $M$ that satisfies
+	\begin{equation}
+		\theta\wedge(d\theta)^n\neq0
+	\end{equation}
+	does not define a submanifold via $\theta=0$.
+\end{lemma}
+\begin{proof}
+	We choose local coordinates as given by the Darboux theorem above. Since $\theta=0$ characterises a contact element, we only have one single defining equation and thus equation \ref{1-GeneralDefinitions-FrobeniusTheoremIntegrabilityCond} can in our setting be expressed as
+	\begin{equation}
+		\theta\wedge(dx^1\wedge\dots\wedge dx^n\wedge dy^1\wedge\dots\wedge dy^n) = 0
+	\end{equation}
+	for a manifold to exist. Here we completed $\theta$ to the set $\{\theta,dx^i,dy^i\}$ which is linearly independent. But since $d\theta=dx_i\wedge dy^i$ and $(dx^i\wedge dy^i)$ and $(dx^j\wedge dy^j)$ commute, we also have
+	\begin{equation}
+		\theta\wedge(d\theta)^n=n\theta\wedge(dx^1\wedge\dots\wedge dy^n)\neq0.
+	\end{equation}
+	From this it can be already read of that equation \ref{1-GeneralDefinitions-FrobeniusTheoremIntegrabilityCond} can not be fulfilled.
+\end{proof}
+\begin{remark}
+	As we have already forewarned, it is not possible to find a suitable submanifold of $M^{2n+1}$ such that the thermodynamic system in equilibrium can be treated globally. However as we have already seen this is still the case for other processes of such thermodynamic systems. In particular considering processes that involve only 1 coordinate (eg. isobaric $dp=0$). In this case a distribution is always involutive since $d(dp)=0$ and thus it is easily integrable.
+\end{remark}
+%
+%
+%
+\begin{definition}[Contact Form and Manifold]
+	A smooth 1-form $\theta$ that satisfies
+	\begin{equation}
+		\theta\wedge(d\theta)^n\neq0
+	\end{equation}
+	(meaning the $n$th $\wedge$-product of $d\theta$) is called a contact form. A $2n+1$-dimensional manifold with such a form $(M,\theta)$ is called a contact manifold. A contact form defines at any point $p\in M$ a contact element via $\theta=0$. Such a contact element is also called contact structure. Note that a contact form is only defined up to a multiplicative constant $\lambda\neq0$.
+\end{definition}
+\begin{definition}[Equilibrium (Legendre) Submanifold]
+	A Legendre submanifold of a $2n+1$-dimensional contact manifold $(M,\theta)$ is a $n$-dimensional submanifold $\iota:N\hookrightarrow M$ such that 
+	\begin{equation}
+		\iota^*(\theta)=0.
+	\end{equation}
+	Since this corresponds to a thermodynamical system in equilibrium, we often refer to this as beeing a equilibrium (sub)manifold.
+\end{definition}
+\begin{corollary}
+	Since locally, a contact form is always given by standard coordinates, a Legendre submanifold is specified by equations
+	\begin{equation}
+		x^0=\Phi(y^1,\dots,y^n) \hspace{2em} x^i=\frac{\partial\Phi}{\partial y^i}.
+	\end{equation}
+	For a thermodynamical system with extensive variables $X^i$ and intensive variables $P^i$ and potential $\Phi$ this means
+	\begin{equation}
+		\Phi=\Phi(X^1,\dots,X^n) \hspace{2em} P^i=\frac{\partial\Phi}{\partial X^i}
+	\end{equation}
+	where we abused notation in the first equation to simultaneously label the function $\Phi$ and coordinate $\Phi$ with the same symbol. On this Legendre submanifold the usual thermodynamic equations for deriving expressions for intesive variables with respect to the potential hold.
+\end{corollary}
+\begin{definition}[Contact transformations]
+	Given two contact manifolds $(M,\theta)$ and $(N,\omega)$, a diffeomorphism $\phi:N\rightarrow M$ is called a contact diffeomorphism if it preserves the contact structure, meaning
+	\begin{equation}
+		\phi^*(\omega)=f\theta
+	\end{equation}
+	where $f$ is a nonvanishing function on $M$. If $f=1$, we call $\phi$ a strict contact transformation.
+\end{definition}
+\begin{corollary}
+	Since pullback and exterior derivative commute, we have that given a contact form $\theta$, a contact transformation implies
+	\begin{align*}
+		\phi^*(\omega\wedge(d\omega)^n) 	&= \phi^*(\omega)\wedge\phi^*((d\omega)^n)\\
+											&= \phi^*(\omega)\wedge(\phi^*(d\omega))^n\\
+											&= \phi^*(\omega)\wedge(d(\phi^*\omega))^n\\
+											&= f\theta\wedge(d(f\theta)^n)\\
+											&= f\theta\wedge(df\wedge\theta+fd\theta)^n
+	\end{align*}
+	Now whenever the product of $n$ forms contains the 1-form $theta$, the total product vanishes since $\theta\wedge\theta=0$. Thus the only term that survives is
+	\begin{equation}
+		\phi^*(\omega\wedge(d\omega)^n) = f\theta\wedge(fd\theta)^n = f^{n+1}\theta\wedge(d\theta)^n
+	\end{equation}
+	and for $f\neq0$ and by injectivity of $\phi^*$ (since $\phi$ was a diffeomorphism), we immediately see that if $\omega$ (or resp. $\theta$) is a contact form, so is the other.
+\end{corollary}
+The next section aims to rigorously define what the phase space of thermodynamic coordinates is and gives the definitions from this section a physical interpretation.
+% TODO maybe insert some more look back at the section and say why everything may be good or bad what we did.
+\end{subsection}
+%
+%
+%
+\newpage
+\begin{subsection}{Thermodynamic Phase Space and Postulates}
+\begin{postulate}[- Thermodynamic Phase Space]
+	To every thermodynamic system corresponds a thermodynamic phase space (TPS) which is a $2n+1$-dimensional contact manifold $(M,\theta)$ with intensive and extensive variables as coordinates. A equilibrium state of such a thermodynamic system is represented by a Legendre submanifold of the contact manifold $(M,\theta)$.
+\end{postulate}
+% TODO insert thermodynamical postulates if wanted
+\begin{example}[Canonical Ensemble]
+	In the canonical ensemble, the Free Energy is the potential. We choose coordinates $(\F,-S,V,N,T,-p,\mu)$ and the contact form
+	\begin{equation}
+		\theta = dF +SdT+pdV-\mu dN.
+	\end{equation}
+	The heat exchange 1-form $\delta Q$ is then given by $\delta Q=SdT$. For applications in Physics, the free energy in thermal equilibrium often times is given by a partition function $\Z$ via the relation
+	\begin{equation}
+		\F(T,V,N)=-k_BT\log(\Z(T,V,N)).
+	\end{equation}
+	This means on the Legendre submanifold where $\theta=0$, we have
+	\begin{alignat}{3}
+		S &= - &\frac{\partial\F}{\partial T} &= k_B\left(1+T\frac{1}{\Z}\frac{\partial\Z}{\partial T}\right)\\
+		p &= - &\frac{\partial\F}{\partial V} &= k_BT\frac{1}{\Z}\frac{\partial\Z}{\partial V}\\
+		\mu &= &\frac{\partial\F}{\partial N} &= k_BT\frac{1}{\Z}\frac{\partial\Z}{\partial N}.
+	\end{alignat}
+	The partition function $\Z$ can be calculated explicitly from the microscopic behaviour of the system given by the Hamilton Mechanics of the particles/fluids involved. Such a direct calculation is done in the next chapter. Often times the particle number $N$ is assumed to be fixed and thus not be taken as a coordinate but simply as a whole number $N\in\mathbb{N}$.
+\end{example}
+\begin{example}[Microcanonical Ensemble]
+	In the microcanonical ensemble, the potential is given by the entropy $S$ of the system. Thus we can choose coordinates $(S,E,V,N,1/T,p/T,-\mu/T)$ and obtain the contact form
+	\begin{equation}
+		\theta = dS - \frac{1}{T}dE - \frac{p}{T}dV + \frac{\mu}{T}dN.
+	\end{equation}
+	The transformation $\kappa:(x_0,x_1,x_2,x_3,p_1,p_2,p_3)\mapsto(x_1,x_0,x_2,x_3,1/p_1,-p_2/p_1,-p_3/p_1)$ has the differential
+	\begin{equation}
+		D\kappa = 
+		\begin{bmatrix}
+			0 	&	1 	&	0	&	0	&	0	&	0	&	0\\
+			1	&	0	&	0	&	0	&	0	&	0	&	0\\
+			0	&	0	&	1	&	0	&	0	&	0	&	0\\
+			0	&	0	&	0	&	1	&	0	&	0	&	0\\
+			0	&	0	&	0	&	0	& -\frac{1}{p_1^2} &	0	&	0\\
+			0	&	0	&	0	&	0	& \frac{p_2}{p_1^2} & -\frac{1}{p_1} & 0\\
+			0	&	0	&	0	&	0	& \frac{p_3}{p_1^2} & 0 & -\frac{1}{p_1}
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			0 	&	1 	&	0	&	0	&	0	&	0	&	0\\
+			1	&	0	&	0	&	0	&	0	&	0	&	0\\
+			0	&	0	&	1	&	0	&	0	&	0	&	0\\
+			0	&	0	&	0	&	1	&	0	&	0	&	0\\
+			0	&	0	&	0	&	0	& -T^2 	&	0	&	0\\
+			0	&	0	&	0	&	0	& 	pT 	& 	-T 	& 	0\\
+			0	&	0	&	0	&	0	& \mu T	&	0	&	-T
+		\end{bmatrix}.
+	\end{equation}
+	Clearly, the mapping is a diffeomorphism and since $\kappa^*(\theta) = dE -TdS + pdV-\mu dN$, the mapping is a contact transformation and on the Legendre submanifold, we have $dE = TdS-pdV+\mu dN$.
+\end{example}
+
+
+%
+%
+\end{subsection}
+%
+%
+%
+\end{section}

@@ -1,0 +1,628 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{eschrigTopologyGeometryPhysics2011}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d9f3078e42ca5774c7108d6c73462339}{%
+           family={Eschrig},
+           familyi={E\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{d9f3078e42ca5774c7108d6c73462339}
+      \strng{fullhash}{d9f3078e42ca5774c7108d6c73462339}
+      \strng{bibnamehash}{d9f3078e42ca5774c7108d6c73462339}
+      \strng{authorbibnamehash}{d9f3078e42ca5774c7108d6c73462339}
+      \strng{authornamehash}{d9f3078e42ca5774c7108d6c73462339}
+      \strng{authorfullhash}{d9f3078e42ca5774c7108d6c73462339}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-14699-2 978-3-642-14700-5}
+      \field{series}{Lecture {{Notes}} in {{Physics}}}
+      \field{title}{Topology and {{Geometry}} for {{Physics}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{volume}{822}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-3-642-14700-5
+      \endverb
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/X6L9Y29L/Eschrig - 2011 - Topology and Geometry for Physics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-3-642-14700-5
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-3-642-14700-5
+      \endverb
+    \endentry
+    \entry{mrugalaGeometricalFormulationEquilibrium1978}{article}{}
+      \name{author}{1}{}{%
+        {{hash=af6740f54131140c91d83a08bccffdb5}{%
+           family={Mruga{Ł}a},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{af6740f54131140c91d83a08bccffdb5}
+      \strng{fullhash}{af6740f54131140c91d83a08bccffdb5}
+      \strng{bibnamehash}{af6740f54131140c91d83a08bccffdb5}
+      \strng{authorbibnamehash}{af6740f54131140c91d83a08bccffdb5}
+      \strng{authornamehash}{af6740f54131140c91d83a08bccffdb5}
+      \strng{authorfullhash}{af6740f54131140c91d83a08bccffdb5}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00344877}
+      \field{journaltitle}{Reports on Mathematical Physics}
+      \field{month}{12}
+      \field{number}{3}
+      \field{title}{Geometrical Formulation of Equilibrium Phenomenological Thermodynamics}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{volume}{14}
+      \field{year}{1978}
+      \field{urldateera}{ce}
+      \field{pages}{419\bibrangedash 427}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/0034-4877(78)90010-1
+      \endverb
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/4NUBBBGU/MrugaŁa - 1978 - Geometrical formulation of equilibrium phenomenolo.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0034487778900101
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0034487778900101
+      \endverb
+    \endentry
+    \entry{mrugalaContactStructureThermodynamic1991}{article}{}
+      \name{author}{4}{}{%
+        {{hash=18c4eb93b9ffd09f60bfce2d923a1cf1}{%
+           family={Mrugala},
+           familyi={M\bibinitperiod},
+           given={Ryszard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0d9c46441e83b6d8590cc303c4d506d0}{%
+           family={Nulton},
+           familyi={N\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c43e6750f0c15de53a662bd7006e7e0c}{%
+           family={Christian\bibnamedelima Sch{ö}n},
+           familyi={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=96b82dd7a74330735a89c5392d2ba0d8}{%
+           family={Salamon},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{fullhash}{dc3a9e8a68269e5e2ca5a983b62d8602}
+      \strng{bibnamehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{authorbibnamehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{authornamehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{authorfullhash}{dc3a9e8a68269e5e2ca5a983b62d8602}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00344877}
+      \field{journaltitle}{Reports on Mathematical Physics}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Contact Structure in Thermodynamic Theory}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{volume}{29}
+      \field{year}{1991}
+      \field{urldateera}{ce}
+      \field{pages}{109\bibrangedash 121}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/0034-4877(91)90017-H
+      \endverb
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/NNR5Y77K/Mrugala et al. - 1991 - Contact structure in thermodynamic theory.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/003448779190017H
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/003448779190017H
+      \endverb
+    \endentry
+    \entry{weinholdMetricGeometryEquilibrium1975}{article}{}
+      \name{author}{1}{}{%
+        {{hash=158fed65bcfb470b8ca7f764983dcc23}{%
+           family={Weinhold},
+           familyi={W\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{158fed65bcfb470b8ca7f764983dcc23}
+      \strng{fullhash}{158fed65bcfb470b8ca7f764983dcc23}
+      \strng{bibnamehash}{158fed65bcfb470b8ca7f764983dcc23}
+      \strng{authorbibnamehash}{158fed65bcfb470b8ca7f764983dcc23}
+      \strng{authornamehash}{158fed65bcfb470b8ca7f764983dcc23}
+      \strng{authorfullhash}{158fed65bcfb470b8ca7f764983dcc23}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0021-9606, 1089-7690}
+      \field{journaltitle}{The Journal of Chemical Physics}
+      \field{month}{9}
+      \field{number}{6}
+      \field{title}{Metric Geometry of Equilibrium Thermodynamics}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{volume}{63}
+      \field{year}{1975}
+      \field{urldateera}{ce}
+      \field{pages}{2479\bibrangedash 2483}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1063/1.431689
+      \endverb
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/ACMSGCSG/Weinhold - 1975 - Metric geometry of equilibrium thermodynamics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://aip.scitation.org/doi/10.1063/1.431689
+      \endverb
+      \verb{url}
+      \verb http://aip.scitation.org/doi/10.1063/1.431689
+      \endverb
+    \endentry
+    \entry{darbouxProblemePfaffPar1882}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a66c0c7496d319e8d812df4b61ba2b57}{%
+           family={Darboux},
+           familyi={D\bibinitperiod},
+           given={Gaston\bibnamedelimb (1842-1917)\bibnamedelima Auteur},
+           giveni={G\bibinitperiod\bibinitdelim (\bibinithyphendelim 1\bibinitperiod\bibinitdelim A\bibinitperiod},
+           prefix={du\bibnamedelima texte},
+           prefixi={d\bibinitperiod\bibinitdelim t\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {EN}%
+      }
+      \strng{namehash}{a66c0c7496d319e8d812df4b61ba2b57}
+      \strng{fullhash}{a66c0c7496d319e8d812df4b61ba2b57}
+      \strng{bibnamehash}{a66c0c7496d319e8d812df4b61ba2b57}
+      \strng{authorbibnamehash}{a66c0c7496d319e8d812df4b61ba2b57}
+      \strng{authornamehash}{a66c0c7496d319e8d812df4b61ba2b57}
+      \strng{authorfullhash}{a66c0c7496d319e8d812df4b61ba2b57}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Sur le problème de Pfaff / par M. G. Darboux,... -- 1882 -- livre}
+      \field{title}{Sur Le Problème de {{Pfaff}} / Par {{M}}. {{G}}. {{Darboux}},...}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{year}{1882}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/8HHI2YNM/bpt6k68005v.html
+      \endverb
+      \verb{urlraw}
+      \verb https://gallica.bnf.fr/ark:/12148/bpt6k68005v
+      \endverb
+      \verb{url}
+      \verb https://gallica.bnf.fr/ark:/12148/bpt6k68005v
+      \endverb
+    \endentry
+    \entry{grosseAllgemeineRelativitaetstheorie2019}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f0900ae90f368449c616ed41582ac9fe}{%
+           family={Gro{ß}e},
+           familyi={G\bibinitperiod},
+           given={Nadine},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {German}%
+      }
+      \strng{namehash}{f0900ae90f368449c616ed41582ac9fe}
+      \strng{fullhash}{f0900ae90f368449c616ed41582ac9fe}
+      \strng{bibnamehash}{f0900ae90f368449c616ed41582ac9fe}
+      \strng{authorbibnamehash}{f0900ae90f368449c616ed41582ac9fe}
+      \strng{authornamehash}{f0900ae90f368449c616ed41582ac9fe}
+      \strng{authorfullhash}{f0900ae90f368449c616ed41582ac9fe}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Allgemeine Relativitätstheorie}}
+      \field{urlday}{18}
+      \field{urlmonth}{7}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/FR47IINC/_.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://home.mathematik.uni-freiburg.de/ngrosse/teaching/Vorlesungen/ART_WS1819_Skript.pdf
+      \endverb
+      \verb{url}
+      \verb https://home.mathematik.uni-freiburg.de/ngrosse/teaching/Vorlesungen/ART_WS1819_Skript.pdf
+      \endverb
+    \endentry
+    \entry{choquet-bruhatGeneralRelativityEinstein2009}{book}{}
+      \name{author}{1}{}{%
+        {{hash=928194c33d526f407a523b03802e9e32}{%
+           family={{Choquet-Bruhat}},
+           familyi={C\bibinitperiod},
+           given={Yvonne},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Oxford ; New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{928194c33d526f407a523b03802e9e32}
+      \strng{fullhash}{928194c33d526f407a523b03802e9e32}
+      \strng{bibnamehash}{928194c33d526f407a523b03802e9e32}
+      \strng{authorbibnamehash}{928194c33d526f407a523b03802e9e32}
+      \strng{authornamehash}{928194c33d526f407a523b03802e9e32}
+      \strng{authorfullhash}{928194c33d526f407a523b03802e9e32}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: ocn209815586}
+      \field{isbn}{978-0-19-923072-3}
+      \field{series}{Oxford Mathematical Monographs}
+      \field{title}{General Relativity and the {{Einstein}} Equations}
+      \field{year}{2009}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/NID6QRG6/Choquet-Bruhat - 2009 - General relativity and the Einstein equations.pdf
+      \endverb
+      \keyw{General relativity (Physics),Mathematics}
+    \endentry
+    \entry{choquet-bruhatIntroductionGeneralRelativity2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=928194c33d526f407a523b03802e9e32}{%
+           family={{Choquet-Bruhat}},
+           familyi={C\bibinitperiod},
+           given={Yvonne},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Oxford}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{928194c33d526f407a523b03802e9e32}
+      \strng{fullhash}{928194c33d526f407a523b03802e9e32}
+      \strng{bibnamehash}{928194c33d526f407a523b03802e9e32}
+      \strng{authorbibnamehash}{928194c33d526f407a523b03802e9e32}
+      \strng{authornamehash}{928194c33d526f407a523b03802e9e32}
+      \strng{authorfullhash}{928194c33d526f407a523b03802e9e32}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{First edition}
+      \field{isbn}{978-0-19-966645-4}
+      \field{month}{8}
+      \field{title}{Introduction to General Relativity, Black Holes, and Cosmology}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{volume}{52}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/3QIUMNKL/2015 - Introduction to general relativity, black holes, a.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://choicereviews.org/review/10.5860/CHOICE.191353
+      \endverb
+      \verb{url}
+      \verb http://choicereviews.org/review/10.5860/CHOICE.191353
+      \endverb
+    \endentry
+    \entry{choquet-bruhatAnalysisManifoldsPhysics2000}{book}{}
+      \name{author}{2}{}{%
+        {{hash=928194c33d526f407a523b03802e9e32}{%
+           family={{Choquet-Bruhat}},
+           familyi={C\bibinitperiod},
+           given={Yvonne},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=be2f01bf7031e879e878a10602895980}{%
+           family={{Dewitt-Morette}},
+           familyi={D\bibinitperiod},
+           given={C{é}cile},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{fd834493ce3c078b71f7d81f79976bab}
+      \strng{fullhash}{fd834493ce3c078b71f7d81f79976bab}
+      \strng{bibnamehash}{fd834493ce3c078b71f7d81f79976bab}
+      \strng{authorbibnamehash}{fd834493ce3c078b71f7d81f79976bab}
+      \strng{authornamehash}{fd834493ce3c078b71f7d81f79976bab}
+      \strng{authorfullhash}{fd834493ce3c078b71f7d81f79976bab}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-444-50473-9}
+      \field{title}{Analysis, {{Manifolds}} and {{Physics}}, {{Part II}}}
+      \field{year}{2000}
+      \verb{file}
+      \verb /home/jonas/Documents/Studium/2019-WS/Masterarbeit/Literature/RiemannianGeometry/Analysis, Manifolds and Physics - Choquet Bruhat/I---REVIEW-OF-FUNDAMENTAL-NOTIONS-OF-ANALY_2000_Analysis--Manifolds-and-Phys.pdf;/home/jonas/Documents/Studium/2019-WS/Masterarbeit/Literature/RiemannianGeometry/Analysis, Manifolds and Physics - Choquet Bruhat/II---DIFFERENTIAL-CALCULUS-ON-BANACH-SPAC_2000_Analysis--Manifolds-and-Physi.pdf;/home/jonas/Documents/Studium/2019-WS/Masterarbeit/Literature/RiemannianGeometry/Analysis, Manifolds and Physics - Choquet Bruhat/III---DIFFERENTIABLE-MANIFOLDS_2000_Analysis--Manifolds-and-Physics.pdf;/home/jonas/Documents/Studium/2019-WS/Masterarbeit/Literature/RiemannianGeometry/Analysis, Manifolds and Physics - Choquet Bruhat/IV---INTEGRATION-ON-MANIFOLDS_2000_Analysis--Manifolds-and-Physics.pdf;/home/jonas/Documents/Studium/2019-WS/Masterarbeit/Literature/RiemannianGeometry/Analysis, Manifolds and Physics - Choquet Bruhat/V---RIEMANNIAN-MANIFOLDS--K-HLERIAN-MANIFO_2000_Analysis--Manifolds-and-Phys.pdf;/home/jonas/Documents/Studium/2019-WS/Masterarbeit/Literature/RiemannianGeometry/Analysis, Manifolds and Physics - Choquet Bruhat/VI---DISTRIBUTIONS_2000_Analysis--Manifolds-and-Physics.pdf
+      \endverb
+    \endentry
+    \entry{spivakPhysicsMathematiciansMechanics2010}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ee3293a9c2577bc8e7bb84e4d67e85c5}{%
+           family={Spivak},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {Englisch}%
+      }
+      \list{location}{1}{%
+        {Houston, Tex.}%
+      }
+      \list{publisher}{1}{%
+        {Publish or Perish}%
+      }
+      \strng{namehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{fullhash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{bibnamehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authorbibnamehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authornamehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authorfullhash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{From the Preface: The purpose of this book, or possibly series of books, is indicated precisely by the title Physics for Mathematicians. It is only necessary for me to explain what I mean by a mathematician, and what I mean byphysics.By a mathematician I mean some one who has been trained in modern mathematics and been inculcated with its general outlook. ... And by physics I mean -- well, physics, what physicists mean by physics, i.e., the actual study of physical objects ... (rather than the study of symplectic structures on cotangent bundles, for example). In addition to presenting the advanced physics, which mathematicians find so easy, I also want to explore the workings of elementary physics ... which I have always found so hard to fathom.As these remarks probably reveal, basically I have written this work in order to learn the subject myself, in a form that I find comprehensible. And readers familiar with some of my previous books probably realize that this has pretty much been the reason for those works also. ...Perhaps this travelogue of an innocent abroad in a very different field will also turn out to be a book that mathematicians will like.}
+      \field{edition}{first}
+      \field{isbn}{978-0-914098-32-4}
+      \field{title}{{Physics for Mathematicians, Mechanics I}}
+      \field{year}{2010, dec}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/WJ6YV6C2/Physics for Mathematicians, Mechanics I ( PDFDrive.com ).djvu
+      \endverb
+    \endentry
+    \entry{ModifiedBesselFunction}{misc}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labeltitlesource}{title}
+      \field{title}{Modified {{Bessel}} Function of the Second Kind: {{Introduction}} to the {{Bessel}} Functions (Subsection {{Bessels}}/05)}
+      \field{urlday}{23}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/RTGQAGQ5/05.html
+      \endverb
+      \verb{urlraw}
+      \verb https://functions.wolfram.com/Bessel-TypeFunctions/BesselK/introductions/Bessels/05/
+      \endverb
+      \verb{url}
+      \verb https://functions.wolfram.com/Bessel-TypeFunctions/BesselK/introductions/Bessels/05/
+      \endverb
+    \endentry
+    \entry{weissteinModifiedBesselFunction}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=819197bfeff32a3f58d49b2a3eb0a580}{%
+           family={Weisstein},
+           familyi={W\bibinitperiod},
+           given={Eric\bibnamedelima W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Wolfram Research, Inc.}%
+      }
+      \strng{namehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{fullhash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{bibnamehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{authorbibnamehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{authornamehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{authorfullhash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The modified bessel function of the second kind is the function K\_n(x) which is one of the solutions to the modified Bessel differential equation. The modified Bessel functions of the second kind are sometimes called the Basset functions, modified Bessel functions of the third kind (Spanier and Oldham 1987, p. 499), or Macdonald functions (Spanier and Oldham 1987, p. 499; Samko et al. 1993, p. 20). The modified Bessel function of the second kind is implemented in the Wolfram Language as...}
+      \field{title}{Modified {{Bessel Function}} of the {{Second Kind}}}
+      \field{type}{Text}
+      \field{urlday}{14}
+      \field{urlmonth}{9}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://mathworld.wolfram.com/ModifiedBesselFunctionoftheSecondKind.html
+      \endverb
+      \verb{url}
+      \verb https://mathworld.wolfram.com/ModifiedBesselFunctionoftheSecondKind.html
+      \endverb
+    \endentry
+    \entry{chandrasekharChandrasekharAnIntroductionStudy1958}{book}{}
+      \name{author}{1}{}{%
+        {{hash=2cdd974df31a73795c3a486550391e0c}{%
+           family={Chandrasekhar},
+           familyi={C\bibinitperiod},
+           given={Subrahmanyan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{location}{1}{%
+        {Yerkes Observatory}%
+      }
+      \list{publisher}{1}{%
+        {Dover Publications}%
+      }
+      \strng{namehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{fullhash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{bibnamehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authorbibnamehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authornamehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authorfullhash}{2cdd974df31a73795c3a486550391e0c}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-486-60413-6}
+      \field{series}{Astrophysical {{Monographs}}}
+      \field{title}{Chandrasekhar-{{An Introduction To The Study Of Stellar Structure}}}
+      \field{year}{1958,jul}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/ZJISDYWH/Chandrasekhar-AnIntroductionToTheStudyOfStellarStructure.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ia800602.us.archive.org/26/items/AnIntroductionToTheStudyOfStellarStructure/Chandrasekhar-AnIntroductionToTheStudyOfStellarStructure.pdf
+      \endverb
+      \verb{url}
+      \verb https://ia800602.us.archive.org/26/items/AnIntroductionToTheStudyOfStellarStructure/Chandrasekhar-AnIntroductionToTheStudyOfStellarStructure.pdf
+      \endverb
+    \endentry
+    \entry{waldGeneralRelativity1984}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4517cb47549e9e42f6bfd204ca9456a7}{%
+           family={Wald},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chicago}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{4517cb47549e9e42f6bfd204ca9456a7}
+      \strng{fullhash}{4517cb47549e9e42f6bfd204ca9456a7}
+      \strng{bibnamehash}{4517cb47549e9e42f6bfd204ca9456a7}
+      \strng{authorbibnamehash}{4517cb47549e9e42f6bfd204ca9456a7}
+      \strng{authornamehash}{4517cb47549e9e42f6bfd204ca9456a7}
+      \strng{authorfullhash}{4517cb47549e9e42f6bfd204ca9456a7}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-226-87032-8}
+      \field{title}{General {{Relativity}}}
+      \field{year}{1984}
+      \verb{file}
+      \verb /home/jonas/Documents/Zotero/storage/BFXR5FR8/Wald - 1984 - General Relativity.pdf
+      \endverb
+    \endentry
+    \entry{pleyerGithubRepositoryJonas}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d07c636eed4c44d78d049ffcdda951e2}{%
+           family={Pleyer},
+           familyi={P\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{fullhash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{bibnamehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{authorbibnamehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{authornamehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{authorfullhash}{d07c636eed4c44d78d049ffcdda951e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{title}{Github {{Repository}} by {{Jonas Pleyer}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/jonaspleyer
+      \endverb
+      \verb{url}
+      \verb https://github.com/jonaspleyer
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,49 @@
+\input{../Header}
+
+\input{../CustomCommands}
+
+\begin{document}
+\input{../Titlepage}
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\input{-1-ListOfAbbrev}
+\newpage
+\input{0-Abstract}
+
+% Main Part of the thesis
+\newpage
+\pagenumbering{arabic}
+\input{1-GeneralDefinitions}
+\newpage
+\input{2-InternalEnergy-Explicit}
+\newpage
+\input{3-MassOfStar}
+\newpage
+\input{4-NumericalSolutions}
+%\newpage
+%\input{Ideas/ExactSolutions}
+\newpage
+\input{5-NumericalSolutions}
+
+% List of figures and tables
+\newpage
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+% Bibliography
+\pagebreak
+\addcontentsline{toc}{section}{References}
+\pagenumbering{alph}
+% Try to let Biblatex format more sloppyly to account for line breaks etc.
+\sloppy
+\printbibliography
+
+% Appendix
+\newpage
+\input{99-Appendix}
+
+\includepdf{../ErklaerungZurMasterarbeit.pdf}
+\end{document}
