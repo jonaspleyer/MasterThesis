@@ -1,7 +1,5 @@
 # MasterThesis
 ## General
-This summarizes the contents of my Master Thesis. For changes see the individual commits.
-
 [Shortcut to the current version](https://github.com/jonaspleyer/MasterThesis/blob/main/Main/BuildFiles/main.pdf)
 
 ## Structure
