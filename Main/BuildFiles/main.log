@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.14)  14 DEC 2020 15:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.14)  17 DEC 2020 14:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -867,18 +867,7 @@ Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (../Titlepage.tex
-<../uni-logos/pdf/ufcd-logo-e1-a4-color.pdf, id=90, 140.05324pt x 165.1269pt>
-File: ../uni-logos/pdf/ufcd-logo-e1-a4-color.pdf Graphic file (type pdf)
-<use ../uni-logos/pdf/ufcd-logo-e1-a4-color.pdf>
-Package pdftex.def Info: ../uni-logos/pdf/ufcd-logo-e1-a4-color.pdf  used on in
-put line 18.
-(pdftex.def)             Requested size: 140.05287pt x 165.12648pt.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../uni-logos/pdf/ufcd-logo
--e1-a4-color.pdf>] [2]) (BuildFiles/main.toc
+) (BuildFiles/main.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -890,14 +879,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write6
- [1] (./-1-ListOfAbbrev.tex) [2] (./0-Abstract.tex) [3] (./1-GeneralDefinitions
-.tex [1] [2] [3] [4]
-[5]) [6] (./2-InternalEnergy-Explicit.tex [7] [8] [9]
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./-1-ListOfAbbrev.tex) [2
+] (./0-Abstract.tex)
+[3] (./1-GeneralDefinitions.tex [1] [2] [3] [4] [5]) [6]
+(./2-InternalEnergy-Explicit.tex [7] [8] [9]
 Package svg Info: Last page of `./svg-inkscape/RelEOS_svg-tex.pdf' is 1 on inpu
 t line 121.
 
 (./svg-inkscape/RelEOS_svg-tex.pdf_tex
-<./svg-inkscape/RelEOS_svg-tex.pdf, id=305, page=1, 408.85481pt x 288.15111pt>
+<./svg-inkscape/RelEOS_svg-tex.pdf, id=294, page=1, 408.85481pt x 288.15111pt>
 File: ./svg-inkscape/RelEOS_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/RelEOS_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/RelEOS_svg-tex.pdf , page1 used on inpu
@@ -909,7 +901,7 @@ t line 56.
 Package svg Info: Last page of `./svg-inkscape/TOV-LE-Combi_svg-tex.pdf' is 1 o
 n input line 45.
  (./svg-inkscape/TOV-LE-Combi_svg-tex.pdf_tex
-<./svg-inkscape/TOV-LE-Combi_svg-tex.pdf, id=486, page=1, 462.52798pt x 578.16p
+<./svg-inkscape/TOV-LE-Combi_svg-tex.pdf, id=476, page=1, 462.52798pt x 578.16p
 t>
 File: ./svg-inkscape/TOV-LE-Combi_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/TOV-LE-Combi_svg-tex.pdf, page 1>
@@ -922,7 +914,7 @@ Package svg Info: Last page of `./svg-inkscape/TOV-Terms_svg-tex.pdf' is 1 on i
 nput line 59.
 
 (./svg-inkscape/TOV-Terms_svg-tex.pdf_tex
-<./svg-inkscape/TOV-Terms_svg-tex.pdf, id=540, page=1, 578.16pt x 433.62pt>
+<./svg-inkscape/TOV-Terms_svg-tex.pdf, id=529, page=1, 578.16pt x 433.62pt>
 File: ./svg-inkscape/TOV-Terms_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/TOV-Terms_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/TOV-Terms_svg-tex.pdf , page1 used on i
@@ -935,7 +927,7 @@ nput line 56.
 (BuildFiles/main.lot)
 \tf@lot=\write8
  [23] [1] [2] (./99-Appendix.tex)
-<../ErklaerungZurMasterarbeit.pdf, id=657, 597.79335pt x 845.19763pt>
+<../ErklaerungZurMasterarbeit.pdf, id=647, 597.79335pt x 845.19763pt>
 File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 <use ../ErklaerungZurMasterarbeit.pdf>
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf  used on input line 4
@@ -946,7 +938,7 @@ File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf  used on input line 4
 8.
 (pdftex.def)             Requested size: 597.79189pt x 845.19557pt.
-<../ErklaerungZurMasterarbeit.pdf, id=660, page=1, 597.79335pt x 845.19763pt>
+<../ErklaerungZurMasterarbeit.pdf, id=650, page=1, 597.79335pt x 845.19763pt>
 File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 <use ../ErklaerungZurMasterarbeit.pdf, page 1>
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf , page1 used on input
@@ -976,13 +968,17 @@ Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf , page1 used on input
  [2 <../ErklaerungZurMasterarbeit.pdf>] (BuildFiles/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7F8BFA0665612B76E77CD26EA2B28969;1403.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 19323 strings out of 479383
- 343567 string characters out of 5875829
+ 19309 strings out of 479383
+ 343195 string characters out of 5875829
  1115112 words of memory out of 5000000
- 35804 multiletter control sequences out of 15000+600000
+ 35797 multiletter control sequences out of 15000+600000
  414462 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  97i,17n,100p,1301b,1574s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1003,10 +999,10 @@ pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on BuildFiles/main.pdf (32 pages, 896534 bytes).
+Output written on BuildFiles/main.pdf (30 pages, 840706 bytes).
 PDF statistics:
- 802 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 241 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 790 PDF objects out of 1000 (max. 8388607)
+ 684 compressed objects within 7 object streams
+ 239 named destinations out of 1000 (max. 500000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
