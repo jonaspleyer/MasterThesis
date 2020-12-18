@@ -105,24 +105,14 @@ Interestingly, the pressure seems to be constant for very high temperatures. The
 \end{equation}
 The same argument then holds true for the density given by equation \ref{2-IntEner-DensityAlpha} and since 
 \begin{equation}
-	\lim\limits_{\alpha\to0}\left[1+\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2*K_2(\alpha)}\right] = 3
+	\lim\limits_{\alpha\to0}\left[1+\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right] = 3
 \end{equation}
 we have
 \begin{equation}
 	\lim\limits_{\alpha\to0}\left(\frac{\rho(\alpha)}{Cmc^2}\right) = \frac{3}{2\e^2} \approx 0.203003.
 \end{equation}
-Figure \ref{2-IntEner-PressureDensityPlot} shows the behaviour of the pressure and density. We see that for a low temperature (corresponding to high $\alpha$), the pressure and density start to vanish. This is a expected behaviour and strengthens this result. Since in the coming sections will apply a polytropic equation of state as given in table \ref{4-NumSol-TOVParameters}, we try to compare it against this assumption. The (usually assumed constant) exponent of a polytropic equation of state $\rho=p^n$ can be calculated by
-\begin{equation}
-	n = \frac{\log(\rho)}{\log(p)}.
-\end{equation}
-This was also done in figure \ref{2-IntEner-PressureDensityPlot}. It can clearly be seen that the exponent is not constant and changes by $33\%$ along the path plotted. This observation makes it clear that a polytropic equation of state is (though often necessary) even in the simplest explicitly calculable example a simplification.
-\begin{figure}[H]
-	\centering
-	\includesvg[width=\textwidth]{pictures/2-InternelEnergy-Explicit/RelEOS}
-	\caption[]{}
-	\label{2-IntEner-PressureDensityPlot}
-\end{figure}
-
+%
+%
 \begin{theorem}
 	The mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ written down in equation \eqref{2-IntEner-PressureAlpha} is a bijection for any $N,m,c,C\neq0$.
 	\begin{equation}
@@ -168,7 +158,21 @@ This was also done in figure \ref{2-IntEner-PressureDensityPlot}. It can clearly
 	\rho = \frac{\U}{V} = p\left(1+\alpha(p)\frac{K_1(\alpha(p))+K_3(\alpha(p))}{2K_2(\alpha(p))}\right).
 	\label{2-IntEner-FinalEOS}
 \end{equation}
-If it is possible to obtain a readable output for $\alpha(p)$, this equation can further be used in combination with the TOV equation to obtain a radial dependence for pressure and density and ultimately the mass $M$ of the star.
+Figure \ref{2-IntEner-RelEOSPlot} is obtained by choosing numerical values and then interpolating and inverting equation \ref{2-IntEner-PressureAlpha}. The constant factor 
+\begin{equation}
+	A:=CNmc^2/p_0
+\end{equation}
+is substituted to obtain independence of $p_0$\footnote{This will be the starting value for the pressure in the TOV equation. Since the pressure decreases from the inside of a star to the outside, this resembles our highest value of $p$.}. Furthermore the graphs of the plotted EOS are normalised such that
+\begin{equation}
+	\rho_{i}(p_0)=\rho_{0,i}
+\end{equation}
+and can thus be compared with each other. Note that the $\rho_0$ of the plot is not a universal value but rather each function has been scaled individually such that $\rho_{i}(p_0)=\rho_0$. The polytropic EOS $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before the equation is independent of $A$ and can be uniquely characterised by $n$. For further details, the interested reader is referred to \cite{pleyerGithubRepositoryJonas}.
+\begin{figure}[H]
+	\centering
+	\includesvg[width=\textwidth]{pictures/2-InternelEnergy-Explicit/RelEOS}
+	\caption[Relativistic Equation of State]{The plot shows the relativistic equation of state $\rho(p)$ normalised such that values can be compared with a polytropic EOS. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic equation of state. By normalisation, the graphs of the polytropic equation of state are independent of the factor $A$ which is explained in ???.} %TODO Insert reference for explanation
+	\label{2-IntEner-RelEOSPlot}
+\end{figure}
 \end{subsection}
 %
 %
