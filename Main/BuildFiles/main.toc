@@ -22,11 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}Newtonian Limit}{15}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Existence of Solutions}{16}{subsection.3.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}TOV Equation}{16}{subsubsection.3.3.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Upper Limits}{16}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.3}Upper Limits}{16}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Numerical Solutions}{19}{section.4}%
 \defcounter {refsection}{0}\relax 
@@ -34,9 +30,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2}Relativistic EOS}{22}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{List of Figures}{23}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Ideas}{23}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{List of Tables}{23}{section*.8}%
+\contentsline {section}{List of Figures}{24}{theorem.5.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{List of Tables}{24}{section*.8}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{References}{a}{section*.9}%
 \defcounter {refsection}{0}\relax 

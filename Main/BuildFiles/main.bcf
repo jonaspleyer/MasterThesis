@@ -2364,11 +2364,12 @@
     <bcf:citekey order="5">spivakPhysicsMathematiciansMechanics2010</bcf:citekey>
     <bcf:citekey order="6">ModifiedBesselFunction</bcf:citekey>
     <bcf:citekey order="7">weissteinModifiedBesselFunction</bcf:citekey>
-    <bcf:citekey order="8">chandrasekharChandrasekharAnIntroductionStudy1958</bcf:citekey>
-    <bcf:citekey order="9">waldGeneralRelativity1984</bcf:citekey>
-    <bcf:citekey order="10">pleyerGithubRepositoryJonas</bcf:citekey>
+    <bcf:citekey order="8">pleyerGithubRepositoryJonas</bcf:citekey>
+    <bcf:citekey order="9">chandrasekharChandrasekharAnIntroductionStudy1958</bcf:citekey>
+    <bcf:citekey order="10">waldGeneralRelativity1984</bcf:citekey>
     <bcf:citekey order="11">pleyerGithubRepositoryJonas</bcf:citekey>
     <bcf:citekey order="12">pleyerGithubRepositoryJonas</bcf:citekey>
+    <bcf:citekey order="13">pleyerGithubRepositoryJonas</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
