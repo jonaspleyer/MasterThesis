@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.18)  20 DEC 2020 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.18)  20 DEC 2020 21:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**main.tex
+**main
 (./main.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-12-03> xparse <2020-03-03> (../Header.tex
@@ -873,6 +873,7 @@ Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 
 ))
 (../CustomCommands.tex
+   defining Unicode char U+2212 (decimal 8722)
 \c@theorem=\count428
 )
 \@quotelevel=\count429
@@ -1017,27 +1018,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./pictures/2-InternalEnergy-Explicit/RelEOS.pgf) [11]) [12]
 (./3-MassOfStar.tex [13] [14] [15] [16] [17]) [18] (./4-NumericalSolutions.tex
 (./pictures/4-NumericalSolutions/TOV-LE-Combi.pgf) [19]
-(./pictures/4-NumericalSolutions/TOV-Terms.pgf
-
-! Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3286 ...electfont \(\displaystyle \times{10^{−
-                                                  7}}{}\)}%
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-)) [20] (./5-Ideas.tex [21] [22]) [23] (BuildFiles/main.lof)
+(./pictures/4-NumericalSolutions/TOV-Terms.pgf)) [20] (./5-Ideas.tex [21]
+[22]) [23] (BuildFiles/main.lof)
 \tf@lof=\write7
-
-(BuildFiles/main.lot)
+ (BuildFiles/main.lot)
 \tf@lot=\write8
- [24] [1] [2] (./99-Appendix.tex)
-<../ErklaerungZurMasterarbeit.pdf, id=567, 597.79335pt x 845.19763pt>
+ [24] [1] [2]
+(./99-Appendix.tex)
+<../ErklaerungZurMasterarbeit.pdf, id=568, 597.79335pt x 845.19763pt>
 File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 <use ../ErklaerungZurMasterarbeit.pdf>
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf  used on input line 4
@@ -1048,7 +1036,7 @@ File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf  used on input line 4
 6.
 (pdftex.def)             Requested size: 597.79189pt x 845.19557pt.
-<../ErklaerungZurMasterarbeit.pdf, id=570, page=1, 597.79335pt x 845.19763pt>
+<../ErklaerungZurMasterarbeit.pdf, id=571, page=1, 597.79335pt x 845.19763pt>
 File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 <use ../ErklaerungZurMasterarbeit.pdf, page 1>
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf , page1 used on input
@@ -1075,31 +1063,20 @@ File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf , page1 used on input
  line 46.
 (pdftex.def)             Requested size: 597.81924pt x 845.23425pt.
- [2 <../ErklaerungZurMasterarbeit.pdf>] (BuildFiles/main.aux)
+ [2 <../ErklaerungZurMasterarbeit.pdf>]
+(BuildFiles/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 51C153E218C9BE2AA59842C1487021B8;1297.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 25623 strings out of 479383
- 473437 string characters out of 5875829
- 1249508 words of memory out of 5000000
- 41973 multiletter control sequences out of 15000+600000
+ 25624 strings out of 479383
+ 473453 string characters out of 5875829
+ 1249499 words of memory out of 5000000
+ 41974 multiletter control sequences out of 15000+600000
  414462 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,17n,100p,1301b,1598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,17n,100p,1297b,1598s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -1113,15 +1090,16 @@ b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb>
-Output written on BuildFiles/main.pdf (31 pages, 766221 bytes).
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+>
+Output written on BuildFiles/main.pdf (31 pages, 773206 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 649 compressed objects within 7 object streams
+ 723 PDF objects out of 1000 (max. 8388607)
+ 652 compressed objects within 7 object streams
  255 named destinations out of 1000 (max. 500000)
  193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

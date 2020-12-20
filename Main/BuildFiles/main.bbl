@@ -516,6 +516,40 @@
       \verb https://mathworld.wolfram.com/ModifiedBesselFunctionoftheSecondKind.html
       \endverb
     \endentry
+    \entry{pleyerGithubRepositoryJonas}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d07c636eed4c44d78d049ffcdda951e2}{%
+           family={Pleyer},
+           familyi={P\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{fullhash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{bibnamehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{authorbibnamehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{authornamehash}{d07c636eed4c44d78d049ffcdda951e2}
+      \strng{authorfullhash}{d07c636eed4c44d78d049ffcdda951e2}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{title}{Github {{Repository}} by {{Jonas Pleyer}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/jonaspleyer
+      \endverb
+      \verb{url}
+      \verb https://github.com/jonaspleyer
+      \endverb
+    \endentry
     \entry{chandrasekharChandrasekharAnIntroductionStudy1958}{book}{}
       \name{author}{1}{}{%
         {{hash=2cdd974df31a73795c3a486550391e0c}{%
@@ -539,8 +573,8 @@
       \strng{authorbibnamehash}{2cdd974df31a73795c3a486550391e0c}
       \strng{authornamehash}{2cdd974df31a73795c3a486550391e0c}
       \strng{authorfullhash}{2cdd974df31a73795c3a486550391e0c}
-      \field{sortinit}{8}
-      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{0-486-60413-6}
@@ -577,8 +611,8 @@
       \strng{authorbibnamehash}{4517cb47549e9e42f6bfd204ca9456a7}
       \strng{authornamehash}{4517cb47549e9e42f6bfd204ca9456a7}
       \strng{authorfullhash}{4517cb47549e9e42f6bfd204ca9456a7}
-      \field{sortinit}{9}
-      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-0-226-87032-8}
@@ -586,40 +620,6 @@
       \field{year}{1984}
       \verb{file}
       \verb /home/jonas/Documents/Zotero/storage/BFXR5FR8/Wald - 1984 - General Relativity.pdf
-      \endverb
-    \endentry
-    \entry{pleyerGithubRepositoryJonas}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=d07c636eed4c44d78d049ffcdda951e2}{%
-           family={Pleyer},
-           familyi={P\bibinitperiod},
-           given={Jonas},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \strng{namehash}{d07c636eed4c44d78d049ffcdda951e2}
-      \strng{fullhash}{d07c636eed4c44d78d049ffcdda951e2}
-      \strng{bibnamehash}{d07c636eed4c44d78d049ffcdda951e2}
-      \strng{authorbibnamehash}{d07c636eed4c44d78d049ffcdda951e2}
-      \strng{authornamehash}{d07c636eed4c44d78d049ffcdda951e2}
-      \strng{authorfullhash}{d07c636eed4c44d78d049ffcdda951e2}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{GitHub}
-      \field{title}{Github {{Repository}} by {{Jonas Pleyer}}}
-      \field{urlday}{18}
-      \field{urlmonth}{6}
-      \field{urlyear}{2020}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://github.com/jonaspleyer
-      \endverb
-      \verb{url}
-      \verb https://github.com/jonaspleyer
       \endverb
     \endentry
   \enddatalist
