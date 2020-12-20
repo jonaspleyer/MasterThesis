@@ -28,9 +28,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1}Polytropic EOS}{19}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Relativistic EOS}{21}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Relativistic EOS}{20}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Ideas}{23}{section.5}%
+\contentsline {section}{\numberline {5}Ideas}{21}{section.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{List of Figures}{24}{theorem.5.9}%
 \defcounter {refsection}{0}\relax 
