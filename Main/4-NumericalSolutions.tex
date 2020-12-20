@@ -28,7 +28,7 @@ one could be tempted to make the assumption that
 However this equation fails since the mass given in equation \ref{4-NumSol-TOVEqBasic1} is not the same as the one given in the LE equation.\\
 % This means that if the Lane-Emden equation has value of $p_\text{LE}=0$, the TOV equation will also have one, and if $p_\text{LE}(0)\neq0$ then $r_\text{0,TOV}<r_\text{0,LE}$. However depending on the equation of state, this may not be said with regard to the density $\rho_\text{TOV}$ as can be seen in the numerical example below.
 Figure \ref{4-NumSol-TOVEqEasyEOS} shows the solution of both equations for the parameters:
-\begin{table}[h]
+\begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|}
 		\hline
@@ -36,9 +36,10 @@ Figure \ref{4-NumSol-TOVEqEasyEOS} shows the solution of both equations for the 
 		\hline
 		Equation of state & $\rho=Ap^{1/\gamma}$ \\
 		$A$ & $2$\\
-		$\gamma$ & $4/3$ \\
-		$p_0$ & $1$ \\
-		$\rho_0=Ap_0^{1/\gamma}$ & $2$\\ 
+		$n$ & $3$\\
+		$\gamma=1+\frac{1}{n}$ & $4/3$ \\
+		$p_0$ & $0.5$ \\
+		$\rho_0=Ap_0^{1/\gamma}$ & $2(2)^{\frac{4}{3}}\approx1.1892$\\
 		$m_0$ & $0$\\
 		\hline
 	\end{tabular}
@@ -50,7 +51,7 @@ In this particular case $1<\gamma=4/3$ and thus the slope of the TOV-density doe
 	\frac{\partial\rho}{\partial r} = \frac{\rho^{\gamma^{-1}-1}}{C^{1/\gamma}}\frac{\partial p}{\partial r}
 \end{equation}
 and thus if $\rho$ has small enough values that the slope of the TOV-density may falls below the Lane-Emden solution. The plot of this particular case shows this small detail at the last part of the plotted interval.
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\import{pictures/4-NumericalSolutions/}{TOV-LE-Combi.pgf}
 	\caption[Comparison TOV and LE equation]{Comparison of the fully relativistic TOV result and the classical Lane-Emden solution. The images show the plots for the parameters of table \ref{4-NumSol-TOVParameters}. First the pressure is presented. Afterwards the density calculated with the given EOS and the average density $\bar{\rho}_i=(4\pi/3)^{-1}m_i/r^3$ for the two solutions are beeing compared. In the second row, the mass and the ratio $m_i/r$ can be seen.}
