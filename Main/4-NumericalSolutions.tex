@@ -9,15 +9,25 @@ In this section the numerical solutions of the TOV equation
 as derived previously in \ref{3-Mass-TOVDerivation} will be discussed. To obtain numerical solvability a equation of state in the form $\rho(r,p)$ is supplied. 
 % TODO Add reference for when the equations are solvable
 In Figure \ref{4-NumSol-TOVEqEasyEOS} a plot of such a solution is presented.
-The density $\rho$ is derived via the equation \ref{4-NumSol-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method. The integration is stopped once the pressure reaches values $p<=0$.  Explicit code can be found on the github profile of the author\cite{pleyerGithubRepositoryJonas}. Upon comparing the TOV equation and its non-relativistic limiting case, the Lane-Emden equation\footnote{Neglecting terms of order $1/c^2$ and higher and setting $G=c=1$.} as derived in \ref{3-Mass-LEDerivation},
+The density $\rho$ is derived via the equation \ref{4-NumSol-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method. The integration is stopped once the pressure reaches values $p\leq0$. The initial value of \ref{4-NumSol-TOVEqBasic1} is $\partial m/\partial r(r=0)=0$. For \ref{4-NumSol-TOVEqBasic1}, the initial value can be calculated when applying L'Hôpital's and combining them to obtain
+\begin{alignat}{3}
+	\lim\limits_{r\rightarrow0}\frac{m}{r} &= \lim\limits_{r\rightarrow0}\frac{\partial m}{\partial r} &=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{1} &= 0\\
+	\lim\limits_{r\rightarrow0}\frac{m}{r^2} &= \lim\limits_{r\rightarrow0}\frac{1}{2r}\frac{\partial m}{\partial r}  &= \lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{2r} &= 0\\
+	\lim\limits_{r\rightarrow0}\frac{m}{r^3} &= \lim\limits_{r\rightarrow0}\frac{1}{3r^2}\frac{\partial m}{\partial r} &=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{3r^2} &= \frac{4\pi\rho_0}{3}\\
+	\lim\limits_{r\rightarrow0}\frac{\partial p}{\partial r} &= 0
+\end{alignat}
+Explicit code can be found in \cite{pleyerGithubRepositoryJonas}. Upon comparing the TOV equation and its non-relativistic limiting case, the Lane-Emden equation\footnote{Neglecting terms of order $1/c^2$ and higher and setting $G=c=1$.} as derived in \ref{3-Mass-LEDerivation},
 \begin{equation}
 	\frac{\partial p}{\partial r} = -\frac{m\rho}{r^2}
 \end{equation}
-one promptly notices that
+one could be tempted to make the assumption that
+% TODO Make this more clear. The reader should not see this equation as prominently but should still know why this does not work.
 \begin{equation}
 	\frac{\partial p_{\text{TOV}}}{dr} \leq \frac{\partial p_{\text{LE}}}{dr}.
 \end{equation}
-This means that if the Lane-Emden equation has value of $p_\text{LE}=0$, the TOV equation will also have one, and if $p_\text{LE}(0)\neq0$ then $r_\text{0,TOV}<r_\text{0,LE}$. However depending on the equation of state, this may not be said with regard to the density $\rho_\text{TOV}$ as can be seen in the numerical example below. Figure \ref{4-NumSol-TOVEqEasyEOS} shows the solution of both equations for the parameters:
+However this equation fails since the mass given in equation \ref{4-NumSol-TOVEqBasic1} is not the same as the one given in the LE equation.\\
+% This means that if the Lane-Emden equation has value of $p_\text{LE}=0$, the TOV equation will also have one, and if $p_\text{LE}(0)\neq0$ then $r_\text{0,TOV}<r_\text{0,LE}$. However depending on the equation of state, this may not be said with regard to the density $\rho_\text{TOV}$ as can be seen in the numerical example below.
+Figure \ref{4-NumSol-TOVEqEasyEOS} shows the solution of both equations for the parameters:
 \begin{table}[h]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -42,8 +52,8 @@ In this particular case $1<\gamma=4/3$ and thus the slope of the TOV-density doe
 and thus if $\rho$ has small enough values that the slope of the TOV-density may falls below the Lane-Emden solution. The plot of this particular case shows this small detail at the last part of the plotted interval.
 \begin{figure}[H]
 	\centering
-	\includesvg[width=\textwidth]{pictures/4-NumericalSolutions/TOV-LE-Combi}
-	\caption[Comparison TOV and Lane-Emden equation]{Comparison of the fully relativistic TOV result and the classical Lane-Emden solution. The images show the plots for the parameters of table \ref{4-NumSol-TOVParameters}}
+	\import{pictures/4-NumericalSolutions/}{TOV-LE-Combi.pgf}
+	\caption[Comparison TOV and LE equation]{Comparison of the fully relativistic TOV result and the classical Lane-Emden solution. The images show the plots for the parameters of table \ref{4-NumSol-TOVParameters}. First the pressure is presented. Afterwards the density calculated with the given EOS and the average density $\bar{\rho}_i=(4\pi/3)^{-1}m_i/r^3$ for the two solutions are beeing compared. In the second row, the mass and the ratio $m_i/r$ can be seen.}
 	\label{4-NumSol-TOVEqEasyEOS}
 \end{figure}\noindent
 Generally speaking this result shows the expected behaviour. One has to keep in mind that due to numerical errors, the point at which the respective solutions for $p$ cross the $x$-axis can not be determined perfectly. This issue is especially prominent for the TOV equation, since the function tends towards $0$ very slowly.\\
@@ -56,7 +66,7 @@ we expect $\partial m/\partial r(R)=0$ for the given polytropic equation of stat
 A cross check to test if the limiting case as calculated in section \ref{3-Mass-LEDerivation} by dropping all additional terms in equation \ref{4-NumSol-TOVEqBasic2} yields good results. Additionally, when dropping terms from right to left in equation \ref{4-NumSol-TOVEqBasic2} more intermediate solutions can be numerically calculated. Results can be seen in figure \ref{4-NumSol-TovTerms}.
 \begin{figure}[ht]
 	\centering
-	\includesvg[width=\textwidth]{pictures/4-NumericalSolutions/TOV-Terms}
+	\import{pictures/4-NumericalSolutions/}{TOV-Terms.pgf}
 	\caption[Comparison LE and partial TOV]{Comparison between the LE and TOV solutions while dropping terms from equation \ref{4-NumSol-TOVEqBasic2} from right to left. The last figure shows the difference between the TOV solution with 0 terms and the LE solution. The scale of the difference shows that the numerical differ only by values up to $3.5\times10^{-7}$. In order to achieve such a comparison, a polynomial fit of both pressure solutions had to be done. This should however not alter the result in any noticeable way. For further details see \cite{pleyerGithubRepositoryJonas}.}
 	\label{4-NumSol-TovTerms}
 \end{figure}
