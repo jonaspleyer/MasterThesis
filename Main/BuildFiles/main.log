@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.18)  20 DEC 2020 21:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.18)  21 DEC 2020 07:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1017,15 +1017,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./2-InternalEnergy-Explicit.tex [7] [8] [9] [10]
 (./pictures/2-InternalEnergy-Explicit/RelEOS.pgf) [11]) [12]
 (./3-MassOfStar.tex [13] [14] [15] [16] [17]) [18] (./4-NumericalSolutions.tex
-(./pictures/4-NumericalSolutions/TOV-LE-Combi.pgf) [19]
-(./pictures/4-NumericalSolutions/TOV-Terms.pgf)) [20] (./5-Ideas.tex [21]
-[22]) [23] (BuildFiles/main.lof)
+[19] (./pictures/4-NumericalSolutions/TOV-LE-Combi.pgf)
+(./pictures/4-NumericalSolutions/TOV-Terms.pgf) [20]) [21] (./5-Ideas.tex)
+[22] (BuildFiles/main.lof)
 \tf@lof=\write7
  (BuildFiles/main.lot)
 \tf@lot=\write8
- [24] [1] [2]
+ [23] [1] [2]
 (./99-Appendix.tex)
-<../ErklaerungZurMasterarbeit.pdf, id=568, 597.79335pt x 845.19763pt>
+<../ErklaerungZurMasterarbeit.pdf, id=563, 597.79335pt x 845.19763pt>
 File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 <use ../ErklaerungZurMasterarbeit.pdf>
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf  used on input line 4
@@ -1036,7 +1036,7 @@ File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf  used on input line 4
 6.
 (pdftex.def)             Requested size: 597.79189pt x 845.19557pt.
-<../ErklaerungZurMasterarbeit.pdf, id=571, page=1, 597.79335pt x 845.19763pt>
+<../ErklaerungZurMasterarbeit.pdf, id=566, page=1, 597.79335pt x 845.19763pt>
 File: ../ErklaerungZurMasterarbeit.pdf Graphic file (type pdf)
 <use ../ErklaerungZurMasterarbeit.pdf, page 1>
 Package pdftex.def Info: ../ErklaerungZurMasterarbeit.pdf , page1 used on input
@@ -1071,12 +1071,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  25624 strings out of 479383
- 473453 string characters out of 5875829
- 1249499 words of memory out of 5000000
- 41974 multiletter control sequences out of 15000+600000
+ 473450 string characters out of 5875829
+ 1245498 words of memory out of 5000000
+ 41976 multiletter control sequences out of 15000+600000
  414462 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,17n,100p,1297b,1598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,17n,100p,1297b,1590s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -1096,10 +1096,10 @@ ts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on BuildFiles/main.pdf (31 pages, 773206 bytes).
+Output written on BuildFiles/main.pdf (30 pages, 774039 bytes).
 PDF statistics:
- 723 PDF objects out of 1000 (max. 8388607)
- 652 compressed objects within 7 object streams
- 255 named destinations out of 1000 (max. 500000)
+ 717 PDF objects out of 1000 (max. 8388607)
+ 647 compressed objects within 7 object streams
+ 253 named destinations out of 1000 (max. 500000)
  193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
