@@ -1,15 +1,59 @@
 \begin{appendix}
 \pagenumbering{roman}
-\renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{\Roman{subsection}}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
 
 \begin{section}*{Appendix}
 \addcontentsline{toc}{section}{Appendix}
+%
+%
+\begin{subsection}{Exact solutions of the LE equation}
+\label{99-App-A-Exact-LE-Solutions}
+This section partly relies on information in \cite{weissteinLaneEmdenDifferentialEquation} and \cite{chandrasekharChandrasekharAnIntroductionStudy1958}. The LE equation is
+\begin{equation}
+	\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
+	\label{99-App-A-LE-Equation}
+\end{equation}
+which for $n=0$ transforms readily into
+\begin{equation}
+	\int\limits_0^\xi\frac{d}{d\xi}\left(\xi'^2\frac{d\theta}{d\xi}\right)d\xi' = -\int\limits_0^\xi\xi'^2d\xi'.
+\end{equation}
+Both sides can be evaluated directly and then simplified further.
+\begin{align}
+	\xi^2\frac{d\theta}{d\xi} &= -\frac{\xi^3}{3}\\
+	\frac{d\theta}{d\xi} &= -\frac{\xi}{3}\\
+	\theta(\xi) &= \theta(0)-\frac{\xi^2}{6}
+\end{align}
+With the initial condition $\theta(0)=1$, we obtain the desired result. For $n=1$, equation \ref{99-App-A-LE-Equation} transforms into
+\begin{equation}
+	\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\xi^2\theta=0
+\end{equation}
+which is a spherical Bessel differential equation
+\begin{equation}
+	\frac{d}{dr}\left(r^2\frac{dU}{dr}\right)+\left[k^2r^2-m(m+1)\right]U=0
+\end{equation}
+when setting $m=0$ and $k=1$. The solution to this equation is \cite{weissteinSphericalBesselDifferential}
+\begin{align}
+	U(r) 	&= A\sqrt{\frac{\pi}{kr}}J_{m+1/2}(kr) + B\sqrt{\frac{\pi}{kr}}Y_{m+1/2}(kr)\\
+			&= Aj_m(kr) + By_m(kr)
+\end{align}
+where $J_n$ is the Bessel function of the first and $Y_n$ of the second kind and $j_n$ and $y_n$ are the corresponding spherical Bessel functions. Thus in our case with $j_{0}(x)=\sin(x)/x$ and $Y_{0}(x)=-\cos(z)/z$, we obtain
+\begin{equation}
+	\theta(\xi) = A\frac{\sin(\xi)}{\xi} - B\frac{\cos(k\xi)}{\xi}.
+\end{equation}
+The need for a well defined limit at $\xi\rightarrow0$ implies that $B=0$ and thus since $\sin(z)/z\rightarrow1$ for $z\rightarrow0$, we have $A=\theta(0)=1$ and 
+\begin{equation}
+	\theta(\xi) = \frac{\sin(\xi)}{\xi}.
+\end{equation}
+For $n=5$
+% TODO Add n=5 exact results
 
-% Explain what you have done here in a new subsection
 
 
 
 
+\end{subsection}
+%
+%
 \end{section}
 \end{appendix}
