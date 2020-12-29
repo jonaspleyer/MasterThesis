@@ -6,6 +6,7 @@
 \usepackage {amsthm}
 \usepackage [sorting=none, url=true, backend=biber]
 			{biblatex}
+\usepackage {booktabs}
 \usepackage {caption}
 \usepackage {faktor}
 \usepackage {float}
@@ -27,17 +28,15 @@
 \date{04.10.2020}\let\Date\@date
 \makeatother
 
-
-% Add the bibliography for the project
-\addbibresource{98-literature.bib}
-
-
 % Set the geometry of the paper
 \geometry{a4paper, top=25mm, left=25mm, right=25mm, bottom=30mm,
 headsep=10mm, footskip=12mm}
 
 % Set the numbering of equations to be referenced to their subsection
 \numberwithin{equation}{subsection}
+
+% Add the bibliography for the project
+\addbibresource{98-literature.bib}
 
 % Add Large and small letters to be breakable in urls and DOIs in biblatex
 \setcounter{biburllcpenalty}{9999}% Kleinbuchstaben
@@ -46,3 +45,6 @@ headsep=10mm, footskip=12mm}
 % Sets linebreaking in names - Higher value = Dislikes such breaks
 \setcounter{highnamepenalty}{9999}
 \setcounter{lownamepenalty}{9999}
+
+% Specify TopRule and Bottomrule Thickness for booktabs usepackage
+\renewcommand{\heavyrulewidth}{2pt}
