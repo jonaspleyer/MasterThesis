@@ -137,7 +137,7 @@ we have
 	\begin{equation}
 		\alpha\frac{K_1^2}{K_2^2}  < \alpha + 4\frac{K_1}{K_2}.
 	\end{equation}
-	We quickly prove the more general result $K_\nu<K_{\nu+1}$. One possible definition\cite{weissteinModifiedBesselFunction} for the Bessel function $K_\nu$ is given by
+	We quickly prove the more general result $K_\nu<K_{\nu+1}$. One possible definition\cite{weissteinModifiedBesselFunctiona} for the Bessel function $K_\nu$ is given by
 	\begin{equation}
 		K_\nu := \frac{\sqrt{\pi}}{\left(\nu-\frac{1}{2}\right)!}\left(\frac{1}{2}z\right)^\nu\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu-\frac{1}{2}}dt
 	\end{equation}
@@ -161,6 +161,7 @@ we have
 Figure \ref{2-IntEner-RelEOSPlot} is obtained by choosing numerical values and then interpolating and inverting equation \ref{2-IntEner-PressureAlpha}. The constant factor 
 \begin{equation}
 	A:=CNmc^2/p_0
+	\label{2-IntEner-FactorExplanation}
 \end{equation}
 is substituted to obtain independence of $p_0$\footnote{This will be the starting value for the pressure in the TOV equation. Since the pressure decreases from the inside of a star to the outside, this resembles our highest value of $p$.}. Furthermore the graphs of the plotted EOS are normalised such that
 \begin{equation}
@@ -170,8 +171,7 @@ and can thus be compared with each other. Note that the $\rho_0$ of the plot is 
 \begin{figure}[H]
 	\centering
 	\import{pictures/2-InternalEnergy-Explicit/}{RelEOS.pgf}
-	\caption[Relativistic Equation of State]{The plot shows the relativistic equation of state $\rho(p)$ normalised such that values can be compared with a polytropic EOS. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic equation of state. By normalisation, the graphs of the polytropic equation of state are independent of the factor $A$ which is explained in ???.}%TODO Insert reference for explanation
-	%TODO Explain why there is not p0 dependence in this plot.
+	\caption[Relativistic Equation of State]{The plot shows the relativistic equation of state $\rho(p)$ normalised such that values can be compared with a polytropic EOS. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic equation of state. By normalisation, the graphs of the polytropic equation of state are independent of the factor $A$ which is explained in equation \ref{2-IntEner-FactorExplanation}.}
 	\label{2-IntEner-RelEOSPlot}
 \end{figure}
 \end{subsection}
