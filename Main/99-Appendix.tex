@@ -9,7 +9,7 @@
 %
 \begin{subsection}{Exact solutions of the LE equation}
 \label{99-App-A-Exact-LE-Solutions}
-This section partly relies on information in \cite{weissteinLaneEmdenDifferentialEquation} and \cite{chandrasekharChandrasekharAnIntroductionStudy1958}. The LE equation is
+This section relies on information in \cite{weissteinLaneEmdenDifferentialEquation} and \cite{chandrasekharChandrasekharAnIntroductionStudy1958}. The LE equation is
 \begin{equation}
 	\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
 	\label{99-App-A-LE-Equation}
@@ -21,7 +21,6 @@ which for $n=0$ transforms readily into
 Both sides can be evaluated directly and then simplified further.
 \begin{align}
 	\xi^2\frac{d\theta}{d\xi} &= -\frac{\xi^3}{3}\\
-	\frac{d\theta}{d\xi} &= -\frac{\xi}{3}\\
 	\theta(\xi) &= \theta(0)-\frac{\xi^2}{6}
 \end{align}
 With the initial condition $\theta(0)=1$, we obtain the desired result. For $n=1$, equation \ref{99-App-A-LE-Equation} transforms into
@@ -31,7 +30,6 @@ With the initial condition $\theta(0)=1$, we obtain the desired result. For $n=1
 we start by substituting $U=\theta x$ and thus obtain (also multiplying by $x^2$)
 \begin{align}
 	0 &= \frac{dU}{d\xi} + \xi\frac{d^2U}{d\xi^2} - \frac{dU}{d\xi} + \xi U\\
-	0 &= \xi\frac{d^2U}{d\xi^2} + \xi U\\
 	-U &= \frac{d^2U}{d\xi^2}
 \end{align}
 and the last equation can be solved with a linear combination of $\cos(\xi)$ and $\sin(\xi)$. Transforming back to $\theta$, we then have
@@ -42,13 +40,64 @@ The need for a well defined limit at $\xi\rightarrow0$ implies that $B=0$ and th
 \begin{equation}
 	\theta(\xi) = \frac{\sin(\xi)}{\xi}.
 \end{equation}
-For $n=5$
-% TODO Add n=5 exact results
-
-
-
-
-
+For $n=5$, we start by making the two substitutions $x=1/\xi$ and $\theta=ax^\omega$ as done in \cite[94\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958} and then transforming the LE equation into
+\begin{alignat}{5}
+	&x^4\frac{d\theta}{d\xi}&&+\theta^n&&=0\\
+	&a\omega(\omega-1)x^{\omega+2}&&+a^nx^{n\omega} &&=0.
+\end{alignat}
+From this we see that $\omega+2=n\omega$ and $a\omega(\omega-1)=-a^n$ needs to be satisfied, since the equation needs to hold for all $x\in\R_{\geq0}$. Rewriting these conditions, we obtain the singular solution for the LE equation
+\begin{equation}
+	\theta(x) = \left(\frac{2(n-3)}{(n-1)^2}\right)^{1/(n-1)}x^{2/(n-1)}
+\end{equation}
+since with $x=1/\xi$, we have $\theta(\xi)\rightarrow\infty$ for $\xi\rightarrow0$. Notice that the solution is only valid if $n\geq3$. We can use this solution to the LE equation and perturb it to make the more general ansatz
+\begin{equation}
+	\theta(x) = ax^\omega z(x).
+\end{equation}
+If $n<3$, the factor $a$ has to be replaced with a more general one. The singular solution is obtained when taking $z=1$. Using another transformation $1/x=\xi=\exp(-t)$, we obtain
+\begin{alignat}{5}
+	&\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right) &&+ \theta^n &&=0\\
+	&x^4\frac{d^2\theta}{dx^2} &&+ \theta^n &&=0\\
+	ax^{\omega+2}\Bigl[&x^2\frac{d^2z}{dx^2} + 2\omega x\frac{dz}{dx} + \omega(\omega-1)z\Bigr] &&+ a^nx^{n\omega}z^n &&=0\\
+	&\frac{d^2z}{dt^2} + (2\omega-1)\frac{dz}{dt}+\omega(\omega-1)z &&+ a^{n-1}z^n &&=0\\
+	&\frac{d^2z}{dt^2} + \frac{5-n}{n-1}\frac{dz}{dt} + 2\frac{3-n}{(n-1)^2}z &&+ 2\frac{(n-3)}{(n-1)^2}z^n &&=0.
+\end{alignat}
+For $n=5$, we obtain
+\begin{equation}
+	\frac{d^2z}{dt^2}=\frac{1}{4}z(1-z^4).
+\end{equation}
+we multiply both sides with $dz/dt$ and integrate
+\begin{equation}
+	\frac{1}{2}\left(\frac{d^2z}{dt^2}\right) = \frac{1}{8}z^2-\frac{1}{24}z^6+D
+	\label{99-App-A-LE-For-n-5-In-z-writing}
+\end{equation}
+where $D$ is the integration constant. For $\xi\rightarrow0$, we expect $\theta\rightarrow\theta_0$ and thus $z=\theta_0\e^{-\omega t}(1/a+\mathcal{O}(\e^{-t}))$ as $t$ approaches $\infty$. We immediately see that $dz/dt$ exhibits a similar behaviour and thus the integration constant $D$ has to vanish.\\
+The right hand side of equation \ref{99-App-A-LE-For-n-5-In-z-writing} cannot get negative since otherwise $z$ would take complex values which enables us to take the square root with a minus sign\footnote{This only determines the direction in which $t$ is defined, so it is arbitrary.} and integrate again
+\begin{equation}
+	\int\left(1-\frac{1}{3}z^4\right)^{-1/2}\frac{dz}{z}=-\frac{1}{2}\int dt.
+\end{equation}
+We change the integration by again substituting the variables $1/3z^4=\sin^2(\alpha)$ and calculate $dz/z=2\cos(\alpha)/\sin(\alpha)d\alpha$ as well as $-dt=d\alpha/\sin(\alpha)$. Now we rewrite the integral
+\begin{align}
+	\int\frac{1}{\sqrt{1-\sin^2(\alpha)}}\frac{2\cos(\alpha)}{\sin(\alpha)}\frac{d\alpha}{} &= -\int dt\\
+	\int\frac{2d\alpha}{\sin(\alpha)} &= -\int dt.
+\end{align}
+Evaluating those integrals leads us to
+\begin{equation}
+	\log(\tan(\alpha/2))+\log(1/C) = -t
+	\label{99-App-A-LE-For-n-5-Integral}
+\end{equation}
+where the integration constant has been chosen in advance to simplify the next expressions. From here, we further manipulate equation \ref{99-App-A-LE-For-n-5-Integral} and combine it with our previous substitution $1/3z^4=\sin^2(\alpha)$ to obtain
+\begin{equation}
+	\frac{1}{3}z^4=\sin^2(\alpha)=\frac{4\tan^2(\alpha/2)}{\left(1+\tan^2(\alpha/2)\right)}^2
+\end{equation}
+and with the solution for out integral before and plugging in the substitution from the beginning $\xi=\e^{-t}$, we have
+\begin{equation}
+	z=\pm\left(\frac{12C^2\xi^2}{1+C^2\xi^2}\right)^{1/4}.
+\end{equation}
+For $\theta$, we need to have $\theta\rightarrow\theta0=1$ as $\xi\rightarrow0$. This means that $C=1$ and with $\theta=ax^\omega z$, we obtain
+\begin{equation}
+	\theta = \frac{1}{\left(1+\frac{1}{3}\xi^2\right)^{1/2}}.
+\end{equation}
+We see that this equation has no zero value and tends to $0$ as $\xi\rightarrow\infty$.
 \end{subsection}
 %
 %
