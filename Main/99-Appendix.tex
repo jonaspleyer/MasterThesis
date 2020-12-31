@@ -28,16 +28,13 @@ With the initial condition $\theta(0)=1$, we obtain the desired result. For $n=1
 \begin{equation}
 	\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\xi^2\theta=0
 \end{equation}
-which is a spherical Bessel differential equation
-\begin{equation}
-	\frac{d}{dr}\left(r^2\frac{dU}{dr}\right)+\left[k^2r^2-m(m+1)\right]U=0
-\end{equation}
-when setting $m=0$ and $k=1$. The solution to this equation is \cite{weissteinSphericalBesselDifferential}
+we start by substituting $U=\theta x$ and thus obtain (also multiplying by $x^2$)
 \begin{align}
-	U(r) 	&= A\sqrt{\frac{\pi}{kr}}J_{m+1/2}(kr) + B\sqrt{\frac{\pi}{kr}}Y_{m+1/2}(kr)\\
-			&= Aj_m(kr) + By_m(kr)
+	0 &= \frac{dU}{d\xi} + \xi\frac{d^2U}{d\xi^2} - \frac{dU}{d\xi} + \xi U\\
+	0 &= \xi\frac{d^2U}{d\xi^2} + \xi U\\
+	-U &= \frac{d^2U}{d\xi^2}
 \end{align}
-where $J_n$ is the Bessel function of the first and $Y_n$ of the second kind and $j_n$ and $y_n$ are the corresponding spherical Bessel functions. Thus in our case with $j_{0}(x)=\sin(x)/x$ and $Y_{0}(x)=-\cos(z)/z$, we obtain
+and the last equation can be solved with a linear combination of $\cos(\xi)$ and $\sin(\xi)$. Transforming back to $\theta$, we then have
 \begin{equation}
 	\theta(\xi) = A\frac{\sin(\xi)}{\xi} - B\frac{\cos(k\xi)}{\xi}.
 \end{equation}
