@@ -60,8 +60,9 @@ we expect $\partial m/\partial r(R)=0$ if $p(R)=0$ when choosing a polytropic eq
 %
 %
 \begin{subsection}{Verifying the results}
+\label{4-NumSol-Sec-Verifiying-the-results}
 Verification is done in different ways. First, one can compare calculated LE results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-LE-Exact-Results}. All calculations are carried out with a chosen step size of $d\xi=0.03$.\\
-The graphs overall show good numerical agreement. Initial values at $r=0$ are identical since they were set to be. The spike occurring afterwards can be explained by equation \ref{4-NumSol-LE-Substitution}. The initial value of all derivatives is identically $0$ which means no change of value for $\theta$ or $\chi$ for the initial step. It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen. The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases exponentially.
+The graphs overall show good numerical agreement. Initial values at $r=0$ are identical since they were set to be. The spike occurring afterwards can be explained by equation \ref{4-NumSol-LE-Substitution}. The initial value of all derivatives is identically $0$ which means no change of value for $\theta$ or $\chi$ for the initial step. It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen. The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
 \begin{figure}[H]
 	\centering
 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols.pgf}
