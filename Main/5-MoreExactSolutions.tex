@@ -1,52 +1,72 @@
 \begin{section}{More Exact Results}
 \begin{subsection}{LE equation}
-One can derive another exact solution for the LE equation at the exponent $n=2$ when considering a series expansion of $\theta$ around the point $\xi=0$ with initial conditions
+One can derive another exact solution for the LE equation at the exponent $n=2$ when 
+considering a series expansion of $\theta$ around the point $\xi=0$ with initial conditions
 \begin{equation}
-	\theta=\sum\limits_{m=0}^\infty a_m\xi^m \hspace{1cm} a_0=\left.\theta\right|_{\xi=0}=\theta_0 \hspace{1cm} a_1=\left.\frac{d\theta}{d\xi}\right|_{\xi=0}=0
+	\theta=\sum\limits_{m=0}^\infty a_m\xi^m \hspace{1cm} a_0=\left.\theta\right|_{\xi=0}=\theta_0 
+	\hspace{1cm} a_1=\left.\frac{d\theta}{d\xi}\right|_{\xi=0}=0
 	\label{5-MoExSo-LEN2-Series-Initial-Conditions}
 \end{equation}
-Since the series is absolut convergent, we can plug it into the LE equation \ref{3-Mass-Lane-Emden-Eq} and use the Cauchy Product formula.
+Since the series is absolut convergent, we can plug it into the LE equation 
+\ref{3-Mass-Lane-Emden-Eq} and use the Cauchy Product formula.
 \begin{equation}
-	\sum\limits_{m=2}^\infty m(m-1)a_m\xi^{m-2}+\sum\limits_{m=1}^\infty (2m)a_m\xi^{m-2} + \sum\limits_{m=0}^\infty\sum\limits_{k=0}^m a_{m-k}a_k\xi^m = 0
+	\sum\limits_{m=2}^\infty m(m-1)a_m\xi^{m-2}+\sum\limits_{m=1}^\infty (2m)a_m\xi^{m-2} + 
+	\sum\limits_{m=0}^\infty\sum\limits_{k=0}^m a_{m-k}a_k\xi^m = 0
 	\label{5-MoExSo-LEN2-Series-PluggedIn}
 \end{equation}
 \begin{theorem}
 	The odd coefficients $a_{2m+1}$ of this series expansion vanish.
 \end{theorem}
 \begin{proof}
-	We rewrite the summations of equation \ref{5-MoExSo-LEN2-Series-PluggedIn} to start at the same index $m=0$ and combine them
+	We rewrite the summations of equation \ref{5-MoExSo-LEN2-Series-PluggedIn} to start at the 
+	same index $m=0$ and combine them
 	\begin{equation}
-		\sum\limits_{m=0}^\infty\left((m+2)(m+1)a_{m+2}\xi^{m}+(2m+2)a_{m+1}\xi^{m-1} + \sum\limits_{k=0}^m a_{m-k}a_k\xi^m\right) = 0
+		\sum\limits_{m=0}^\infty\left((m+2)(m+1)a_{m+2}\xi^{m}+(2m+2)a_{m+1}\xi^{m-1} + 
+		\sum\limits_{k=0}^m a_{m-k}a_k\xi^m\right) = 0
 	\end{equation}
-	With equation \ref{5-MoExSo-LEN2-Series-Initial-Conditions}, we can start the summation in the middle one index higher and separate the term $\xi^m$. This equation has to be true inside the radius of convergence of the series and thus needs to vanish for ambiguous $\xi$.
+	With equation \ref{5-MoExSo-LEN2-Series-Initial-Conditions}, we can start the summation 
+	in the middle one index higher and separate the term $\xi^m$. This equation has to be true inside the radius of convergence of the series and thus needs to vanish for ambiguous $\xi$.
 	\begin{equation}
 		(m+2)(m+1)a_{m+2}+2(m+2)a_{m+2}+\sum\limits_{k=0}^ma_{m-k}a_k = 0
 	\end{equation}
-	and upon further manipulation results in the recursive description for the coefficients of the series
+	and upon further manipulation results in the recursive description for the coefficients 
+	of the series
 	\begin{equation}
 		a_{m+2} = -\frac{1}{(m+2)(m+3)}\sum\limits_{k=0}^ma_{m-k}a_k.
 		\label{5-MoExSo-LEN2-Recursive-Coefficients}
 	\end{equation}
-	We show the statement by induction. For $a_1$ it is already true. Let the statement be true for all odd values $2k+1\leq2m+1$. Writing down $a_{2m+3}$ gives us
+	We show the statement by induction. For $a_1$ it is already true. Let the statement be true 
+	for all odd values $2k+1\leq2m+1$. Writing down $a_{2m+3}$ gives us
 	\begin{equation}
 		a_{2m+3} = -\frac{1}{(2m+3)(2m+4)}\left(a_0a_{2m+1}+a_1a_{2m}+\dots+a_{2m}a_1+a_{2m+1}a_0\right).
 	\end{equation}
-	It is clear that in the summation odd and even coefficients get paired and will thus vanish completely.
+	It is clear that in the summation odd and even coefficients get paired and will thus 
+	vanish completely.
 \end{proof}\noindent
-This proof shows that we can restrict ourselves to the subsequence $b_m=a_{2m}$ and the subseries with initial values given by
+This proof shows that we can restrict ourselves to the subsequence $b_m=a_{2m}$ and 
+the subseries with initial values given by
 \begin{equation}
-	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} = -\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^mb_{m-k}b_k \hspace{1cm} b_0=\theta_0
+	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} = 
+	-\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^mb_{m-k}b_k \hspace{1cm} b_0=\theta_0
 \end{equation}
 \begin{figure}[H]
 	\import{pictures/5-MoreExactSolutions/}{LE-ExactN2.pgf}
-	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - From top left to bottom right, the series calculated with the coefficients explained above, the sequence $R_n=(|b_n|)^{-1/n}$ which approaches the radius of convergence, the difference to the result obtained by solving the differential equation as in section \ref{4-NumSol-Sec-Verifiying-the-results} and the corresponding relative difference are shown.}
+	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - From top left to bottom right, 
+	the series calculated with the coefficients explained above, 
+	the sequence $R_n=(|b_n|)^{-1/n}$ which approaches the radius of convergence, 
+	the difference to the result obtained by solving the differential equation 
+	as in section \ref{4-NumSol-Sec-Verifiying-the-results} and the corresponding 
+	relative difference are shown.}
 	\label{5-MoExSo-LEN2-Plot}
 \end{figure}\noindent
-These results can be used to calculate the series expansion of the LE equation numerically. Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions. However in both plots at the bottom, the last few values where the solution reaches the radius of convergence have been omitted for better clarity. It is clear that in this regime both solutions do not agree. The third plot indicates that the radius of convergence might actually be larger than where the solutions deviate. However one important aspect is numerical uncertainty. In this procedure, the coefficients were calculated up to $a_{200}=b_{100}$
-
-
-
-
+These results can be used to calculate the series expansion of the LE equation numerically. 
+Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions. 
+However in both plots at the bottom, the last few values where the solution reaches the 
+radius of convergence have been omitted for better clarity. It is clear that in this 
+regime both solutions do not agree. The third plot indicates that the radius of 
+convergence might actually be larger than where the solutions deviate. 
+However one important aspect is numerical uncertainty. In this procedure, 
+the coefficients were calculated up to $a_{200}=b_{100}$
 
 
 \end{subsection}
