@@ -25,7 +25,8 @@ Since the series is absolut convergent, we can plug it into the LE equation
 		\sum\limits_{k=0}^m a_{m-k}a_k\xi^m\right) = 0
 	\end{equation}
 	With equation \ref{5-MoExSo-LEN2-Series-Initial-Conditions}, we can start the summation 
-	in the middle one index higher and separate the term $\xi^m$. This equation has to be true inside the radius of convergence of the series and thus needs to vanish for ambiguous $\xi$.
+	in the middle one index higher and separate the term $\xi^m$. This equation has to be true 
+	inside the radius of convergence of the series and thus needs to vanish for ambiguous $\xi$.
 	\begin{equation}
 		(m+2)(m+1)a_{m+2}+2(m+2)a_{m+2}+\sum\limits_{k=0}^ma_{m-k}a_k = 0
 	\end{equation}
@@ -49,6 +50,24 @@ the subseries with initial values given by
 	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} = 
 	-\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^mb_{m-k}b_k \hspace{1cm} b_0=\theta_0
 \end{equation}
+\begin{theorem}
+	The series $\theta=\sum\limits_{m=0}^\infty b_m\xi^{2m}$ converges for sufficiently small $\xi$.
+\end{theorem}
+\begin{proof}
+	We first show that $|b_n|$ is monotonically decreasing. 
+	This statement is true for $m=1$ since $b_0=\theta_0$ and $b_1=\frac{\theta_0^2}{20}$
+	and thus if $\theta_0\leq20$, this is true. In general, we have
+	\begin{align}
+		|b_{m+1}| &= \left|\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^m b_{m-k}b_k\right|\\
+		&\leq \frac{1}{(2m+2)(2m+3)}\left(2|b_mb_0| + \sum\limits_{k=1}^{m-1}b_{m-k}b_k\right)\\
+		&\leq \frac{|b_0|}{(2m+2)(2m+3)}|b_m| + |b_m|.
+	\end{align}
+	From the preceding equations we can read of
+	\begin{equation}
+		\frac{|b_{m+1}|}{|b_m|} = 1+\frac{|b_0|}{(2m+2)(2m+3)}
+	\end{equation}
+
+\end{proof}
 \begin{figure}[H]
 	\import{pictures/5-MoreExactSolutions/}{LE-ExactN2.pgf}
 	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - From top left to bottom right, 
@@ -66,7 +85,8 @@ radius of convergence have been omitted for better clarity. It is clear that in 
 regime both solutions do not agree. The third plot indicates that the radius of 
 convergence might actually be larger than where the solutions deviate. 
 However one important aspect is numerical uncertainty. In this procedure, 
-the coefficients were calculated up to $a_{200}=b_{100}$
+the coefficients were calculated up to $a_{200}=b_{100}\approx-5.4871\times10^{-117}$.
+
 
 
 \end{subsection}
