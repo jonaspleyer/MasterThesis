@@ -49,43 +49,58 @@ the subseries with initial values given by
 \begin{equation}
 	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} = 
 	-\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^mb_{m-k}b_k \hspace{1cm} b_0=\theta_0
+	\label{5-MoExSo-LEN2-bn-Definition}
 \end{equation}
 \begin{theorem}
-	The series $\theta=\sum\limits_{m=0}^\infty b_m\xi^{2m}$ converges for sufficiently small $\xi$.
+	The series $\theta=\sum\limits_{m=0}^\infty b_m\xi^{2m}$ converges for $\xi\leq1$.
 \end{theorem}
 \begin{proof}
-	We first show that $|b_n|$ is monotonically decreasing. 
-	This statement is true for $m=1$ since $b_0=\theta_0$ and $b_1=\frac{\theta_0^2}{20}$
-	and thus if $\theta_0\leq20$, this is true. In general, we have
-	\begin{align}
-		|b_{m+1}| &= \left|\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^m b_{m-k}b_k\right|\\
-		&\leq \frac{1}{(2m+2)(2m+3)}\left(2|b_mb_0| + \sum\limits_{k=1}^{m-1}b_{m-k}b_k\right)\\
-		&\leq \frac{|b_0|}{(2m+2)(2m+3)}|b_m| + |b_m|.
-	\end{align}
-	From the preceding equations we can read of
+	We start by showing that $|b_{m+1}|\leq1/(4m+6)$. Using the triangle inequality on 
+	\ref{5-MoExSo-LEN2-bn-Definition}, we obtain
 	\begin{equation}
-		\frac{|b_{m+1}|}{|b_m|} = 1+\frac{|b_0|}{(2m+2)(2m+3)}
+		|b_{m+1}| \leq \frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^m|b_{m-k}b_k|.
 	\end{equation}
-
+	For $m=0$, we have $b_1=-1/6$ and thus $|b_1|\leq1/3$ and so the statement is true for $m=0$.
+	If the statement holds for all $m<m+1$, we have
+	\begin{equation}
+		|b_{m+1}| \leq \frac{m}{(2m+2)(2m+3)} = \frac{1}{2}\frac{m}{(m+1)}\frac{1}{(2m+3)}
+		\leq\frac{1}{2}\frac{1}{(2m+3)}
+	\end{equation}
+	which proves the first statement. To see that $b_m$ is a alternating sequence, we again inspect
+	\ref{5-MoExSo-LEN2-bn-Definition}. The first element of the series is 
+	$b_0=1$ and the second is $b_1=-1/6$ so the initial statement is again correct. Let $b_m$ be 
+	alternating for all $m<2m+1$. Then equation \ref{5-MoExSo-LEN2-bn-Definition} for odd values reads
+	\begin{equation}
+		b_{2m+1} = -\frac{1}{(4m+4)(4m+5)}\left(b_{2m}b_0+b_{2m-1}b_1+\dots+b_0b_{2m}\right)
+	\end{equation}
+	This shows that if all odd values $b_{2k+1}$ are negative and all even ones are positive, 
+	then $b_{2m+1}$ is negative too. The same holds true when the index $2m+2$ is even.
+	By the Leibniz criterion the series converges if $\xi\leq1$. 
 \end{proof}
 \begin{figure}[H]
 	\import{pictures/5-MoreExactSolutions/}{LE-ExactN2.pgf}
-	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - From top left to bottom right, 
-	the series calculated with the coefficients explained above, 
-	the sequence $R_n=(|b_n|)^{-1/n}$ which approaches the radius of convergence, 
-	the difference to the result obtained by solving the differential equation 
-	as in section \ref{4-NumSol-Sec-Verifiying-the-results} and the corresponding 
-	relative difference are shown.}
+	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - We see the power 
+	the series calculated with the coefficients explained above (the far right tick is the 
+	last calculated value for $R_m$ where plotting is stopped) and 
+	the sequence $R_m=(|a_m|)^{-1/m}$ which approaches the radius of convergence.
+	}
 	\label{5-MoExSo-LEN2-Plot}
 \end{figure}\noindent
-These results can be used to calculate the series expansion of the LE equation numerically. 
-Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions. 
-However in both plots at the bottom, the last few values where the solution reaches the 
-radius of convergence have been omitted for better clarity. It is clear that in this 
-regime both solutions do not agree. The third plot indicates that the radius of 
-convergence might actually be larger than where the solutions deviate. 
-However one important aspect is numerical uncertainty. In this procedure, 
-the coefficients were calculated up to $a_{200}=b_{100}\approx-5.4871\times10^{-117}$.
+These results can be used to calculate the power series of the LE equation numerically. 
+Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions 
+as the difference $\Delta=\theta_{calc}-\theta_{ser}$ is not larger than $0.00015$.
+% However in both plots at the bottom, the last few values where the solution starts reaching the 
+% radius of convergence have been omitted for visual clarity. 
+The solutions differ for larger values around $\approx3.918$
+The top right plot indicates that the radius of convergence might actually be larger than 
+where solutions deviate. 
+One important observation is that in this procedure, 
+the coefficients were calculated up to $b_{250}\approx-4.7723\times10^{-296}$ which is in close 
+proximity to the floating point limit of python given by $\approx2.2251\times10^{-308}$ and 
+indicates that numerical errors may be the reason the series starts to diverge. 
+Also in order to achieve sufficient numerical precision, we would need to calculate higher 
+order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows
+that these parts of the series still yield large contributions to the value of $\theta$ at this point.
 
 
 
