@@ -178,23 +178,18 @@ We will first follow mainly the approach given in \cite{waldGeneralRelativity198
 % \end{definition}
 We first state a useful Lemma for the proof of our next theorem.
 \begin{lemma}
-	The function $\rho_{av}(r)=m(r)/r^3$ has negative slope for $\partial_r\rho(r)\leq0$.
+	Given $\rho\in C^1(\R_{\geq0})$ is monotonously increasing, the function $\rho_{av}=m/r^3$ has negative slope.
 \end{lemma}
 \begin{proof}
-	Taking the derivative of $\rho_{av}$ we obtain 
+	Taking the derivative of $\rho_{av}$ and applying equation \ref{3-Mass-MassDepOnr}, we obtain 
 	\begin{equation}
-		\frac{\partial}{\partial r}\left(\frac{m(r)}{r^3}\right) = -\frac{m(r)}{r^4} + \frac{4\pi\rho(r)}{r}.
+		\frac{\partial}{\partial r}\left(\frac{m}{r^3}\right) = -3\frac{m}{r^4} + \frac{4\pi\rho}{r}.
 	\end{equation}
-	For this equation to be $\leq0$, it is sufficient to have
+	By equation \ref{3-Mass-TOV-Eq} we know that $p$ has negative slope and since $\rho$ is monotonously increasing, we have
 	\begin{equation}
-		\rho(r)r^3\leq\frac{m(r)}{4\pi}=\int\limits_0^r\rho(r')r'^2dr'.
+		m = \int\limits_0^r 4\pi\rho r^2 dr \geq \rho\int\limits_0^r4\pi r^2 = \frac{4\pi r^3\rho}{3}
 	\end{equation}
-	Since for $r=0$ both sides of the equations match, we can take another derivative and obtain 
-	\begin{equation}
-		\rho(r)r^2\geq\partial_r\rho(r)r^3+3\rho(r)r^2 \Leftrightarrow -2\rho(r) \geq \partial_r\rho(r)r
-		% TODO correct this theorem. Currently it is simply not correct
-	\end{equation}
-	which is always true since $\rho$ has negative slope by definition.
+	which shows that $\frac{4\pi\rho r^3}{3}\leq m$ and completes the proof.
 \end{proof}\noindent
 \begin{theorem}[Mass Bound]
 	The Mass of a spherically symmetric star is bound from above by
