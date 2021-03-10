@@ -1,10 +1,13 @@
 \begin{section}{The Internal Energy calculated explicitly}
 % \begin{subsection}{The canonical ensemble formalism}
 % TODO Taylor this section to the previous one!
-The canonical ensemble was introduced in its mathematical form in the previous section. On the equilibrium submanifold of the TPS $B$, we can write the free energy as a function of the partition function $\Z$. The internal energy is then obtained by a change of coordinates or simply the equation $\F=\U+TS$. Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. Concepts and definitions of Hamilton Mechanics can be read in \cite{eschrigTopologyGeometryPhysics2011, grosseAllgemeineRelativitaetstheorie2019, choquet-bruhatGeneralRelativityEinstein2009, choquet-bruhatIntroductionGeneralRelativity2015, choquet-bruhatAnalysisManifoldsPhysics2000, spivakPhysicsMathematiciansMechanics2010}. In general we assume $H:TM^N\rightarrow\R$ to be a positive smooth function on the manifold of space-time $M$. This explicitly takes form in the well known equations
+% The canonical ensemble was introduced in its mathematical form in the previous section. On the equilibrium submanifold of the TPS $B$, we can write the free energy as a function of the partition function $\Z$. 
+In the canonical ensemble the internal energy is obtained by the equation $\F=\U+TS$ where all quantities present can be obtained by means of the partition function.
+Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. Concepts and definitions of Hamilton Mechanics can be read in \cite{eschrigTopologyGeometryPhysics2011, grosseAllgemeineRelativitaetstheorie2019, choquet-bruhatGeneralRelativityEinstein2009, choquet-bruhatIntroductionGeneralRelativity2015, choquet-bruhatAnalysisManifoldsPhysics2000, spivakPhysicsMathematiciansMechanics2010}. In general we assume $H:\R^N\times\R^N\rightarrow\R$ to be a positive smooth function that assigns the positions and momenta of $N$ particles a energy.
+This explicitly takes form in the well known equations
 % In the canonical ensemble the internal energy $\U$ can be calculated from the partition function $\Z$ via the following equations:
 \begin{align}
-	\Z(T,V,N) 	&= \int\limits_{TM^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_BT}\right)\frac{dx_1dp_1\dots dx_Ndp_N}{N!h^{3N}}\\
+	\Z(T,V,N) 	&= \int\limits_{\R^{2N}}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_BT}\right)\frac{dx_1dp_1\dots dx_Ndp_N}{N!h^{3N}}\\
 	\F(T,V,N) 	&= - k_BT\log\left(\Z(T,V,N)\right)\label{2-IntEner-FreeEnerDef}\\
 	\U(T,V,N) 	&= \F + T \Ent\\
 				&= \F - T\frac{\partial\F}{\partial T}\\
@@ -120,7 +123,7 @@ we have
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	For this proof it suffices to show that the function $p(\alpha)$ has a strictly monotonous\footnote{We omit this word in this proof for readability.} behaviour. Without loss of generality, we assume $N,m,c,C>0$. Now it is obvious that the first two terms $Nmc^2/CK_2(\alpha)$ and $\alpha^{-2}$ are strictly decreasing. This is easy to see when using \cite{ModifiedBesselFunction}
+	For this proof it suffices to show that the function $p(\alpha)$ has a strictly monotonous\footnote{We omit this word in this proof for readability.} behaviour. Without loss of generality, we assume $N,m,c,C>0$. Now it is obvious that the first two terms $Nmc^2/CK_2(\alpha)$ and $\alpha^{-2}$ are strictly decreasing. This is easy to see when using \cite{abramowitzPocketbookMathematicalFunctions1984}
 	\begin{equation}
 		\frac{\partial K_n}{\partial\alpha} = \frac{n}{\alpha}K_n-K_{n+1} = -\frac{K_{n-1}+K_{n+1}}{2}.
 		\label{2-IntEner-BesselDerivative}
