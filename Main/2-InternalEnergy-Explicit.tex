@@ -1,21 +1,23 @@
 \begin{section}{Thermodynamical Calculation of an EoS}
-This chapter aims at developing an fully special relativistic equation of state.
-
-In the canonical ensemble the internal energy is obtained by the equation $\F=\U+TS$ where all quantities present can be obtained by means of the partition function.
-Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. For concepts and definitions of Hamilton Mechanics the reader is referred to \cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010} and details about thermodynamics can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}. In general we assume $H:\R^N\times\R^N\rightarrow\R$ to be a positive smooth function that assigns the positions and momenta of $N$ particles an energy.
+This chapter aims at developing an fully special relativistic equation of state. We will briefly summarise the most important concepts necessary for the derivation.\\
+In the canonical ensemble, for which a introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where all quantities present are either variables such as $T$ or can be derived by means of the partition function $\Z$.
+Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. 
+For concepts and definitions of Hamilton Mechanics the reader is referred to \cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010}. 
+In general we assume $H:\R^N\times\R^N\rightarrow\R$ to be a positive smooth function that assigns the positions and momenta of $N$ particles an energy.
 This explicitly takes form in the well known equations
-% In the canonical ensemble the internal energy $\U$ can be calculated from the partition function $\Z$ via the following equations:
 \begin{align}
-	\Z(T,V,N) 	&= \int\limits_{\R^{2N}}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_BT}\right)\frac{dx_1dp_1\dots dx_Ndp_N}{N!h^{3N}}\\
+	\Z(T,V,N) 	&= \int\limits_{\mathcal{V}\times\R^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_BT}\right)\frac{dx_1dp_1\dots dx_Ndp_N}{N!h^{3N}}\\
 	\F(T,V,N) 	&= - k_BT\log\left(\Z(T,V,N)\right)\label{2-IntEner-FreeEnerDef}\\
 	\U(T,V,N) 	&= \F + T \Ent\\
 				&= \F - T\frac{\partial\F}{\partial T}\\
 				&= k_BT^2\frac{1}{\Z}\frac{\partial\Z}{\partial T}\label{2-IntEner-Def}.
 \end{align}
-where $x_i\in M$ and $p_i\in T_{x_i}M$. The last equation shows that to fully calculate $U$ it is necessary to obtain a readable output from $\Z$.
+where $x_i\in \mathcal{V}\subset\R^N$  and $p_i\in \R^N$. The relation $V=\mathcal{V}$ describes the total volume occupied by the medium while $T$ and $N$ are its Temperature and particle Number respectively. 
+The last equation shows that to fully calculate $U$ it is necessary to obtain a readable output from $\Z$.
 % \end{subsection}
 \begin{subsection}{The Ultra-Relativistic Case}
-First we inspect the ultra-relativistic Hamiltonian given by 
+The ultra-relativistic case is a textbook example and well known limit that we will use in order to verify our later calculated results. 
+First we write down the ultra-relativistic Hamiltonian given by 
 \begin{equation}
 	H(\vec{x},\vec{p})=||\vec{p}||c.
 \end{equation}
@@ -27,7 +29,8 @@ The corresponding partition function for a $N$ particle system then reads ($\bet
 	\Z	&= \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^3\right)^N
 	\label{2-IntEner-UltraRelZ}
 \end{align}
-where from the first to second line we used usual spherical coordinates and afterwards used the integral transformation $x=\beta cp$. The remaining integral $\U$ can be solved to be exactly $=2$ and the internal energy can now be written down and further approximated to subjective needs.
+where from the first to second line we used usual spherical coordinates and afterwards used the integral transformation $x=\beta cp$. 
+The remaining integral $\U$ can be solved to be exactly $=2$ and the internal energy can now be written down and further approximated to subjective needs.
 \end{subsection}
 %
 %
