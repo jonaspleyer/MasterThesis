@@ -60,17 +60,20 @@ We can now calculate the internal energy $\U$ from $\Z$ via equation \eqref{2-In
     \U &= 3Nk_BT - mc^2\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}+2\right).
     \label{2-IntEner-InternelEnergyExplicit}
 \end{align}
-Again, it can be seen that the ultra relativistic limit can be obtained by letting $\alpha\rightarrow0$ since the term written in brackets vanishes.\\
+Again, it can be seen that the ultra relativistic limit can be obtained by letting $\alpha\rightarrow0$ since the term written in brackets vanishes. 
+It is immediate that the ultra relativistic equation of state is $\rho=3p$ which is equivalent to a traceless energy momentum tensor.\\
 From equation \eqref{2-IntEner-PartFunc} and \eqref{2-IntEner-FreeEnerDef}, we immediately derive the ideal gas equation via the definition of pressure in the canonical ensemble
 \begin{equation}
     p=\frac{\partial\F}{\partial V} = \frac{Nk_ BT}{V}.
     \label{2-IntEner-IdealGasEq}
 \end{equation}
+Note that in the case of the Hamiltonian $H$ having a non-trivial dependence on the coordinates $x_i$, the partition function would differ by a factor involving $V$ and $T$.
+This more general scenario does not yield the ideal gas law and would thus need to be treated separately.
 \end{subsection}
 %
 %
 %
-\begin{subsection}{Deriving an equation of state}
+\begin{subsection}{The fully special relativistic equation of state}
 This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation \eqref{2-IntEner-IdealGasEq}. This is done by assuming an additional constraint and thus further reducing the degrees of freedom of the thermodynamic system.\\
 When assuming an adiabatic condition $\delta Q=0$ and using the First Law of Thermodynamics $dU = \delta Q + \delta W$, where $\delta W=-pdV$ and $dU=C_VdT$, we can relate pressure and temperature. Using equation \ref{2-IntEner-InternelEnergyExplicit} and \ref{2-IntEner-IdealGasEq}, we obtain
 \begin{alignat}{3}
