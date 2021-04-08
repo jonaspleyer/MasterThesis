@@ -1,9 +1,9 @@
 \begin{section}{Thermodynamical Calculation of an EoS}
-This chapter aims at developing an fully special relativistic equation of state. We will briefly summarise the most important concepts necessary for the derivation.\\
+This chapter aims at developing an fully special relativistic equation of state of a noninteracting gas. We briefly summarise important concepts necessary for the derivation.\\
 In the canonical ensemble, for which a introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where all quantities present are either variables such as $T$ or can be derived by means of the partition function $\Z$.
 Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. 
 For concepts and definitions of Hamilton Mechanics the reader is referred to \cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010}. 
-In general we assume $H:\R^N\times\R^N\rightarrow\R$ to be a positive smooth function that assigns the positions and momenta of $N$ particles an energy.
+In general we assume $H:\R^{3N}\times\R^{3N}\rightarrow\R$ to be a positive smooth function that assigns the positions and momenta of $N$ particles an energy.
 This explicitly takes form in the well known equations
 \begin{align}
 	\Z(T,V,N) 	&= \int\limits_{\mathcal{V}\times\R^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_BT}\right)\frac{dx_1dp_1\dots dx_Ndp_N}{N!h^{3N}}\\
@@ -12,18 +12,20 @@ This explicitly takes form in the well known equations
 				&= \F - T\frac{\partial\F}{\partial T}\\
 				&= k_BT^2\frac{1}{\Z}\frac{\partial\Z}{\partial T}\label{2-IntEner-Def}.
 \end{align}
-where $x_i\in \mathcal{V}\subset\R^N$  and $p_i\in \R^N$. The relation $V=\mathcal{V}$ describes the total volume occupied by the medium while $T$ and $N$ are its Temperature and particle Number respectively. 
-The last equation shows that to fully calculate $U$ it is necessary to obtain a readable output from $\Z$.
-% \end{subsection}
+where $x_i\in \mathcal{V}\subset\R^N$  and $p_i\in \R^N$. The relation $V=\text{vol}(\mathcal{V})$ describes the total volume occupied by the medium while $T$ and $N$ are its Temperature and particle Number respectively. 
+The last equation shows that to fully calculate $U$ it is necessary to obtain a readable output from the partition function $\Z$.
+%
+%
+%
 \begin{subsection}{The Ultra-Relativistic Case}
 The ultra-relativistic case is a textbook example and well known limit that we will use in order to verify our later calculated results. 
 First we write down the ultra-relativistic Hamiltonian given by 
 \begin{equation}
-	H(\vec{x},\vec{p})=||\vec{p}||c.
+	H(x,p)=||p||c.
 \end{equation}
 The corresponding partition function for a $N$ particle system then reads ($\beta=(k_BT)^{-1}$)
 \begin{align}
-	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \beta H(\vec{p})\right)d^3p\right]^N\\
+	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \beta H(p)\right)d^3p\right]^N\\
 		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty4\pi p^2\exp(-\beta pc) dp\right]^N\\
 		&= \frac{V^N}{N!h^{3N}}\frac{(4\pi)^N(k_BT)^{3N}}{c^{3N}}\left[\int\limits_0^\infty x^2\exp(-x) dx\right]^N\\
 	\Z	&= \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^3\right)^N
@@ -38,11 +40,11 @@ The remaining integral $\U$ can be solved to be exactly $=2$ and the internal en
 \begin{subsection}{The Special-Relativistic Case}
 We will now turn our attention to the fully special-relativistic Hamiltonian given by
 \begin{equation}
-	H=mc^2\sqrt{1+\frac{\vec{p}^2}{m^2c^2}}.
+	H=mc^2\sqrt{1+\frac{p^2}{m^2c^2}}.
 \end{equation}
 In doing so, we keep in mind that the ultra relativistic limit can be obtained from this Hamiltonian by letting $m\rightarrow0$. In this limiting case we should be able to recover the results from equation \eqref{2-IntEner-UltraRelZ}.
 \begin{align}
-	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \frac{mc^2\sqrt{1+\frac{\vec{p}^2}{m^2c^2}}}{k_BT}\right)d^3p\right]^N\label{2-IntEner-EQ1}\\
+	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \frac{mc^2\sqrt{1+\frac{p^2}{m^2c^2}}}{k_BT}\right)d^3p\right]^N\label{2-IntEner-EQ1}\\
 		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty 4\pi p^2\exp\left(-\beta mc^2\sqrt{1+\frac{p^2}{m^2c^2}} \right)dp\right]^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\left[\int\limits_0^\infty q^2\exp\left(-\alpha\sqrt{1+q^2}\right)dq\right]^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\left(\int\limits_0^\infty\sinh(x)^2\cosh(x)\exp(-\alpha\cosh(x))dx \right)^N\\
@@ -74,8 +76,11 @@ This more general scenario does not yield the ideal gas law and would thus need 
 %
 %
 \begin{subsection}{The fully special relativistic equation of state}
-This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation \eqref{2-IntEner-IdealGasEq}. This is done by assuming an additional constraint and thus further reducing the degrees of freedom of the thermodynamic system.\\
-When assuming an adiabatic condition $\delta Q=0$ and using the First Law of Thermodynamics $dU = \delta Q + \delta W$, where $\delta W=-pdV$ and $dU=C_VdT$, we can relate pressure and temperature. Using equation \ref{2-IntEner-InternelEnergyExplicit} and \ref{2-IntEner-IdealGasEq}, we obtain
+This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation \eqref{2-IntEner-IdealGasEq}. 
+We assume an additional constraint and thus further reduce the degrees of freedom of the thermodynamic system.\\
+When assuming an adiabatic condition $\delta Q=0$ and using the First Law of Thermodynamics \cite{fliessbachStatistischePhysikLehrbuch2018} $dU = \delta Q + \delta W$, where $\delta W=-pdV$ and $dU=C_VdT$, we can relate pressure and temperature. 
+This adiabatic condition is quite well satisfied since radiational losses compared to the total amount of mass can be neglected.
+Using equation \ref{2-IntEner-InternelEnergyExplicit} and \ref{2-IntEner-IdealGasEq}, we obtain
 \begin{alignat}{3}
     -pdV &= C_VdT\\
     -\frac{Nk_BT}{V}dV &= Nk_B &\Biggl[1 + &\alpha^2\left(\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)^2 - \frac{\partial^2_\alpha K_2(\alpha)}{K_2(\alpha)}\right)\Biggr]dT\\
@@ -184,6 +189,13 @@ and can thus be compared with each other. Note that the $\rho_0$ of the plot is 
 	\label{2-IntEner-RelEOSPlot}
 \end{figure}
 \end{subsection}
+%
+%
+%
+% \begin{subsection}
+% TODO Generalise the approach given above for a interacting gas under certain conditions.
+% \end{subsection}
+%
 %
 %
 \end{section}
