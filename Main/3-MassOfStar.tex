@@ -160,7 +160,13 @@ Exact solutions are known for the cases $n=0,1,5$. The derivation can be found i
 %
 \begin{subsection}{Mass Bounds}
 %The aim of this section is to derive an upper limit for the mass of a spherically symmetric stellar object which obeys an local equation of state $f(p,\rho)=0$. 
-We will first follow mainly the approach given in \cite{waldGeneralRelativity1984}. The first assumptions will be that $d\rho/dr<0$ and $\rho\geq0$. Also we again consider a compact star, meaning $\rho(r)=0$ for all $r>R$. While we talk about the derivative of $\rho$ it may not be differentiable at $r=R$. However differentiability of the metric demands at least continuity at every point. 
+We will first follow the approach given in \cite{waldGeneralRelativity1984}. 
+The first assumptions will be that $d\rho/dr<0$ and $\rho\geq0$. 
+Also we again consider a compact star, meaning $\rho(r)=0$ for all $r>R$.
+% While we talk about the derivative of $\rho$ it may not be differentiable at $r=R$.
+% However differentiability of the metric demands at least continuity at every point. 
+%
+%
 % In total we assume the following Definition.
 % \begin{definition}[Star]
 % 	A star is a compact subset $K\subseteq V$ that is diffeomorph (in the sense of a submanifold of $\R^3$) to a closed Ball $B_1(0)$. The center of the star is defined by the equation
@@ -214,7 +220,9 @@ We first state a useful Lemma for the proof of our next theorem.
 	\begin{equation}
 		\frac{\nu'}{r}\exp\left(\frac{\nu-\lambda}{2}\right)\geq\frac{2\nu'(R)}{R}\e^{-\frac{1}{2}\lambda(R)}\left.\frac{\partial}{\partial r}\e^{\frac{\nu}{2}}\right|_R
 	\end{equation}
-	and use the Schwarzschild solution at $r=R$ for $\e^\lambda$ and $\e^\nu$. This is justified since we assumed $\rho(r)=0$ for $r>R$ and thus we need to recover the vacuum solution for a spherically symmetric object which is given by the Schwarzschild solution. By continuity of the metric on every point of space, we can match 
+	and use the Schwarzschild solution at $r=R$ for $\e^\lambda$ and $\e^\nu$. 
+	This is justified since we assumed $\rho(r)=0$ for $r>R$ and thus we need to recover the vacuum solution for a spherically symmetric object which is given by the Schwarzschild solution. 
+	By continuity of the metric on every point of space, we can match 
 	\begin{equation}
 		\left.\e^{-\lambda(r)}\right|_R=\left[1-\frac{2M}{r}\right]_R=\left.\e^{\nu(r)}\right|_R
 		\label{3-Mass-MassLimitApprox1}
@@ -249,15 +257,17 @@ We first state a useful Lemma for the proof of our next theorem.
 		M< \frac{4R}{9}.
 	\end{equation}
 \end{proof}\noindent
-This shows that the mass of star has an upper limit under the assumptions $\rho\geq0$, $\partial_r\rho\leq0$ and $\rho(R)=0$ for some $R\geq0$. The case in which $M=4R/9$ would be achieved by using a constant density of 
-\begin{equation}
-	\rho = \frac{1}{4\pi}\frac{M}{R^3}
-\end{equation}
-from which the mass $m(r)$ can be obtained
-\begin{equation}
-	m(r) = \frac{r^3}{R^3}M.
-\end{equation}
-However this case is actually forbidden as was just shown. Physically, the assumption that $\rho(R)=0$ defines a radius for the stellar object since it limits the physical dimension. In general stellar objects need not to fulfill this condition. Physically it is however necessary to have $p(R)=0$ while the density may have discontinuities at this point.
+This shows that the mass of star has an upper limit under the assumptions $\rho\geq0$, $\partial_r\rho\leq0$ and $\rho(R)=0$ for some $R\geq0$. 
+% The case in which $M=4R/9$ would be achieved by using a constant density of 
+% \begin{equation}
+% 	\rho = \frac{1}{4\pi}\frac{M}{R^3}
+% \end{equation}
+% from which the mass $m(r)$ can be obtained
+% \begin{equation}
+% 	m(r) = \frac{r^3}{R^3}M.
+% \end{equation}
+% However this case is actually forbidden as was just shown. 
+% Physically, the assumption that $\rho(R)=0$ defines a radius for the stellar object since it limits the physical dimension. In general stellar objects need not to fulfill this condition. Physically it is however necessary to have $p(R)=0$ while the density may have discontinuities at this point.
 \end{subsection}
 %
 %
