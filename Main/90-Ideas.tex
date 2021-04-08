@@ -6,24 +6,70 @@
 		\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
 		\label{5-Ideas-LEeq}
 	\end{equation}
-	with $\theta(\xi=0)=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{Theo-Lane-EmdenFiniteBoundary1}, 
+	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{Theo-Lane-EmdenFiniteBoundary1}, 
 	\ref{Theo-Lane-EmdenFiniteBoundary2} and \ref{Theo-Lane-EmdenFiniteBoundary3}.
 \end{theorem}
-\begin{theorem}[Lane-Emden Finite Boundary 1]
+\begin{theorem}[Lane-Emden Local Existence]
 	\label{Theo-Lane-EmdenFiniteBoundary1}
-	For every $n\geq0$, the Lane-Emden equation \ref{5-Ideas-LEeq} has a solution in a $\epsilon$ Ball around $r=0$.
+	For every $n\geq0$, the Lane-Emden equation \ref{5-Ideas-LEeq} has a solution in an $\epsilon$ Ball around $\xi=0$.
 \end{theorem}
 \begin{proof}
-	We use the transformation $x=1/\xi$ with $dx=-d\xi/\xi^2$ to transform equation \ref{3-Mass-Lane-Emden-Eq} into
+	This proof can be generalised to $m\geq2$ dimensions. 
+	Following \cite{quittnerSuperlinearParabolicProblems2007a} we see that the LE differential equation can be written as
 	\begin{equation}
-		x^4\frac{d^2\theta}{dx^2} + \theta^n=0
+		\frac{d}{d\xi}\left(\xi^{m-1}\frac{d\theta}{d\xi}\right) + \xi^{m-1}\theta^n = 0.
 	\end{equation}
-
+	Integrating once and rearranging leads us to
+	\begin{equation}
+		\frac{d\theta}{d\xi} = \left.\frac{d\theta}{d\xi}\right|_0 - \int\limits_0^\xi\left(\frac{t}{\xi}\right)^{m-1}\theta^ndt.
+	\end{equation}
+	By choosing the initial value of $d\theta/d\xi=0$ we see that positive solutions to the LE equation need to have negative slope.
+	This equation also shows that for $\theta_0>0$, the solution $\theta$ will be positive in a $\epsilon$ region around $\xi=0$.
+	We integrate both sides again and end up with
+	\begin{equation}
+		\theta = \theta_0 - \int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{m-1}\theta^ndtds.
+		\label{5-Ideas-LEOperator}
+	\end{equation}
+	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and with negative slope. %where $n\in\R$ refers to the exponent given before.
+	With the norm $||.||_\infty$ this space is complete.
+	Inspecting the operator $T:C^*\rightarrow C^*$ defined by
+% 	\footnote{The  index $1$ refers to the $C^1$ norm given by $||f||_2=||f||_\infty+||f'||_\infty+||f''||_\infty$ on the yet to be defined space.}
+	equation \ref{5-Ideas-LEOperator} we can apply the Banach fixed-point theorem.
+% 	Without loss of generality, we can assume $U\neq V$. Then
+	\begin{align}
+		||T(U)-T(V)||_\infty	&\leq	\left|\left|U^n-V^n\right|\right|_\infty\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{m-1}dtds\\
+								&=		\left|\left|U^n-V^n\right|\right|_\infty\frac{\xi^2}{2m}
+	\end{align}
+	Let $n\geq1$. 
+	Since the function $x\mapsto x^n$ is differentiable for $n\geq1$ it is also Lipschitz with constant $L$ on the compact interval $I=[0,\theta_0]$.
+	This means in particular that we have
+	\begin{equation}
+		||T(U)-T(V)||_\infty	\leq	\left|\left|U-V\right|\right|_\infty\frac{L\xi^2}{2m}
+	\end{equation}
+	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \ref{5-Ideas-LEOperator}.\\
+	Now let $0\leq n<1$.
+	In this situation the preceding method does not work due to $x^n$ not being differentiable at $x=0$. 
+	For $\theta_0\leq1$, we know that $\theta^n\leq\theta_0^n$. We can now choose $\epsilon$ such that with
+	\begin{equation}
+		\int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{m-1}\theta^n(t)dtds \leq \frac{\xi^2}{2m}\theta_0^n
+	\end{equation}
+	we have $\theta\geq\theta_0/2$ on $[0,\epsilon]$. If $\theta_0>1$, we have $\theta^n\leq\theta_0$ and obtain the same result. 
+	Then the same procedure as before can be carried through but with the interval $I=[\theta_0/2,\theta]$.
 \end{proof}
+%
+%
+%
 \begin{theorem}[Lane-Emden Finite Boundary 2]
 	\label{Theo-Lane-EmdenFiniteBoundary2}
 	For $n<5$, the Lane-Emden equation \ref{5-Ideas-LEeq} has no Solution defined on the total space $\R_{\geq0}$.
 \end{theorem}
+\begin{proof}
+	From \cite{quittnerSuperlinearParabolicProblems2007a} we know that solutions for equation \ref{5-Ideas-LEeq} on the total space exist for $n\geq5$.
+	
+\end{proof}
+%
+%
+%
 \begin{theorem}[Lane-Emden Finite Boundary 3]
 	\label{Theo-Lane-EmdenFiniteBoundary3}
 	Let $n<5$ and $\theta:[0,x)\rightarrow\R$ be a solution of \ref{5-Ideas-LEeq}. If $\theta(x)>0$, then $\theta$ can be extended with Theorem \ref{Theo-Lane-EmdenFiniteBoundary1} 
@@ -41,7 +87,7 @@
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	First we transform the TOV equation using $p=y^a$ with $a>0$ and $m=Arv$ and together with the polytropic EOS $\rho=Ap^{1/\gamma}$ obtain
+	First we transform the TOV equation \ref{3-Mass-TOV-Eq} using $p=y^a$ with $a>0$ and $m=Arv$ and together with the polytropic EOS $\rho=Ap^{1/\gamma}$ obtain
 	\begin{align}
 		\frac{\partial v}{\partial r} &= 4\pi ry^{a/\gamma}-Av\\
 		ay^{a-1}\frac{\partial y}{\partial r} &= -\frac{vA^2y^{a/\gamma}}{r}\left(1+\frac{y^a}{Ay^{a/\gamma}}\right)\left(\frac{4\pi r^2y^a}{Av} +1\right)\frac{1}{1-2vA}
@@ -51,8 +97,10 @@
 	\begin{equation}
 		\frac{\partial y}{\partial r} = -\frac{y^{a/\gamma-a+1}}{ar}\left(A+y^{a-a/\gamma}\right)\left(4\pi r^2y^a +Av\right)\frac{1}{1-2vA}.
 	\end{equation}
-	Using $\gamma=1+1/n$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$. It is also Lipschitz in $(y,v)$ if we restrict 
-	ourselves to a compact domain for $r\in[\delta,\infty)$ and $v\in[0,1/2A-\epsilon]$ with $\epsilon, \delta>0$ and if all of the following conditions are satisfied.
+	Using $\gamma=1+1/n$ with $n>0$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$. We restrict 
+	ourselves to a compact domain $r\in \overline{B_{\delta}(\tau)}$ and $v\in[0,1/2A-\epsilon]$ where $0<\epsilon<1/2A$. 
+	We choose $0<\delta$ and $0\leq\tau$ in such a way that $0<\epsilon<1/2A$ is satisfied for some $\epsilon$ which is possible since $m\rightarrow0$ for $r\rightarrow0$.
+	To obtain Lipschitz continuity in $(y,v)$, all of the following conditions need to be fulfilled.
 	\begin{equation}
 		\frac{a}{\gamma}-a+1 \geq 1 \hspace{1cm} a-\frac{a}{\gamma} \geq 1 \hspace{1cm} a \geq 1
 		\label{tmp-label-1}
@@ -62,12 +110,25 @@
 	\begin{equation}
 		a\geq n+1
 	\end{equation}
-	which can be easily satisfied. This now shows that there exists a unique solution for given initial values $\tau, y(\tau), v(\tau)\in(\delta,\infty)\times\R_{\geq0}\times[0,1/2A)$.
+	which can be easily satisfied. 
+	This now shows with extension of the Picard-Lindelöf Theorem that there exists a unique solution for given initial values $\tau, y(\tau), v(\tau)\in B_{\delta}(\tau)\times\R_{\geq0}\times[0,1/2A-\epsilon)$ that especially continuously depends on $A$.
+	Without loss of generality we can choose $\delta$ small enough such that solutions are positive in $p$.
 	%Let $\epsilon\rightarrow0$ and $\delta\rightarrow0$ be two (wlog monotonous) sequences with identical initial values $\tau, y(\tau), v(\tau)$. Respective solutions are identical for 
 	%all values on which both are defined. This means we can extend our solution to cover $(0,\infty)\times(0,\infty)\times[0,1/2A)$. 
-	By transforming back equation \ref{tmp-label-2}
-	
-	% TODO Continue with this part
+	By transforming back equation \ref{tmp-label-2} to 
+	\begin{equation}
+		\frac{\partial p}{\partial r} = -\frac{1}{r^2}\left(Ap^{1/\gamma}+p\right)\left(4\pi r^3p+vA\right)\left(1-2vA\right)^{-1}
+	\end{equation}
+	and letting $A\rightarrow0$, we obtain
+	\begin{equation}
+		\frac{\partial p}{\partial r} = - 4\pi rp^2
+	\end{equation}
+	which is then solved by
+	\begin{equation}
+		p = \frac{\tilde{p}}{2\pi\tilde{p}(r^2-\tau^2)+1}
+	\end{equation}
+	where $\tilde{p}$ is the initial value at $r=\tau$. It is clear that this solution can be extended to $r\in[0,\infty)$ by choosing arbitrary small $\tau$.
+	In the limit, the result equals the hypothesis.
 \end{proof}
 \begin{theorem}[TOV Finite Boundary]
 	For each $A>0$, the TOV equation \ref{4-NumSol-TOVEqBasic1} has a exponent $n>0$ for which a solution $p$ does not have any zero points.
