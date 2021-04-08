@@ -9,7 +9,8 @@ In this section the numerical solutions of the TOV equation
 as derived previously in \ref{3-Mass-TOVDerivation} will be discussed. To obtain numerical solvability a equation of state in the form $\rho(r,p)$ is supplied. 
 % TODO Add reference for when the equations are solvable
 In Figure \ref{4-NumSol-TOVEqEasyEOS} a plot of such a solution is presented.
-The density $\rho$ is derived via the equation \ref{4-NumSol-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method. The integration is stopped once the pressure reaches values $p\leq0$. The initial value of \ref{4-NumSol-TOVEqBasic1} is $\partial m/\partial r(r=0)=0$. For \ref{4-NumSol-TOVEqBasic1}, the initial value can be calculated when applying L'Hôpital's rule and combining them to obtain
+The density $\rho$ is derived via the equation \ref{4-NumSol-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method.
+The integration is stopped once the pressure reaches values $p\leq0$. The initial value of \ref{4-NumSol-TOVEqBasic1} is $\partial m/\partial r(r=0)=0$. For \ref{4-NumSol-TOVEqBasic1}, the initial value can be calculated when applying L'Hôpital's rule and combining them to obtain
 \begin{alignat}{5}
 	\lim\limits_{r\rightarrow0}\frac{m}{r} &= \lim\limits_{r\rightarrow0}\frac{\partial m}{\partial r} &&=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{1} &&= 0\\
 	\lim\limits_{r\rightarrow0}\frac{m}{r^2} &= \lim\limits_{r\rightarrow0}\frac{1}{2r}\frac{\partial m}{\partial r}  &&= \lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{2r} &&= 0\\
@@ -25,7 +26,7 @@ Explicit code can be found in \cite{pleyerGithubRepositoryJonas}. The Lane-Emden
 where the initial value for $d\chi/d\xi$ can be calculated with L'Hôpital's rule. With the conversion factor $\alpha$ derived in section \ref{3-Mass-LEDerivation}, TOV and LE results can be compared. Figure \ref{4-NumSol-TOVEqEasyEOS} shows the solution of both equations for the parameters of table \ref{4-NumSol-TOVParameters}. Note that values in the last part are calculated instead of supplied to the solving routine. Additionally conversion equations to compare TOV and LE results are displayed.\\
 Since the mass reads
 \begin{equation}
-	m(r) = \int\limits_0^r 4\pi s^2\rho(s)ds,
+	m(r) = \int\limits_0^r 4\pi r'^2\rho(r')dr',
 \end{equation}
 we expect $\partial m/\partial r(R)=0$ if $p(R)=0$ when choosing a polytropic equation of state with $\gamma>0$. The plot in figure \ref{4-NumSol-TOVEqEasyEOS} shows this expected behaviour for the Lane Emden equation at $r\approx2.31$ and has the same behaviour for the TOV results at $r\approx6.80$.\footnote{For the purpose of nicely displaying the calculated result, the plot only shows result up to $r=2.5$}
 \begin{table}[H]
@@ -61,8 +62,17 @@ we expect $\partial m/\partial r(R)=0$ if $p(R)=0$ when choosing a polytropic eq
 %
 \begin{subsection}{Verifying the results}
 \label{4-NumSol-Sec-Verifiying-the-results}
-Verification is done in different ways. First, one can compare calculated LE results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-LE-Exact-Results}. All calculations are carried out with a chosen step size of $d\xi=0.03$.\\
-The graphs overall show good numerical agreement. Initial values at $r=0$ are identical since they were set to be. The spike occurring afterwards can be explained by equation \ref{4-NumSol-LE-Substitution}. The initial value of all derivatives is identically $0$ which means no change of value for $\theta$ or $\chi$ for the initial step. It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen. The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
+Verification is done in different ways. 
+First, one can compare calculated LE results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-LE-Exact-Results}. 
+All calculations are carried out with a chosen step size of $d\xi=0.03$.\\
+The graphs overall show good numerical agreement. 
+Initial values at $r=0$ are identical since they were set to be. 
+The spike occurring afterwards can be explained by equation \ref{4-NumSol-LE-Substitution}. 
+The initial value of all derivatives is identically $0$ which means no change of value for $\theta$ or $\chi$ for the initial step of the numerical integration. 
+On the other hand the exact results will see a change which explains the large discrepancy in the beginning.
+It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. 
+This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen. 
+The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
 \begin{figure}[H]
 	\centering
 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols.pgf}
