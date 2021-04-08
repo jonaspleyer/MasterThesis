@@ -62,8 +62,9 @@ we expect $\partial m/\partial r(R)=0$ if $p(R)=0$ when choosing a polytropic eq
 %
 \begin{subsection}{Verifying the results}
 \label{4-NumSol-Sec-Verifiying-the-results}
-Verification is done in different ways. 
-First, one can compare calculated LE results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-LE-Exact-Results}. 
+% Verification is done in different ways. 
+% First, o
+One can compare calculated LE results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-LE-Exact-Results}. 
 All calculations are carried out with a chosen step size of $d\xi=0.03$.\\
 The graphs overall show good numerical agreement. 
 Initial values at $r=0$ are identical since they were set to be. 
@@ -75,19 +76,23 @@ This behaviour is best seen in the solution for $n=5$ where a large range of $0\
 The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
 \begin{figure}[H]
 	\centering
-	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols.pgf}
-	\caption[Validation of numerical LE results]{Validation of numerical LE results - The Plot shows absolute and relative difference of known exact and numerically calculated results.}
+% 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols.pgf}
+	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols-2.pgf}
+	% TODO If time is left: Make plot nicer
+	\caption[Validation of numerical LE results]{Validation of numerical LE results - The first two plots show absolute and relative difference of known exact and numerically calculated results while the third plot shows the behaviour of the maximum value of $\Delta$ as the stepsize decreases.}
 	\label{4-NumSol-ValidateLEResults}
 \end{figure}\noindent
+As can be seen in the last column of plots, the condition for convergence in this case is well fulfilled. 
+The double logarithmic plot displays nicely that by lowering the integration stepsize, the maximum difference in this inverval decreases.
 % TODO TOV-Terms: Why do we do this? Explain it better.
-Next, we wish to see how accurate numerical TOV results are. This is not an easy task since no explicit solutions are known for the TOV equation. However one way to at least get confident that solving was a success is by dropping terms from right to left in equation \ref{4-NumSol-TOVEqBasic2} and solving for these new differential equations. As we have seen in section \ref{3-Mass-LEDerivation}, the last result should reproduce the LE equation. These intermediate differential equations have been numerically solved and results can be seen in figure \ref{4-NumSol-TovTerms}.
-\begin{figure}[H]
-	\centering
-	\import{pictures/4-NumericalSolutions/}{TOV-Terms.pgf}
-	\caption[Comparison of LE and partial TOV solutions]{Comparison of LE and partial TOV solutions - The index $i$ represents the number of terms still present in the equation where $i=3$ means the complete TOV equation and $i=0$ the LE equation. The last figure shows the difference between the TOV solution with $0$ terms and the LE solution calculated via equation \ref{4-NumSol-LE-Substitution}. The scale of the difference shows a maximum of $\approx3.5\times10^{-7}$. In order to achieve such a comparison, a polynomial fit of both pressure solutions had to be done. This should however not alter the result in any noticeable way. For further details see \cite{pleyerGithubRepositoryJonas}.}
-	\label{4-NumSol-TovTerms}
-\end{figure}
-
+% Next, we wish to see how accurate numerical TOV results are. This is not an easy task since no explicit solutions are known for the TOV equation. However one way to at least get confident that solving was a success is by dropping terms from right to left in equation \ref{4-NumSol-TOVEqBasic2} and solving for these new differential equations. As we have seen in section \ref{3-Mass-LEDerivation}, the last result should reproduce the LE equation. These intermediate differential equations have been numerically solved and results can be seen in figure \ref{4-NumSol-TovTerms}.
+% \begin{figure}[H]
+% 	\centering
+% 	\import{pictures/4-NumericalSolutions/}{TOV-Terms.pgf}
+% 	\caption[Comparison of LE and partial TOV solutions]{Comparison of LE and partial TOV solutions - The index $i$ represents the number of terms still present in the equation where $i=3$ means the complete TOV equation and $i=0$ the LE equation. The last figure shows the difference between the TOV solution with $0$ terms and the LE solution calculated via equation \ref{4-NumSol-LE-Substitution}. The scale of the difference shows a maximum of $\approx3.5\times10^{-7}$. In order to achieve such a comparison, a polynomial fit of both pressure solutions had to be done. This should however not alter the result in any noticeable way. For further details see \cite{pleyerGithubRepositoryJonas}.}
+% 	\label{4-NumSol-TovTerms}
+% \end{figure}
+% 
 \end{subsection}
 %
 %
