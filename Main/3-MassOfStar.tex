@@ -10,13 +10,16 @@ The stress-energy tensor of an ideal fluid with density $\rho$ and pressure $p$ 
 	T_{\mu\nu}=\rho u_\mu u_\nu + p(g_{\mu\nu}+u_\mu u_\nu)
 \end{equation}
 where $u$ is the 4-velocity of the fluid. In the rest frame where $u^\mu=(-\e^{-\nu/2},0,0,0)$, this equation simplifies to
+% \begin{equation}
+% 	T^\mu_\nu=\begin{bmatrix}
+% 	           	-\rho	& 	& 	&\\
+% 	           	&		p	&	&\\
+% 	           	&		&	p	&\\
+% 				&		&	&	p
+% 	           \end{bmatrix}.
+% \end{equation}
 \begin{equation}
-	T^\mu_\nu=\begin{bmatrix}
-	           	-\rho	& 	& 	&\\
-	           	&		p	&	&\\
-	           	&		&	p	&\\
-				&		&	&	p
-	           \end{bmatrix}.
+	T^\mu_\nu=\text{diag}(-\rho,p,p,p)
 \end{equation}
 The Christoffel symbols for this metric are
 \begin{align}
@@ -25,8 +28,8 @@ The Christoffel symbols for this metric are
 	                     	\nu'/2 & 0 & & \\
 	                     	& & 0 &\\
 	                     	& & & 0
-	                     \end{bmatrix}\\
-	\Gamma_{\mu\nu}^1 &= \begin{bmatrix}
+	                     \end{bmatrix}\hspace{0.3cm}
+	\Gamma_{\mu\nu}^1 = \begin{bmatrix}
 	                     	\nu'\e^{\nu-\lambda}/2 & & &\\
 	                     	& \lambda'/2 & & \\
 	                     	& & -r\e^{-\lambda} & \\
@@ -37,8 +40,8 @@ The Christoffel symbols for this metric are
 	                     	& 0 & 1/r &\\
 	                     	& 1/r & 0 &\\
 	                     	& & & -\sin\theta\cos\theta
-	                     \end{bmatrix}\\
-	\Gamma_{\mu\nu}^3 &= \begin{bmatrix}
+	                     \end{bmatrix}\hspace{0.3cm}
+	\Gamma_{\mu\nu}^3 = \begin{bmatrix}
 	                     	0 & & &\\
 	                     	& 0 & &\\
 	                     	& 0 & 0 & 1/r\\
@@ -83,13 +86,19 @@ Together with equation \ref{3-Mass-EinstEqu-2} and the definition \ref{3-Mass-Ma
 									&= -\frac{p+\rho}{2r}\left(\frac{8\pi pr+ \frac{2m}{r^2}}{1-\frac{2m}{r}} \right)\\
 									&= -\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}\\
 	\frac{\partial p}{\partial r} 	&= -\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
-	\label{3-Mass-TOV-Eq}
+	\label{3-Mass-TOV-Eq-1}
 \end{align}
-where in the last step the constants $c=G=1$ were put back in. 
+where in the last step the constants $c=G=1$ were put back in. Equation \ref{3-Mass-TOV-Eq-1} together with \ref{3-Mass-MassDepOnr} yields the TOV differential equations
+\begin{alignat}{3}
+	\frac{\partial m}{\partial r} &= &&4\pi\rho(r)r^2\\
+	\frac{\partial p}{\partial r} &= -&&\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
+	\label{3-Mass-TOV-Eq}
+\end{alignat}
 \end{subsection}
 %
 %
 %
+\pagebreak
 \begin{subsection}{Newtonian Limit}
 \label{3-Mass-LEDerivation}
 This section follows \cite{weissteinLaneEmdenDifferentialEquation} and \cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}. Together with a polytropic equation of state $p=K\rho^{1+1/n}$ and the definition $\rho=\lambda\theta^n$, we expect to obtain the Newtonian behavior in the non-relativistic limit in the form of the Lane-Emden equation
