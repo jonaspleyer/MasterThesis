@@ -102,4 +102,23 @@ In the previous discussion, we relied on the EOS given by \ref{4-NumSol-TOVEqEas
 \end{subsection}
 %
 %
+\begin{subsection}{Zero Values of the TOV and LE equation}
+Having discussed individual solutions for the TOV and LE equation, this section now turns to analysing zero values of both equations.
+We define a zero value as the first point in which the solution of our differential equation reaches value $0$, or more precisely where the pressure $p$ reaches zero.\footnote{Note that $p_0$ still denotes the initial value while $r_0$ and $\xi_0$ denote values where $p=0$.}
+Even now the problem is not well posed since for different solving routines alternative transformations may be used.
+This has to be kept in mind when comparing results. 
+Apart from the previously defined exact solutions \ref{3-Mass-LE-Exact-Results} we will only use the parameter $r$ as defined by equation \ref{3-Mass-TOV-Eq}.
+\begin{figure}[H]
+	\centering
+	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults.pgf}
+	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults-1.pgf}
+	\label{4-NumSol-TOV-Exponents-Const-p0}
+	\caption[Zero Values of TOV and LE equation]{The plot shows the zero values of numerical TOV and LE results for different parameters. 
+	In the second plot results for $p_0=8$ have been omitted for better visual clarity. These behave similar to the $p_0=1$ results.}
+\end{figure}
+
+
+\end{subsection}
+%
+%
 \end{section}
