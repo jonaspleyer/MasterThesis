@@ -12,3 +12,6 @@ Main/_minted-main
 
 # Ignore Linkt to pdf
 Main/Thesis.pdf
+
+# Ignore kile viewing directory
+Main/.kile
