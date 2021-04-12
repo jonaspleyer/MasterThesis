@@ -17,7 +17,7 @@ The integration is stopped once the pressure reaches values $p\leq0$. The initia
 	\lim\limits_{r\rightarrow0}\frac{m}{r^3} &= \lim\limits_{r\rightarrow0}\frac{1}{3r^2}\frac{\partial m}{\partial r} &&=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{3r^2} &&= \frac{4\pi\rho_0}{3}\\
 	\lim\limits_{r\rightarrow0}\frac{\partial p}{\partial r} &= 0
 \end{alignat}
-Explicit code can be found in \cite{pleyerGithubRepositoryJonas}. The Lane-Emden equation was obtained in section \ref{3-Mass-LEDerivation} as the non-relativistic limit of the TOV equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$. To obtain numerical results for the LE equation as given in equation \ref{3-Mass-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
+Explicit code can be found in \cite{pleyerGithubRepositoryJonas2021}. The Lane-Emden equation was obtained in section \ref{3-Mass-LEDerivation} as the non-relativistic limit of the TOV equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$. To obtain numerical results for the LE equation as given in equation \ref{3-Mass-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
 \begin{alignat}{3}
 	\frac{d\theta}{d\xi} &= \chi &\hspace{1cm} \left.\frac{d\theta}{d\xi}\right|_{\xi=0} &= 0\\
 	\frac{d\chi}{d\xi} &= -\frac{2}{\xi}\chi-\theta^n & \left.\frac{d\chi}{d\xi}\right|_{\xi=0} &= -\theta^n
