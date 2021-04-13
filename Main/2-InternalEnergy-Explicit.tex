@@ -1,5 +1,5 @@
-\begin{section}{Thermodynamical Calculation of an EoS}
-This chapter aims at developing an fully special relativistic equation of state of a noninteracting gas. We briefly summarise important concepts necessary for the derivation.\\
+\begin{section}{Thermodynamic Calculation of an EoS}
+This chapter aims at developing an fully special relativistic \ac{eos} of a noninteracting gas. We briefly summarise important concepts necessary for the derivation.\\
 In the canonical ensemble, for which a introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
 Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. 
 Concepts and definitions of Hamilton Mechanics can be found in \cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010}. 
@@ -17,7 +17,7 @@ From there $\U/V$ as the energy density can be compared to the pressure defined 
 	p=\frac{\diff\F}{\diff V}.
 	\label{2-IntEner-pressureDef}
 \end{equation}
-% to yield an EoS.
+to yield an \ac{eos}.
 %
 %
 %
@@ -36,9 +36,9 @@ The corresponding partition function for a $N$ particle system then reads ($\bet
 	\label{2-IntEner-UltraRelZ}
 \end{align}
 where from the first to second line we used usual spherical coordinates and afterwards the integral transformation $x=\beta cp$.
-The integral in equation \ref{2-IntEner-UltraRelZ-Int-eq} can be solved exactly with value $2$. 
+The integral in equation \eqref{2-IntEner-UltraRelZ-Int-eq} can be solved exactly with value $2$. 
 In the last line $\beta=(k_BT)^{-1}$ was used for visual clarity.
-With equation \ref{2-IntEner-Def} the internal energy $\U = 3Nk_BT$ and with equation \ref{2-IntEner-pressureDef} the equation of state can now be written down
+With equation \eqref{2-IntEner-Def} the internal energy $\U = 3Nk_BT$ and with equation \eqref{2-IntEner-pressureDef} the \ac{eos} can now be written down
 \begin{equation}
 	p = \frac{Nk_BT}{V} = \frac{1}{3}\frac{\U}{V} = \frac{1}{3}\rho.
 	\label{2-IntEner-eos-nonrel}
@@ -73,8 +73,8 @@ We can now calculate the internal energy $\U$ from $\Z$ via equation \eqref{2-In
     \label{2-IntEner-InternelEnergyExplicit}
 \end{align}
 Again, it can be seen that the ultra-relativistic limit can be obtained by letting $\alpha\rightarrow0$ since the term written in brackets vanishes. 
-It is immediate that the ultra-relativistic equation of state is $\rho=3p$ which is equivalent to a traceless energy momentum tensor.\\
-From equation \eqref{2-IntEner-PartFunc} and \eqref{2-IntEner-FreeEnerDef}, we immediately derive the ideal gas equation via the definition of pressure (see equation \ref{2-IntEner-pressureDef} in the canonical ensemble
+It is immediate that the ultra-relativistic \ac{eos} is $\rho=3p$ which is equivalent to a traceless energy momentum tensor.\\
+From equation \eqref{2-IntEner-PartFunc} and \eqref{2-IntEner-FreeEnerDef}, we immediately derive the ideal gas equation via the definition of pressure (see equation \eqref{2-IntEner-pressureDef} in the canonical ensemble
 \begin{equation}
     p=\frac{\partial\F}{\partial V} = \frac{Nk_ BT}{V}.
     \label{2-IntEner-IdealGasEq}
@@ -90,7 +90,7 @@ This section aims to develop an equation between the thermodynamic energy densit
 We assume an additional constraint namely adiabaticity and thus further reduce the degrees of freedom of the thermodynamic system.\\
 When assuming an adiabatic condition $\updelta Q=0$ and using the First Law of Thermodynamics \cite{fliessbachStatistischePhysikLehrbuch2018} $\diff U =\updelta Q + \updelta W$, where $\updelta W=-p\diff V$ and $\diff U=C_V\diff T$, we can relate pressure and temperature. 
 This adiabatic condition is quite well satisfied since the time scale of radiational and other losses compared to the time scale of thermodynamic events is negligible \cite{noerdlingerSolarMassLoss2008, vinkMassLossStellar2017}.
-Using equation \ref{2-IntEner-InternelEnergyExplicit} and \ref{2-IntEner-pressureDef}, we obtain
+Using equation \eqref{2-IntEner-InternelEnergyExplicit} and \eqref{2-IntEner-pressureDef}, we obtain
 \begin{alignat}{3}
     -p\diff V &= C_V\diff T\\
     -\frac{Nk_BT}{V}\diff V &= Nk_B &\Biggl[1 + &\alpha^2\left(\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)^2 - \frac{\partial^2_\alpha K_2(\alpha)}{K_2(\alpha)}\right)\Biggr]\diff T\\
@@ -111,7 +111,7 @@ where the constant $C$ is defined by the equation beforehand and only depends on
 \begin{equation}
 	C = \frac{\alpha_0 K_2(\alpha_0)}{V_0}\exp\left(\alpha_0\frac{K_1(\alpha_0)+K_3(\alpha_0)}{2K_2(\alpha_0)}\right).
 \end{equation}
-Since the goal of this section is to obtain a readable output for an equation of state, it is necessary to construct a bijection relating $p$ and $T$. This is made clear when writing down the energy density
+Since the goal of this section is to obtain a readable output for an \ac{eos}, it is necessary to construct a bijection relating $p$ and $T$. This is made clear when writing down the energy density
 \begin{equation}
 	\rho = \frac{\U}{V} = \frac{Nk_BT}{V} - \frac{Nk_BT}{V}\left(\alpha\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)
 	\label{2-IntEner-DensityAlpha}
@@ -127,7 +127,7 @@ Interestingly, the pressure seems to be constant for very high temperatures. The
 \begin{equation}
 	\lim\limits_{\alpha\to0}\left[\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)\right] = \frac{1}{2\e^2} \approx 0.006767.
 \end{equation}
-The same argument then holds true for the density given by equation \ref{2-IntEner-DensityAlpha} and since 
+The same argument then holds true for the density given by equation \eqref{2-IntEner-DensityAlpha} and since 
 \begin{equation}
 	\lim\limits_{\alpha\to0}\left[1+\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right] = 3
 \end{equation}
@@ -173,29 +173,29 @@ we have
 	\begin{equation}
 		 \frac{1}{2}z\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t = \left(\nu+\frac{1}{2}\right)\int\limits_1^\infty \e^{-tz}t\left(t^2-1\right)^{\nu-1/2}\diff t.
 	\end{equation}
-	Now it is obvious that $K_{\nu+1}>K_\nu$. Thus in total, the function given by equation \ref{2-IntEner-FinalEOS} can be inverted.
+	Now it is obvious that $K_{\nu+1}>K_\nu$. Thus in total, the function given by equation \eqref{2-IntEner-FinalEOS} can be inverted.
 \end{proof}%
 %
 %
-\noindent With this mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ and its inverse $\alpha:\R_{>0}\rightarrow \R_{>0},p\mapsto \alpha(p)$, we can use \ref{2-IntEner-DensityAlpha} and finally write down the equation of state 
+\noindent With this mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ and its inverse $\alpha:\R_{>0}\rightarrow \R_{>0},p\mapsto \alpha(p)$, we can use \eqref{2-IntEner-DensityAlpha} and finally write down the \ac{eos} 
 \begin{equation}
 	\rho = \frac{\U}{V} = p\left(1+\alpha(p)\frac{K_1(\alpha(p))+K_3(\alpha(p))}{2K_2(\alpha(p))}\right).
 	\label{2-IntEner-FinalEOS}
 \end{equation}
-Figure \ref{2-IntEner-RelEOSPlot} is obtained by choosing numerical values and then interpolating and inverting equation \ref{2-IntEner-PressureAlpha}. The constant factor 
+Figure \ref{2-IntEner-RelEOSPlot} is obtained by choosing numerical values and then interpolating and inverting equation \eqref{2-IntEner-PressureAlpha}. The constant factor 
 \begin{equation}
-	A:=CNmc^2/p_0
+	B:=CNmc^2/p_0
 	\label{2-IntEner-FactorExplanation}
 \end{equation}
-is substituted to obtain independence of $p_0$\footnote{This will be the starting value for the pressure in the TOV equation. Since the pressure decreases from the inside of a star to the outside, this resembles our highest value of $p$.}. Furthermore the graphs of the plotted EOS are normalised such that
+is substituted to obtain independence of $p_0$\footnote{This will be the starting value for the pressure in the \acl{TOV} equation. Since the pressure decreases from the inside of a star to the outside, this resembles our highest value of $p$.}. Furthermore the graphs of the plotted \ac{eos} are normalised such that
 \begin{equation}
 	\rho_{i}(p_0)=\rho_{0,i}
 \end{equation}
-and can thus be compared with each other. Note that the $\rho_0$ of the plot is not a universal value but rather each function has been scaled individually and $\rho_0$ is a placeholder for the corresponding $\rho_{0,i}$. The polytropic EOS $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before the equation is independent of $A$ and can be uniquely characterised by $n$. For further details, the interested reader is referred to \cite{pleyerGithubRepositoryJonas2021}.
+and can thus be compared with each other. Note that the $\rho_0$ of the plot is not a universal value but rather each function has been scaled individually and $\rho_0$ is a placeholder for the corresponding $\rho_{0,i}$. The polytropic \ac{eos} $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before the equation is independent of $A$ and can be uniquely characterised by $n$. For further details, the interested reader is referred to \cite{pleyerGithubRepositoryJonas2021}.
 \begin{figure}[H]
 	\centering
 	\import{pictures/2-InternalEnergy-Explicit/}{RelEOS.pgf}
-	\caption[Relativistic Equation of State]{The plot shows the relativistic equation of state $\rho(p)$ normalised such that values can be compared with a polytropic EOS. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic equation of state. By normalisation, the graphs of the polytropic equation of state are independent of the factor $A$ which is explained in equation \ref{2-IntEner-FactorExplanation}.}
+	\caption[Relativistic Equation of State]{The relativistic \ac{eos} $\rho(p)$ is normalised such that values can be compared with a polytropic \ac{eos}. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic \ac{eos}. By normalisation, the graphs of the polytropic \ac{eos} are independent of the factor $A$.}
 	\label{2-IntEner-RelEOSPlot}
 \end{figure}
 \end{subsection}
