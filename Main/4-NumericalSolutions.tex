@@ -77,7 +77,6 @@ The offset between the numerically calculated values and the exact result stays 
 Despite this behaviour we can see that the criterion for convergence is fulfilled in the last column of figure \ref{4-NumSol-ValidateLEResults}.
 \begin{figure}[H]
 	\centering
-% 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols.pgf}
 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols-2.pgf}
 	% TODO If time is left: Make plot nicer
 	\caption[Validation of numerical LE results]{Validation of numerical \ac{LE} results - The first two plots show absolute and relative difference of known exact and numerically calculated results while the third plot shows the behaviour of the maximum value of $\Delta$ as the stepsize decreases.}
@@ -111,6 +110,9 @@ We define a zero value as the first point in which the solution of our different
 Even now the problem is not well posed since for different solving routines alternative transformations may be used.
 This has to be kept in mind when comparing results. 
 Apart from the previously defined exact solutions of table \ref{3-Mass-LE-Exact-Results} we will only use the parameter $r$ as defined by equation \eqref{3-Mass-TOV-Eq}.
+% TODO explain the substitution used to calculate results
+% TODO explain the conversion 
+% TODO explain numerical optimisations to speed up things
 \begin{figure}[H]
 	\centering
 % 	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults.pgf}
