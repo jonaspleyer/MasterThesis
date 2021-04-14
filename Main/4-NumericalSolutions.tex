@@ -9,7 +9,7 @@ In this section the numerical solutions of the \ac{TOV} equation
 as derived previously in section \ref{3-Mass-TOVDerivation} will be discussed. To obtain numerical solvability a equation of state in the form $\rho(r,p)$ is supplied. 
 % TODO Add reference for when the equations are solvable
 In Figure \ref{4-NumSol-TOVEqEasyEOS} a plot of such a solution is presented.
-The density $\rho$ is derived via the equation \eqref{4-NumSol-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method.
+The density $\rho$ is derived via the equation \eqref{4-NumSol-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method \cite{rungeUeberNumerischeAufloesung1895, schlömilch1901zeitschrift, h.SimplifiedDerivationAnalysis2010}.
 The integration is stopped once the pressure reaches values $p\leq0$. The initial value of \eqref{4-NumSol-TOVEqBasic1} is $\partial_r m(r=0)=0$. For equation \eqref{4-NumSol-TOVEqBasic1}, the initial value can be calculated when applying L'Hôpital's rule and combining them to obtain
 \begin{alignat}{5}
 	\lim\limits_{r\rightarrow0}\frac{m}{r} &= \lim\limits_{r\rightarrow0}\frac{\partial m}{\partial r} &&=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{1} &&= 0\\
@@ -74,6 +74,7 @@ On the other hand the exact results will see a change which explains the large d
 It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. 
 This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen. 
 The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
+Despite this behaviour we can see that the criterion for convergence is fulfilled in the last column of figure \ref{4-NumSol-ValidateLEResults}.
 \begin{figure}[H]
 	\centering
 % 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols.pgf}
