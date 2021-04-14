@@ -72,6 +72,12 @@ encoding=UTF-8
 highlight=LaTeX
 mode=LaTeX
 
+[item:80-Outlook.tex]
+archive=true
+encoding=UTF-8
+highlight=LaTeX
+mode=LaTeX
+
 [item:90-Ideas.tex]
 archive=true
 encoding=UTF-8
