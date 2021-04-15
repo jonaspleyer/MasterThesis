@@ -1,0 +1,5 @@
+- How should axes in graphs be visualised?
+https://journals.aps.org/authors/axis-labels-and-scales-on-graphs-h18
+https://academia.stackexchange.com/questions/18357/are-there-any-guidelines-for-labeling-axes-in-plots-graphs
+
+- 
