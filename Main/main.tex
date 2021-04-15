@@ -36,6 +36,10 @@
 \addcontentsline{toc}{section}{\listtablename}
 \listoftables
 
+% Appendix
+\newpage
+\input{99-Appendix}
+
 % Bibliography
 \pagebreak
 \addcontentsline{toc}{section}{References}
@@ -43,10 +47,6 @@
 % Try to let Biblatex format more sloppyly to account for line breaks etc.
 \sloppy
 \printbibliography
-
-% Appendix
-\newpage
-\input{99-Appendix}
 
 \includepdf{../ErklaerungZurMasterarbeit.pdf}
 \end{document}
