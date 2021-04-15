@@ -1,4 +1,5 @@
 \begin{section}{Thermodynamic Calculation of an EoS}
+% TODO Make clear what I have done and what is from other sources
 This chapter aims at developing an fully special relativistic \ac{eos} of a noninteracting gas. We briefly summarise important concepts necessary for the derivation.\\
 In the canonical ensemble, for which a introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
 Microscopically the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$. 
@@ -48,11 +49,13 @@ With equation \eqref{2-IntEner-Def} the internal energy $\U = 3Nk_BT$ and with e
 %
 %
 \begin{subsection}{The Special-Relativistic Internal Energy}
-We will now turn our attention to the fully special-relativistic Hamiltonian given by
+% We will now turn our attention to the fully special-relativistic case.
+A source for the following calculations could not be found and were thus carried out by the author solely.
+The special relativistic Hamiltonian is given by
 \begin{equation}
 	H=mc^2\sqrt{1+\frac{p^2}{m^2c^2}}.
 \end{equation}
-In doing so, we keep in mind that the ultra-relativistic limit can be obtained from this Hamiltonian by letting $m\rightarrow0$. In this limiting case we should be able to recover the results from equation \eqref{2-IntEner-UltraRelZ}.
+The ultra-relativistic limit can be obtained by letting $m\rightarrow0$. In this limiting case we should be able to recover the results from equation \eqref{2-IntEner-UltraRelZ}.
 \begin{align}
 	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \frac{mc^2\sqrt{1+\frac{p^2}{m^2c^2}}}{k_BT}\right)\diff^3p\right]^N\label{2-IntEner-EQ1}\\
 		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty 4\pi p^2\exp\left(-\beta mc^2\sqrt{1+\frac{p^2}{m^2c^2}} \right)\diff p\right]^N\\
