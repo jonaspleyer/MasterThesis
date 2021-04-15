@@ -1,118 +1,76 @@
-\begin{section}{More Exact Results}
-\begin{subsection}{LE equation}
-One can derive another exact solution for the LE equation at the exponent $n=2$ when 
-considering a series expansion of $\theta$ around the point $\xi=0$ with initial conditions
-\begin{equation}
-	\theta=\sum\limits_{m=0}^\infty a_m\xi^m \hspace{1cm} a_0=\left.\theta\right|_{\xi=0}=\theta_0 
-	\hspace{1cm} a_1=\left.\frac{d\theta}{d\xi}\right|_{\xi=0}=0
-	\label{5-MoExSo-LEN2-Series-Initial-Conditions}
-\end{equation}
-Since the series is absolut convergent, we can plug it into the LE equation 
-\ref{3-Mass-Lane-Emden-Eq} and use the Cauchy Product formula.
-\begin{equation}
-	\sum\limits_{m=2}^\infty m(m-1)a_m\xi^{m-2}+\sum\limits_{m=1}^\infty (2m)a_m\xi^{m-2} + 
-	\sum\limits_{m=0}^\infty\sum\limits_{k=0}^m a_{m-k}a_k\xi^m = 0
-	\label{5-MoExSo-LEN2-Series-PluggedIn}
-\end{equation}
-\begin{theorem}
-	The odd coefficients $a_{2m+1}$ of this series expansion vanish.
+\section{To a General Zero Value Theorem}
+\subsection{LE Equation}
+Motivated by the preceding sections, the aim now is to prove the following theorem.
+\begin{theorem}[Lane-Emden Finite Boundary]
+	\label{Theo-Lane-EmdenFiniteBoundary}
+	For every $0\leq n\leq5$, the Lane-Emden equation
+	\begin{equation}
+		\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
+		\label{5-Ideas-LEeq}
+	\end{equation}
+	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{Theo-Lane-EmdenFiniteBoundary1}, 
+	\ref{Theo-Lane-EmdenFiniteBoundary2} and \ref{Theo-Lane-EmdenFiniteBoundary3}.
 \end{theorem}
+We explain what the idea behind the proof is.
+...
+\begin{lemma}[LE Local Existence]
+	\label{Theo-Lane-EmdenFiniteBoundary1}
+	For every $n\geq0$, the Lane-Emden equation \ref{5-Ideas-LEeq} has a solution in an $\epsilon$ Ball around $\xi=0$.
+\end{lemma}
 \begin{proof}
-	We rewrite the summations of equation \ref{5-MoExSo-LEN2-Series-PluggedIn} to start at the 
-	same index $m=0$ and combine them
+	This proof can be generalised to $m\geq2$ dimensions. 
+	Following \cite{quittnerSuperlinearParabolicProblems2007a} we see that the LE differential equation can be written as
 	\begin{equation}
-		\sum\limits_{m=0}^\infty\left((m+2)(m+1)a_{m+2}\xi^{m}+(2m+2)a_{m+1}\xi^{m-1} + 
-		\sum\limits_{k=0}^m a_{m-k}a_k\xi^m\right) = 0
+		\frac{d}{d\xi}\left(\xi^{m-1}\frac{d\theta}{d\xi}\right) + \xi^{m-1}\theta^n = 0.
 	\end{equation}
-	With equation \ref{5-MoExSo-LEN2-Series-Initial-Conditions}, we can start the summation 
-	in the middle one index higher and separate the term $\xi^m$. This equation has to be true 
-	inside the radius of convergence of the series and thus needs to vanish for ambiguous $\xi$.
+	Integrating once and rearranging leads us to
 	\begin{equation}
-		(m+2)(m+1)a_{m+2}+2(m+2)a_{m+2}+\sum\limits_{k=0}^ma_{m-k}a_k = 0
+		\frac{d\theta}{d\xi} = \left.\frac{d\theta}{d\xi}\right|_0 - \int\limits_0^\xi\left(\frac{t}{\xi}\right)^{m-1}\theta^ndt.
 	\end{equation}
-	and upon further manipulation results in the recursive description for the coefficients 
-	of the series
+	By choosing the initial value of $d\theta/d\xi=0$ we see that positive solutions to the LE equation need to have negative slope.
+	This equation also shows that for $\theta_0>0$, the solution $\theta$ will be positive in a $\epsilon$ region around $\xi=0$.
+	We integrate both sides again and end up with
 	\begin{equation}
-		a_{m+2} = -\frac{1}{(m+2)(m+3)}\sum\limits_{k=0}^ma_{m-k}a_k.
-		\label{5-MoExSo-LEN2-Recursive-Coefficients}
+		\theta = \theta_0 - \int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{m-1}\theta^ndtds.
+		\label{5-Ideas-LEOperator}
 	\end{equation}
-	We show the statement by induction. For $a_1$ it is already true. Let the statement be true 
-	for all odd values $2k+1\leq2m+1$. Writing down $a_{2m+3}$ gives us
+	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and with negative slope. %where $n\in\R$ refers to the exponent given before.
+	With the norm $||.||_\infty$ this space is complete.
+	Inspecting the operator $T:C^*\rightarrow C^*$ defined by
+% 	\footnote{The  index $1$ refers to the $C^1$ norm given by $||f||_2=||f||_\infty+||f'||_\infty+||f''||_\infty$ on the yet to be defined space.}
+	equation \ref{5-Ideas-LEOperator} we can apply the Banach fixed-point theorem.
+% 	Without loss of generality, we can assume $U\neq V$. Then
+	\begin{align}
+		||T(U)-T(V)||_\infty	&\leq	\left|\left|U^n-V^n\right|\right|_\infty\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{m-1}dtds\\
+								&=		\left|\left|U^n-V^n\right|\right|_\infty\frac{\xi^2}{2m}
+	\end{align}
+	Let $n\geq1$. 
+	Since the function $x\mapsto x^n$ is differentiable for $n\geq1$ it is also Lipschitz with constant $L$ on the compact interval $I=[0,\theta_0]$.
+	This means in particular that we have
 	\begin{equation}
-		a_{2m+3} = -\frac{1}{(2m+3)(2m+4)}\left(a_0a_{2m+1}+a_1a_{2m}+\dots+a_{2m}a_1+a_{2m+1}a_0\right).
+		||T(U)-T(V)||_\infty	\leq	\left|\left|U-V\right|\right|_\infty\frac{L\xi^2}{2m}
 	\end{equation}
-	It is clear that in the summation odd and even coefficients get paired and will thus 
-	vanish completely.
-\end{proof}\noindent
-This proof shows that we can restrict ourselves to the subsequence $b_m=a_{2m}$ and 
-the subseries with initial values given by
-\begin{equation}
-	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} = 
-	-\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^mb_{m-k}b_k \hspace{1cm} b_0=\theta_0
-	\label{5-MoExSo-LEN2-bn-Definition}
-\end{equation}
-\begin{theorem}
-	The series $\theta=\sum\limits_{m=0}^\infty b_m\xi^{2m}$ converges for $\xi\leq1$.
-\end{theorem}
-\begin{proof}
-	We start by showing that $|b_{m+1}|\leq1/(4m+6)$. Using the triangle inequality on 
-	\ref{5-MoExSo-LEN2-bn-Definition}, we obtain
+	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \ref{5-Ideas-LEOperator}.\\
+	Now let $0\leq n<1$.
+	In this situation the preceding method does not work due to $x^n$ not being differentiable at $x=0$. 
+	For $\theta_0\leq1$, we know that $\theta^n\leq\theta_0^n$. We can now choose $\epsilon$ such that with
 	\begin{equation}
-		|b_{m+1}| \leq \frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^m|b_{m-k}b_k|.
+		\int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{m-1}\theta^n(t)dtds \leq \frac{\xi^2}{2m}\theta_0^n
 	\end{equation}
-	For $m=0$, we have $b_1=-1/6$ and thus $|b_1|\leq1/3$ and so the statement is true for $m=0$.
-	If the statement holds for all $m<m+1$, we have
-	\begin{equation}
-		|b_{m+1}| \leq \frac{m}{(2m+2)(2m+3)} = \frac{1}{2}\frac{m}{(m+1)}\frac{1}{(2m+3)}
-		\leq\frac{1}{2}\frac{1}{(2m+3)}
-	\end{equation}
-	which proves the first statement. To see that $b_m$ is a alternating sequence, we again inspect
-	\ref{5-MoExSo-LEN2-bn-Definition}. The first element of the series is 
-	$b_0=1$ and the second is $b_1=-1/6$ so the initial statement is again correct. Let $b_m$ be 
-	alternating for all $m<2m+1$. Then equation \ref{5-MoExSo-LEN2-bn-Definition} for odd values reads
-	\begin{equation}
-		b_{2m+1} = -\frac{1}{(4m+4)(4m+5)}\left(b_{2m}b_0+b_{2m-1}b_1+\dots+b_0b_{2m}\right)
-	\end{equation}
-	This shows that if all odd values $b_{2k+1}$ are negative and all even ones are positive, 
-	then $b_{2m+1}$ is negative too. The same holds true when the index $2m+2$ is even.
-	By the Leibniz criterion the series converges if $\xi\leq1$. 
+	we have $\theta\geq\theta_0/2$ on $[0,\epsilon]$. If $\theta_0>1$, we have $\theta^n\leq\theta_0$ and obtain the same result. 
+	Then the same procedure as before can be carried through but with the interval $I=[\theta_0/2,\theta]$.
 \end{proof}
-\begin{figure}[H]
-	\import{pictures/5-MoreExactSolutions/}{LE-ExactN2.pgf}
-	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - We see the power 
-	the series calculated with the coefficients explained above (the far right tick is the 
-	last calculated value for $R_m$ where plotting is stopped) and 
-	the sequence $R_m=(|a_m|)^{-1/m}$ which approaches the radius of convergence.
-	}
-	\label{5-MoExSo-LEN2-Plot}
-\end{figure}\noindent
-These results can be used to calculate the power series of the LE equation numerically. 
-Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions 
-as the difference $\Delta=\theta_{calc}-\theta_{ser}$ is not larger than $0.00015$.
-% However in both plots at the bottom, the last few values where the solution starts reaching the 
-% radius of convergence have been omitted for visual clarity. 
-The solutions differ for larger values around $\approx3.918$
-The top right plot indicates that the radius of convergence might actually be larger than 
-where solutions deviate. 
-One important observation is that in this procedure, 
-the coefficients were calculated up to $b_{250}\approx-4.7723\times10^{-296}$ which is in close 
-proximity to the floating point limit of python given by $\approx2.2251\times10^{-308}$ and 
-indicates that numerical errors may be the reason the series starts to diverge. 
-Also in order to achieve sufficient numerical precision, we would need to calculate higher 
-order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows
-that these parts of the series still yield large contributions to the value of $\theta$ at this point.
+Maybe talk about more details or how we are proceding.
 
+\begin{lemma}
+	
+\end{lemma}
 
-
-\end{subsection}
 %
 %
-\begin{subsection}{TOV equation}
+%
+\subsection{TOV Equation}
 
-\end{subsection}
 %
 %
-\begin{subsection}{Existance of Solutions}
-
-\end{subsection}
-\end{section}
+%
