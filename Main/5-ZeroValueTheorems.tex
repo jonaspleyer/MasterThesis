@@ -2,63 +2,67 @@
 \subsection{LE Equation}
 Motivated by the preceding sections, the aim now is to prove the following theorem.
 \begin{theorem}[Lane-Emden Finite Boundary]
-	\label{Theo-Lane-EmdenFiniteBoundary}
+	\label{5-Zeroes-Lane-EmdenFiniteBoundary}
 	For every $0\leq n\leq5$, the Lane-Emden equation
 	\begin{equation}
 		\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
 		\label{5-Ideas-LEeq}
 	\end{equation}
-	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{Theo-Lane-EmdenFiniteBoundary1}, 
-	\ref{Theo-Lane-EmdenFiniteBoundary2} and \ref{Theo-Lane-EmdenFiniteBoundary3}.
+	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{5-Zeroes-Lane-EmdenFiniteBoundary1}, 
+	\ref{5-Zeroes-Lane-EmdenFiniteBoundary2} and \ref{5-Zeroes-Lane-EmdenFiniteBoundary3}.
 \end{theorem}
 We explain what the idea behind the proof is.
 ...
 \begin{lemma}[LE Local Existence]
-	\label{Theo-Lane-EmdenFiniteBoundary1}
+	\label{5-Zeroes-Lane-EmdenFiniteBoundary1}
 	For every $n\geq0$, the Lane-Emden equation \ref{5-Ideas-LEeq} has a solution in an $\epsilon$ Ball around $\xi=0$.
 \end{lemma}
+With the aid of the Picard-Lindelöf theorem or the 
+
 \begin{proof}
-	This proof can be generalised to $m\geq2$ dimensions. 
+	This proof can be generalised to $l\geq2$ dimensions. 
 	Following \cite{quittnerSuperlinearParabolicProblems2007a} we see that the LE differential equation can be written as
 	\begin{equation}
-		\frac{d}{d\xi}\left(\xi^{m-1}\frac{d\theta}{d\xi}\right) + \xi^{m-1}\theta^n = 0.
+		\frac{d}{d\xi}\left(\xi^{l-1}\frac{d\theta}{d\xi}\right) + \xi^{l-1}\theta^n = 0.
 	\end{equation}
 	Integrating once and rearranging leads us to
 	\begin{equation}
-		\frac{d\theta}{d\xi} = \left.\frac{d\theta}{d\xi}\right|_0 - \int\limits_0^\xi\left(\frac{t}{\xi}\right)^{m-1}\theta^ndt.
+		\frac{d\theta}{d\xi} = \left.\frac{d\theta}{d\xi}\right|_0 - \int\limits_0^\xi\left(\frac{t}{\xi}\right)^{l-1}\theta^ndt.
+		\label{5-Zeroes-LEOperator-Derivative}
 	\end{equation}
-	By choosing the initial value of $d\theta/d\xi=0$ we see that positive solutions to the LE equation need to have negative slope.
+	By choosing the correct initial value\footnote{One has to choose this value in order to obtain the correct limiting case when using the non-relativistic limit of the \ac{TOV} equation. See also section \ref{3-Mass-LEDerivation}} of $d\theta/d\xi=0$ we see that positive solutions to the LE equation need to have negative slope.
 	This equation also shows that for $\theta_0>0$, the solution $\theta$ will be positive in a $\epsilon$ region around $\xi=0$.
 	We integrate both sides again and end up with
 	\begin{equation}
-		\theta = \theta_0 - \int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{m-1}\theta^ndtds.
-		\label{5-Ideas-LEOperator}
+		\theta = \theta_0 - \int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{l-1}\theta^ndtds.
+		\label{5-Zeroes-LEOperator}
 	\end{equation}
-	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and with negative slope. %where $n\in\R$ refers to the exponent given before.
+	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and with non-positive slope. %where $n\in\R$ refers to the exponent given before.
+	Additionally with equation \eqref{5-Zeroes-LEOperator-Derivative} we can restrict ourselves to functions with
+	\begin{equation}
+		\frac{d\theta}{d\xi} \geq -\theta_0^n\frac{\xi}{m}.
+		\label{5-Zeroes-LEOperator-Restrict-Slope}
+	\end{equation}
 	With the norm $||.||_\infty$ this space is complete.
 	Inspecting the operator $T:C^*\rightarrow C^*$ defined by
 % 	\footnote{The  index $1$ refers to the $C^1$ norm given by $||f||_2=||f||_\infty+||f'||_\infty+||f''||_\infty$ on the yet to be defined space.}
-	equation \ref{5-Ideas-LEOperator} we can apply the Banach fixed-point theorem.
+	equation \ref{5-Zeroes-LEOperator} we can apply the Banach fixed-point theorem.
 % 	Without loss of generality, we can assume $U\neq V$. Then
 	\begin{align}
-		||T(U)-T(V)||_\infty	&\leq	\left|\left|U^n-V^n\right|\right|_\infty\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{m-1}dtds\\
-								&=		\left|\left|U^n-V^n\right|\right|_\infty\frac{\xi^2}{2m}
+		||T(U)-T(V)||_\infty	&\leq	\left|\left|U^n-V^n\right|\right|_\infty\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}dtds\\
+								&=		\left|\left|U^n-V^n\right|\right|_\infty\frac{\xi^2}{2l}
 	\end{align}
 	Let $n\geq1$. 
 	Since the function $x\mapsto x^n$ is differentiable for $n\geq1$ it is also Lipschitz with constant $L$ on the compact interval $I=[0,\theta_0]$.
 	This means in particular that we have
 	\begin{equation}
-		||T(U)-T(V)||_\infty	\leq	\left|\left|U-V\right|\right|_\infty\frac{L\xi^2}{2m}
+		||T(U)-T(V)||_\infty	\leq	\left|\left|U-V\right|\right|_\infty\frac{L\xi^2}{2l}
 	\end{equation}
-	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \ref{5-Ideas-LEOperator}.\\
+	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \ref{5-Zeroes-LEOperator}.\\
 	Now let $0\leq n<1$.
-	In this situation the preceding method does not work due to $x^n$ not being differentiable at $x=0$. 
-	For $\theta_0\leq1$, we know that $\theta^n\leq\theta_0^n$. We can now choose $\epsilon$ such that with
-	\begin{equation}
-		\int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{m-1}\theta^n(t)dtds \leq \frac{\xi^2}{2m}\theta_0^n
-	\end{equation}
-	we have $\theta\geq\theta_0/2$ on $[0,\epsilon]$. If $\theta_0>1$, we have $\theta^n\leq\theta_0$ and obtain the same result. 
-	Then the same procedure as before can be carried through but with the interval $I=[\theta_0/2,\theta]$.
+	In this situation the preceding method does not work due to $x^n$ not being differentiable or Lipschitz at $x=0$. 
+	Since by definition of $C^*$, we had chosen \eqref{5-Zeroes-LEOperator-Restrict-Slope} as an additional constraint, we can now choose $\epsilon$ small enough to have $\theta\geq q>0$ on $[0,\epsilon]$.
+	Then the same procedure as before can be carried through but with the interval $I=[q,\theta]$.
 \end{proof}
 Maybe talk about more details or how we are proceding.
 
