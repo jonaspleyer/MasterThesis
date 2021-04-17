@@ -3,13 +3,20 @@
 \input{../CustomCommands}
 
 \begin{document}
-% \input{../Titlepage}
-\pagenumbering{Roman}
+\input{../Titlepage}
 \tableofcontents
+\pagenumbering{Roman}
 \newpage
 \input{00-ListOfAbbrev}
 % \newpage
 % \input{0-Abstract}
+
+% List of figures and tables
+% \newpage
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
 
 % Main Part of the thesis
 \newpage
@@ -28,13 +35,6 @@
 \input{90-Ideas}
 \newpage
 \input{80-Outlook}
-
-% List of figures and tables
-\newpage
-\addcontentsline{toc}{section}{\listfigurename}
-\listoffigures
-\addcontentsline{toc}{section}{\listtablename}
-\listoftables
 
 % Appendix
 \newpage
