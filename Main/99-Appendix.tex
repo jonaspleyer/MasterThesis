@@ -2,6 +2,7 @@
 \pagenumbering{roman}
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\thesubsection}{\Alph{subsection}}
+\renewcommand\thetheorem{\thesubsection.\arabic{theorem}}
 
 \begin{section}*{Appendix}
 \addcontentsline{toc}{section}{Appendix}
@@ -101,7 +102,8 @@ We see that this equation has no zero value and tends to $0$ as $\xi\rightarrow\
 \end{subsection}
 %
 %
-\begin{subsection}{New Exact LE Series Solution at Index 2}
+%
+\subsection{New Exact LE Series Solution at Index 2}
 One can derive another exact solution for the LE equation at the exponent $n=2$ when 
 considering a series expansion of $\theta$ around the point $\xi=0$ with initial conditions
 \begin{equation}
@@ -203,6 +205,61 @@ indicates that numerical errors may be the reason the series starts to diverge.
 Also in order to achieve sufficient numerical precision, we would need to calculate higher 
 order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows
 that these parts of the series still yield large contributions to the value of $\theta$ at this point.
-\end{subsection}
+%
+%
+%
+\subsection{Exact TOV Solution in Absence of Mass}
+\begin{theorem}[TOV Exact Solution]
+	The TOV equation \ref{4-NumSol-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
+	\begin{equation}
+		p = \frac{p_0}{2\pi rp_0+1}
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	First we transform the TOV equation \ref{3-Mass-TOV-Eq} using $p=y^a$ with $a>0$ and $m=Arv$ and together with the polytropic EOS $\rho=Ap^{1/\gamma}$ obtain
+	\begin{align}
+		\frac{\partial v}{\partial r} &= 4\pi ry^{a/\gamma}-Av\\
+		ay^{a-1}\frac{\partial y}{\partial r} &= -\frac{vA^2y^{a/\gamma}}{r}\left(1+\frac{y^a}{Ay^{a/\gamma}}\right)\left(\frac{4\pi r^2y^a}{Av} +1\right)\frac{1}{1-2vA}
+		\label{tmp-label-2}
+	\end{align}
+	Rearranging the second equation one obtains
+	\begin{equation}
+		\frac{\partial y}{\partial r} = -\frac{y^{a/\gamma-a+1}}{ar}\left(A+y^{a-a/\gamma}\right)\left(4\pi r^2y^a +Av\right)\frac{1}{1-2vA}.
+	\end{equation}
+	Using $\gamma=1+1/n$ with $n>0$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$. We restrict 
+	ourselves to a compact domain $r\in \overline{B_{\delta}(\tau)}$ and $v\in[0,1/2A-\epsilon]$ where $0<\epsilon<1/2A$. 
+	We choose $0<\delta$ and $0\leq\tau$ in such a way that $0<\epsilon<1/2A$ is satisfied for some $\epsilon$ which is possible since $m\rightarrow0$ for $r\rightarrow0$.
+	To obtain Lipschitz continuity in $(y,v)$, all of the following conditions need to be fulfilled.
+	\begin{equation}
+		\frac{a}{\gamma}-a+1 \geq 1 \hspace{1cm} a-\frac{a}{\gamma} \geq 1 \hspace{1cm} a \geq 1
+		\label{tmp-label-1}
+		% TODO Change label when the proof is complete and in the correct section
+	\end{equation}
+	The second equation implies the first and the third. Thus we only need to choose $a\geq(1-1/\gamma)^{-1}$. With $\gamma=1+1/n$ we can rewrite this equation to 
+	\begin{equation}
+		a\geq n+1
+	\end{equation}
+	which can be easily satisfied. 
+	This now shows with extension of the Picard-Lindelöf Theorem that there exists a unique solution for given initial values $\tau, y(\tau), v(\tau)\in B_{\delta}(\tau)\times\R_{\geq0}\times[0,1/2A-\epsilon)$ that especially continuously depends on $A$.
+	Without loss of generality we can choose $\delta$ small enough such that solutions are positive in $p$.
+	%Let $\epsilon\rightarrow0$ and $\delta\rightarrow0$ be two (wlog monotonous) sequences with identical initial values $\tau, y(\tau), v(\tau)$. Respective solutions are identical for 
+	%all values on which both are defined. This means we can extend our solution to cover $(0,\infty)\times(0,\infty)\times[0,1/2A)$. 
+	By transforming back equation \ref{tmp-label-2} to 
+	\begin{equation}
+		\frac{\partial p}{\partial r} = -\frac{1}{r^2}\left(Ap^{1/\gamma}+p\right)\left(4\pi r^3p+vA\right)\left(1-2vA\right)^{-1}
+	\end{equation}
+	and letting $A\rightarrow0$, we obtain
+	\begin{equation}
+		\frac{\partial p}{\partial r} = - 4\pi rp^2
+	\end{equation}
+	which is then solved by
+	\begin{equation}
+		p = \frac{\tilde{p}}{2\pi\tilde{p}(r^2-\tau^2)+1}
+	\end{equation}
+	where $\tilde{p}$ is the initial value at $r=\tau$. It is clear that this solution can be extended to $r\in[0,\infty)$ by choosing arbitrary small $\tau$.
+	In the limit, the result equals the hypothesis.
+\end{proof}
+
+
 \end{section}
 \end{appendix}
