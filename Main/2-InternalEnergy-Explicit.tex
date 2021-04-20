@@ -89,6 +89,7 @@ This more general scenario does not yield the ideal gas law and would thus need 
 %
 %
 \begin{subsection}{The Special-Relativistic Equation of State}
+\label{2-IntEner-SR-EOS-Derivation}
 This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation \eqref{2-IntEner-pressureDef}. 
 We assume an additional constraint namely adiabaticity and thus further reduce the degrees of freedom of the thermodynamic system.\\
 When assuming an adiabatic condition $\updelta Q=0$ and using the First Law of Thermodynamics \cite{fliessbachStatistischePhysikLehrbuch2018} $\diff U =\updelta Q + \updelta W$, where $\updelta W=-p\diff V$ and $\diff U=C_V\diff T$, we can relate pressure and temperature. 
@@ -129,6 +130,7 @@ At this point it is not reasonable to ask what happens in the ultra-relativistic
 Interestingly, the pressure seems to be constant for very high temperatures. The limiting case is obtained when taking $T\rightarrow\infty$ (which corresponds to $\alpha\rightarrow0$)
 \begin{equation}
 	\lim\limits_{\alpha\to0}\left[\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)\right] = \frac{1}{2\e^2} \approx 0.006767.
+	\label{2-IntEner-PressureAlpha-Limit}
 \end{equation}
 The same argument then holds true for the density given by equation \eqref{2-IntEner-DensityAlpha} and since 
 \begin{equation}
@@ -198,7 +200,7 @@ and can thus be compared with each other. Note that the $\rho_0$ of the plot is 
 \begin{figure}[H]
 	\centering
 	\import{pictures/2-InternalEnergy-Explicit/}{RelEOS.pgf}
-	\caption[Relativistic Equation of State]{The relativistic \ac{eos} $\rho(p)$ is normalised such that values can be compared with a polytropic \ac{eos}. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic \ac{eos}. By normalisation, the graphs of the polytropic \ac{eos} are independent of the factor $A$.}
+	\caption[Relativistic Equation of State]{Relativistic Equation of State - The relativistic \ac{eos} $\rho(p)$ is normalised such that values can be compared with a polytropic \ac{eos}. Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic \ac{eos}. By normalisation, the graphs of the polytropic \ac{eos} are independent of the factor $A$.}
 	\label{2-IntEner-RelEOSPlot}
 \end{figure}
 \end{subsection}
