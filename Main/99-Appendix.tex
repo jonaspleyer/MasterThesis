@@ -210,7 +210,7 @@ that these parts of the series still yield large contributions to the value of $
 %
 \subsection{Exact TOV Solution in Absence of Mass}
 \begin{theorem}[TOV Exact Solution]
-	The TOV equation \ref{4-NumSol-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
+	The TOV equation \ref{4-NumSol-Equ-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
 	\begin{equation}
 		p = \frac{p_0}{2\pi rp_0+1}
 	\end{equation}
@@ -259,7 +259,16 @@ that these parts of the series still yield large contributions to the value of $
 	where $\tilde{p}$ is the initial value at $r=\tau$. It is clear that this solution can be extended to $r\in[0,\infty)$ by choosing arbitrary small $\tau$.
 	In the limit, the result equals the hypothesis.
 \end{proof}
-
-
+%
+%
+%
+\subsection{Numerical Optimisations}
+\label{99-App-Numerical-Optimisations}
+% TODO write all the optimisations and why it is hard to do
+When solving the \ac{TOV} or \ac{LE} equation numerically calculations for the next step clearly depend on results from the before calculated one.
+This simple fact which is integral to the concept of an \ac{ODE} means that numerics is single thread bound which already puts one at a systematic disadvantage.
+This means any effort to parallelise the given task must focus on distributing the individual solving routines to respective threads\footnote{Thread refers to a sequence of instructions given to a processing unit.}.
+With this first consideration at hand a server with high number of processing units may come into mind to then speed up the calculation.
+However in the situation of section \ref{4-NumSol-Sec-TOV-Exponents}
 \end{section}
 \end{appendix}
