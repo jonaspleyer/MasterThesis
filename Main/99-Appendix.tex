@@ -111,8 +111,7 @@ considering a series expansion of $\theta$ around the point $\xi=0$ with initial
 	\hspace{1cm} a_1=\left.\frac{d\theta}{d\xi}\right|_{\xi=0}=0
 	\label{5-MoExSo-LEN2-Series-Initial-Conditions}
 \end{equation}
-Since the series is absolut convergent, we can plug it into the LE equation 
-\ref{3-Mass-Lane-Emden-Eq} and use the Cauchy Product formula.
+Since the series is absolut convergent, we can plug it into the LE equation \ref{3-Mass-Equ-Lane-Emden-Eq} and use the Cauchy Product formula.
 \begin{equation}
 	\sum\limits_{m=2}^\infty m(m-1)a_m\xi^{m-2}+\sum\limits_{m=1}^\infty (2m)a_m\xi^{m-2} + 
 	\sum\limits_{m=0}^\infty\sum\limits_{k=0}^m a_{m-k}a_k\xi^m = 0
@@ -266,9 +265,42 @@ that these parts of the series still yield large contributions to the value of $
 \label{99-App-Numerical-Optimisations}
 % TODO write all the optimisations and why it is hard to do
 When solving the \ac{TOV} or \ac{LE} equation numerically calculations for the next step clearly depend on results from the before calculated one.
-This simple fact which is integral to the concept of an \ac{ODE} means that numerics is single thread bound which already puts one at a systematic disadvantage.
-This means any effort to parallelise the given task must focus on distributing the individual solving routines to respective threads\footnote{Thread refers to a sequence of instructions given to a processing unit.}.
+This simple fact which is integral to the concept of an \ac{ODE} means that numerics is single thread \footnote{Thread refers to a sequence of instructions given to a processing unit.} bound which already puts one at a systematic disadvantage.
+This means any effort to parallelise the given task must focus on distributing the individual solving routines to respective threads.
 With this first consideration at hand a server with high number of processing units may come into mind to then speed up the calculation.
-However in the situation of section \ref{4-NumSol-Sec-TOV-Exponents}
+However in the situation of section \ref{4-NumSol-Sec-TOV-Exponents} this would only allow us to calculate more results in parallel but not speed up the individual solving routines.
+And this is exactly the bottleneck in our case.
+When looking at figure \ref{4-NumSol-Plt-TOV-Exponents-Combo} it is clear that higher values for $r_0$ are of interest where the curves reach the current maximum limit.
+From this figure it is also clear that the effort will increase exponentially since we are bound to a single thread for individual solving routines.
+Hence parallel computation of this problem would not help in this case especially considering that server processing units typically have lower single threaded performance than consumer chips.\\
+Explicit parallelisation is achieved by distributing different values of $n$ to different threads. 
+More efficient distribution of those calculations can make a difference but effects discussed above and below have more impact.
+Furthermore in order to fully understand how to improve for this distribution it is partly necessary to calculate the results which is then even less of an issue afterwards.\\
+Another optimisation evolved around not computing unnecessary cases.
+Consider again figure \ref{4-NumSol-Plt-TOV-Exponents-Combo}.
+It is clear (however not proven until now) that for each combination $A,p_0$ at some value $n_0(A,p_0)$ values for $r_0$ will reach the numerical upper limit of the routine.
+For other solving routines with $n\geq n_0$ the same will happen which makes it unnecessary to even begin to compute them since they will not be shown in the graph anyways.
+This behaviour has been verified for a number of numerical combinations of parameters before beeing utilised in the final version.
+For the solving routine this means explicitly that once there have been $2$ previous solving routines that failed in obtaining a value lower than $r_0$, the whole routine will not consider solving for any combinations of these particular parameters $A,p_0$ anymore.\\
+Another obvious optimisation was to use a database to store results.
+In this case MongoDB \cite{dirolfPymongo11Python2021} was chosen for its good integration with the python language. 
+This pool of results allows one to compare the current solving routine with already calculated results.
+% In many cases extra calculations can be circumvented by a database query:
+Extra calculations can be permitted after a database query in the following cases:
+\begin{itemize}
+	\item If the current solving routine does have higher precision (in form of lower constant stepsize).
+	\item If the previous solving routine reached the limit for $r_0$ and the current one would go further.
+	\item If there exist multiple results for a combination of parameters $A,p_0,n$ \footnote{Then every result present is deleted and one new result will be calculated.}.
+\end{itemize}
+With these optimisations less results in total need to be calculated.
+One still present disadvantage is however that allocation of parameters for solving routines is done beforehand and can not be changed in mid process.
+This means if a thread started by the program finished and another is still running with multiple solving routines left, these cannot be given to another thread.
+This is a possibility for future tweaks.\\
+So far the previous discussion evolved around a fixed stepsize.
+Since in this case the 4th order Runge Kutta solving method was implemented by hand, it is possible to use variable stepsizes for solving.
+From figure \ref{4-NumSol-Plt-ValidateLEResults} we can see that the largest errors occur in the first step of integration. 
+This means in the beginning a small stepsize is desireable to retain accuracy while later it can be increased. 
+These settings were experimented with but since the author had already achieved numerous results with a constant stepsize were not committed to the final version.
+It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.
 \end{section}
 \end{appendix}
