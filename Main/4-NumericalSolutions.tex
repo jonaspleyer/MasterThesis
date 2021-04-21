@@ -7,7 +7,7 @@ In this section the numerical solutions of the \ac{TOV} equation
 	\frac{\partial p}{\partial r} &=-\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
 	\label{4-NumSol-Equ-TOVEqBasic2}
 \end{align}
-as derived previously in section \ref{3-Mass-TOVDerivation} will be discussed. To obtain numerical solvability a \ac{eos} in the form $\rho(r,p)$ is supplied. 
+as derived previously in section \ref{3-Mass-Sec-TOVDerivation} will be discussed. To obtain numerical solvability a \ac{eos} in the form $\rho(r,p)$ is supplied. 
 % TODO Add reference for when the equations are solvable
 In Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} a plot of such a solution is presented.
 The density $\rho$ is derived via the equation \eqref{4-NumSol-Equ-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method \cite{rungeUeberNumerischeAufloesung1895, schlömilch1901zeitschrift, h.SimplifiedDerivationAnalysis2010}.
@@ -21,15 +21,15 @@ For equation \eqref{4-NumSol-Equ-TOVEqBasic1}, the initial value can be calculat
 	\lim\limits_{r\rightarrow0}\frac{\partial p}{\partial r} &= 0
 \end{alignat}
 Explicit code can be found in \cite{pleyerGithubRepositoryJonas2021}. 
-The Lane-Emden equation was obtained in section \ref{3-Mass-LEDerivation} as the non-relativistic limit of the \ac{TOV} equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$. 
-To obtain numerical results for the \ac{LE} equation as given in equation \eqref{3-Mass-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
+The Lane-Emden equation was obtained in section \ref{3-Mass-Sec-LEDerivation} as the non-relativistic limit of the \ac{TOV} equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$. 
+To obtain numerical results for the \ac{LE} equation as given in equation \eqref{3-Mass-Equ-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
 \begin{alignat}{3}
 	\frac{d\theta}{d\xi} &= \chi &\hspace{1cm} \left.\frac{d\theta}{d\xi}\right|_{\xi=0} &= 0\\
 	\frac{d\chi}{d\xi} &= -\frac{2}{\xi}\chi-\theta^n & \left.\frac{d\chi}{d\xi}\right|_{\xi=0} &= -\theta^n
 	\label{4-NumSol-Equ-LE-Substitution}
 \end{alignat}
 where the initial value for $d\chi/d\xi$ can be calculated with L'Hôpital's rule. 
-With the conversion factor $\kappa$ derived in section \ref{3-Mass-LEDerivation}, \ac{TOV} and \ac{LE} results can be compared. 
+With the conversion factor $\kappa$ derived in section \ref{3-Mass-Sec-LEDerivation}, \ac{TOV} and \ac{LE} results can be compared. 
 Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows the solution of both equations for the parameters of table \ref{4-NumSol-Tbl-TOVParameters}. 
 Note that values in the last part are calculated instead of supplied to the solving routine. 
 Additionally conversion equations to compare \ac{TOV} and \ac{LE} results are displayed.\\
@@ -76,7 +76,7 @@ The plot in figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour
 \label{4-NumSol-Sec-Verifiying-the-results}
 % Verification is done in different ways. 
 % First, o
-One can compare calculated \ac{LE} results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-LE-Exact-Results}. 
+One can compare calculated \ac{LE} results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-Tbl-LE-Exact-Results}. 
 All calculations are carried out with a chosen step size of $d\xi=0.03$.\\
 The graphs overall show good numerical agreement. 
 Initial values at $r=0$ are identical since they were set to be. 
@@ -119,7 +119,7 @@ Section \ref{2-IntEner-SR-EOS-Derivation} showed that the function given in equa
 \end{equation}
 explicitly has a non-positive slope. 
 When calculating a inverse function the values $C,N,m$ need to be chosen high enough in order to reach sufficiently high values for $p$.
-By knowing the initial value $p_0$ and by the fact that the TOV solution pressure\eqref{3-Mass-TOV-Eq-1} has non-positive slope and with equation \eqref{2-IntEner-PressureAlpha-Limit}, it is sufficient to choose $Bp_0=CNmc^2>2/\e^2$. 
+By knowing the initial value $p_0$ and by the fact that the TOV solution pressure \eqref{3-Mass-Equ-TOV-Eq-1} has non-positive slope and with equation \eqref{2-IntEner-PressureAlpha-Limit}, it is sufficient to choose $Bp_0=CNmc^2>2/\e^2$. 
 On the other hand it is also important to choose high enough values for $\alpha$ for numerical inversion since otherwise functions can not be displayed if they reach small enough values for $p$.
 The limit for $\alpha$ is chosen such that values as low as $0.001p_0$ can be evaluated.
 Afterwards the function over the given interval is inverted by a polynomial fit and then used in equation \eqref{2-IntEner-DensityAlpha} to obtain the \ac{eos}.\\
@@ -146,9 +146,9 @@ Having discussed individual solutions for the \ac{TOV} and \ac{LE} equation, thi
 We define a zero value as the first point in which the solution of our differential equation reaches value $0$, or more precisely where the pressure $p$ reaches zero.\footnote{Note that $p_0$ still denotes the initial value while $r_0$ and $\xi_0$ denote values where $p=0$.}
 Even now the problem is not well posed since for different solving routines alternative transformations may be used.
 This has to be kept in mind when comparing results. 
-Apart from the previously defined exact solutions of table \ref{3-Mass-LE-Exact-Results} we will only use the parameter $r$ as defined by equation \eqref{3-Mass-TOV-Eq} to display final results.
-In order to solve the equations, a transformation in the form applied in section \ref{3-Mass-LEDerivation} is used since it was hoped to increase the precision with which the zero value is determined.
-This can be motivated by looking at plots for \ac{LE} solutions as in figure \ref{3-Mass-LE-Exact-Results-Plots} and comparing them to \ac{TOV} results of figure \ref{4-NumSol-Plt-TOVEqEasyEOS}.
+Apart from the previously defined exact solutions of table \ref{3-Mass-Tbl-LE-Exact-Results} we will only use the parameter $r$ as defined by equation \eqref{3-Mass-TOV-Eq} to display final results.
+In order to solve the equations, a transformation in the form applied in section \ref{3-Mass-Sec-LEDerivation} is used since it was hoped to increase the precision with which the zero value is determined.
+This can be motivated by looking at plots for \ac{LE} solutions as in figure \ref{3-Mass-Plt-LE-Exact-Results-Plots} and comparing them to \ac{TOV} results of figure \ref{4-NumSol-Plt-TOVEqEasyEOS}.
 With the \ac{eos} $\rho=Ap^{1/\gamma}$ and the new definition $\rho=\rho_0\theta^n$, the equations used are 
 \begin{alignat}{3}
 	\frac{\partial m}{\partial\xi} &= &&4\pi\kappa^3\rho\xi^2\\
@@ -163,7 +163,7 @@ However in this case since
 	p=\frac{\rho_0^n\theta^n}{A^{1+1/n}}
 \end{equation}
 it is clear that a zero values of $\theta$ and $p$ match under the same parameter $\xi$.
-When transforming back by using $\kappa\xi=r$ as explained in section \ref{3-Mass-LEDerivation} one should note that $\kappa$ depends on $n$ via 
+When transforming back by using $\kappa\xi=r$ as explained in section \ref{3-Mass-Sec-LEDerivation} one should note that $\kappa$ depends on $n$ via 
 \begin{equation}
 	4\pi\kappa^2=(n+1)K\rho_0^{1/n-1}
 \end{equation}
