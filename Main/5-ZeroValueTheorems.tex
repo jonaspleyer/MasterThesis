@@ -8,13 +8,13 @@ Motivated by the preceding sections, the aim now is to prove the following theor
 		\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
 		\label{5-Ideas-LEeq}
 	\end{equation}
-	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{5-Zeroes-Lane-EmdenFiniteBoundary1}, 
+	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}, 
 	\ref{5-Zeroes-Lane-EmdenFiniteBoundary2} and \ref{5-Zeroes-Lane-EmdenFiniteBoundary3}.
 \end{theorem}
 We explain what the idea behind the proof is.
 ...
 \begin{lemma}[LE Local Existence]
-	\label{5-Zeroes-Lane-EmdenFiniteBoundary1}
+	\label{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}
 	For every $n\geq0$, the Lane-Emden equation \ref{5-Ideas-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
 \end{lemma}
 With the aid of the Picard-Lindelöf theorem or the 
@@ -78,13 +78,64 @@ The following theorem makes use of that fact and of a different representation o
 		\frac{d\chi}{d\xi} &= -\theta^n - \frac{2}{\xi}\chi
 	\end{align}
 	From here we can see that this equation at $\epsilon>0$ is solvable by means of the Picard-Lindelöf theorem.
-	
 \end{proof}
 %
 %
 %
 \subsection{TOV Equation}
+\begin{hypothesis}[TOV Zero Value Hypothesis]
+	Given the TOV differential equation with $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
+	\begin{alignat}{3}
+		\frac{\partial m}{\partial r} &= &&4\pi\rho r^2\\
+		\frac{\partial p}{\partial r} &= -&&\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
+		\label{5-Zeroes-Equ-TOV-Equ}
+	\end{alignat}
+	and initial values $m_0=0,p_0\geq0$ there exists a $n_0\geq0$ such that all solutions with same parameters $A,p_0$ and smaller exponent $n<n_0$ have a $p(r_0)$ for some $r_0>0$.
+\end{hypothesis}
+\begin{proof}
+	asdf
+\end{proof}
 
+\begin{lemma}
+	\label{5-Zeroes-Lem-TOV-Conditions}
+	Let $(m,p):\R\rightarrow\R^2$ be a \ac{TOV} solution with initial values $m_0=0$ and $p_0>0$.
+	Also let $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ be the monotonously increasing \ac{eos}.
+	Then for a small enough $\epsilon$ Interval $[0,\epsilon]$ the solution $f$ satisfies the following conditions.
+	\begin{align}
+		m(r) &\leq \frac{4\pi\rho_0r^3}{3}\label{5-Zeroes-Equ-TOV-Conditions-1}\\
+		\lim_{r\rightarrow0}\frac{m}{r^3}&=\frac{4\pi\rho_0}{3}\label{5-Zeroes-Equ-TOV-Conditions-2}\\
+		p(r)&\geq\frac{p_0}{2}\label{5-Zeroes-Equ-TOV-Conditions-3}
+	\end{align}
+\end{lemma}
+\begin{proof}
+	To prove the condition \eqref{5-Zeroes-Equ-TOV-Conditions-1} we inspect that with the initial value $m_0=0$ we can write
+	\begin{equation}
+		m = \int\limits_0^r 4\pi\rho r'^2dr'\leq4\pi\rho_0\int\limits r'^2dr'=\frac{4\pi\rho_0r^3}{3}
+	\end{equation}
+	where in the second step we used that $\rho$ is monotonously increasing and positive solutions of the \ac{TOV} equation have non-positive slope in the pressure $p$ component.\\
+	The second condition is obtained when applying L'Hosptials Rule as was done in the beginning of section \ref{4-NumSol-Sec-Comp-TOV-LE}.
+	For the third condition we first inspect that condition \ref{5-Zeroes-Equ-TOV-Conditions-1} lets us choose $(1-2m/r)^{-1}\leq 2$.
+	\begin{align}
+		p_0 - p &=\int\limits_0^r\frac{1}{r'^2}\left(p+\rho\right)\left(4\pi pr'^3+m\right)\left(1-\frac{2m}{r'}\right)^{-1}dr'\\
+				&\leq2\left(p_0+\rho_0\right)\int\limits_0^r\frac{4\pi pr'^3+m}{r'^2}dr'\\
+				&\leq2(p_0+\rho_0)\int\limits_0^r\left(4\pi p_0r' + \frac{4\pi\rho_0r'}{3}\right)dr'\\
+				&=4\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)r^2
+	\end{align}
+	In the first step we used that $p$ is a \ac{TOV} solution while in the second step the aforementioned inequality and just as in the last step the non-positive slope of $p$ with the monotonicity of $\rho$ came into play.
+	Afterwards we used the first condition \ref{5-Zeroes-Equ-TOV-Conditions-1} and integrated the result.
+	It is now clear that a small enough $\epsilon>0$ can be chosen such that all stated conditions are satisfied.
+\end{proof}
+\begin{lemma}[TOV Local existence]
+	The \ac{TOV} equation \ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
+\end{lemma}
+\begin{proof}
+	The proof follows similar principles as previously done in lemma \ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}.
+	In order to solve the problem at hand we need to define a space $K$ consisting of all functions $f:\R\rightarrow\R^2$ that satisfy the boundary conditions in form of initial values $m_0=0$ and $p_0>0$.
+	Additionally we have shown in lemma \ref{5-Zeroes-Lem-TOV-Conditions} that we can apply the listed conditions for a small enough interval $[0,\epsilon]$ without restricting the possible number of solutions.
+	Additionally solutions of the \ac{TOV} equation have non-positive pressure $p$ slope and non-negative mass $m$ slope which is taken as an additional requirement.
+	Thus we call $K$ the space of all functions $f:\R_{\geq0}\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
+	This space is complete with the $C^1$ norm $||.||_1$.
+\end{proof}
 %
 %
 %
