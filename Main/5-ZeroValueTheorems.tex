@@ -2,20 +2,57 @@
 \subsection{LE Equation}
 Motivated by the preceding sections, the aim now is to prove the following theorem.
 \begin{theorem}[Lane-Emden Finite Boundary]
-	\label{5-Zeroes-Lane-EmdenFiniteBoundary}
+	\label{5-Zeroes-The-Lane-EmdenFiniteBoundary}
 	For every $0\leq n<5$, the Lane-Emden equation
 	\begin{equation}
 		\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
-		\label{5-Ideas-LEeq}
+		\label{5-Zeroes-Equ-LEeq}
 	\end{equation}
 	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the statements \ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}, 
-	\ref{5-Zeroes-Lane-EmdenFiniteBoundary2} and \ref{5-Zeroes-Lane-EmdenFiniteBoundary3}.
+	\ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary2} and \ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary3}.
 \end{theorem}
-We explain what the idea behind the proof is.
-...
+The procedure for proving existance is similar for both equations.
+We want to use the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
+In order to tackle these problems we first state some aiding lemmata.
+\begin{lemma}
+	\label{5-Zeroes-Lem-Integral-Contraction}
+	Let $f:I\times U\rightarrow V$ with $I=[a,b]$ and $U\subseteq\R^n,V\subseteq\R^m$ be continuous and $H:C^0\rightarrow C^0$ be Lipschitz.
+	Then the mapping $T:M\rightarrow M$ where $M\subseteq C^0$ which is defined by
+	\begin{equation}
+		T(f)(t,x)=\int\limits_a^tH(f(s,x))ds
+	\end{equation}
+	is a contraction when choosing $t\in[a,a+\epsilon]$ with $\epsilon>0$ small enough.
+\end{lemma}
+\begin{proof}
+	Since $f$ is Lipschitz with constant $L$ we can write
+	\begin{align}
+		||T(f)-T(g)||_\infty 	&\leq \int\limits_a^t||H(f(t,x))-H(g(t,x))||_\infty dt\\
+								&\leq \int\limits_a^tL||f-g||_\infty\\
+								&=(t-a)L||f-g||_\infty.
+	\end{align}
+	Now it is clear that we can choose $\epsilon>0$ small enough such that the mapping is a contraction for $t\in[a,a+\epsilon]$.
+\end{proof}
+\begin{lemma}
+	\label{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable}
+	Let $f:\overline{U}\rightarrow \overline{V}$ with $U\subseteq\R^n,V\subseteq\R^m$ open subsets be be continuously partially differentiable and every partial derivative well defined on $\overline{U}$.
+	Then $f$ is Lipschitz on $\overline{U}$.
+\end{lemma}
+\begin{proof}
+	With the mean value theorem of differentiation we know that
+	\begin{equation}
+		\frac{|f(x)-f(y)|}{|x-y|}\leq \mathrm{sup}_{x\in\overline{U}}\left(\partial_{e_i}f(x)\right)
+	\end{equation}
+	where $e_i$ is the unit vector pointing in $x-y$ direction.
+	The right hand side of this equation is by definition a continuous function of $e_i$ and the space of unit vectors in $\R^n$ is $B_1(0)$ and thus compact.
+	This shows that for every possible combination $x,y$ we can take
+	\begin{equation}
+		\frac{|f(x)-f(y)|}{|x-y|}\leq \sup_{e_i\in B_1(0)}\sup_{x\in\overline{U}}\left(\partial_{e_i}f(x)\right):=L
+	\end{equation}
+	as the Lipschitz constant.
+\end{proof}
 \begin{lemma}[LE Local Existence]
 	\label{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}
-	For every $n\geq0$, the Lane-Emden equation \ref{5-Ideas-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
+	For every $n\geq0$, the Lane-Emden equation \ref{5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
 \end{lemma}
 \begin{proof}
 	This proof can be generalised to $l\geq2$ dimensions. 
@@ -26,57 +63,57 @@ We explain what the idea behind the proof is.
 	Integrating once and rearranging leads us to
 	\begin{equation}
 		\frac{d\theta}{d\xi} = \left.\frac{d\theta}{d\xi}\right|_0 - \int\limits_0^\xi\left(\frac{t}{\xi}\right)^{l-1}\theta^ndt.
-		\label{5-Zeroes-LEOperator-Derivative}
+		\label{5-Zeroes-Equ-LEOperator-Derivative}
 	\end{equation}
 	By choosing the correct initial value\footnote{One has to choose this value in order to obtain the correct limiting case when using the non-relativistic limit of the \ac{TOV} equation. See also section \ref{3-Mass-Sec-LEDerivation}} of $d\theta/d\xi=0$ we see that positive solutions to the LE equation need to have negative slope.
 	This equation also shows that for $\theta_0>0$, the solution $\theta$ will be positive in a $\epsilon$ region around $\xi=0$.
 	We integrate both sides again and end up with
 	\begin{equation}
 		\theta = \theta_0 - \int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{l-1}\theta^ndtds.
-		\label{5-Zeroes-LEOperator}
+		\label{5-Zeroes-Equ-LEOperator}
 	\end{equation}
-	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and with non-positive slope. %where $n\in\R$ refers to the exponent given before.
-	Additionally with equation \eqref{5-Zeroes-LEOperator-Derivative} we can restrict ourselves to functions with
+	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and are monotonously decreasing.
+	Additionally with equation \eqref{5-Zeroes-Equ-LEOperator-Derivative} we can restrict ourselves to functions with
 	\begin{equation}
 		\frac{d\theta}{d\xi} \geq -\theta_0^n\frac{\xi}{m}.
-		\label{5-Zeroes-LEOperator-Restrict-Slope}
+		\label{5-Zeroes-Equ-LEOperator-Restrict-Slope}
 	\end{equation}
 	With the norm $||.||_\infty$ this space is complete.
 	Inspecting the operator $T:C^*\rightarrow C^*$ defined by
 % 	\footnote{The  index $1$ refers to the $C^1$ norm given by $||f||_2=||f||_\infty+||f'||_\infty+||f''||_\infty$ on the yet to be defined space.}
-	equation \ref{5-Zeroes-LEOperator} we can apply the Banach fixed-point theorem \cite{banachOperationsDansEnsembles1922}.
+	equation \eqref{5-Zeroes-Equ-LEOperator} we can apply the Banach fixed-point theorem \cite{banachOperationsDansEnsembles1922} in combination with lemma \ref{5-Zeroes-Lem-Integral-Contraction}.
 % 	Without loss of generality, we can assume $U\neq V$. Then
 	\begin{align}
 		||T(U)-T(V)||_\infty	&\leq	\left|\left|U^n-V^n\right|\right|_\infty\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}dtds\\
 								&=		\left|\left|U^n-V^n\right|\right|_\infty\frac{\xi^2}{2l}
 	\end{align}
 	Let $n\geq1$. 
-	Since the function $x\mapsto x^n$ is differentiable for $n\geq1$ it is also Lipschitz with constant $L$ on the compact interval $I=[0,\theta_0]$.
+	Since the function $x\mapsto x^n$ is differentiable for $n\geq1$ with lemma \ref{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable} it is also Lipschitz with constant $L$ on the compact interval $I=[0,\theta_0]$.
 	This means in particular that we have
 	\begin{equation}
 		||T(U)-T(V)||_\infty	\leq	\left|\left|U-V\right|\right|_\infty\frac{L\xi^2}{2l}
 	\end{equation}
-	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \ref{5-Zeroes-LEOperator}.\\
+	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \eqref{5-Zeroes-Equ-LEOperator}.\\
 	Now let $0\leq n<1$.
 	In this situation the preceding method does not work due to $x^n$ not being differentiable or Lipschitz at $x=0$. 
-	Since by definition of $C^*$, we had chosen \eqref{5-Zeroes-LEOperator-Restrict-Slope} as an additional constraint, we can now choose $\epsilon$ small enough to have $\theta\geq q>0$ on $[0,\epsilon]$.
+	Since by definition of $C^*$, we had chosen \eqref{5-Zeroes-Equ-LEOperator-Restrict-Slope} as an additional constraint, we can now choose $\epsilon$ small enough to have $\theta\geq q>0$ on $[0,\epsilon]$.
 	Then the same procedure as before can be carried through but with the interval $I=[q,\theta]$.
-\end{proof}
-Equation \eqref{5-Zeroes-LEOperator-Derivative} shows that non-negative solutions must have non-positive slope.
+\end{proof}\noindent
+Equation \eqref{5-Zeroes-Equ-LEOperator-Derivative} shows that non-negative solutions must have non-positive slope.
 The following theorem makes use of that fact and of a different representation of the \ac{LE} equation to show that solutions can be extended until they reach zero.
-\begin{lemma}
-	Let $\theta$ be a \ac{LE} solution on $[0,\epsilon)$. 
-	Additionally suppose that $\lim\limits_{\xi\rightarrow\epsilon}\theta(\xi)>0$.
-	Then we can find a $\delta$ such that an extension of $\theta$ around $\epsilon$ exists.
-\end{lemma}
-\begin{proof}
-	First we will rewrite the \ac{LE} equation.
-	\begin{align}
-		\frac{d\theta}{d\xi} &= \chi\\
-		\frac{d\chi}{d\xi} &= -\theta^n - \frac{2}{\xi}\chi
-	\end{align}
-	From here we can see that this equation at $\epsilon>0$ is solvable by means of the Picard-Lindelöf theorem.
-\end{proof}
+% \begin{lemma}
+% 	Let $\theta$ be a \ac{LE} solution on $[0,\epsilon)$. 
+% 	Additionally suppose that $\lim\limits_{\xi\rightarrow\epsilon}\theta(\xi)>0$.
+% 	Then we can find a $\delta$ such that an extension of $\theta$ around $\epsilon$ exists.
+% \end{lemma}
+% \begin{proof}
+% 	First we will rewrite the \ac{LE} equation.
+% 	\begin{align}
+% 		\frac{d\theta}{d\xi} &= \chi\\
+% 		\frac{d\chi}{d\xi} &= -\theta^n - \frac{2}{\xi}\chi
+% 	\end{align}
+% 	From here we can see that this equation at $\epsilon>0$ is solvable by means of the Picard-Lindelöf theorem.
+% \end{proof}
 %
 %
 %
@@ -91,9 +128,9 @@ The following theorem makes use of that fact and of a different representation o
 	and initial values $m_0=0,p_0\geq0$ there exists a $n_0\geq0$ such that all solutions with same parameters $A,p_0$ and smaller exponent $n<n_0$ have a $p(r_0)$ for some $r_0>0$.
 \end{hypothesis}
 \begin{proof}
-	asdf
+	... 
+	% TODO write something about this proof.
 \end{proof}
-
 \begin{lemma}
 	\label{5-Zeroes-Lem-TOV-Conditions}
 	Let $(m,p):\R\rightarrow\R^2$ be a \ac{TOV} solution with initial values $m_0=0$ and $p_0>0$.
@@ -130,9 +167,20 @@ The following theorem makes use of that fact and of a different representation o
 	The proof follows similar principles as previously done in lemma \ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}.
 	In order to solve the problem at hand we need to define a space $K$ consisting of all functions $f:\R\rightarrow\R^2$ that satisfy the boundary conditions in form of initial values $m_0=0$ and $p_0>0$.
 	Additionally we have shown in lemma \ref{5-Zeroes-Lem-TOV-Conditions} that we can apply the listed conditions for a small enough interval $[0,\epsilon]$ without restricting the possible number of solutions.
-	Additionally solutions of the \ac{TOV} equation have non-positive pressure $p$ slope and non-negative mass $m$ slope which is taken as an additional requirement.
-	Thus we call $K$ the space of all functions $f:\R_{\geq0}\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
-	This space is complete with the $C^1$ norm $||.||_1$.
+	Solutions of the \ac{TOV} equation have monotonously decreasing pressure $p$ and monotonously increasing mass $m$ which is taken as an additional requirement.
+	We now call $K$ the space of all functions $f:\R_{\geq0}\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
+	This space is complete with the norm $||.||_\infty$.
+	We will now again apply the Banach fixed-point theorem in combintion with lemma \ref{5-Zeroes-Lem-Integral-Contraction} to obtain a unique solution.
+	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation
+	\begin{equation}
+		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2dr',-\int\limits_0^r\frac{1}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
+	\end{equation}
+	Now clearly the inner arguments of the integral are differentiable in $r,m,p$ and well defined if $r>0$.
+	There are some terms which cause problems when $r=0$.
+	Looking at $m/r$ we see that condition \eqref{5-Zeroes-Equ-TOV-Conditions-2} we issued now tells us that $m/r\rightarrow0$ as $r\rightarrow0$.
+	Similarly condition \eqref{5-Zeroes-Equ-TOV-Conditions-2} implies that $m/r^2\rightarrow0$ in the same limit.
+	This now means that on this space $K$ the integrand has a well defined differential for every $r\in[0,\epsilon]$ which in turn shows with lemma \ref{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable} that it is Lipschitz.
+	Using lemma \ref{5-Zeroes-Lem-Integral-Contraction} we can apply the Banach fixed-point theorem and obtain a unique solution.
 \end{proof}
 %
 %
