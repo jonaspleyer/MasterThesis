@@ -15,3 +15,7 @@ Main/Thesis.pdf
 
 # Ignore kile viewing directory
 Main/.kile
+
+# Ignore Intellij Files
+.idea
+Written.iml
