@@ -23,11 +23,13 @@ For equation \eqref{4-NumSol-Equ-TOVEqBasic1}, the initial value can be calculat
 Explicit code can be found in \cite{pleyerGithubRepositoryJonas2021}. 
 The Lane-Emden equation was obtained in section \ref{3-Mass-Sec-LEDerivation} as the non-relativistic limit of the \ac{TOV} equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$. 
 To obtain numerical results for the \ac{LE} equation as given in equation \eqref{3-Mass-Equ-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
-\begin{alignat}{3}
-	\frac{d\theta}{d\xi} &= \chi &\hspace{1cm} \left.\frac{d\theta}{d\xi}\right|_{\xi=0} &= 0\\
-	\frac{d\chi}{d\xi} &= -\frac{2}{\xi}\chi-\theta^n & \left.\frac{d\chi}{d\xi}\right|_{\xi=0} &= -\theta^n
-	\label{4-NumSol-Equ-LE-Substitution}
-\end{alignat}
+\begin{equation}
+	\begin{aligned}
+		\frac{d\theta}{d\xi} &= \chi &\hspace{1cm} \left.\frac{d\theta}{d\xi}\right|_{\xi=0} &= 0\\
+		\frac{d\chi}{d\xi} &= -\frac{2}{\xi}\chi-\theta^n & \left.\frac{d\chi}{d\xi}\right|_{\xi=0} &= -\theta^n
+		\label{4-NumSol-Equ-LE-Substitution}
+	\end{aligned}
+\end{equation}
 where the initial value for $d\chi/d\xi$ can be calculated with L'Hôpital's rule. 
 With the conversion factor $\kappa$ derived in section \ref{3-Mass-Sec-LEDerivation}, \ac{TOV} and \ac{LE} results can be compared. 
 Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows the solution of both equations for the parameters of table \ref{4-NumSol-Tbl-TOVParameters}. 
@@ -80,7 +82,7 @@ One can compare calculated \ac{LE} results with already known exact  solutions f
 All calculations are carried out with a chosen step size of $d\xi=0.03$.\\
 The graphs overall show good numerical agreement. 
 Initial values at $r=0$ are identical since they were set to be. 
-The spike occurring afterwards can be explained by equation \eqref{4-NumSol-Equ-LE-Substitution}. 
+The spike occurring afterwards can be explained by equations \eqref{4-NumSol-Equ-LE-Substitution}. 
 The initial value of all derivatives is identically $0$ which means no change of value for $\theta$ or $\chi$ for the initial step of the numerical integration. 
 On the other hand the exact results will see a change which explains the large discrepancy in the beginning.
 It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. 

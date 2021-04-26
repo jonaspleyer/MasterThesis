@@ -101,19 +101,16 @@ In order to tackle these problems we first state some aiding lemmata.
 \end{proof}\noindent
 Equation \eqref{5-Zeroes-Equ-LEOperator-Derivative} shows that non-negative solutions must have non-positive slope.
 The following theorem makes use of that fact and of a different representation of the \ac{LE} equation to show that solutions can be extended until they reach zero.
-% \begin{lemma}
-% 	Let $\theta$ be a \ac{LE} solution on $[0,\epsilon)$. 
-% 	Additionally suppose that $\lim\limits_{\xi\rightarrow\epsilon}\theta(\xi)>0$.
-% 	Then we can find a $\delta$ such that an extension of $\theta$ around $\epsilon$ exists.
-% \end{lemma}
-% \begin{proof}
-% 	First we will rewrite the \ac{LE} equation.
-% 	\begin{align}
-% 		\frac{d\theta}{d\xi} &= \chi\\
-% 		\frac{d\chi}{d\xi} &= -\theta^n - \frac{2}{\xi}\chi
-% 	\end{align}
-% 	From here we can see that this equation at $\epsilon>0$ is solvable by means of the Picard-Lindelöf theorem.
-% \end{proof}
+\begin{lemma}
+	Let $\theta$ be a \ac{LE} solution and $[0,\xi_\mathrm{max}]$ be the maximum interval of existence.
+	Then $\theta(\xi_\mathrm{max})=0$ or $\xi_\mathrm{max}=\infty$.
+\end{lemma}
+\begin{proof}
+	It is clear that $\theta<0$ is a case that can never appear as long as we are interested in real solutions.
+	Suppose $\theta(\xi_\mathrm{max})>0$ and $\xi_\mathrm{max}<\infty$.
+	Then there exists a interval $(\xi_\mathrm{max}-\epsilon,\xi_\mathrm{max}+\epsilon)$ and $(\theta(\xi_\mathrm{max})-\delta,\theta(\xi_\mathrm{max})+\delta)$ where the \ac{LE} differential equation has a solution.
+	With equations \ref{4-NumSol-Equ-LE-Substitution} we can directly see that the Picard-Lindelöf theorem is applicable in this situation.
+\end{proof}
 %
 %
 %
