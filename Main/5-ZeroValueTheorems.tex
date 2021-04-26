@@ -16,8 +16,8 @@ We want to use the Banach fixed-point theorem to show that over a suitably chose
 In order to tackle these problems we first state some aiding lemmata.
 \begin{lemma}
 	\label{5-Zeroes-Lem-Integral-Contraction}
-	Let $f:I\times U\rightarrow V$ with $I=[a,b]$ and $U\subseteq\R^n,V\subseteq\R^m$ be continuous and $H:C^0\rightarrow C^0$ be Lipschitz.
-	Then the mapping $T:M\rightarrow M$ where $M\subseteq C^0$ which is defined by
+	Let $f:I\times U\rightarrow V$ with $I=[a,b]$ and $U\subseteq\R^n,V\subseteq\R^m$ be continuous and $H:K\rightarrow K$ with $K\subseteq C^0(I\times U,V)$ be Lipschitz.
+	Then the mapping $T:K\rightarrow K$ which is defined by
 	\begin{equation}
 		T(f)(t,x)=\int\limits_a^tH(f(s,x))ds
 	\end{equation}
@@ -50,6 +50,17 @@ In order to tackle these problems we first state some aiding lemmata.
 	\end{equation}
 	as the Lipschitz constant.
 \end{proof}
+% \begin{lemma}
+% 	Let $H:I\times U\rightarrow V$ be a function such that $H$ is differentiable for $(t,x)\in I^{\mathrm{o}}\times U$
+% 	\footnote{Here $I^{\mathrm{o}}$ refers to the interior of the Interval.}
+% 	and has well defined partial differential
+% 	\begin{equation}
+% 		\frac{\partial H}{\partial t}
+% 	\end{equation}
+% 
+% \end{lemma}
+% 
+
 \begin{lemma}[LE Local Existence]
 	\label{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}
 	For every $n\geq0$, the Lane-Emden equation \ref{5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
