@@ -169,14 +169,14 @@ The following theorem makes use of that fact and of a different representation o
 	It is now clear that a small enough $\epsilon>0$ can be chosen such that all stated conditions are satisfied.
 \end{proof}
 \begin{lemma}[TOV Local existence]
-	The \ac{TOV} equation \ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
+	The \ac{TOV} equation \ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
 \end{lemma}
 \begin{proof}
 	The proof follows similar principles as previously done in lemma \ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}.
-	In order to solve the problem at hand we need to define a space $K$ consisting of all functions $f:\R\rightarrow\R^2$ that satisfy the boundary conditions in form of initial values $m_0=0$ and $p_0>0$.
-	Additionally we have shown in lemma \ref{5-Zeroes-Lem-TOV-Conditions} that we can apply the listed conditions for a small enough interval $[0,\epsilon]$ without restricting the possible number of solutions.
-	Solutions of the \ac{TOV} equation have monotonously decreasing pressure $p$ and monotonously increasing mass $m$ which is taken as an additional requirement.
-	We now call $K$ the space of all functions $f:\R_{\geq0}\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
+	In order to solve the problem at hand we need to define a space $K$ consisting of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that all satisfy the same boundary conditions in form of initial values $m_0=0$ and $p_0>0$.
+	Additionally we have shown in lemma \ref{5-Zeroes-Lem-TOV-Conditions} that we can apply the listed conditions for a small enough interval $[0,\epsilon]$ without reducing the number of possible solutions.
+	Since solutions of the \ac{TOV} equation have monotonously decreasing pressure $p$ and monotonously increasing mass $m$ those are taken as an additional requirement.
+	We now call $K$ the space of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
 	This space is complete with the norm $||.||_\infty$.
 	We will now again apply the Banach fixed-point theorem in combination with lemma \ref{5-Zeroes-Lem-Integral-Contraction} to obtain a unique solution.
 	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation
