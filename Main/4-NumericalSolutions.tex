@@ -1,5 +1,5 @@
 \begin{section}{Numerical Solutions}
-\begin{subsection}{Comparing TOV and LE results with a polytropic EOS}% TODO find out how to get EOS here without link
+\begin{subsection}{Comparing \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} results with a polytropic \acrNoHyperlink{\acs}{eos}}% TODO find out how to get EOS here without link
 \label{4-NumSol-Sec-Comp-TOV-LE} %TODO here as well
 In this section the numerical solutions of the \ac{TOV} equation
 \begin{align}
@@ -59,7 +59,7 @@ The plot in figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour
 		&&& $\kappa^2=((n+1)K\lambda^{1/n-1})/(4\pi)$ & $\approx0.1125$\\
 		\bottomrule
 	\end{tabular}
-	\caption[Numerical Parameters for TOV and LE equation]{Numerical Parameters for \ac{TOV} and \ac{LE} equation.}
+	\caption[Numerical Parameters for \acrNoHyperlink{\acs}{TOV} and LE equation]{Numerical Parameters for \ac{TOV} and \ac{LE} equation.}
 	\label{4-NumSol-Tbl-TOVParameters}
 \end{table}%
 \begin{figure}[H]
@@ -92,7 +92,8 @@ Despite this behaviour we can see that the criterion for convergence is fulfille
 	\centering
 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols-2.pgf}
 	% TODO If time left fix left axis of this plot
-	\caption[Validation of numerical LE results]{Validation of numerical \ac{LE} results - The first two plots show absolute and relative difference of known exact and numerically calculated results while the third plot shows the behaviour of the maximum value of $\Delta$ as the stepsize decreases.}
+	\caption{Validation of numerical LE results}
+	The first two plots show absolute and relative difference of known exact and numerically calculated results while the third plot shows the behaviour of the maximum value of $\Delta$ as the stepsize decreases.
 	\label{4-NumSol-Plt-ValidateLEResults}
 \end{figure}\noindent
 As can be seen in the last column of plots, the condition for convergence in this case is well fulfilled. 
@@ -109,7 +110,7 @@ The double logarithmic plot displays nicely that by lowering the integration ste
 \end{subsection}
 %
 %
-\begin{subsection}{Relativistic EOS}
+\begin{subsection}{Relativistic \acrNoHyperlink{\acs}{eos}}
 \label{4-NumSol-Sec-RelEOS}
 In the previous discussion, we relied on the EOS given in table \ref{4-NumSol-Tbl-TOVParameters}. 
 This is a versatile assumption, but one could ask, what would happen to a star in which the particles have no interaction but are near relativistic speed. The resulting EOS was calculated in the beginning (see equation \eqref{2-IntEner-FinalEOS}) although not written down explicitly. 
@@ -141,7 +142,7 @@ This normalises both \acp{eos} to same inital pressures.
 \end{subsection}
 %
 %
-\begin{subsection}{Zero Values of the TOV and LE equation}
+\begin{subsection}{Zero Values of the \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} equation}
 \label{4-NumSol-Sec-TOV-Exponents}
 Having discussed individual solutions for the \ac{TOV} and \ac{LE} equation, this section now turns to analysing zero values of both equations.
 We define a zero value as the first point in which the solution of our differential equation reaches value $0$, or more precisely where the pressure $p$ reaches zero.\footnote{Note that $p_0$ still denotes the initial value while $r_0$ and $\xi_0$ denote values where $p=0$.}
@@ -183,9 +184,12 @@ Numerical optimisations to speed up calculation times and a short discussion on 
 % 	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults.pgf}
 % 	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults-1.pgf}
 	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults-Combo.pgf}
-	\caption[Zero Values of TOV and LE equation]{Zero Values of \ac{TOV} and \ac{LE} equation - 
-	In the first plot results for $p_0=8$ have been omitted for better visual clarity. These behave similar to the $p_0=1$ results.}
+%	\caption[Zero Values of TOV and LE equation]{Zero Values of \ac{TOV} and \ac{LE} equation -
+%	In the first plot results for $p_0=8$ have been omitted for better visual clarity. These behave similar to the $p_0=1$ results.}
+	\caption{Zero Values of TOV and LE equation}
 	\label{4-NumSol-Plt-TOV-Exponents-Combo}
+	In the first plot results for $p_0=8$ have been omitted for better visual clarity.
+	These behave similar to the $p_0=1$ results.
 \end{figure}
 \end{subsection}
 %
