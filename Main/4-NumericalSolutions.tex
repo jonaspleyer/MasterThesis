@@ -1,15 +1,16 @@
 \begin{section}{Numerical Solutions}
-\begin{subsection}{Comparing TOV and LE results with a polytropic EOS}
-\label{4-NumSol-Sec-Comp-TOV-LE}
+\begin{subsection}{Comparing TOV and LE results with a polytropic EOS}% TODO find out how to get EOS here without link
+\label{4-NumSol-Sec-Comp-TOV-LE} %TODO here as well
 In this section the numerical solutions of the \ac{TOV} equation
 \begin{align}
 	\frac{\partial m}{\partial r} &= 4\pi\rho r^2\label{4-NumSol-Equ-TOVEqBasic1}\\
 	\frac{\partial p}{\partial r} &=-\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
 	\label{4-NumSol-Equ-TOVEqBasic2}
 \end{align}
-as derived previously in section \ref{3-Mass-Sec-TOVDerivation} will be discussed. To obtain numerical solvability a \ac{eos} in the form $\rho(r,p)$ is supplied. 
+as derived previously in section \ref{3-Mass-Sec-TOVDerivation} will be discussed.
+To obtain numerical solvability an \ac{eos} in the form $\rho(r,p)$ is supplied.
 % TODO Add reference for when the equations are solvable
-In Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} a plot of such a solution is presented.
+In Figure \ref{4-NumSol-Plt-TOVEqEasyEOS}, a plot of such a solution is presented.
 The density $\rho$ is derived via the equation \eqref{4-NumSol-Equ-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method \cite{rungeUeberNumerischeAufloesung1895, schlömilch1901zeitschrift, h.SimplifiedDerivationAnalysis2010}.
 The integration is stopped once the pressure reaches values $p\leq0$. 
 The initial value of \eqref{4-NumSol-Equ-TOVEqBasic1} is $\partial_r m(r=0)=0$. 
@@ -30,9 +31,9 @@ To obtain numerical results for the \ac{LE} equation as given in equation \eqref
 \end{alignat}
 where the initial value for $d\chi/d\xi$ can be calculated with L'Hôpital's rule. 
 With the conversion factor $\kappa$ derived in section \ref{3-Mass-Sec-LEDerivation}, \ac{TOV} and \ac{LE} results can be compared. 
-Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows the solution of both equations for the parameters of table \ref{4-NumSol-Tbl-TOVParameters}. 
-Note that values in the last part are calculated instead of supplied to the solving routine. 
-Additionally conversion equations to compare \ac{TOV} and \ac{LE} results are displayed.\\
+Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows the solution of both equations for the parameters of table \ref{4-NumSol-Tbl-TOVParameters}.% TODO make table and figure capital
+Note that values in the lower part ($\rho_0,\lambda,K,\kappa^2$) of the table are calculated instead of supplied to the solving routine.
+Additionally, conversion equations to compare \ac{TOV} and \ac{LE} results are displayed.\\
 Since the mass reads
 \begin{equation}
 	m(r) = \int\limits_0^r 4\pi r'^2\rho(r')dr',
@@ -64,7 +65,7 @@ The plot in figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour
 \begin{figure}[H]
 	\centering
 	\import{pictures/4-NumericalSolutions/}{TOV-LE-Combi.pgf}
-	\caption[Comparison of the TOV and LE equation]{Comparison of the general relativistic \ac{TOV} result with polytropic \ac{eos} to the classical Lane-Emden solution. 
+	\caption[Comparison of the TOV and LE equation]{Comparison of the general relativistic \ac{TOV} result with polytropic \ac{eos} to the classical Lane-Emden solution.% TODO format better to match other descriptions
 	The images show the plots for the parameters of table \ref{4-NumSol-Tbl-TOVParameters}. 
 	First the pressure is presented. Afterwards the density calculated with the given EOS and the average density $\bar{\rho}_i=(4\pi/3)^{-1}m_i/r^3$ for the two solutions are beeing compared. In the second row, the mass and the ratio $m_i/r$ can be seen.}
 	\label{4-NumSol-Plt-TOVEqEasyEOS}
@@ -86,7 +87,7 @@ On the other hand the exact results will see a change which explains the large d
 It is clear that the relative difference on the right hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant. 
 This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen. 
 The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
-Despite this behaviour we can see that the criterion for convergence is fulfilled in the last column of figure \ref{4-NumSol-Plt-ValidateLEResults}.
+Despite this behaviour we can see that the criterion for convergence is fulfilled in the last column of figure \ref{4-NumSol-Plt-ValidateLEResults}.%TODO figure capital
 \begin{figure}[H]
 	\centering
 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols-2.pgf}

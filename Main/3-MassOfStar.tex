@@ -1,9 +1,11 @@
-\begin{section}{Calculating the Mass of a Star with an EOS}
+\begin{section}{Calculating the Mass of a Star with an \acs{eos}}
+	% TODO swap all abbreviations
 \begin{subsection}{Deriving the TOV-Equation}
 \label{3-Mass-Sec-TOVDerivation}
+This chapter derives the \ac{TOV} equation which was introduced earlier in %TODO reference section 01-Introduction with GR references.
 Information about \ac{gr} can be found in \cite{choquet-bruhatAnalysisManifoldsPhysics2000, choquet-bruhatGeneralRelativityEinstein2009, choquet-bruhatIntroductionGeneralRelativity2015, waldGeneralRelativity1984}.
 We follow the derivation of Wald.
-In this chapter, we consider a spherical-symmetric static Lorentz-Manifold $(V,g)$ with charts such that the metric $g$ can be written as
+We consider a spherical-symmetric static Lorentz-Manifold $(V,g)$ with charts such that the metric $g$ can be written as
 \begin{equation}
 	g=-\e^\nu dt^2+\e^\lambda dr^2 + r^2(d\theta^2+\sin^2\theta d\phi^2).
 \end{equation}
@@ -11,7 +13,8 @@ The stress-energy tensor of an ideal fluid with density $\rho$ and pressure $p$ 
 \begin{equation}
 	T_{\mu\nu}=\rho u_\mu u_\nu + p(g_{\mu\nu}+u_\mu u_\nu)
 \end{equation}
-where $u$ is the 4-velocity of the fluid. In the rest frame where $u^\mu=(-\e^{-\nu/2},0,0,0)$, this equation simplifies to
+where $u$ is the 4-velocity of the fluid.
+In the rest frame where $u^\mu=(-\e^{-\nu/2},0,0,0)$, this equation simplifies to
 \begin{equation}
 	T^\mu_\nu=\text{diag}(-\rho,p,p,p)
 \end{equation}
@@ -36,8 +39,7 @@ The Christoffel symbols for this metric are
 	                     	& & & -\sin\theta\cos\theta
 	                     \end{bmatrix}, \hspace{0.3cm}
 	\Gamma_{\mu\nu}^3 = \begin{bmatrix}
-	                     	0 & & &\\
-	                     	& 0 & &\\
+	                     	& 0 & 0 &\\
 	                     	& 0 & 0 & 1/r\\
 	                     	& 0 & 0 & \cos\theta/\sin\theta\\
 	                     	& 1/r & \cos\theta/\sin\theta & 0
@@ -50,24 +52,26 @@ From these, the non-zero components of the Ricci-Tensor can be calculated
 	R_{33} &= -\frac{1}{2r^2}\e^{-\lambda}\left(r\nu'-r\lambda'-2\e^\lambda+2\right)\\
 	R_{44} &= R_{33}
 \end{align}
-and with $R_{\mu\nu}-g_{\mu\nu}R/2=G_{\mu\nu}=8\pi T_{\mu\nu}$ ultimately yield the following field equations.
+and with $R_{\mu\nu}-g_{\mu\nu}R/2=G_{\mu\nu}=8\pi T_{\mu\nu}$ we ultimately receive the following field equations.
 \begin{align}
 	-8\pi T_0^0 = 8\pi\rho &= \frac{\lambda'\e^{-\lambda}}{r}+\frac{1-\e^{-\lambda}}{r^2}\label{3-Mass-Equ-EinstEqu-1}\\
 	8\pi T_1^1 = 8\pi p &= \nu'\frac{\e^{-\lambda}}{r} - \frac{1-\e^{-\lambda}}{r^2}\label{3-Mass-Equ-EinstEqu-2}\\
 	8\pi T_2^2 = 8\pi p &= \frac{\e^{-\lambda}}{2}\left[\nu''+\left(\frac{\nu'}{2} + \frac{1}{r}\right)\left(\nu'-\lambda'\right) \right]\label{3-Mass-Equ-EinstEqu-3}
 \end{align}
-Since $R_4^4=R_3^3$, we omitted the last equation. From equation \eqref{3-Mass-Equ-EinstEqu-1} we infer the relation.
+Since $R_4^4=R_3^3$, we omitted the last equation.
+From equation \eqref{3-Mass-Equ-EinstEqu-1} we infer the relation.
 \begin{equation}
 	\e^{-\lambda} = 1 - \frac{2}{r}\int\limits_0^r 4\pi\rho(r') r'^2dr' = 1 - \frac{2m(r)}{r}.
 	\label{3-Mass-Equ-MassDepOnr}
 \end{equation}
-The metric needs to be defined at every point in space and thus we can not have any additional integration constant in equation \eqref{3-Mass-Equ-MassDepOnr}, since otherwise we would obtain a term $a/r$ which is ill defined for $r\rightarrow0$.\\
-The property $m(r)$ can be recognised as the Newtonian mass of the star (which is different to the proper mass \cite{waldGeneralRelativity1984}). Since $\e^{-\lambda}>0$, we immediately see that $m(r)<r/2$.\\
-In addition to the Field equations \eqref{3-Mass-Equ-EinstEqu-1} to \eqref{3-Mass-Equ-EinstEqu-3} the divergence of the Stress-Energy Tensor yields more information
+The metric needs to be defined at every point in space and thus can not have any additional integration constant in equation \eqref{3-Mass-Equ-MassDepOnr}, since otherwise we would obtain a term $a/r$ which is not defined for $r\rightarrow0$.\\
+The property $m(r)$ can be recognised as the Newtonian mass of the star (which is different to the proper mass \cite{waldGeneralRelativity1984}).
+Since $\e^{-\lambda}>0$, we immediately see that $m(r)<r/2$.\\
+In addition to the Field equations \eqref{3-Mass-Equ-EinstEqu-1} through \eqref{3-Mass-Equ-EinstEqu-3} the divergence of the Stress-Energy Tensor yields more information
 \begin{equation}
 	\nabla_\mu T^{\mu\nu}=0.
 \end{equation}
-The following explicit calculation\footnote{Again assuming spherical symmetry.} shows how to obtain this additional restriction on the pressure and density.
+The following explicit calculation, which again assumes spherical symmetry, shows how to obtain this additional restriction on the pressure and density.
 \begin{align}
 	\nabla_\mu T^\mu_\nu 	&= \partial_\mu T^\mu_1 + \Gamma^\mu_{\mu\sigma}T^\sigma_\nu-\Gamma^\sigma_{\mu\nu}T^\mu_\sigma\\
 	\nabla_\mu T^\mu_1		&= \frac{\partial p}{\partial r} + p\left(\Gamma^0_{01}+\Gamma^1_{11}+\Gamma^2_{21}+\Gamma^3_{31} \right) - \Gamma^\sigma_{\mu 1}T^\mu_\sigma\\
@@ -95,7 +99,8 @@ where in the last step the constants $c=G=1$ were put back in. Equation \eqref{3
 \pagebreak
 \begin{subsection}{Newtonian Limit}
 \label{3-Mass-Sec-LEDerivation}
-This section follows \cite{weissteinLaneEmdenDifferentialEquation2020} and \cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}. Together with a polytropic \ac{eos} $p=K\rho^{1+1/n}$ and the definition $\rho=\lambda\theta^n$, we expect to obtain the Newtonian behavior in the non-relativistic limit in the form of the \ac{LE} equation
+This section follows \cite{weissteinLaneEmdenDifferentialEquation2020} and \cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}.
+Together with a polytropic \ac{eos} $p=K\rho^{1+1/n}$ and the definition $\rho=\lambda\theta^n$, we expect to obtain the Newtonian behavior in the non-relativistic limit in the form of the \ac{LE} equation
 \begin{equation}
 	\frac{K(n+1)\lambda^{1/n-1}}{4\pi}\Delta\theta+\theta^n=0.
 \end{equation}
