@@ -1,8 +1,8 @@
 \begin{section}{Thermodynamic Calculation of an \acrNoHyperlink{\acs}{eos}}
 % TODO Make clear what I have done and what is from other sources
-This chapter aims at developing an fully special relativistic \ac{eos} of a noninteracting gas.
-We briefly summarise important concepts necessary for the derivation.\\
-In the canonical ensemble, for which a introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
+This chapter aims at developing a fully special relativistic \ac{eos} of a non-interacting gas.
+We briefly summarise important concepts necessary for the derivation.
+In the canonical ensemble, for which an introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
 Microscopically, the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$.
 Concepts and definitions of Hamilton Mechanics can be found in \cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010}.
 In general we assume $H:\R^{3N}\times\R^{3N}\rightarrow\R$ to be a positive smooth function that assigns an energy to the positions and momenta of $N$ particles.
@@ -56,7 +56,8 @@ The special relativistic Hamiltonian is given by
 \begin{equation}
 	H=mc^2\sqrt{1+\frac{p^2}{m^2c^2}}.
 \end{equation}
-The ultra-relativistic limit can be obtained by letting $m\rightarrow0$. In this limiting case we should be able to recover the results from equation \eqref{2-IntEner-UltraRelZ}.
+The ultra-relativistic limit can be obtained by letting $m\rightarrow0$.
+In this limiting case we should be able to recover the results from equation \eqref{2-IntEner-UltraRelZ}.
 \begin{align}
 	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \frac{mc^2\sqrt{1+\frac{p^2}{m^2c^2}}}{k_BT}\right)\diff^3p\right]^N\label{2-IntEner-EQ1}\\
 		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty 4\pi p^2\exp\left(-\beta mc^2\sqrt{1+\frac{p^2}{m^2c^2}} \right)\diff p\right]^N\\
@@ -69,7 +70,10 @@ The ultra-relativistic limit can be obtained by letting $m\rightarrow0$. In this
 		&= \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^{3}\frac{\alpha^2K_2(\alpha)}{2}\right)^N
 		\label{2-IntEner-PartFunc}
 \end{align}
-In the first step we used spherical coordinates followed by the substitution $qmc=p$ and $\alpha=\beta mc^2=mc^2/k_BT$. Afterwards we substituted $q=\sinh(x)$ and used the identity $\cosh(x)\sinh(x)=\sinh(2x)/2$. Partial integration then leads to the last integral which can be identified as the modified Bessel function of the 2nd kind $K_2(\alpha)$ \cite{abramowitzPocketbookMathematicalFunctions1984}. The equation is then rewritten such that the ultra-relativistic limit can be read off upon letting $\alpha\rightarrow0$.\\ % TODO find better formulation for "read off"
+In the first step we used spherical coordinates followed by the substitution $qmc=p$ and $\alpha=\beta mc^2=mc^2/k_BT$.
+Afterwards we substituted $q=\sinh(x)$ and used the identity $\cosh(x)\sinh(x)=\sinh(2x)/2$.
+Partial integration then leads to the last integral which can be identified as the modified Bessel function of the 2nd kind $K_2(\alpha)$ \cite{abramowitzPocketbookMathematicalFunctions1984}.
+The equation is then rewritten such that the ultra-relativistic limit can be read off upon letting $\alpha\rightarrow0$.\\
 We can now calculate the internal energy $\U$ from $\Z$ via equation \eqref{2-IntEner-Def}
 \begin{align}
     \U &= 3Nk_BT - Nk_BT\alpha\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}+2\right)\\
@@ -94,7 +98,7 @@ This more general scenario does not yield the ideal gas law and would thus need 
 This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation \eqref{2-IntEner-pressureDef}.
 We assume an additional constraint namely adiabaticity and thus further reduce the degrees of freedom of the thermodynamic system.\\ % TODO maybe different term for adiabaticity
 When assuming an adiabatic condition $\updelta Q=0$ and using the First Law of Thermodynamics \cite{fliessbachStatistischePhysikLehrbuch2018} $\diff U =\updelta Q + \updelta W$, where $\updelta W=-p\diff V$ and $\diff U=C_V\diff T$, we can relate pressure and temperature. 
-This adiabatic condition is quite well satisfied since the time scale of radiational and other losses compared to the time scale of thermodynamic events is negligible \cite{noerdlingerSolarMassLoss2008, vinkMassLossStellar2017}.
+This adiabatic condition is quite well satisfied since the timescale of radiational and other losses compared to the timescale of thermodynamic events is negligible \cite{noerdlingerSolarMassLoss2008, vinkMassLossStellar2017}.
 Using equation \eqref{2-IntEner-InternelEnergyExplicit} and \eqref{2-IntEner-pressureDef}, we obtain
 \begin{alignat}{3}
     -p\diff V &= C_V\diff T\\
@@ -185,7 +189,7 @@ we have
 	\begin{equation}
 		\frac{K_\nu}{K_{\nu+1}} = \frac{1}{\left(\nu+\frac{1}{2}\right)\left(\frac{1}{2}z\right)}\frac{\int\e^{-tz}\left(t^2-1\right)^{\nu-1/2}\diff t}{\int\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t}
 	\end{equation}
-	and rewrite the demoninator with partial integration
+	and rewrite the denominator with partial integration
 	\begin{equation}
 		 \frac{1}{2}z\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t = \left(\nu+\frac{1}{2}\right)\int\limits_1^\infty \e^{-tz}t\left(t^2-1\right)^{\nu-1/2}\diff t.
 	\end{equation}
@@ -215,21 +219,22 @@ Note that the $\rho_0$ of the plot is not a universal value but rather each func
 The polytropic \ac{eos} $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before, the equation is independent of $A$ and can be uniquely characterised by $n$. % TODO is this comma right?
 For further details, the interested reader is referred to \cite{pleyerGithubRepositoryJonas2021}.
 \begin{figure}[H]
-	\centering
+	{\centering
 	\import{pictures/2-InternalEnergy-Explicit/}{RelEOS.pgf}
-	\caption[Relativistic Equation of State]{Relativistic Equation of State -
+	}
+	\caption{Relativistic \acl{eos}}
+	\label{2-IntEner-RelEOSPlot}
+	\small
 	The relativistic \ac{eos} $\rho(p)$ is normalised such that values can be compared with a polytropic \ac{eos}.
 	Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic \ac{eos}.
-	By normalisation, the graphs of the polytropic \ac{eos} are independent of the factor $A$.}
-	\label{2-IntEner-RelEOSPlot}
-	% TODO general formatting of figures. Keep description in lower font and maybe center title above?
+	By normalisation, the graphs of the polytropic \ac{eos} are independent of the factor $A$.
 \end{figure}
 \end{subsection}
 %
 %
 %
 % \begin{subsection}
-% TODO Generalise the approach given above for a interacting gas under certain conditions.
+% TODO Generalise the approach given above for an interacting gas under certain conditions.
 % \end{subsection}
 %
 %
