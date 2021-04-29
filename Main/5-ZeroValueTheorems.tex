@@ -3,112 +3,122 @@
 Motivated by the preceding sections, the aim now is to prove the following theorem.
 \begin{theorem}[Lane-Emden Finite Boundary]
 	\label{5-Zeroes-The-Lane-EmdenFiniteBoundary}
-	For every $0\leq n<5$, the Lane-Emden equation
+	For every $0\leq n<5$, the generalised Lane-Emden equation
 	\begin{equation}
-		\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
+		\frac{1}{\xi^{l-1}}\frac{d}{d\xi}\left(\xi^{l-1}\frac{d\theta}{d\xi}\right)+\theta^n=0
 		\label{5-Zeroes-Equ-LEeq}
 	\end{equation}
-	with $\theta_0=1$ has a zero value for a finite $\xi_0$. To prove this theorem, show the following statements.
-\end{theorem}\noindent
-The procedure for proving existance is similar for both equations.
-We want to use the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
-In order to tackle these problems we first state some aiding lemmata.
-\begin{lemma}
-	\label{5-Zeroes-Lem-Integral-Contraction}
-	Let $f:I\times U\rightarrow V$ with $I=[a,b]$ and $U\subseteq\R^n,V\subseteq\R^m$ be continuous and $H:K\rightarrow K$ with $K\subseteq C^0(I\times U,V)$ be Lipschitz.
-	Then the mapping $T:K\rightarrow K$ which is defined by
-	\begin{equation}
-		T(f)(t,x)=\int\limits_a^tH(f(s,x))ds
-	\end{equation}
-	is a contraction when choosing $t\in[a,a+\epsilon]$ with $\epsilon>0$ small enough.
-\end{lemma}
-\begin{proof}
-	Since $f$ is Lipschitz with constant $L$ we can write
-	\begin{align}
-		||T(f)-T(g)||_\infty 	&\leq \int\limits_a^t||H(f(t,x))-H(g(t,x))||_\infty dt\\
-								&\leq \int\limits_a^tL||f-g||_\infty\\
-								&=(t-a)L||f-g||_\infty.
-	\end{align}
-	Now it is clear that we can choose $\epsilon>0$ small enough such that the mapping is a contraction for $t\in[a,a+\epsilon]$.
-\end{proof}
-\begin{lemma}
-	\label{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable}
-	Let $f:\overline{U}\rightarrow \overline{V}$ with $U\subseteq\R^n,V\subseteq\R^m$ open subsets be be continuously partially differentiable and every partial derivative well defined on $\overline{U}$.
-	Then $f$ is Lipschitz on $\overline{U}$.
-\end{lemma}
-\begin{proof}
-	With the mean value theorem of differentiation we know that
-	\begin{equation}
-		\frac{|f(x)-f(y)|}{|x-y|}\leq \mathrm{sup}_{x\in\overline{U}}\left(\partial_{e_i}f(x)\right)
-	\end{equation}
-	where $e_i$ is the unit vector pointing in $x-y$ direction.
-	The right hand side of this equation is by definition a continuous function of $e_i$ and the space of unit vectors in $\R^n$ is $B_1(0)$ and thus compact.
-	This shows that for every possible combination $x,y$ we can take
-	\begin{equation}
-		\frac{|f(x)-f(y)|}{|x-y|}\leq \sup_{e_i\in B_1(0)}\sup_{x\in\overline{U}}\left(\partial_{e_i}f(x)\right):=L
-	\end{equation}
-	as the Lipschitz constant.
-\end{proof}
+	with $\theta_0=1$ and $l\geq2$ has a zero value for a finite $\xi_0$.
+	To prove this theorem, we show the statements following in this section.
+\end{theorem}
 \begin{lemma}[LE Local Existence]
-	\label{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}
+	\label{5-Zeroes-Lem-Lane-Emden-Local-Existence}
 	For every $n\geq0$, the Lane-Emden equation \ref{5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
+\end{lemma}\noindent
+The procedure for proving existence is similar for both equations.
+Contrary to what is written in \cite[p.~50]{quittnerSuperlinearParabolicProblems2007} we do not expect to be able to solve this problem with the standard Banach fixed-point theorem.
+Instead, we want to use the Schauder fixed-point theorem \cite{schauderFixpunktsatzFunktionalraumen1930}, which is a variation the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
+In order to do this we examine some properties that solutions of the \ac{LE} differential equation will have.
+\begin{lemma}
+	\label{5-Zeroes-Lem-LE-Conditions}
+	A positive solution $\theta$ of the \ac{LE} equation with $n\geq0$ on a suitably chosen interval $[0,\lambda]$ obeys the conditions
+	\begin{align}
+		\theta(0) 					&= \theta_0>0\label{5-Zeroes-Equ-LE-Conditions-Initial-1}\\
+		\left.\frac{d\theta}{d\xi}\right|_{\xi=0} &= 0 \label{5-Zeroes-Equ-LE-Conditions-Initial-2}\\
+		x\leq y 					&\Rightarrow \theta(y)\leq\theta(x)\label{5-Zeroes-Equ-LE-Conditions-3}\\
+		\theta_0/2					&\leq \theta \label{5-Zeroes-Equ-LE-Conditions-4}\\
+		|\theta(x)-\theta(y)|		&\leq L|x-y|\label{5-Zeroes-Equ-LE-Conditions-5}
+	\end{align}
+	where $L$ is independent of $\theta$.
+	The statements above are true for every $x,y\in[0,\lambda]$.
+	We will call $C^*\subseteq C^0$ the space of all continuous functions $f:[0,\lambda]\rightarrow\R$ that satisfy those conditions.
 \end{lemma}
 \begin{proof}
-	This proof can be generalised to $l\geq2$ dimensions. 
-	Following \cite{quittnerSuperlinearParabolicProblems2007a} we see that the LE differential equation can be written as
+	The first and second initial conditions of equations \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} and \eqref{5-Zeroes-Equ-LE-Conditions-Initial-2} are true by assumption.
+	The third condition \eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated when once integrating the \ac{LE} equation
 	\begin{equation}
-		\frac{d}{d\xi}\left(\xi^{l-1}\frac{d\theta}{d\xi}\right) + \xi^{l-1}\theta^n = 0.
+		\frac{d\theta}{d\xi} = -\int\limits_0^\xi \frac{t^{l-1}}{\xi^{l-1}}\theta^n \diff t
+		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1}
 	\end{equation}
-	Integrating once and rearranging leads us to
+	where we not yet needed any of the above criteria except positivity of $\theta$.
+	From this expression condition \eqref{5-Zeroes-Equ-LE-Conditions-5} is derived immediately.
+	When integrating equation \eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} once more and using the initial value of condition \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1}, we obtain
 	\begin{equation}
-		\frac{d\theta}{d\xi} = \left.\frac{d\theta}{d\xi}\right|_0 - \int\limits_0^\xi\left(\frac{t}{\xi}\right)^{l-1}\theta^ndt.
-		\label{5-Zeroes-Equ-LEOperator-Derivative}
+		\theta = \theta_0 -\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s.
+		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2}
 	\end{equation}
-	By choosing the correct initial value\footnote{One has to choose this value in order to obtain the correct limiting case when using the non-relativistic limit of the \ac{TOV} equation. See also section \ref{3-Mass-Sec-LEDerivation}} of $d\theta/d\xi=0$ we see that positive solutions to the LE equation need to have negative slope.
-	This equation also shows that for $\theta_0>0$, the solution $\theta$ will be positive in a $\epsilon$ region around $\xi=0$.
-	We integrate both sides again and end up with
+	We combine this statement with the previously shown condition of equation \eqref{5-Zeroes-Equ-LE-Conditions-3}.
+	Then it is clear that
 	\begin{equation}
-		\theta = \theta_0 - \int\limits_0^\xi\int\limits_0^s\left(\frac{t}{s}\right)^{l-1}\theta^ndtds.
-		\label{5-Zeroes-Equ-LEOperator}
+		\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s \leq \theta_0^n\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1} \diff t \diff s \leq \theta_0^n\frac{\xi^2}{2l}
+		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Inequality}
 	\end{equation}
-	We define $C^*$ as the space of all real continuous functions $f\geq0$ on $[0,\epsilon]$ that share the same initial value $\theta_0$ and are monotonously decreasing.
-	Additionally with equation \eqref{5-Zeroes-Equ-LEOperator-Derivative} we can restrict ourselves to functions with
+	and thus $\xi\leq\lambda$ can be chosen suitably small to satisfy condition \eqref{5-Zeroes-Equ-LE-Conditions-4}.
+	For the last condition we again observe that from equation \eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2} follows promptly that
 	\begin{equation}
-		\frac{d\theta}{d\xi} \geq -\theta_0^n\frac{\xi}{m}.
-		\label{5-Zeroes-Equ-LEOperator-Restrict-Slope}
+		|\theta(x)-\theta(y)| = \left|\int\limits_x^y\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s\right| \leq \theta^n_0\frac{|x^2-y^2|}{2l} \leq \theta^n_0\frac{\lambda}{l}|x-y|
+		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Inequality-2}
 	\end{equation}
-	With the norm $||.||_\infty$ this space is complete.
-	Inspecting the operator $T:C^*\rightarrow C^*$ defined by
-% 	\footnote{The  index $1$ refers to the $C^1$ norm given by $||f||_2=||f||_\infty+||f'||_\infty+||f''||_\infty$ on the yet to be defined space.}
-	equation \eqref{5-Zeroes-Equ-LEOperator} we can apply the Banach fixed-point theorem \cite{banachOperationsDansEnsembles1922} in combination with lemma \ref{5-Zeroes-Lem-Integral-Contraction}.
-% 	Without loss of generality, we can assume $U\neq V$. Then
-	\begin{align}
-		||T(U)-T(V)||_\infty	&\leq	\left|\left|U^n-V^n\right|\right|_\infty\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}dtds\\
-								&=		\left|\left|U^n-V^n\right|\right|_\infty\frac{\xi^2}{2l}
-	\end{align}
-	Let $n\geq1$. 
-	Since the function $x\mapsto x^n$ is differentiable for $n\geq1$ with lemma \ref{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable} it is also Lipschitz with constant $L$ on the compact interval $I=[0,\theta_0]$.
-	This means in particular that we have
-	\begin{equation}
-		||T(U)-T(V)||_\infty	\leq	\left|\left|U-V\right|\right|_\infty\frac{L\xi^2}{2l}
-	\end{equation}
-	Thus when choosing $\epsilon<\sqrt{2m/L}$ we have a contraction and the Banach fixed-point theorem then gives us a unique solution to equation \eqref{5-Zeroes-Equ-LEOperator}.\\
-	Now let $0\leq n<1$.
-	In this situation the preceding method does not work due to $x^n$ not being differentiable or Lipschitz at $x=0$. 
-	Since by definition of $C^*$, we had chosen \eqref{5-Zeroes-Equ-LEOperator-Restrict-Slope} as an additional constraint, we can now choose $\epsilon$ small enough to have $\theta\geq q>0$ on $[0,\epsilon]$.
-	Then the same procedure as before can be carried through but with the interval $I=[q,\theta]$.
 \end{proof}\noindent
-Equation \eqref{5-Zeroes-Equ-LEOperator-Derivative} shows that non-negative solutions must have non-positive slope.
+The now introduced function space $C^*$ contains all functions that are possible solutions for the \ac{LE} equation.
+In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is compact and convex which we will show in the next two lemmata.
+\begin{lemma}
+	The space $C^*$ defined in lemma \ref{5-Zeroes-Lem-LE-Conditions} with the norm $||\cdot||_\infty$is complete and convex.
+\end{lemma}
+\begin{proof}
+	We begin by showing completeness.
+	It is clear that from condition \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to \eqref{5-Zeroes-Equ-LE-Conditions-4} are conserved even in pointwise convergence.
+	Generally speaking Lipschitz continuous functions need not be complete under $||\cdot||_\infty$.
+	However, since we had chosen $L$ to be independent of $\theta$ for $||f_m-f||_\infty\rightarrow0$ we can write
+	\[
+		|f(x)-f(y)|=|f(x)-f_m(x)+f_m(x)-f_m(y)+f_m(y)-f(y)|\leq 2\epsilon+L|x-y|
+	\]
+	which proves the statement in the limit $\epsilon\rightarrow0$.
+	Convexity for conditions \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to \eqref{5-Zeroes-Equ-LE-Conditions-4} is also clear.
+	Let $f,g\in C^*$ and $h\in[0,1]$.
+	Then
+	\begin{alignat}{3}
+		&&&|hf(x)+(1-h)g(x)-hf(y)-(1-h)g(y)|\\
+		&\leq h&&|f(x)-f(y)|+ (1-h)|g(x)-g(y)|\\
+		&\leq L&&|x-y|
+	\end{alignat}
+	which shows convexity.
+\end{proof}\noindent
+\begin{lemma}
+	The space $C^*$ with $||\cdot||_\infty$ is compact.
+	To prove this statement we use the Arzela-Ascoli theorem.
+	This means that since $C^*$ is a function space on a compact set $[0,\lambda]$ we only need to show that it is bounded and equicontinuous.
+\end{lemma}
+\begin{proof}
+	For every function $f\in C^*$ we know by condition \eqref{5-Zeroes-Equ-LE-Conditions-3} and \eqref{5-Zeroes-Equ-LE-Conditions-4} that $\theta/2\leq f\leq\theta_0$ which shows boundedness.
+	Since with condition \eqref{5-Zeroes-Equ-LE-Conditions-5} every function $f\in C^*$ is especially Lipschitz, we can clearly see that equicontinuity hols.
+\end{proof}
+\begin{proof}[Proof LE Local Existence]
+	With these results it is now possible to prove our initial statement of theorem \ref{5-Zeroes-Lem-Lane-Emden-Local-Existence}.
+	It is left to prove that the operator $T:C^*\rightarrow C^*$ defined by
+	\begin{equation}
+		T(f)(x) := \theta_0 - \int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}f^n(t)\diff t\diff s
+		\label{5-Zeroes-Equ-LE-Definition-Operator-On-C-Star}
+	\end{equation}
+	is continuous on $C^*$.
+	With a quick integral approximation we obtain
+	\begin{align}
+		||T(f)-T(g)||_{\infty} &= ||\int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\left[f^n(t)-g^n(t)\right]\diff t\diff s\\
+		&\leq \frac{x^2}{2l}||f^n-g^n||_{\infty}.
+	\end{align}
+	Since $z\mapsto z^n$ is continuous for $z\geq0$ and $n\geq0$ the statement follows directly.
+\end{proof}
+Equation \eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} shows that non-negative solutions must have non-positive slope.
 The following theorem makes use of that fact and of a different representation of the \ac{LE} equation to show that solutions can be extended until they reach zero.
 \begin{lemma}
-	Let $\theta$ be a \ac{LE} solution and $[0,\xi_\mathrm{max}]$ be the maximum interval of existence.
-	Then $\theta(\xi_\mathrm{max})=0$ or $\xi_\mathrm{max}=\infty$.
+	Let $\theta$ be a \ac{LE} solution and $[0,\xi_\textrm{max}]$ be the maximum interval of existence.
+	Then $\theta(\xi_\textrm{max})=0$ or $\xi_\textrm{max}=\infty$.
 \end{lemma}
 \begin{proof}
-	It is clear that $\theta<0$ is a case that can never appear as long as we are interested in real solutions.
-	Suppose $\theta(\xi_\mathrm{max})>0$ and $\xi_\mathrm{max}<\infty$.
-	Then there exists a interval $(\xi_\mathrm{max}-\epsilon,\xi_\mathrm{max}+\epsilon)$ and $(\theta(\xi_\mathrm{max})-\delta,\theta(\xi_\mathrm{max})+\delta)$ where the \ac{LE} differential equation has a solution.
-	With equations \ref{4-NumSol-Equ-LE-Substitution} we can directly see that the Picard-Lindelöf theorem is applicable in this situation.
+	It is clear that $\theta<0$ is a case that can never appear as long as we are interested in positive solutions.
+	Suppose $\theta(\xi_\textrm{max})>0$ and $\xi_\textrm{max}<\infty$.
+	Then there exists a interval $(\xi_\textrm{max}-\epsilon,\xi_\textrm{max}+\epsilon)$ and $(\theta(\xi_\textrm{max})-\delta,\theta(\xi_\textrm{max})+\delta)$ where the \ac{LE} differential equation has a solution.
+	With equations \ref{4-NumSol-Equ-LE-Substitution} we can directly see that the Picard-Lindelöf theorem \cite{ernestApplicationMethodeApproximations1894} is applicable in this situation.
 \end{proof}
 %
 %
