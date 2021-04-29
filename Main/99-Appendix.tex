@@ -158,8 +158,8 @@ the subseries with initial values given by
 	The series $\theta=\sum\limits_{m=0}^\infty b_m\xi^{2m}$ converges for $\xi\leq1$.
 \end{theorem}
 \begin{proof}
-	We start by showing that $|b_{m+1}|\leq1/(4m+6)$. Using the triangle inequality on 
-	\ref{5-MoExSo-LEN2-bn-Definition}, we obtain
+	We start by showing that $|b_{m+1}|\leq1/(4m+6)$.
+	Using the triangle inequality on \ref{5-MoExSo-LEN2-bn-Definition}, we obtain
 	\begin{equation}
 		|b_{m+1}| \leq \frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^m|b_{m-k}b_k|.
 	\end{equation}
@@ -169,10 +169,11 @@ the subseries with initial values given by
 		|b_{m+1}| \leq \frac{m}{(2m+2)(2m+3)} = \frac{1}{2}\frac{m}{(m+1)}\frac{1}{(2m+3)}
 		\leq\frac{1}{2}\frac{1}{(2m+3)}
 	\end{equation}
-	which proves the first statement. To see that $b_m$ is a alternating sequence, we again inspect
-	\ref{5-MoExSo-LEN2-bn-Definition}. The first element of the series is 
-	$b_0=1$ and the second is $b_1=-1/6$ so the initial statement is again correct. Let $b_m$ be 
-	alternating for all $m<2m+1$. Then equation \ref{5-MoExSo-LEN2-bn-Definition} for odd values reads
+	which proves the first statement.
+	To see that $b_m$ is a alternating sequence, we again inspect \ref{5-MoExSo-LEN2-bn-Definition}.
+	The first element of the series is $b_0=1$ and the second is $b_1=-1/6$ so the initial statement is again correct.
+	Let $b_m$ be alternating for all $m<2m+1$.
+	Then equation \ref{5-MoExSo-LEN2-bn-Definition} for odd values reads
 	\begin{equation}
 		b_{2m+1} = -\frac{1}{(4m+4)(4m+5)}\left(b_{2m}b_0+b_{2m-1}b_1+\dots+b_0b_{2m}\right)
 	\end{equation}
@@ -190,20 +191,16 @@ the subseries with initial values given by
 	\label{5-MoExSo-LEN2-Plot}
 \end{figure}\noindent
 These results can be used to calculate the power series of the LE equation numerically. 
-Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions 
+Figure \ref{5-MoExSo-LEN2-Plot} shows those results.
+Good agreement is found between the two solutions
 as the difference $\Delta=\theta_{calc}-\theta_{ser}$ is not larger than $0.00015$.
 % However in both plots at the bottom, the last few values where the solution starts reaching the 
 % radius of convergence have been omitted for visual clarity. 
 The solutions differ for larger values around $\approx3.918$
 The top right plot indicates that the radius of convergence might actually be larger than 
 where solutions deviate. 
-One important observation is that in this procedure, 
-the coefficients were calculated up to $b_{250}\approx-4.7723\times10^{-296}$ which is in close 
-proximity to the floating point limit of python given by $\approx2.2251\times10^{-308}$ and 
-indicates that numerical errors may be the reason the series starts to diverge. 
-Also in order to achieve sufficient numerical precision, we would need to calculate higher 
-order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows
-that these parts of the series still yield large contributions to the value of $\theta$ at this point.
+One important observation is that in this procedure, the coefficients were calculated up to $b_{250}\approx-4.7723\times10^{-296}$ which is in proximity to the floating point limit of python given by $\approx2.2251\times10^{-308}$ and indicates that numerical errors may be the reason the series starts to diverge.
+Also in order to achieve sufficient numerical precision, we would need to calculate higher order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows that these parts of the series still yield large contributions to the value of $\theta$ at this point.
 %
 %
 %
@@ -225,8 +222,8 @@ that these parts of the series still yield large contributions to the value of $
 	\begin{equation}
 		\frac{\partial y}{\partial r} = -\frac{y^{a/\gamma-a+1}}{ar}\left(A+y^{a-a/\gamma}\right)\left(4\pi r^2y^a +Av\right)\frac{1}{1-2vA}.
 	\end{equation}
-	Using $\gamma=1+1/n$ with $n>0$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$. We restrict 
-	ourselves to a compact domain $r\in \overline{B_{\delta}(\tau)}$ and $v\in[0,1/2A-\epsilon]$ where $0<\epsilon<1/2A$. 
+	Using $\gamma=1+1/n$ with $n>0$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$.
+	We restrict ourselves to a compact domain $r\in \overline{B_{\delta}(\tau)}$ and $v\in[0,1/2A-\epsilon]$ where $0<\epsilon<1/2A$.
 	We choose $0<\delta$ and $0\leq\tau$ in such a way that $0<\epsilon<1/2A$ is satisfied for some $\epsilon$ which is possible since $m\rightarrow0$ for $r\rightarrow0$.
 	To obtain Lipschitz continuity in $(y,v)$, all of the following conditions need to be fulfilled.
 	\begin{equation}
@@ -234,7 +231,8 @@ that these parts of the series still yield large contributions to the value of $
 		\label{tmp-label-1}
 		% TODO Change label when the proof is complete and in the correct section
 	\end{equation}
-	The second equation implies the first and the third. Thus we only need to choose $a\geq(1-1/\gamma)^{-1}$. With $\gamma=1+1/n$ we can rewrite this equation to 
+	The second equation implies the first and the third. Thus we only need to choose $a\geq(1-1/\gamma)^{-1}$.
+	With $\gamma=1+1/n$ we can rewrite this equation to
 	\begin{equation}
 		a\geq n+1
 	\end{equation}
