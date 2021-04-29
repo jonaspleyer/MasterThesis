@@ -13,11 +13,11 @@ Motivated by the preceding sections, the aim now is to prove the following theor
 \end{theorem}
 \begin{lemma}[LE Local Existence]
 	\label{5-Zeroes-Lem-Lane-Emden-Local-Existence}
-	For every $n\geq0$, the Lane-Emden equation \ref{5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
+	For every $n\geq0$, the Lane-Emden equation~\ref{5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
 \end{lemma}\noindent
 The procedure for proving existence is similar for both equations.
-Contrary to what is written in \cite[p.~50]{quittnerSuperlinearParabolicProblems2007} we do not expect to be able to solve this problem with the standard Banach fixed-point theorem.
-Instead, we want to use the Schauder fixed-point theorem \cite{schauderFixpunktsatzFunktionalraumen1930}, which is a variation the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
+Contrary to what is written in~\cite[p.~50]{quittnerSuperlinearParabolicProblems2007} we do not expect to be able to solve this problem with the standard Banach fixed-point theorem.
+Instead, we want to use the Schauder fixed-point theorem~\cite{schauderFixpunktsatzFunktionalraumen1930}, which is a variation the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
 In order to do this we examine some properties that solutions of the \ac{LE} differential equation will have.
 \begin{lemma}
 	\label{5-Zeroes-Lem-LE-Conditions}
@@ -34,27 +34,27 @@ In order to do this we examine some properties that solutions of the \ac{LE} dif
 	We will call $C^*\subseteq C^0$ the space of all continuous functions $f:[0,\lambda]\rightarrow\R$ that satisfy those conditions.
 \end{lemma}
 \begin{proof}
-	The first and second initial conditions of equations \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} and \eqref{5-Zeroes-Equ-LE-Conditions-Initial-2} are true by assumption.
-	The third condition \eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated when once integrating the \ac{LE} equation
+	The first and second initial conditions of equations~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} and~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-2} are true by assumption.
+	The third condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated when once integrating the \ac{LE} equation
 	\begin{equation}
 		\frac{d\theta}{d\xi} = -\int\limits_0^\xi \frac{t^{l-1}}{\xi^{l-1}}\theta^n \diff t
 		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1}
 	\end{equation}
 	where we not yet needed any of the above criteria except positivity of $\theta$.
-	From this expression condition \eqref{5-Zeroes-Equ-LE-Conditions-5} is derived immediately.
-	When integrating equation \eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} once more and using the initial value of condition \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1}, we obtain
+	From this expression condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} is derived immediately.
+	When integrating equation~\eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} once more and using the initial value of condition~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1}, we obtain
 	\begin{equation}
 		\theta = \theta_0 -\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s.
 		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2}
 	\end{equation}
-	We combine this statement with the previously shown condition of equation \eqref{5-Zeroes-Equ-LE-Conditions-3}.
+	We combine this statement with the previously shown condition of equation~\eqref{5-Zeroes-Equ-LE-Conditions-3}.
 	Then it is clear that
 	\begin{equation}
 		\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s \leq \theta_0^n\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1} \diff t \diff s \leq \theta_0^n\frac{\xi^2}{2l}
 		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Inequality}
 	\end{equation}
-	and thus $\xi\leq\lambda$ can be chosen suitably small to satisfy condition \eqref{5-Zeroes-Equ-LE-Conditions-4}.
-	For the last condition we again observe that from equation \eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2} follows promptly that
+	and thus $\xi\leq\lambda$ can be chosen suitably small to satisfy condition~\eqref{5-Zeroes-Equ-LE-Conditions-4}.
+	For the last condition we again observe that from equation~\eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2} follows promptly that
 	\begin{equation}
 		|\theta(x)-\theta(y)| = \left|\int\limits_x^y\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s\right| \leq \theta^n_0\frac{|x^2-y^2|}{2l} \leq \theta^n_0\frac{\lambda}{l}|x-y|
 		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Inequality-2}
@@ -63,18 +63,18 @@ In order to do this we examine some properties that solutions of the \ac{LE} dif
 The now introduced function space $C^*$ contains all functions that are possible solutions for the \ac{LE} equation.
 In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is compact and convex which we will show in the next two lemmata.
 \begin{lemma}
-	The space $C^*$ defined in lemma \ref{5-Zeroes-Lem-LE-Conditions} with the norm $||\cdot||_\infty$is complete and convex.
+	The space $C^*$ defined in lemma~\ref{5-Zeroes-Lem-LE-Conditions} with the norm $||\cdot||_\infty$is complete and convex.
 \end{lemma}
 \begin{proof}
 	We begin by showing completeness.
-	It is clear that from condition \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to \eqref{5-Zeroes-Equ-LE-Conditions-4} are conserved even in pointwise convergence.
+	It is clear that from condition~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to~\eqref{5-Zeroes-Equ-LE-Conditions-4} are conserved even in pointwise convergence.
 	Generally speaking Lipschitz continuous functions need not be complete under $||\cdot||_\infty$.
 	However, since we had chosen $L$ to be independent of $\theta$ for $||f_m-f||_\infty\rightarrow0$ we can write
 	\[
 		|f(x)-f(y)|=|f(x)-f_m(x)+f_m(x)-f_m(y)+f_m(y)-f(y)|\leq 2\epsilon+L|x-y|
 	\]
 	which proves the statement in the limit $\epsilon\rightarrow0$.
-	Convexity for conditions \eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to \eqref{5-Zeroes-Equ-LE-Conditions-4} is also clear.
+	Convexity for conditions~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to~\eqref{5-Zeroes-Equ-LE-Conditions-4} is also clear.
 	Let $f,g\in C^*$ and $h\in[0,1]$.
 	Then
 	\begin{alignat}{3}
@@ -90,11 +90,11 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 	This means that since $C^*$ is a function space on a compact set $[0,\lambda]$ we only need to show that it is bounded and equicontinuous.
 \end{lemma}
 \begin{proof}
-	For every function $f\in C^*$ we know by condition \eqref{5-Zeroes-Equ-LE-Conditions-3} and \eqref{5-Zeroes-Equ-LE-Conditions-4} that $\theta/2\leq f\leq\theta_0$ which shows boundedness.
-	Since with condition \eqref{5-Zeroes-Equ-LE-Conditions-5} every function $f\in C^*$ is especially Lipschitz, we can clearly see that equicontinuity hols.
+	For every function $f\in C^*$ we know by condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} and~\eqref{5-Zeroes-Equ-LE-Conditions-4} that $\theta/2\leq f\leq\theta_0$ which shows boundedness.
+	Since with condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} every function $f\in C^*$ is especially Lipschitz, we can clearly see that equicontinuity hols.
 \end{proof}
 \begin{proof}[Proof LE Local Existence]
-	With these results it is now possible to prove our initial statement of theorem \ref{5-Zeroes-Lem-Lane-Emden-Local-Existence}.
+	With these results it is now possible to prove our initial statement of theorem~\ref{5-Zeroes-Lem-Lane-Emden-Local-Existence}.
 	It is left to prove that the operator $T:C^*\rightarrow C^*$ defined by
 	\begin{equation}
 		T(f)(x) := \theta_0 - \int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}f^n(t)\diff t\diff s
@@ -107,8 +107,8 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 		&\leq \frac{x^2}{2l}||f^n-g^n||_{\infty}.
 	\end{align}
 	Since $z\mapsto z^n$ is continuous for $z\geq0$ and $n\geq0$ the statement follows directly.
-\end{proof}
-Equation \eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} shows that non-negative solutions must have non-positive slope.
+\end{proof}\noindent
+Equation~\eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} shows that non-negative solutions must have non-positive slope.
 The following theorem makes use of that fact and of a different representation of the \ac{LE} equation to show that solutions can be extended until they reach zero.
 \begin{lemma}
 	Let $\theta$ be a \ac{LE} solution and $[0,\xi_\textrm{max}]$ be the maximum interval of existence.
@@ -118,7 +118,7 @@ The following theorem makes use of that fact and of a different representation o
 	It is clear that $\theta<0$ is a case that can never appear as long as we are interested in positive solutions.
 	Suppose $\theta(\xi_\textrm{max})>0$ and $\xi_\textrm{max}<\infty$.
 	Then there exists a interval $(\xi_\textrm{max}-\epsilon,\xi_\textrm{max}+\epsilon)$ and $(\theta(\xi_\textrm{max})-\delta,\theta(\xi_\textrm{max})+\delta)$ where the \ac{LE} differential equation has a solution.
-	With equations \ref{4-NumSol-Equ-LE-Substitution} we can directly see that the Picard-Lindelöf theorem \cite{ernestApplicationMethodeApproximations1894} is applicable in this situation.
+	With equations~\ref{4-NumSol-Equ-LE-Substitution} we can directly see that the Picard-Lindelöf theorem~\cite{ernestApplicationMethodeApproximations1894} is applicable in this situation.
 \end{proof}
 %
 %
