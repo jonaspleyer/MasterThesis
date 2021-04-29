@@ -1,5 +1,5 @@
 \begin{section}{Numerical Solutions}
-\begin{subsection}{Comparing \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} results with a polytropic \acrNoHyperlink{\acs}{eos}}
+\begin{subsection}{Comparing \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} and \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} results with a polytropic \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \label{4-NumSol-Sec-Comp-TOV-LE}
 In this section the numerical solutions of the \ac{TOV} equation
 \begin{align}
@@ -120,7 +120,7 @@ The plot displays nicely that by lowering the integration stepsize, the maximum 
 \end{subsection}
 %
 %
-\begin{subsection}{Relativistic \acrNoHyperlink{\acs}{eos}}
+\begin{subsection}{Relativistic \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \label{4-NumSol-Sec-RelEOS}
 In the previous discussion, we relied on the \ac{eos} given in Table \ref{4-NumSol-Tbl-TOVParameters}.
 This is a versatile assumption, but one could ask what would happen to a star in which the particles have no interaction but are close to relativistic speed.
@@ -153,7 +153,7 @@ This normalises both \acp{eos} to same inital pressures.
 \end{subsection}
 %
 %
-\begin{subsection}{Zero Values of the \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} equation}
+\begin{subsection}{Zero Values of the \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} and \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} equation}
 \label{4-NumSol-Sec-TOV-Exponents}
 Having discussed individual solutions for the \ac{TOV} and \ac{LE} equation, this section now turns to analysing zero values of both equations.
 We define a zero value as the first point in which the solution of our differential equation reaches value $0$, or more precisely where the pressure $p$ reaches zero.\footnote{Note that $p_0$ still denotes the initial value while $r_0$ and $\xi_0$ denote values where $p=0$.}
@@ -192,8 +192,9 @@ The methods to prove this theorem will be discussed in the next section.\\
 To obtain Figure \ref{4-NumSol-Plt-TOV-Exponents-Combo} the differential equations need to be solved multiple times for varying parameter combinations until the pressure reaches its zero value.
 Numerical optimisations to speed up calculation times, and a short discussion on the methods used can be found in the appendix in section \ref{99-App-Numerical-Optimisations}.
 \begin{figure}[H]
-	\centering
+	{\centering
 	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults-Combo.pgf}
+	}
 	\caption{Zero Values of TOV and LE equation}
 	\label{4-NumSol-Plt-TOV-Exponents-Combo}
 	In the first plot results for $p_0=8$ have been omitted for better visual clarity.
