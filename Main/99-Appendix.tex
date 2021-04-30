@@ -315,6 +315,11 @@ Since in this case the 4th order Runge Kutta solving method was implemented by h
 From figure~\ref{4-NumSol-Plt-ValidateLEResults} we can see that the largest errors occur in the first step of integration. 
 This means in the beginning a small stepsize is desirable to retain accuracy while later it can be increased. 
 These settings were experimented with but since the author had already achieved numerous results with a constant stepsize were not committed to the final version.
-It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.
+It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.\\
+Furthermore, one could attempt to rewrite the code in a lower level programming language such as C to obtain a performance benefit.
+Results from \cite{jensenDrujensenFib2021} show a $676\%$ increase in performance for calculating Fibonacci numbers between the two languages when compiling code with PyPy.
+It is however unclear to which degree this theoretical improvement would carry over to the code present.\\
+The code is also designed in a way to check regularly for already present results in the database.
+These calls could be forwarded to a different handler in order to possibly parallelise the problem and reduce disk\footnote{We refer to the term disk although the data was stored on a solid state drive.} latency issues.
 \end{section}
 \end{appendix}
