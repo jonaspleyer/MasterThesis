@@ -1,19 +1,21 @@
 \section{To a General Zero Value Theorem}
+\label{sec:5-zeroes}
 \subsection{\texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} Equation}
+\label{subsec:5-zeroes-le-equation}
 Motivated by the preceding sections, the aim now is to prove the following theorem.
 \begin{theorem}[\acrNoHyperlink{\acl}{LE} Finite Boundary]
 	\label{5-Zeroes-Theo-Lane-EmdenFiniteBoundary}
 	For every $0\leq n<5$, the generalised Lane-Emden equation
 	\begin{equation}
 		\frac{1}{\xi^{l-1}}\frac{d}{d\xi}\left(\xi^{l-1}\frac{d\theta}{d\xi}\right)+\theta^n=0
-		\label{5-Zeroes-Equ-LEeq}
+		\label{eq:5-Zeroes-Equ-LEeq}
 	\end{equation}
 	with $\theta_0=1$ and $l\geq2$ has a zero value for a finite $\xi_0$.
 	To prove this theorem, we show the statements following in this section.
 \end{theorem}
 \begin{lemma}[\acrNoHyperlink{\acs}{LE} Local Existence]
 	\label{5-Zeroes-Lem-Lane-Emden-Local-Existence}
-	For every $n\geq0$, the Lane-Emden equation~\ref{5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
+	For every $n\geq0$, the Lane-Emden equation~\ref{eq:5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
 \end{lemma}\noindent
 The procedure for proving existence is similar for both equations.
 Contrary to what is written in~\cite[p.~50]{quittnerSuperlinearParabolicProblems2007} we do not expect to be able to solve this problem with the standard Banach fixed-point theorem.
@@ -38,26 +40,26 @@ In order to do this we examine some properties that solutions of the \ac{LE} dif
 	The third condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated when once integrating the \ac{LE} equation
 	\begin{equation}
 		\frac{d\theta}{d\xi} = -\int\limits_0^\xi \frac{t^{l-1}}{\xi^{l-1}}\theta^n \diff t
-		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1}
+		\label{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1}
 	\end{equation}
 	where we not yet needed any of the above criteria except positivity of $\theta$.
 	From this expression condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} is derived immediately.
-	When integrating equation~\eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} once more and using the initial value of condition~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1}, we obtain
+	When integrating equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1} once more and using the initial value of condition~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1}, we obtain
 	\begin{equation}
 		\theta = \theta_0 -\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s.
-		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2}
+		\label{eq:5-Zeroes-LE-Equation-Rewritten-Integration-2}
 	\end{equation}
 	We combine this statement with the previously shown condition of equation~\eqref{5-Zeroes-Equ-LE-Conditions-3}.
 	Then it is clear that
 	\begin{equation}
 		\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s \leq \theta_0^n\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1} \diff t \diff s \leq \theta_0^n\frac{\xi^2}{2l}
-		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Inequality}
+		\label{eq:5-Zeroes-LE-Equation-Rewritten-Inequality}
 	\end{equation}
 	and thus $\xi\leq\lambda$ can be chosen suitably small to satisfy condition~\eqref{5-Zeroes-Equ-LE-Conditions-4}.
-	For the last condition we again observe that from equation~\eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-2} follows promptly that
+	For the last condition we again observe that from equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-2} follows promptly that
 	\begin{equation}
 		|\theta(x)-\theta(y)| = \left|\int\limits_x^y\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s\right| \leq \theta^n_0\frac{|x^2-y^2|}{2l} \leq \theta^n_0\frac{\lambda}{l}|x-y|
-		\label{5-Zeroes-Equ-LE-Equation-Rewritten-Inequality-2}
+		\label{eq:5-Zeroes-LE-Equation-Rewritten-Inequality-2}
 	\end{equation}
 \end{proof}\noindent
 The now introduced function space $C^*$ contains all functions that are possible solutions for the \ac{LE} equation.
@@ -98,7 +100,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 	It is left to prove that the operator $T:C^*\rightarrow C^*$ defined by
 	\begin{equation}
 		T(f)(x) := \theta_0 - \int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}f^n(t)\diff t\diff s
-		\label{5-Zeroes-Equ-LE-Definition-Operator-On-C-Star}
+		\label{eq:5-Zeroes-LE-Definition-Operator-On-C-Star}
 	\end{equation}
 	is continuous on $C^*$.
 	With a quick integral approximation we obtain
@@ -108,7 +110,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 	\end{align}
 	Since $z\mapsto z^n$ is continuous for $z\geq0$ and $n\geq0$ the statement follows directly.
 \end{proof}\noindent
-Equation~\eqref{5-Zeroes-Equ-LE-Equation-Rewritten-Integration-1} shows that non-negative solutions must have non-positive slope.
+Equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1} shows that non-negative solutions must have non-positive slope.
 The following theorem makes use of that fact and of a different representation of the \ac{LE} equation to show that solutions can be extended until they reach zero.
 \begin{lemma}
 	Let $\theta$ be a \ac{LE} solution and $[0,\xi_\textrm{m}]$ be the maximum interval of existence.
@@ -124,6 +126,7 @@ The following theorem makes use of that fact and of a different representation o
 %
 %
 \subsection{TOV Equation}
+\label{subsec:5-Zeroes-TOV-Equ}
 \begin{hypothesis}[TOV Zero Value Hypothesis]
 	Given the TOV differential equation with $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
 	\begin{alignat}{3}
