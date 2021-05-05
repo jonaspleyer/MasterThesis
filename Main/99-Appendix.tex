@@ -90,7 +90,7 @@ Now we rewrite the integral
 	\int\frac{1}{\sqrt{1-\sin^2(\alpha)}}\frac{2\cos(\alpha)}{\sin(\alpha)}\frac{d\alpha}{} &= -\int dt\\
 	\int\frac{2d\alpha}{\sin(\alpha)} &= -\int dt.
 \end{align}
-Evaluating those integrals \ac{LE}ads us to
+Evaluating those integrals leads us to
 \begin{equation}
 	\log(\tan(\alpha/2))+\log(1/C) = -t
 	\label{99-App-A-LE-For-n-5-Integral}
@@ -193,7 +193,7 @@ the subseries with initial values given by
 	This shows that if all odd values $b_{2k+1}$ are negative and all even ones are positive, 
 	then $b_{2m+1}$ is negative too.
 	The same holds true when the index $2m+2$ is even.
-	By the \ac{LE}ibniz criterion the series converges if $\xi\leq1$. 
+	By the Leibniz criterion the series converges if $\xi\leq1$.
 \end{proof}
 \begin{figure}[H]
 	{\centering
@@ -260,7 +260,7 @@ Also in order to achieve sufficient numerical precision, we would need to calcul
 	\begin{equation}
 		\frac{\partial p}{\partial r} = -\frac{1}{r^2}\left(Ap^{1/\gamma}+p\right)\left(4\pi r^3p+vA\right)\left(1-2vA\right)^{-1}
 	\end{equation}
-	and \ac{LE}tting $A\rightarrow0$, we obtain
+	and letting $A\rightarrow0$, we obtain
 	\begin{equation}
 		\frac{\partial p}{\partial r} = - 4\pi rp^2
 	\end{equation}
@@ -289,7 +289,7 @@ From this figure it is also clear that the effort will increase exponentially si
 Hence parallel computation of this problem would not help in this case especially considering that server processing units typically have lower single threaded performance than consumer chips.\\
 Explicit parallelisation is achieved by distributing different values of $n$ to different threads. 
 More efficient distribution of those calculations can make a difference but effects discussed above and below have more impact.
-Furthermore in order to fully understand how to improve for this distribution it is partly necessary to calculate the results which is then even \ac{LE}ss of an issue afterwards.\\
+Furthermore in order to fully understand how to improve for this distribution it is partly necessary to calculate the results which is then even less of an issue afterwards.\\
 Another optimisation evolved around not computing unnecessary cases.
 Consider again figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo}.
 It is clear (however not proven until now) that for each combination $A,p_0$ at some value $n_0(A,p_0)$ values for $r_0$ will reach the numerical upper limit of the routine.
@@ -306,9 +306,9 @@ Extra calculations can be permitted after a database query in the following case
 	\item If the previous solving routine reached the limit for $r_0$ and the current one would go further.
 	\item If there exist multiple results for a combination of parameters $A,p_0,n$ \footnote{Then every result present is deleted and one new result will be calculated.}.
 \end{itemize}
-With these optimisations \ac{LE}ss results in total need to be calculated.
+With these optimisations less results in total need to be calculated.
 One still present disadvantage is however that allocation of parameters for solving routines is done beforehand and can not be changed in mid process.
-This means if a thread started by the program finished and another is still running with multiple solving routines \ac{LE}ft, these cannot be given to another thread.
+This means if a thread started by the program finished and another is still running with multiple solving routines left, these cannot be given to another thread.
 This is a possibility for future tweaks.\\
 So far the previous discussion evolved around a fixed stepsize.
 Since in this case the 4th order Runge Kutta solving method was implemented by hand, it is possible to use variable stepsizes for solving.
@@ -317,7 +317,7 @@ This means in the beginning a small stepsize is desirable to retain accuracy whi
 These settings were experimented with but since the author had already achieved numerous results with a constant stepsize were not committed to the final version.
 It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.\\
 Furthermore, one could attempt to rewrite the code in a lower level programming language such as C to obtain a performance benefit.
-Results from \cite{jensenDrujensenFib2021} show a $676\%$ increase in performance for calculating Fibonacci numbers between the two languages when compiling code with PyPy.
+Results from~\cite{jensenDrujensenFib2021} show a $676\%$ increase in performance for calculating Fibonacci numbers between the two languages when compiling code with PyPy.
 It is however unclear to which degree this theoretical improvement would carry over to the code present.\\
 The code is also designed in a way to check regularly for already present results in the database.
 These calls could be forwarded to a different handler in order to possibly parallelise the problem and reduce disk\footnote{We refer to the term disk although the data was stored on a solid state drive.} latency issues.
