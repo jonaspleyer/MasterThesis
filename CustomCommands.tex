@@ -62,6 +62,7 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
 
 \theoremstyle{remarkstyle}
 \newtheorem*{remark}{Remark}
@@ -73,3 +74,21 @@
 
 % Define a different numbering for enumerate environments
 \renewcommand{\labelenumi}{\roman{enumi})}
+
+% Prevent acronym usepackage to display hyperrefs in section titles.
+\makeatletter
+\DeclareRobustCommand\acrNoHyperlink[2]{%
+	\begingroup
+	\disableAcronymHyperlink
+	#1{#2}%
+	\endgroup
+}
+
+\newcommand{\disableAcronymHyperlink}{%
+% copied from acronym.sty, lines 125--128
+	\def\AC@hyperlink##1##2{##2}%
+	\def\AC@hyperref[##1]##2{##2}%
+	\def\AC@hypertarget##1##2{##2}%
+	\def\AC@phantomsection{}%
+}
+\makeatother
