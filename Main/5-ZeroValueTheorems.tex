@@ -99,7 +99,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 	With these results it is now possible to prove our initial statement of theorem~\ref{5-Zeroes-Lem-Lane-Emden-Local-Existence}.
 	It is left to prove that the operator $T:C^*\rightarrow C^*$ defined by
 	\begin{equation}
-		T(f)(x) := \theta_0 - \int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}f^n(t)\diff t\diff s
+		T(f)(x) = \theta_0 - \int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}f^n(t)\diff t\diff s
 		\label{eq:5-Zeroes-LE-Definition-Operator-On-C-Star}
 	\end{equation}
 	is continuous on $C^*$.
@@ -130,7 +130,8 @@ The following theorem makes use of that fact and of a different representation o
 \end{proof}
 %
 %
-%
+% TODO fix TOV and LE references
+% TODO fix my life.
 \subsection{TOV Equation}
 \label{subsec:5-Zeroes-TOV-Equ}
 \begin{hypothesis}[TOV Zero Value Hypothesis]
@@ -184,18 +185,52 @@ The following theorem makes use of that fact and of a different representation o
 	Since solutions of the \ac{TOV} equation have monotonously decreasing pressure $p$ and monotonously increasing mass $m$ those are taken as an additional requirement.
 	We now call $K$ the space of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
 	This space is complete with the norm $||.||_\infty$.
-	We will now again apply the Banach fixed-point theorem in combination with lemma \ref{5-Zeroes-Lem-Integral-Contraction} to obtain a unique solution.
-	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation
-	\begin{equation}
-		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2dr',-\int\limits_0^r\frac{1}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
-	\end{equation}
-	Now clearly the inner arguments of the integral are differentiable in $r,m,p$ and well defined if $r>0$.
-	There are some terms which cause problems when $r=0$.
-	Looking at $m/r$ we see that condition \eqref{5-Zeroes-Equ-TOV-Conditions-2} we issued now tells us that $m/r\rightarrow0$ as $r\rightarrow0$.
-	Similarly condition \eqref{5-Zeroes-Equ-TOV-Conditions-2} implies that $m/r^2\rightarrow0$ in the same limit.
-	This now means that on this space $K$ the integrand has a well defined differential for every $r\in[0,\epsilon]$ which in turn shows with lemma \ref{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable} that it is Lipschitz.
-	Using lemma \ref{5-Zeroes-Lem-Integral-Contraction} we can apply the Banach fixed-point theorem and obtain a unique solution.
+%	We will now again apply the Banach fixed-point theorem in combination with lemma~\ref{5-Zeroes-Lem-Integral-Contraction} to obtain a unique solution.
+	% TODO fix reference or delete everything.
+	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation~\eqref{3-Mass-Equ-TOV-Eq-1}
+	\[
+		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2 dr',-\int\limits_0^r\frac{p+\rho}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
+	\]
+	We want to prove that the integrands are Lipschitz in $m,p$.
+	For the first component of $T$ this statement is clearly true since $\rho$ is monotonously increasing and $p\in[p_0/2,p_0]$ is bound by assumption~\eqref{5-Zeroes-Equ-TOV-Conditions-3}.
+	For the second integrand together with restriction~\eqref{5-Zeroes-Equ-TOV-Conditions-1} we observe that
+	\[
+		(p+\rho)\frac{4\pi\rho r'^3+m}{r^2}\left(1-\frac{2 m}{r}\right)^{-1} \leq2(p_0+\rho_0)\left(4\pi\rho r'+\frac{m}{r}\right).
+	\]
+	The first resulting term is again Lipschitz in $p$ by the same argument.
+	For the second term we can use restriction~\eqref{5-Zeroes-Equ-TOV-Conditions-2}.
+	For the second term we look at $(m,p),(u,q)\in K$ with $0<\delta<1$
+	Then for $r\geq\delta$ it is clear that
+	\[
+		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty}\leq\frac{1}{\delta^2}\left|\left|m-u\right|\right|_{\infty}
+	\]
+	At $r=0$ the expression clearly vanishes due to constraint~\eqref{5-Zeroes-Equ-TOV-Conditions-1}.
+	Here any Lipschitz constant can be chosen.
+	For $0<r<\delta$ we readily see that
+	\[
+		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty}\leq\frac{1}{\delta^2}\left|\left|m-u\right|\right|_{\infty}
+	\]
+	which finishes the proof.
 \end{proof}
+%\begin{proof}
+%	The proof follows similar principles as previously done in lemma~\ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}.
+%	In order to solve the problem at hand we need to define a space $K$ consisting of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that all satisfy the same boundary conditions in form of initial values $m_0=0$ and $p_0>0$.
+%	Additionally, we have shown in lemma~\ref{5-Zeroes-Lem-TOV-Conditions} that we can apply the listed conditions for a small enough interval $[0,\epsilon]$ without reducing the number of possible solutions.
+%	Since solutions of the \ac{TOV} equation have monotonously decreasing pressure $p$ and monotonously increasing mass $m$ those are taken as an additional requirement.
+%	We now call $K$ the space of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
+%	This space is complete with the norm $||.||_\infty$.
+%	We will now again apply the Banach fixed-point theorem in combination with lemma~\ref{5-Zeroes-Lem-Integral-Contraction} to obtain a unique solution.
+%	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation
+%	\begin{equation}
+%		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2dr',-\int\limits_0^r\frac{1}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
+%	\end{equation}
+%	Now clearly the inner arguments of the integral are differentiable in $r,m,p$ and well defined if $r>0$.
+%	There are some terms which cause problems when $r=0$.
+%	Looking at $m/r$ we see that condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} we issued now tells us that $m/r\rightarrow0$ as $r\rightarrow0$.
+%	Similarly condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} implies that $m/r^2\rightarrow0$ in the same limit.
+%	This now means that on this space $K$ the integrand has a well defined differential for every $r\in[0,\epsilon]$ which in turn shows with lemma~\ref{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable} that it is Lipschitz.
+%	Using lemma~\ref{5-Zeroes-Lem-Integral-Contraction} we can apply the Banach fixed-point theorem and obtain a unique solution.
+%\end{proof}
 %
 %
 %
