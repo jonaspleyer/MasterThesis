@@ -8,9 +8,10 @@
 \addcontentsline{toc}{section}{Appendix}
 %
 %
-\begin{subsection}{Known Exact Solutions of the LE Equation}
+\begin{subsection}{Known Exact Solutions of the \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} Equation}
 \label{99-App-A-Exact-LE-Solutions}
-This section relies on information in \cite{weissteinLaneEmdenDifferentialEquation2020} and \cite{chandrasekharChandrasekharAnIntroductionStudy1958}. The LE equation is
+This section relies on information in~\cite{weissteinLaneEmdenDifferentialEquation2020} and~\cite{chandrasekharChandrasekharAnIntroductionStudy1958}.
+The \ac{LE} equation is
 \begin{equation}
 	\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0
 	\label{99-App-A-LE-Equation}
@@ -24,7 +25,7 @@ Both sides can be evaluated directly and then simplified further.
 	\xi^2\frac{d\theta}{d\xi} &= -\frac{\xi^3}{3}\\
 	\theta(\xi) &= \theta(0)-\frac{\xi^2}{6}
 \end{align}
-With the initial condition $\theta(0)=1$, we obtain the desired result. For $n=1$, equation \ref{99-App-A-LE-Equation} transforms into
+With the initial condition $\theta(0)=1$, we obtain the desired result. For $n=1$, equation~\ref{99-App-A-LE-Equation} transforms into
 \begin{equation}
 	\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\xi^2\theta=0
 \end{equation}
@@ -33,7 +34,8 @@ we start by substituting $U=\theta x$ and thus obtain (also multiplying by $x^2$
 	0 &= \frac{dU}{d\xi} + \xi\frac{d^2U}{d\xi^2} - \frac{dU}{d\xi} + \xi U\\
 	-U &= \frac{d^2U}{d\xi^2}
 \end{align}
-and the last equation can be solved with a linear combination of $\cos(\xi)$ and $\sin(\xi)$. Transforming back to $\theta$, we then have
+and the last equation can be solved with a linear combination of $\cos(\xi)$ and $\sin(\xi)$.
+Transforming back to $\theta$, we then have
 \begin{equation}
 	\theta(\xi) = A\frac{\sin(\xi)}{\xi} - B\frac{\cos(k\xi)}{\xi}.
 \end{equation}
@@ -41,20 +43,25 @@ The need for a well defined limit at $\xi\rightarrow0$ implies that $B=0$ and th
 \begin{equation}
 	\theta(\xi) = \frac{\sin(\xi)}{\xi}.
 \end{equation}
-For $n=5$, we start by making the two substitutions $x=1/\xi$ and $\theta=ax^\omega$ as done in \cite[94\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958} and then transforming the LE equation into
+For $n=5$, we start by making the two substitutions $x=1/\xi$ and $\theta=ax^\omega$ as done in~\cite[94\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958} and then transforming the \ac{LE} equation into
 \begin{alignat}{5}
 	&x^4\frac{d\theta}{d\xi}&&+\theta^n&&=0\\
 	&a\omega(\omega-1)x^{\omega+2}&&+a^nx^{n\omega} &&=0.
 \end{alignat}
-From this we see that $\omega+2=n\omega$ and $a\omega(\omega-1)=-a^n$ needs to be satisfied, since the equation needs to hold for all $x\in\R_{\geq0}$. Rewriting these conditions, we obtain the singular solution for the LE equation
+From this we see that $\omega+2=n\omega$ and $a\omega(\omega-1)=-a^n$ needs to be satisfied, since the equation needs to hold for all $x\in\R_{\geq0}$.
+Rewriting these conditions, we obtain the singular solution for the \ac{LE} equation
 \begin{equation}
 	\theta(x) = \left(\frac{2(n-3)}{(n-1)^2}\right)^{1/(n-1)}x^{2/(n-1)}
 \end{equation}
-since with $x=1/\xi$, we have $\theta(\xi)\rightarrow\infty$ for $\xi\rightarrow0$. Notice that the solution is only valid if $n\geq3$. We can use this solution to the LE equation and perturb it to make the more general ansatz
+since with $x=1/\xi$, we have $\theta(\xi)\rightarrow\infty$ for $\xi\rightarrow0$.
+Notice that the solution is only valid if $n\geq3$.
+We can use this solution to the \ac{LE} equation and perturb it to make the more general ansatz
 \begin{equation}
 	\theta(x) = ax^\omega z(x).
 \end{equation}
-If $n<3$, the factor $a$ has to be replaced with a more general one. The singular solution is obtained when taking $z=1$. Using another transformation $1/x=\xi=\exp(-t)$, we obtain
+If $n<3$, the factor $a$ has to be replaced with a more general one.
+The singular solution is obtained when taking $z=1$.
+Using another transformation $1/x=\xi=\exp(-t)$, we obtain
 \begin{alignat}{5}
 	&\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right) &&+ \theta^n &&=0\\
 	&x^4\frac{d^2\theta}{dx^2} &&+ \theta^n &&=0\\
@@ -71,12 +78,14 @@ we multiply both sides with $dz/dt$ and integrate
 	\frac{1}{2}\left(\frac{d^2z}{dt^2}\right) = \frac{1}{8}z^2-\frac{1}{24}z^6+D
 	\label{99-App-A-LE-For-n-5-In-z-writing}
 \end{equation}
-where $D$ is the integration constant. For $\xi\rightarrow0$, we expect $\theta\rightarrow\theta_0$ and thus $z=\theta_0\e^{-\omega t}(1/a+\mathcal{O}(\e^{-t}))$ as $t$ approaches $\infty$. We immediately see that $dz/dt$ exhibits a similar behaviour and thus the integration constant $D$ has to vanish.\\
-The right hand side of equation \ref{99-App-A-LE-For-n-5-In-z-writing} cannot get negative since otherwise $z$ would take complex values which enables us to take the square root with a minus sign\footnote{This only determines the direction in which $t$ is defined, so it is arbitrary.} and integrate again
+where $D$ is the integration constant. For $\xi\rightarrow0$, we expect $\theta\rightarrow\theta_0$ and thus $z=\theta_0\e^{-\omega t}(1/a+\mathcal{O}(\e^{-t}))$ as $t$ approaches $\infty$.
+We immediately see that $dz/dt$ exhibits a similar behaviour and thus the integration constant $D$ has to vanish.\\
+The right-hand side of equation~\ref{99-App-A-LE-For-n-5-In-z-writing} cannot get negative since otherwise $z$ would take complex values which enables us to take the square root with a minus sign\footnote{This only determines the direction in which $t$ is defined, so it is arbitrary.} and integrate again
 \begin{equation}
 	\int\left(1-\frac{1}{3}z^4\right)^{-1/2}\frac{dz}{z}=-\frac{1}{2}\int dt.
 \end{equation}
-We change the integration by again substituting the variables $1/3z^4=\sin^2(\alpha)$ and calculate $dz/z=2\cos(\alpha)/\sin(\alpha)d\alpha$ as well as $-dt=d\alpha/\sin(\alpha)$. Now we rewrite the integral
+We change the integration by again substituting the variables $1/3z^4=\sin^2(\alpha)$ and calculate $dz/z=2\cos(\alpha)/\sin(\alpha)d\alpha$ as well as $-dt=d\alpha/\sin(\alpha)$.
+Now we rewrite the integral
 \begin{align}
 	\int\frac{1}{\sqrt{1-\sin^2(\alpha)}}\frac{2\cos(\alpha)}{\sin(\alpha)}\frac{d\alpha}{} &= -\int dt\\
 	\int\frac{2d\alpha}{\sin(\alpha)} &= -\int dt.
@@ -86,7 +95,8 @@ Evaluating those integrals leads us to
 	\log(\tan(\alpha/2))+\log(1/C) = -t
 	\label{99-App-A-LE-For-n-5-Integral}
 \end{equation}
-where the integration constant has been chosen in advance to simplify the next expressions. From here, we further manipulate equation \ref{99-App-A-LE-For-n-5-Integral} and combine it with our previous substitution $1/3z^4=\sin^2(\alpha)$ to obtain
+where the integration constant has been chosen in advance to simplify the next expressions.
+From here, we further manipulate equation~\ref{99-App-A-LE-For-n-5-Integral} and combine it with our previous substitution $1/3z^4=\sin^2(\alpha)$ to obtain
 \begin{equation}
 	\frac{1}{3}z^4=\sin^2(\alpha)=\frac{4\tan^2(\alpha/2)}{\left(1+\tan^2(\alpha/2)\right)}^2
 \end{equation}
@@ -94,7 +104,8 @@ and with the solution for out integral before and plugging in the substitution f
 \begin{equation}
 	z=\pm\left(\frac{12C^2\xi^2}{1+C^2\xi^2}\right)^{1/4}.
 \end{equation}
-For $\theta$, we need to have $\theta\rightarrow\theta0=1$ as $\xi\rightarrow0$. This means that $C=1$ and with $\theta=ax^\omega z$, we obtain
+For $\theta$, we need to have $\theta\rightarrow\theta0=1$ as $\xi\rightarrow0$.
+This means that $C=1$ and with $\theta=ax^\omega z$, we obtain
 \begin{equation}
 	\theta = \frac{1}{\left(1+\frac{1}{3}\xi^2\right)^{1/2}}.
 \end{equation}
@@ -103,31 +114,31 @@ We see that this equation has no zero value and tends to $0$ as $\xi\rightarrow\
 %
 %
 %
-\subsection{New Exact LE Series Solution at Index 2}
-One can derive another exact solution for the LE equation at the exponent $n=2$ when 
+\subsection{New Exact \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} Series Solution at Index 2}
+One can derive another exact solution for the \ac{LE} equation at the exponent $n=2$ when 
 considering a series expansion of $\theta$ around the point $\xi=0$ with initial conditions
 \begin{equation}
 	\theta=\sum\limits_{m=0}^\infty a_m\xi^m \hspace{1cm} a_0=\left.\theta\right|_{\xi=0}=\theta_0 
 	\hspace{1cm} a_1=\left.\frac{d\theta}{d\xi}\right|_{\xi=0}=0
-	\label{5-MoExSo-LEN2-Series-Initial-Conditions}
+	\label{99-App-LEN2-Series-Initial-Conditions}
 \end{equation}
-Since the series is absolut convergent, we can plug it into the LE equation \ref{3-Mass-Equ-Lane-Emden-Eq} and use the Cauchy Product formula.
+Since the series is absolut convergent, we can plug it into the \ac{LE} equation~\ref{3-Mass-Equ-Lane-Emden-Eq} and use the Cauchy Product formula.
 \begin{equation}
 	\sum\limits_{m=2}^\infty m(m-1)a_m\xi^{m-2}+\sum\limits_{m=1}^\infty (2m)a_m\xi^{m-2} + 
 	\sum\limits_{m=0}^\infty\sum\limits_{k=0}^m a_{m-k}a_k\xi^m = 0
-	\label{5-MoExSo-LEN2-Series-PluggedIn}
+	\label{99-App-LEN2-Series-PluggedIn}
 \end{equation}
 \begin{theorem}
 	The odd coefficients $a_{2m+1}$ of this series expansion vanish.
 \end{theorem}
 \begin{proof}
-	We rewrite the summations of equation \ref{5-MoExSo-LEN2-Series-PluggedIn} to start at the 
+	We rewrite the summations of equation~\ref{99-App-LEN2-Series-PluggedIn} to start at the 
 	same index $m=0$ and combine them
 	\begin{equation}
 		\sum\limits_{m=0}^\infty\left((m+2)(m+1)a_{m+2}\xi^{m}+(2m+2)a_{m+1}\xi^{m-1} + 
 		\sum\limits_{k=0}^m a_{m-k}a_k\xi^m\right) = 0
 	\end{equation}
-	With equation \ref{5-MoExSo-LEN2-Series-Initial-Conditions}, we can start the summation 
+	With equation~\ref{99-App-LEN2-Series-Initial-Conditions}, we can start the summation 
 	in the middle one index higher and separate the term $\xi^m$. This equation has to be true 
 	inside the radius of convergence of the series and thus needs to vanish for ambiguous $\xi$.
 	\begin{equation}
@@ -137,10 +148,12 @@ Since the series is absolut convergent, we can plug it into the LE equation \ref
 	of the series
 	\begin{equation}
 		a_{m+2} = -\frac{1}{(m+2)(m+3)}\sum\limits_{k=0}^ma_{m-k}a_k.
-		\label{5-MoExSo-LEN2-Recursive-Coefficients}
+		\label{99-App-LEN2-Recursive-Coefficients}
 	\end{equation}
-	We show the statement by induction. For $a_1$ it is already true. Let the statement be true 
-	for all odd values $2k+1\leq2m+1$. Writing down $a_{2m+3}$ gives us
+	We show the statement by induction. 
+	For $a_1$ it is already true.
+	Let the statement be true for all odd values $2k+1\leq2m+1$. 
+	Writing down $a_{2m+3}$ gives us
 	\begin{equation}
 		a_{2m+3} = -\frac{1}{(2m+3)(2m+4)}\left(a_0a_{2m+1}+a_1a_{2m}+\dots+a_{2m}a_1+a_{2m+1}a_0\right).
 	\end{equation}
@@ -152,14 +165,14 @@ the subseries with initial values given by
 \begin{equation}
 	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} = 
 	-\frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^mb_{m-k}b_k \hspace{1cm} b_0=\theta_0
-	\label{5-MoExSo-LEN2-bn-Definition}
+	\label{99-App-LEN2-bn-Definition}
 \end{equation}
 \begin{theorem}
 	The series $\theta=\sum\limits_{m=0}^\infty b_m\xi^{2m}$ converges for $\xi\leq1$.
 \end{theorem}
 \begin{proof}
-	We start by showing that $|b_{m+1}|\leq1/(4m+6)$. Using the triangle inequality on 
-	\ref{5-MoExSo-LEN2-bn-Definition}, we obtain
+	We start by showing that $|b_{m+1}|\leq1/(4m+6)$.
+	Using the triangle inequality on~\ref{99-App-LEN2-bn-Definition}, we obtain
 	\begin{equation}
 		|b_{m+1}| \leq \frac{1}{(2m+2)(2m+3)}\sum\limits_{k=0}^m|b_{m-k}b_k|.
 	\end{equation}
@@ -169,53 +182,52 @@ the subseries with initial values given by
 		|b_{m+1}| \leq \frac{m}{(2m+2)(2m+3)} = \frac{1}{2}\frac{m}{(m+1)}\frac{1}{(2m+3)}
 		\leq\frac{1}{2}\frac{1}{(2m+3)}
 	\end{equation}
-	which proves the first statement. To see that $b_m$ is a alternating sequence, we again inspect
-	\ref{5-MoExSo-LEN2-bn-Definition}. The first element of the series is 
-	$b_0=1$ and the second is $b_1=-1/6$ so the initial statement is again correct. Let $b_m$ be 
-	alternating for all $m<2m+1$. Then equation \ref{5-MoExSo-LEN2-bn-Definition} for odd values reads
+	which proves the first statement.
+	To see that $b_m$ is a alternating sequence, we again inspect~\ref{99-App-LEN2-bn-Definition}.
+	The first element of the series is $b_0=1$ and the second is $b_1=-1/6$ so the initial statement is again correct.
+	Let $b_m$ be alternating for all $m<2m+1$.
+	Then equation~\ref{99-App-LEN2-bn-Definition} for odd values reads
 	\begin{equation}
 		b_{2m+1} = -\frac{1}{(4m+4)(4m+5)}\left(b_{2m}b_0+b_{2m-1}b_1+\dots+b_0b_{2m}\right)
 	\end{equation}
 	This shows that if all odd values $b_{2k+1}$ are negative and all even ones are positive, 
-	then $b_{2m+1}$ is negative too. The same holds true when the index $2m+2$ is even.
-	By the Leibniz criterion the series converges if $\xi\leq1$. 
+	then $b_{2m+1}$ is negative too.
+	The same holds true when the index $2m+2$ is even.
+	By the Leibniz criterion the series converges if $\xi\leq1$.
 \end{proof}
 \begin{figure}[H]
+	{\centering
 	\import{pictures/5-MoreExactSolutions/}{LE-ExactN2.pgf}
-	\caption[LE Solution for $n=2$]{LE Solution for $n=2$ - We see the power 
-	the series calculated with the coefficients explained above (the far right tick is the 
-	last calculated value for $R_m$ where plotting is stopped) and 
-	the sequence $R_m=(|a_m|)^{-1/m}$ which approaches the radius of convergence.
 	}
-	\label{5-MoExSo-LEN2-Plot}
+	\caption[\acrNoHyperlink{\acs}{LE} Solution for $n=2$]{\ac{LE} Solution for $n=2$}
+	\label{99-App-Plt-LEN2-Plot}
+	\small
+	We see the power the series calculated with the coefficients explained above.
+	The far right tick is the last calculated value for $R_m$ where plotting is stopped) and the sequence $R_m=(|a_m|)^{-1/m}$ which approaches the radius of convergence.
 \end{figure}\noindent
-These results can be used to calculate the power series of the LE equation numerically. 
-Figure \ref{5-MoExSo-LEN2-Plot} shows those results. Good agreement is found between the two solutions 
+These results can be used to calculate the power series of the \ac {LE} equation numerically.
+Figure~\ref{99-App-Plt-LEN2-Plot} shows those results.
+Good agreement is found between the two solutions
 as the difference $\Delta=\theta_{calc}-\theta_{ser}$ is not larger than $0.00015$.
 % However in both plots at the bottom, the last few values where the solution starts reaching the 
 % radius of convergence have been omitted for visual clarity. 
 The solutions differ for larger values around $\approx3.918$
 The top right plot indicates that the radius of convergence might actually be larger than 
 where solutions deviate. 
-One important observation is that in this procedure, 
-the coefficients were calculated up to $b_{250}\approx-4.7723\times10^{-296}$ which is in close 
-proximity to the floating point limit of python given by $\approx2.2251\times10^{-308}$ and 
-indicates that numerical errors may be the reason the series starts to diverge. 
-Also in order to achieve sufficient numerical precision, we would need to calculate higher 
-order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows
-that these parts of the series still yield large contributions to the value of $\theta$ at this point.
+One important observation is that in this procedure, the coefficients were calculated up to $b_{250}\approx-4.7723\times10^{-296}$ which is in proximity to the floating point limit of python given by $\approx2.2251\times10^{-308}$ and indicates that numerical errors may be the reason the series starts to diverge.
+Also in order to achieve sufficient numerical precision, we would need to calculate higher order terms of the series, which is supported by $(R_{250})^{500}\approx3.2159\times10^{296}$ and shows that these parts of the series still yield large contributions to the value of $\theta$ at this point.
 %
 %
 %
-\subsection{Exact TOV Solution in Absence of Mass}
+\subsection{Exact \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} Solution in Absence of Mass}
 \begin{theorem}[TOV Exact Solution]
-	The TOV equation \ref{4-NumSol-Equ-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
+	The TOV equation~\ref{4-NumSol-Equ-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
 	\begin{equation}
 		p = \frac{p_0}{2\pi rp_0+1}
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	First we transform the TOV equation \ref{3-Mass-TOV-Eq} using $p=y^a$ with $a>0$ and $m=Arv$ and together with the polytropic EOS $\rho=Ap^{1/\gamma}$ obtain
+	First we transform the TOV equation~\ref{3-Mass-TOV-Eq} using $p=y^a$ with $a>0$ and $m=Arv$ and together with the polytropic EOS $\rho=Ap^{1/\gamma}$ obtain
 	\begin{align}
 		\frac{\partial v}{\partial r} &= 4\pi ry^{a/\gamma}-Av\\
 		ay^{a-1}\frac{\partial y}{\partial r} &= -\frac{vA^2y^{a/\gamma}}{r}\left(1+\frac{y^a}{Ay^{a/\gamma}}\right)\left(\frac{4\pi r^2y^a}{Av} +1\right)\frac{1}{1-2vA}
@@ -225,8 +237,8 @@ that these parts of the series still yield large contributions to the value of $
 	\begin{equation}
 		\frac{\partial y}{\partial r} = -\frac{y^{a/\gamma-a+1}}{ar}\left(A+y^{a-a/\gamma}\right)\left(4\pi r^2y^a +Av\right)\frac{1}{1-2vA}.
 	\end{equation}
-	Using $\gamma=1+1/n$ with $n>0$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$. We restrict 
-	ourselves to a compact domain $r\in \overline{B_{\delta}(\tau)}$ and $v\in[0,1/2A-\epsilon]$ where $0<\epsilon<1/2A$. 
+	Using $\gamma=1+1/n$ with $n>0$, we see that this equation is continuous in every variable $(r,y,v)\in\R_{>0}\times\R_{\geq0}\times[0,1/2A)$.
+	We restrict ourselves to a compact domain $r\in \overline{B_{\delta}(\tau)}$ and $v\in[0,1/2A-\epsilon]$ where $0<\epsilon<1/2A$.
 	We choose $0<\delta$ and $0\leq\tau$ in such a way that $0<\epsilon<1/2A$ is satisfied for some $\epsilon$ which is possible since $m\rightarrow0$ for $r\rightarrow0$.
 	To obtain Lipschitz continuity in $(y,v)$, all of the following conditions need to be fulfilled.
 	\begin{equation}
@@ -234,7 +246,8 @@ that these parts of the series still yield large contributions to the value of $
 		\label{tmp-label-1}
 		% TODO Change label when the proof is complete and in the correct section
 	\end{equation}
-	The second equation implies the first and the third. Thus we only need to choose $a\geq(1-1/\gamma)^{-1}$. With $\gamma=1+1/n$ we can rewrite this equation to 
+	The second equation implies the first and the third. Thus we only need to choose $a\geq(1-1/\gamma)^{-1}$.
+	With $\gamma=1+1/n$ we can rewrite this equation to
 	\begin{equation}
 		a\geq n+1
 	\end{equation}
@@ -243,7 +256,7 @@ that these parts of the series still yield large contributions to the value of $
 	Without loss of generality we can choose $\delta$ small enough such that solutions are positive in $p$.
 	%Let $\epsilon\rightarrow0$ and $\delta\rightarrow0$ be two (wlog monotonous) sequences with identical initial values $\tau, y(\tau), v(\tau)$. Respective solutions are identical for 
 	%all values on which both are defined. This means we can extend our solution to cover $(0,\infty)\times(0,\infty)\times[0,1/2A)$. 
-	By transforming back equation \ref{tmp-label-2} to 
+	By transforming back equation~\ref{tmp-label-2} to 
 	\begin{equation}
 		\frac{\partial p}{\partial r} = -\frac{1}{r^2}\left(Ap^{1/\gamma}+p\right)\left(4\pi r^3p+vA\right)\left(1-2vA\right)^{-1}
 	\end{equation}
@@ -255,7 +268,8 @@ that these parts of the series still yield large contributions to the value of $
 	\begin{equation}
 		p = \frac{\tilde{p}}{2\pi\tilde{p}(r^2-\tau^2)+1}
 	\end{equation}
-	where $\tilde{p}$ is the initial value at $r=\tau$. It is clear that this solution can be extended to $r\in[0,\infty)$ by choosing arbitrary small $\tau$.
+	where $\tilde{p}$ is the initial value at $r=\tau$.
+	It is clear that this solution can be extended to $r\in[0,\infty)$ by choosing arbitrary small $\tau$.
 	In the limit, the result equals the hypothesis.
 \end{proof}
 %
@@ -268,22 +282,22 @@ When solving the \ac{TOV} or \ac{LE} equation numerically calculations for the n
 This simple fact which is integral to the concept of an \ac{ODE} means that numerics is single thread \footnote{Thread refers to a sequence of instructions given to a processing unit.} bound which already puts one at a systematic disadvantage.
 This means any effort to parallelise the given task must focus on distributing the individual solving routines to respective threads.
 With this first consideration at hand a server with high number of processing units may come into mind to then speed up the calculation.
-However in the situation of section \ref{4-NumSol-Sec-TOV-Exponents} this would only allow us to calculate more results in parallel but not speed up the individual solving routines.
+However in the situation of section~\ref{4-NumSol-Sec-TOV-Exponents} this would only allow us to calculate more results in parallel but not speed up the individual solving routines.
 And this is exactly the bottleneck in our case.
-When looking at figure \ref{4-NumSol-Plt-TOV-Exponents-Combo} it is clear that higher values for $r_0$ are of interest where the curves reach the current maximum limit.
+When looking at figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo} it is clear that higher values for $r_0$ are of interest where the curves reach the current maximum limit.
 From this figure it is also clear that the effort will increase exponentially since we are bound to a single thread for individual solving routines.
 Hence parallel computation of this problem would not help in this case especially considering that server processing units typically have lower single threaded performance than consumer chips.\\
 Explicit parallelisation is achieved by distributing different values of $n$ to different threads. 
 More efficient distribution of those calculations can make a difference but effects discussed above and below have more impact.
 Furthermore in order to fully understand how to improve for this distribution it is partly necessary to calculate the results which is then even less of an issue afterwards.\\
 Another optimisation evolved around not computing unnecessary cases.
-Consider again figure \ref{4-NumSol-Plt-TOV-Exponents-Combo}.
+Consider again figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo}.
 It is clear (however not proven until now) that for each combination $A,p_0$ at some value $n_0(A,p_0)$ values for $r_0$ will reach the numerical upper limit of the routine.
 For other solving routines with $n\geq n_0$ the same will happen which makes it unnecessary to even begin to compute them since they will not be shown in the graph anyways.
 This behaviour has been verified for a number of numerical combinations of parameters before beeing utilised in the final version.
 For the solving routine this means explicitly that once there have been $2$ previous solving routines that failed in obtaining a value lower than $r_0$, the whole routine will not consider solving for any combinations of these particular parameters $A,p_0$ anymore.\\
 Another obvious optimisation was to use a database to store results.
-In this case MongoDB \cite{dirolfPymongo11Python2021} was chosen for its good integration with the python language. 
+In this case MongoDB~\cite{dirolfPymongo11Python2021} was chosen for its good integration with the python language. 
 This pool of results allows one to compare the current solving routine with already calculated results.
 % In many cases extra calculations can be circumvented by a database query:
 Extra calculations can be permitted after a database query in the following cases:
@@ -298,9 +312,21 @@ This means if a thread started by the program finished and another is still runn
 This is a possibility for future tweaks.\\
 So far the previous discussion evolved around a fixed stepsize.
 Since in this case the 4th order Runge Kutta solving method was implemented by hand, it is possible to use variable stepsizes for solving.
-From figure \ref{4-NumSol-Plt-ValidateLEResults} we can see that the largest errors occur in the first step of integration. 
-This means in the beginning a small stepsize is desireable to retain accuracy while later it can be increased. 
+From figure~\ref{4-NumSol-Plt-ValidateLEResults} we can see that the largest errors occur in the first step of integration. 
+This means in the beginning a small stepsize is desirable to retain accuracy while later it can be increased. 
 These settings were experimented with but since the author had already achieved numerous results with a constant stepsize were not committed to the final version.
-It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.
+It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.\\
+Furthermore, one could attempt to rewrite the code in a lower level programming language such as C to obtain a performance benefit.
+Results from~\cite{jensenDrujensenFib2021} show a $676\%$ increase in performance for calculating Fibonacci numbers between the two languages when compiling code with PyPy.
+It is however unclear to which degree this theoretical improvement would carry over to the code present.\\
+The code is also designed in a way to check regularly for already present results in the database.
+These calls could be forwarded to a different handler in order to possibly parallelise the problem and reduce disk\footnote{We refer to the term disk although the data was stored on a solid state drive.} latency issues.
+%
+%
+%
+\subsection{Nonexistence of Global \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} Solutions}
+\label{99-App-NoGlobalLE}
+We present a variation of the proof given in~\cite[p.~36]{quittnerSuperlinearParabolicProblems2007} to conclusively show theorem~\ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary}.
+% TODO reformulate proof to show what we want to show.
 \end{section}
 \end{appendix}

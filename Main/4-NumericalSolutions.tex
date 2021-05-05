@@ -1,5 +1,5 @@
 \begin{section}{Numerical Solutions}
-\begin{subsection}{Comparing \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} results with a polytropic \acrNoHyperlink{\acs}{eos}}
+\begin{subsection}{Comparing \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} and \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} results with a polytropic \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \label{4-NumSol-Sec-Comp-TOV-LE}
 In this section the numerical solutions of the \ac{TOV} equation
 \begin{align}
@@ -7,22 +7,22 @@ In this section the numerical solutions of the \ac{TOV} equation
 	\frac{\partial p}{\partial r} &=-\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3 p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
 	\label{4-NumSol-Equ-TOVEqBasic2}
 \end{align}
-as derived previously in section \ref{3-Mass-Sec-TOVDerivation} will be discussed.
+as derived previously in section~\ref{3-Mass-Sec-TOVDerivation} will be discussed.
 To obtain numerical solvability an \ac{eos} in the form $\rho(r,p)$ is supplied.
-In Figure \ref{4-NumSol-Plt-TOVEqEasyEOS}, a plot of such a solution is presented.
-The density $\rho$ is derived via the equation \eqref{4-NumSol-Equ-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method \cite{rungeUeberNumerischeAufloesung1895, schlömilch1901zeitschrift, h.SimplifiedDerivationAnalysis2010}.
+In Figure~\ref{4-NumSol-Plt-TOVEqEasyEOS}, a plot of such a solution is presented.
+The density $\rho$ is derived via the equation~\eqref{4-NumSol-Equ-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method~\cite{rungeUeberNumerischeAufloesung1895, schlömilch1901zeitschrift, h.SimplifiedDerivationAnalysis2010}.
 The integration is stopped once the pressure reaches values $p\leq0$.
-The initial value of \eqref{4-NumSol-Equ-TOVEqBasic1} is $\partial_r m(r=0)=0$.
-For equation \eqref{4-NumSol-Equ-TOVEqBasic1}, the initial value can be calculated when applying L'Hôpital's rule and combining them to obtain
+The initial value of~\eqref{4-NumSol-Equ-TOVEqBasic1} is $\partial_r m(r=0)=0$.
+For equation~\eqref{4-NumSol-Equ-TOVEqBasic1}, the initial value can be calculated when applying L'Hôpital's rule and combining them to obtain
 \begin{alignat}{5}
 	\lim\limits_{r\rightarrow0}\frac{m}{r} &= \lim\limits_{r\rightarrow0}\frac{\partial m}{\partial r} &&=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{1} &&= 0\\
 	\lim\limits_{r\rightarrow0}\frac{m}{r^2} &= \lim\limits_{r\rightarrow0}\frac{1}{2r}\frac{\partial m}{\partial r}  &&= \lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{2r} &&= 0\\
 	\lim\limits_{r\rightarrow0}\frac{m}{r^3} &= \lim\limits_{r\rightarrow0}\frac{1}{3r^2}\frac{\partial m}{\partial r} &&=\lim\limits_{r\rightarrow0}\frac{4\pi\rho r^2}{3r^2} &&= \frac{4\pi\rho_0}{3}\\
 	\lim\limits_{r\rightarrow0}\frac{\partial p}{\partial r} &= 0
 \end{alignat}
-Explicit code can be found in \cite{pleyerGithubRepositoryJonas2021}.
-The Lane-Emden equation was obtained in section \ref{3-Mass-Sec-LEDerivation} as the non-relativistic limit of the \ac{TOV} equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$.
-To obtain numerical results for the \ac{LE} equation as given in equation \eqref{3-Mass-Equ-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
+Explicit code can be found in~\cite{pleyerGithubRepositoryJonas2021}.
+The Lane-Emden equation was obtained in section~\ref{3-Mass-Sec-LEDerivation} as the non-relativistic limit of the \ac{TOV} equation by neglecting terms of order $1/c^2$ and higher and setting $G=c=1$.
+To obtain numerical results for the \ac{LE} equation as given in equation~\eqref{3-Mass-Equ-Lane-Emden-Eq}, a substitution of the form $d\theta/d\xi=\chi$ was used.
 \begin{equation}
 	\begin{aligned}
 		\frac{d\theta}{d\xi} &= \chi &\hspace{1cm} \left.\frac{d\theta}{d\xi}\right|_{\xi=0} &= 0\\
@@ -31,15 +31,15 @@ To obtain numerical results for the \ac{LE} equation as given in equation \eqref
 	\end{aligned}
 \end{equation}
 The initial value for $d\chi/d\xi$ can be calculated with L'Hôpital's rule.
-With the conversion factor $\kappa$ derived in section \ref{3-Mass-Sec-LEDerivation}, \ac{TOV} and \ac{LE} results can be compared.
-Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows the solution of both equations for the parameters of Table \ref{4-NumSol-Tbl-TOVParameters}.
+With the conversion factor $\kappa$ derived in section~\ref{3-Mass-Sec-LEDerivation}, \ac{TOV} and \ac{LE} results can be compared.
+Figure~\ref{4-NumSol-Plt-TOVEqEasyEOS} shows the solution of both equations for the parameters of Table~\ref{4-NumSol-Tbl-TOVParameters}.
 Additionally conversion equations to compare \ac{TOV} and \ac{LE} results are displayed.
 Since the mass reads
 \begin{equation}
 	m(r) = \int\limits_0^r 4\pi r'^2\rho(r')dr',
 \end{equation}
 we expect $\partial m/\partial r(R)=0$ if $p(R)=0$ when choosing a polytropic equation of state with $\gamma>0$.
-The plot in Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour for the Lane Emden equation at $r\approx2.31$ and has the same behaviour for the \ac{TOV} results at $r\approx6.80$.\footnote{For the purpose of nicely displaying the calculated result, the plot only shows result up to $r=2.5$}
+The plot in Figure~\ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour for the Lane Emden equation at $r\approx2.31$ and has the same behaviour for the \ac{TOV} results at $r\approx6.80$.\footnote{For the purpose of nicely displaying the calculated result, the plot only shows result up to $r=2.5$}
 \begin{table}[H]
 	{\renewcommand{\arraystretch}{1.2}
 	\centering
@@ -63,7 +63,7 @@ The plot in Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour
 	\caption[Numerical Parameters for \acrNoHyperlink{\acs}{TOV} and LE equation]{Numerical Parameters for \ac{TOV} and \ac{LE} equation}
 	\label{4-NumSol-Tbl-TOVParameters}
 	\small
-	Values in the lower part are calculated to compare both results instead of being supplied to the solving routine.
+	To compare results, values $\rho_0,K,\kappa$ are calculated from ones supplied to the solving routine.
 \end{table}%
 \begin{figure}[H]
 	{\centering
@@ -72,10 +72,9 @@ The plot in Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour
 	\caption[Comparison of the \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} equation]{Comparison of the \ac{TOV} and \ac{LE} equation.}
 	\label{4-NumSol-Plt-TOVEqEasyEOS}
 	\small
-	The images show the plots for the parameters of Table \ref{4-NumSol-Tbl-TOVParameters}.
+	The images show the plots for the parameters of Table~\ref{4-NumSol-Tbl-TOVParameters}.
 	The pressures and masses as presented in the first column are direct solutions of the \ac{TOV} or \ac{LE} equations.
 	On the top right-hand side the densities calculated with the \ac{eos} and average densities $\bar{\rho}_i=(4\pi/3)^{-1}m_i/r^3$ are being compared.
-
 %	First the pressure is presented.
 %	Afterwards the density calculated with the given \ac{eos} and the average density $\bar{\rho}_i=(4\pi/3)^{-1}m_i/r^3$ for the two solutions are being compared.
 %	In the second row, the masses and ratios $m_i/r$ can be seen.
@@ -87,17 +86,17 @@ The plot in Figure \ref{4-NumSol-Plt-TOVEqEasyEOS} shows this expected behaviour
 \label{4-NumSol-Sec-Verifiying-the-results}
 % Verification is done in different ways. 
 % First, o
-One can compare calculated \ac{LE} results with already known exact  solutions for certain exponents as given in table \ref{3-Mass-Tbl-LE-Exact-Results}.
-The graphs of figure \ref{4-NumSol-Plt-ValidateLEResults} overall show good numerical agreement.
-The integration stepsize for the left-hand side results of figure \ref{4-NumSol-Plt-ValidateLEResults} is $d\xi=0.03$.
+One can compare calculated \ac{LE} results with already known exact  solutions for certain exponents as given in table~\ref{3-Mass-Tbl-LE-Exact-Results}.
+The graphs of figure~\ref{4-NumSol-Plt-ValidateLEResults} overall show good numerical agreement.
+The integration stepsize for the left-hand side results of figure~\ref{4-NumSol-Plt-ValidateLEResults} is $d\xi=0.03$.
 Initial values at $r=0$ are identical since they were set to be.
-The spike occurring afterwards can be explained by equations \eqref{4-NumSol-Equ-LE-Substitution}.
+The spike occurring afterwards can be explained by equations~\eqref{4-NumSol-Equ-LE-Substitution}.
 The initial value of all derivatives is identically $0$ which means no change in the values $\theta$ or $\chi$ for the initial step of the numerical integration.
 On the other hand the exact results will show a change which explains the large discrepancy in the beginning.
 %It is clear that the relative difference on the right-hand side will spike again once smaller values for $\theta$ are reached if the absolute difference stays constant.
 %This behaviour is best seen in the solution for $n=5$ where a large range of $0\leq r\leq100$ for solving was chosen.
 %The offset between the numerically calculated values and the exact result stays constant while the value of $\theta$ decreases inverse proportionally.
-Despite this behaviour we can see that the criterion for convergence is well fulfilled in the right-hand side of figure \ref{4-NumSol-Plt-ValidateLEResults}.
+Despite this behaviour we can see that the criterion for convergence is well fulfilled in the right-hand side of figure~\ref{4-NumSol-Plt-ValidateLEResults}.
 The plot displays nicely that by lowering the integration stepsize, the maximum difference in this interval decreases.
 \begin{figure}[H]
 	\centering
@@ -109,34 +108,34 @@ The plot displays nicely that by lowering the integration stepsize, the maximum 
 \end{figure}\noindent
 %As can be seen in the last column of plots, the condition for convergence in this case is well fulfilled.
 % TODO TOV-Terms: Why do we do this? Explain it better.
-% Next, we wish to see how accurate numerical \ac{TOV} results are. This is not an easy task since no explicit solutions are known for the \ac{TOV} equation. However one way to at least get confident that solving was a success is by dropping terms from right to left in equation \eqref{4-NumSol-Equ-TOVEqBasic2} and solving for these new differential equations. As we have seen in section \ref{3-Mass-LEDerivation}, the last result should reproduce the \ac{LE} equation. These intermediate differential equations have been numerically solved and results can be seen in Figure \ref{4-NumSol-TovTerms}.
+% Next, we wish to see how accurate numerical \ac{TOV} results are. This is not an easy task since no explicit solutions are known for the \ac{TOV} equation. However one way to at least get confident that solving was a success is by dropping terms from right to left in equation~\eqref{4-NumSol-Equ-TOVEqBasic2} and solving for these new differential equations. As we have seen in section~\ref{3-Mass-LEDerivation}, the last result should reproduce the \ac{LE} equation. These intermediate differential equations have been numerically solved and results can be seen in Figure~\ref{4-NumSol-TovTerms}.
 % \begin{figure}[H]
 % 	\centering
 % 	\import{pictures/4-NumericalSolutions/}{TOV-Terms.pgf}
-% 	\caption[Comparison of \ac{LE} and partial TOV solutions]{Comparison of \ac{LE} and partial \ac{TOV} solutions - The index $i$ represents the number of terms still present in the equation where $i=3$ means the complete \ac{TOV} equation and $i=0$ the \ac{LE} equation. The last figure shows the difference between the \ac{TOV} solution with $0$ terms and the \ac{LE} solution calculated via equation \eqref{4-NumSol-Equ-LE-Substitution}. The scale of the difference shows a maximum of $\approx3.5\times10^{-7}$. In order to achieve such a comparison, a polynomial fit of both pressure solutions had to be done. This should however not alter the result in any noticeable way. For further details see \cite{pleyerGithubRepositoryJonas}.}
+% 	\caption[Comparison of \ac{LE} and partial TOV solutions]{Comparison of \ac{LE} and partial \ac{TOV} solutions - The index $i$ represents the number of terms still present in the equation where $i=3$ means the complete \ac{TOV} equation and $i=0$ the \ac{LE} equation. The last figure shows the difference between the \ac{TOV} solution with $0$ terms and the \ac{LE} solution calculated via equation~\eqref{4-NumSol-Equ-LE-Substitution}. The scale of the difference shows a maximum of $\approx3.5\times10^{-7}$. In order to achieve such a comparison, a polynomial fit of both pressure solutions had to be done. This should however not alter the result in any noticeable way. For further details see~\cite{pleyerGithubRepositoryJonas}.}
 % 	\label{4-NumSol-TovTerms}
 % \end{figure}
 % 
 \end{subsection}
 %
 %
-\begin{subsection}{Relativistic \acrNoHyperlink{\acs}{eos}}
+\begin{subsection}{Relativistic \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \label{4-NumSol-Sec-RelEOS}
-In the previous discussion, we relied on the \ac{eos} given in Table \ref{4-NumSol-Tbl-TOVParameters}.
+In the previous discussion, we relied on the \ac{eos} given in Table~\ref{4-NumSol-Tbl-TOVParameters}.
 This is a versatile assumption, but one could ask what would happen to a star in which the particles have no interaction but are close to relativistic speed.
-The resulting \ac{eos} was calculated in the beginning (see equation \eqref{2-IntEner-FinalEOS}) although not written down explicitly.
+The resulting \ac{eos} was calculated in the beginning (see equation~\eqref{2-IntEner-FinalEOS}) although not written down explicitly.
 Since explicit inversion of the given function is complicated, we rely on numerical methods for calculation.
-Section \ref{2-IntEner-SR-EOS-Derivation} showed that the function given in equation \eqref{2-IntEner-PressureAlpha}
+Section~\ref{2-IntEner-SR-EOS-Derivation} showed that the function given in equation~\eqref{2-IntEner-PressureAlpha}
 \begin{equation}
 	p(\alpha) = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right).
 \end{equation}
 explicitly has a non-positive slope. 
 When calculating an inverse function the values $C,N,m$ need to be chosen high enough in order to reach sufficiently high values for $p$.
-By knowing the initial value $p_0$ and by the fact that the pressure of the \ac{TOV} solution \eqref{3-Mass-Equ-TOV-Eq-1} has a non-positive slope and with equation \eqref{2-IntEner-PressureAlpha-Limit}, it is sufficient to choose $Bp_0=CNmc^2>2/\e^2$.
+By knowing the initial value $p_0$ and by the fact that the pressure of the \ac{TOV} solution~\eqref{3-Mass-Equ-TOV-Eq-1} has a non-positive slope and with equation~\eqref{2-IntEner-PressureAlpha-Limit}, it is sufficient to choose $Bp_0=CNmc^2>2/\e^2$.
 On the other hand it is also important to choose high enough values for $\alpha$ for numerical inversion since otherwise functions can not be displayed if they reach small enough values for $p$.
 The limit for $\alpha$ is chosen such that values as low as $0.001p_0$ can be evaluated.
-Afterwards the function over the given interval is inverted by a polynomial fit and then used in equation \eqref{2-IntEner-DensityAlpha} to obtain the \ac{eos}.\\
-Figure \ref{4-NumSol-Plt-RelEOS-TOV-Comparison} is an example which shows a clear difference between the polytropic and relativistic \ac{eos}.
+Afterwards the function over the given interval is inverted by a polynomial fit and then used in equation~\eqref{2-IntEner-DensityAlpha} to obtain the \ac{eos}.\\
+Figure~\ref{4-NumSol-Plt-RelEOS-TOV-Comparison} is an example which shows a clear difference between the polytropic and relativistic \ac{eos}.
 The values used are $B=20$, $p_0=0.4$, $dr=0.001$, $n=1$.
 The correct prefactor $A$ of the polytropic \ac{eos} is chosen after numerical calulation of the relativistic \ac{eos}.
 It is then simply given by 
@@ -153,15 +152,15 @@ This normalises both \acp{eos} to same inital pressures.
 \end{subsection}
 %
 %
-\begin{subsection}{Zero Values of the \acrNoHyperlink{\acs}{TOV} and \acrNoHyperlink{\acs}{LE} equation}
+\begin{subsection}{Zero Values of the \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} and \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} equation}
 \label{4-NumSol-Sec-TOV-Exponents}
 Having discussed individual solutions for the \ac{TOV} and \ac{LE} equation, this section now turns to analysing zero values of both equations.
 We define a zero value as the first point in which the solution of our differential equation reaches value $0$, or more precisely where the pressure $p$ reaches zero.\footnote{Note that $p_0$ still denotes the initial value while $r_0$ and $\xi_0$ denote values where $p=0$.}
 Even now the problem is not well posed since for different solving routines alternative transformations may be used.
 This has to be kept in mind when comparing results. 
-Apart from the previously defined exact solutions of Table \ref{3-Mass-Tbl-LE-Exact-Results} we will only use the parameter $r$ as defined by equation \eqref{3-Mass-TOV-Eq} to display final results.
-In order to solve the equations, a transformation in the form applied in section \ref{3-Mass-Sec-LEDerivation} is used since it was hoped to increase the precision with which the zero value is determined.
-This can be motivated by looking at plots for \ac{LE} solutions as in Figure \ref{3-Mass-Plt-LE-Exact-Results-Plots} and comparing them to \ac{TOV} results of Figure \ref{4-NumSol-Plt-TOVEqEasyEOS}.
+Apart from the previously defined exact solutions of Table~\ref{3-Mass-Tbl-LE-Exact-Results} we will only use the parameter $r$ as defined by equation~\eqref{3-Mass-TOV-Eq} to display final results.
+In order to solve the equations, a transformation in the form applied in section~\ref{3-Mass-Sec-LEDerivation} is used since it was hoped to increase the precision with which the zero value is determined.
+This can be motivated by looking at plots for \ac{LE} solutions as in Figure~\ref{3-Mass-Plt-LE-Exact-Results-Plots} and comparing them to \ac{TOV} results of Figure~\ref{4-NumSol-Plt-TOVEqEasyEOS}.
 With the \ac{eos} $\rho=Ap^{1/\gamma}$ and the new definition $\rho=\rho_0\theta^n$, the equations used are 
 \begin{alignat}{3}
 	\frac{\partial m}{\partial\xi} &= &&4\pi\kappa^3\rho\xi^2\\
@@ -169,19 +168,19 @@ With the \ac{eos} $\rho=Ap^{1/\gamma}$ and the new definition $\rho=\rho_0\theta
 	\label{4-NumSol-Equ-TOV-Exponents-Transf-TOV}
 \end{alignat}
 where $\rho=\rho_0\theta^n$ and initial values $\partial m/\partial\xi=0$ and $\partial\theta/\partial\xi=0$ can again be calculated with L'Hospitals rule together with $\theta_0=1$ and $ m_0=0$.
-When comparing equations \eqref{4-NumSol-Equ-TOV-Exponents-Transf-TOV} and \eqref{3-Mass-TOV-Eq} one can immediately recognise the distinct terms.
+When comparing equations~\eqref{4-NumSol-Equ-TOV-Exponents-Transf-TOV} and~\eqref{3-Mass-TOV-Eq} one can immediately recognise the distinct terms.
 When talking about zero values we stated earlier that transformations need be accounted when comparing results.
 However in this case since
 \begin{equation}
 	p=\frac{\rho_0^n\theta^n}{A^{1+1/n}}
 \end{equation}
 it is clear that zero values of $\theta$ and $p$ match under the same parameter $\xi$.
-When transforming back by using $\kappa\xi=r$ as explained in section \ref{3-Mass-Sec-LEDerivation} one should note that $\kappa$ depends on $n$ via 
+When transforming back by using $\kappa\xi=r$ as explained in section~\ref{3-Mass-Sec-LEDerivation} one should note that $\kappa$ depends on $n$ via 
 \begin{equation}
 	4\pi\kappa^2=(n+1)K\rho_0^{1/n-1}
 \end{equation}
 and it will thus change values by more than constant scaling.
-Figure \ref{4-NumSol-Plt-TOV-Exponents-Combo} shows zero values for solutions of the \ac{TOV} and \ac{LE} equations respectively with their dependence on $n$.
+Figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo} shows zero values for solutions of the \ac{TOV} and \ac{LE} equations respectively with their dependence on $n$.
 Since not only the parameters $A$ and $n$ in the \ac{eos} may alter results but also the initial value $p_0$ a family of curves was plotted.
 The upper half of the plot displays a currently not explainable bump which is prominent in the \ac{TOV} $p_0=0.1$ case.
 A similar but dampened behaviour can also be seen along the $p_0=1$ curve.
@@ -189,11 +188,12 @@ It is however still unclear if the \ac{TOV} solutions similarly to the \ac{LE} s
 In order to further analyse this property higher integration ranges for larger values of the polytropic index $n$ would be required.
 This observation motivates a theorem that for every combination of parameters $A$ and $p_0$ there exists a value $n_0$ such that each solution of the TOV equation has no zero values for that particular combination of parameters $A,p_0$ if $n\geq n_0$.
 The methods to prove this theorem will be discussed in the next section.\\
-To obtain Figure \ref{4-NumSol-Plt-TOV-Exponents-Combo} the differential equations need to be solved multiple times for varying parameter combinations until the pressure reaches its zero value.
-Numerical optimisations to speed up calculation times, and a short discussion on the methods used can be found in the appendix in section \ref{99-App-Numerical-Optimisations}.
+To obtain Figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo} the differential equations need to be solved multiple times for varying parameter combinations until the pressure reaches its zero value.
+Numerical optimisations to speed up calculation times, and a short discussion on the methods used can be found in the appendix in section~\ref{99-App-Numerical-Optimisations}.
 \begin{figure}[H]
-	\centering
+	{\centering
 	\import{pictures/4-NumericalSolutions/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults-Combo.pgf}
+	}
 	\caption{Zero Values of TOV and LE equation}
 	\label{4-NumSol-Plt-TOV-Exponents-Combo}
 	In the first plot results for $p_0=8$ have been omitted for better visual clarity.
