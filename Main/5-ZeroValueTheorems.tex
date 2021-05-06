@@ -69,6 +69,7 @@ The now introduced function space $C^*$ contains all functions that are possible
 In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is compact and convex which we will show in the next two lemmata.
 \begin{lemma}
 	The space $C^*$ defined in lemma~\ref{5-Zeroes-Lem-LE-Conditions} with the norm $||\cdot||_\infty$is complete and convex.
+	\label{5-Zeroes-Lem-LE-Convex-Complete}
 \end{lemma}
 \begin{proof}
 	We begin by showing completeness.
@@ -91,6 +92,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 \end{proof}\noindent
 \begin{lemma}
 	The space $C^*$ with $||\cdot||_\infty$ is compact.
+	\label{5-Zeroes-Lem-LE-Compact}
 \end{lemma}
 \begin{proof}
 	To prove this statement we use the Arzela-Ascoli theorem.
@@ -148,7 +150,7 @@ The following theorem makes use of that fact and of a different representation o
 \begin{lemma}
 	\label{5-Zeroes-Lem-TOV-Conditions}
 	Let $(m,p):\R\rightarrow\R^2$ be a \ac{TOV} solution with initial values $m_0=0$ and $p_0>0$.
-	Also let $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ be the monotonously increasing \ac{eos}.
+	Also let $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ be the polytropic \ac{eos}.
 	Then for a small enough $\epsilon$ Interval $[0,\epsilon]$ the solution $f$ satisfies the following conditions.
 	\begin{align}
 		p(0)=p_0>0 &\mathrm{\ and\ } m(0)=m_0=0\label{5-Zeroes-Equ-TOV-Conditions-0}\\
@@ -156,45 +158,69 @@ The following theorem makes use of that fact and of a different representation o
 		\lim_{r\rightarrow0}\frac{m}{r^3}&=\frac{4\pi\rho_0}{3}\label{5-Zeroes-Equ-TOV-Conditions-2}\\
 		p(r)&\geq\frac{p_0}{2}\label{5-Zeroes-Equ-TOV-Conditions-3}\\
 		x\leq y&\Rightarrow m(x)\leq m(y)\label{5-Zeroes-Equ-TOV-Conditions-4}\\
-		x\leq y&\Rightarrow p(x)\geq p(y)\label{5-Zeroes-Equ-TOV-Conditions-5}
+		x\leq y&\Rightarrow p(x)\geq p(y)\label{5-Zeroes-Equ-TOV-Conditions-5}\\
+		|m(x)-m(y)|+|p(x)-p(y)|&\leq L|x-y|\forall x,y\in[0,\epsilon]\forall(m,p)\in K\label{5-Zeroes-Equ-TOV-Conditions-6}
 	\end{align}
 \end{lemma}
 \begin{proof}
-	Conditions~\ref{5-Zeroes-Equ-TOV-Conditions-0},\ref{5-Zeroes-Equ-TOV-Conditions-4} and~\ref{5-Zeroes-Equ-TOV-Conditions-5} are clear by looking at equation~\ref{5-Zeroes-Equ-TOV-Equ}.
+	Conditions~\eqref{5-Zeroes-Equ-TOV-Conditions-0},\eqref{5-Zeroes-Equ-TOV-Conditions-4} and~\eqref{5-Zeroes-Equ-TOV-Conditions-5} are clear by looking at equation~\eqref{5-Zeroes-Equ-TOV-Equ}.
 	To prove condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1}, we inspect that with the initial value $m_0=0$ we can write
 	\[
-		m = \int\limits_0^r 4\pi\rho r'^2 dr'\leq4\pi\rho_0\int\limits r'^2 dr'=\frac{4\pi\rho_0 r^3}{3}
+		m = \int\limits_0^r 4\pi\rho r'^2 dr'\leq4\pi\rho_0\int\limits_0^r r'^2 dr'=\frac{4\pi\rho_0 r^3}{3}
 	\]
 	where in the second step we used that $\rho$ is monotonously increasing and positive solutions of the \ac{TOV} equation have non-positive slope in the pressure $p$ component.\\
-	The second condition is obtained when applying L'Hosptial's Rule as was done in the beginning of section~\ref{4-NumSol-Sec-Comp-TOV-LE}.
+	The third condition is obtained when applying L'Hosptial's Rule as was done in the beginning of section~\ref{4-NumSol-Sec-Comp-TOV-LE}.
 	For the third condition we first inspect that condition~\ref{5-Zeroes-Equ-TOV-Conditions-1} lets us choose $(1-2m/r)^{-1}\leq 2$.
 	\begin{align}
-		p_0 - p &=\int\limits_0^r\frac{1}{r'^2}\left(p+\rho\right)\left(4\pi pr'^3+m\right)\left(1-\frac{2m}{r'}\right)^{-1}dr'\\
-				&\leq2\left(p_0+\rho_0\right)\int\limits_0^r\frac{4\pi pr'^3+m}{r'^2}dr'\\
-				&\leq2(p_0+\rho_0)\int\limits_0^r\left(4\pi p_0 r' + \frac{4\pi\rho_0 r'}{3}\right)dr'\\
-				&=4\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)r^2
+		p_0 - p &=\int\limits_0^r\frac{1}{r'^2}\left(p+\rho\right)\left(4\pi pr'^3+m\right)\left(1-\frac{2m}{r'}\right)^{-1}dr'\label{5-Zeroes-Equ-TOV-Conditions-Proof-1}\\
+				&\leq2\left(p_0+\rho_0\right)\int\limits_0^r\frac{4\pi pr'^3+m}{r'^2}dr'\label{5-Zeroes-Equ-TOV-Conditions-Proof-2}\\
+				&\leq2(p_0+\rho_0)\int\limits_0^r\left(4\pi p_0 r' + \frac{4\pi\rho_0 r'}{3}\right)dr'\label{5-Zeroes-Equ-TOV-Conditions-Proof-3}\\
+				&=4\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)r^2\label{5-Zeroes-Equ-TOV-Conditions-Proof-4}
 	\end{align}
 	In the first step we used that $p$ is a \ac{TOV} solution while in the second step the aforementioned inequality and just as in the last step the non-positive slope of $p$ with the monotonicity of $\rho$ came into play.
 	Afterwards we used the first condition~\ref{5-Zeroes-Equ-TOV-Conditions-1} and integrated the result.
+	Condition~\eqref{5-Zeroes-Equ-TOV-Conditions-6} can be shown when inspecting $m$ and $p$ individually.
+	\begin{align}
+		|m(x)-m(y)|&=\left|\int\limits_x^y 4\pi\rho r'^2 dr'\right|\leq|x-y|\frac{4\pi\rho_0\epsilon^3}{3}\\
+%		|p(x)-p(y)|&=\left|\int\limits_x^y \frac{\rho+p}{r'^2}(4\pi r'^3 p + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right|\\
+%		&\leq2(\rho_0+p_0)\left|\int\limits_x^y \left(4\pi r' p+\frac{m}{r'^2}\right)dr'\right|\\
+%		&\leq2(\rho_0+p_0)\left(p_0\epsilon+\frac{4\pi\epsilon\rho_0}{3}\right)|x-y|
+		|p(x)-p(y)|&\leq8\epsilon\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)|x-y|
+	\end{align}
+	For the first equation we used the decreasing monotonous behaviour of $p$ and increasing behaviour of $\rho$.
+	Afterwards, the just proven lines~\eqref{5-Zeroes-Equ-TOV-Conditions-Proof-1} to~\eqref{5-Zeroes-Equ-TOV-Conditions-Proof-4} and $x,y\leq\epsilon$ show the next statement.
 	It is now clear that a small enough $\epsilon>0$ can be chosen such that all stated conditions are satisfied.
 \end{proof}\noindent
-We will now call the space of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ which obey conditions~\eqref{5-Zeroes-Equ-TOV-Conditions-0} to~\eqref{5-Zeroes-Equ-TOV-Conditions-5} $K$.
+We will now call $K$ the space of functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that obey conditions~\eqref{5-Zeroes-Equ-TOV-Conditions-0} to~\eqref{5-Zeroes-Equ-TOV-Conditions-6}.
 \begin{lemma}
 	\label{5-Zeroes-Lem-K-Complete-Convex}
 	The space $K$ with $||\cdot||_\infty$ is complete and convex.
 \end{lemma}
+\begin{proof}
+	We need to show that conditions~\eqref{5-Zeroes-Equ-TOV-Conditions-0} to~\eqref{5-Zeroes-Equ-TOV-Conditions-6} are preserved under convexity and convergence in the $||\cdot||_\infty$ norm.
+	We only need to show this for equation~\eqref{5-Zeroes-Equ-TOV-Conditions-6} which is true by the same argument as in the \ac{LE} case in lemma~\ref{5-Zeroes-Lem-LE-Convex-Complete}.
+\end{proof}
+\begin{lemma}
+	The space $K$ is compact.
+\end{lemma}
+\begin{proof}
+	We again use the Arzela-Ascoli Theorem.
+	By condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1} it is clear that all functions $f\in K$ are bounded.
+	To show equicontinuity, we can apply the exact same argument as in lemma~\ref{5-Zeroes-Lem-LE-Compact} to obtain the desired result.
+\end{proof}
+% TODO continue from here on
 \begin{lemma}[\acrNoHyperlink{\acs}{TOV} Local existence]
 	The \ac{TOV} equation~\ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing continuous \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
 \end{lemma}
 \begin{proof}
 	The proof follows similar principles as previously done in lemma~\ref{5-Zeroes-Lem-Lane-Emden-Local-Existence}.
-	By lemma~\ref{5-Zeroes-Lem-K-Complete-Convex} this space is complete and convex.
+	By lemma~\ref{5-Zeroes-Lem-K-Complete-Convex} the space $K$ is complete, convex and compact.
 	Thus, we can again apply the Schauder fixed-point theorem
 	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation~\eqref{3-Mass-Equ-TOV-Eq-1}
 	\[
 		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2 dr',-\int\limits_0^r\frac{p+\rho}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
 	\]
-	We want to prove that the integrands are Lipschitz in $m,p$.
+	We want to prove that $T$ is continuous.
 	For the first component of $T$ this statement is clearly true since $\rho$ is monotonously increasing and $p\in[p_0/2,p_0]$ is bound by assumption~\eqref{5-Zeroes-Equ-TOV-Conditions-3}.
 	For the second integrand together with restriction~\eqref{5-Zeroes-Equ-TOV-Conditions-1} we observe that
 	\[
@@ -215,25 +241,3 @@ We will now call the space of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}
 	\]
 	which finishes the proof.
 \end{proof}
-%\begin{proof}
-%	The proof follows similar principles as previously done in lemma~\ref{5-Zeroes-Lem-Lane-EmdenFiniteBoundary1}.
-%	In order to solve the problem at hand we need to define a space $K$ consisting of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that all satisfy the same boundary conditions in form of initial values $m_0=0$ and $p_0>0$.
-%	Additionally, we have shown in lemma~\ref{5-Zeroes-Lem-TOV-Conditions} that we can apply the listed conditions for a small enough interval $[0,\epsilon]$ without reducing the number of possible solutions.
-%	Since solutions of the \ac{TOV} equation have monotonously decreasing pressure $p$ and monotonously increasing mass $m$ those are taken as an additional requirement.
-%	We now call $K$ the space of all functions $f:[0,\epsilon]\rightarrow\R_{\geq0}^2$ that satisfy these conditions.
-%	This space is complete with the norm $||.||_\infty$.
-%	We will now again apply the Banach fixed-point theorem in combination with lemma~\ref{5-Zeroes-Lem-Integral-Contraction} to obtain a unique solution.
-%	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation
-%	\begin{equation}
-%		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2dr',-\int\limits_0^r\frac{1}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
-%	\end{equation}
-%	Now clearly the inner arguments of the integral are differentiable in $r,m,p$ and well defined if $r>0$.
-%	There are some terms which cause problems when $r=0$.
-%	Looking at $m/r$ we see that condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} we issued now tells us that $m/r\rightarrow0$ as $r\rightarrow0$.
-%	Similarly condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} implies that $m/r^2\rightarrow0$ in the same limit.
-%	This now means that on this space $K$ the integrand has a well defined differential for every $r\in[0,\epsilon]$ which in turn shows with lemma~\ref{5-Zeroes-Lem-Lipschitz-Continuity-Differentiable} that it is Lipschitz.
-%	Using lemma~\ref{5-Zeroes-Lem-Integral-Contraction} we can apply the Banach fixed-point theorem and obtain a unique solution.
-%\end{proof}
-%
-%
-%
