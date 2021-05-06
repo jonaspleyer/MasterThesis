@@ -151,13 +151,17 @@ The following theorem makes use of that fact and of a different representation o
 	Also let $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ be the monotonously increasing \ac{eos}.
 	Then for a small enough $\epsilon$ Interval $[0,\epsilon]$ the solution $f$ satisfies the following conditions.
 	\begin{align}
+		p(0)=p_0>0 &\mathrm{\ and\ } m(0)=m_0=0\label{5-Zeroes-Equ-TOV-Conditions-0}\\
 		m(r) &\leq \frac{4\pi\rho_0 r^3}{3}\label{5-Zeroes-Equ-TOV-Conditions-1}\\
 		\lim_{r\rightarrow0}\frac{m}{r^3}&=\frac{4\pi\rho_0}{3}\label{5-Zeroes-Equ-TOV-Conditions-2}\\
-		p(r)&\geq\frac{p_0}{2}\label{5-Zeroes-Equ-TOV-Conditions-3}
+		p(r)&\geq\frac{p_0}{2}\label{5-Zeroes-Equ-TOV-Conditions-3}\\
+		x\leq y&\Rightarrow m(x)\leq m(y)\label{5-Zeroes-Equ-TOV-Conditions-4}\\
+		x\leq y&\Rightarrow p(x)\geq p(y)\label{5-Zeroes-Equ-TOV-Conditions-5}
 	\end{align}
 \end{lemma}
 \begin{proof}
-	To prove the condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1} we inspect that with the initial value $m_0=0$ we can write
+	Conditions~\ref{5-Zeroes-Equ-TOV-Conditions-0},\ref{5-Zeroes-Equ-TOV-Conditions-4} and~\ref{5-Zeroes-Equ-TOV-Conditions-5} are clear by looking at equation~\ref{5-Zeroes-Equ-TOV-Equ}.
+	To prove condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1}, we inspect that with the initial value $m_0=0$ we can write
 	\[
 		m = \int\limits_0^r 4\pi\rho r'^2 dr'\leq4\pi\rho_0\int\limits r'^2 dr'=\frac{4\pi\rho_0 r^3}{3}
 	\]
