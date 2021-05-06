@@ -19,7 +19,7 @@ Motivated by the preceding sections, the aim now is to prove the following theor
 \end{lemma}\noindent
 The procedure for proving existence is similar for both equations.
 Although the author in~\cite[p.~50]{quittnerSuperlinearParabolicProblems2007} expects to be able to solve this problem with the standard Banach fixed-point theorem, we want to use the Schauder fixed-point theorem~\cite{schauderFixpunktsatzFunktionalraumen1930}, which is a variation the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
-The statement as formulated in \cite{minazzoTheoremesPointFixe2007} reads
+The statement as formulated in~\cite{minazzoTheoremesPointFixe2007} reads
 \begin{theorem}
 	Every continuous function from a convex compact subset K of a Banach space to K itself has a fixed point.
 \end{theorem}\noindent
@@ -72,7 +72,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 \end{lemma}
 \begin{proof}
 	We begin by showing completeness.
-	It is clear that from condition~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to~\eqref{5-Zeroes-Equ-LE-Conditions-4} are conserved even in pointwise convergence.
+	It is clear that conditions~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to~\eqref{5-Zeroes-Equ-LE-Conditions-4} are conserved.
 	Generally speaking Lipschitz continuous functions need not be complete under $||\cdot||_\infty$.
 	However, since we had chosen $L$ to be independent of $\theta$ for $||f_m-f||_\infty\rightarrow0$ we can write
 	\[
@@ -91,10 +91,10 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 \end{proof}\noindent
 \begin{lemma}
 	The space $C^*$ with $||\cdot||_\infty$ is compact.
-	To prove this statement we use the Arzela-Ascoli theorem.
-	This means that since $C^*$ is a function space on a compact set $[0,\lambda]$ we only need to show that it is bounded and equicontinuous.
 \end{lemma}
 \begin{proof}
+	To prove this statement we use the Arzela-Ascoli theorem.
+	Since $C^*$ is a function space over a compact set $[0,\lambda]$ we only need to show that it is bounded and equicontinuous.
 	For every function $f\in C^*$ we know by condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} and~\eqref{5-Zeroes-Equ-LE-Conditions-4} that $\theta/2\leq f\leq\theta_0$ which shows boundedness.
 	Since with condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} every function $f\in C^*$ is especially Lipschitz, we can clearly see that equicontinuity hols.
 \end{proof}
@@ -133,12 +133,11 @@ The following theorem makes use of that fact and of a different representation o
 \end{proof}
 %
 %
-% TODO fix TOV and LE references
-% TODO fix my life.
-\subsection{TOV Equation}
+\subsection{\texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} Equation}
 \label{subsec:5-Zeroes-TOV-Equ}
-\begin{hypothesis}[TOV Zero Value Hypothesis]
-	Given the TOV differential equation with $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
+% TODO write something about this proof.
+\begin{hypothesis}[\acrNoHyperlink{\acs}{TOV} Zero Value Hypothesis]
+	Given the \ac{TOV} differential equation with $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
 	\begin{alignat}{3}
 		\frac{\partial m}{\partial r} &= &&4\pi\rho r^2\\
 		\frac{\partial p}{\partial r} &= -&&\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3 p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
@@ -146,9 +145,6 @@ The following theorem makes use of that fact and of a different representation o
 	\end{alignat}
 	and initial values $m_0=0,p_0\geq0$ there exists a $n_0\geq0$ such that all solutions with same parameters $A,p_0$ and smaller exponent $n<n_0$ have a $p(r_0)$ for some $r_0>0$.
 \end{hypothesis}
-\begin{proof}
-	% TODO write something about this proof.
-\end{proof}
 \begin{lemma}
 	\label{5-Zeroes-Lem-TOV-Conditions}
 	Let $(m,p):\R\rightarrow\R^2$ be a \ac{TOV} solution with initial values $m_0=0$ and $p_0>0$.
