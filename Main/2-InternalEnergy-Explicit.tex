@@ -27,9 +27,10 @@ to yield an \ac{eos}.
 \begin{subsection}{The Ultra-Relativistic Internal Energy}
 The ultra-relativistic case is a textbook example and well known limit that we will use in order to verify our later calculated results. 
 First we write down the ultra-relativistic Hamiltonian given by 
-\[
+\begin{equation}
 	H(x,p)=||p||c.
-\]
+	\label{eq:2-IntEner-Ultra-Rel-Hamiltonian}
+\end{equation}
 The corresponding partition function for a $N$ particle system then reads ($\beta=(k_B T)^{-1}$)
 \begin{align}
 	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \beta H(p)\right)\diff^3 p\right]^N\\
@@ -54,9 +55,10 @@ With equation~\eqref{2-IntEner-Def} the internal energy $\U = 3Nk_B T$ and with 
 % We will now turn our attention to the fully special-relativistic case.
 A source for the following calculations could not be found and were thus carried out by the author solely.
 The special relativistic Hamiltonian is given by
-\[
+\begin{equation}
 	H=mc^2\sqrt{1+\frac{p^2}{m^2 c^2}}.
-\]
+	\label{eq:2-IntEner-Rel-Hamiltonian}
+\end{equation}
 The ultra-relativistic limit can be obtained by letting $m\rightarrow0$.
 In this limiting case we should be able to recover the results from equation~\eqref{eq:2-IntEner-UltraRelZ}.
 \begin{align}
@@ -118,14 +120,16 @@ After applying partial integration, the result is
     &=\log\left(\frac{\alpha}{\alpha_0}\right) + \log\left(\frac{K_2(\alpha)}{K_2(\alpha_0)}\right) - \Bigl[\alpha\frac{\partial_\alpha K_2}{K_2}\Bigr]_{\alpha_0}^\alpha
 \end{align}
 This equation enables us to write down a relation between volume and temperature (encapsulated in $\alpha=mc^2/k_B T$)
-\[
+\begin{equation}
 	V(\alpha) = \frac{\alpha K_2(\alpha)}{C}\exp\left(\alpha\frac{K_3(\alpha)+K_1(\alpha)}{2K_2(\alpha)}\right)
-\]
+	\label{eq:2-IntEner-Volume-Alpha-Dependence}
+\end{equation}
 where the constant $C$ is defined by the equation beforehand and only depends on the integration boundaries $\alpha_0$ and $V_0$.
 It is given by
-\[
+\begin{equation}
 	C = \frac{\alpha_0 K_2(\alpha_0)}{V_0}\exp\left(\alpha_0\frac{K_1(\alpha_0)+K_3(\alpha_0)}{2K_2(\alpha_0)}\right).
-\]
+	\label{eq:2-IntEner-Parameter-Eos-Integration-Result}
+\end{equation}
 Since the goal of this section is to obtain a readable output for an \ac{eos}, it is necessary to construct a bijection relating $p$ and $T$.
 This becomes clear when writing down the energy density % TODO think about that formulation
 \begin{equation}
@@ -146,20 +150,23 @@ The limiting case is obtained when taking $T\rightarrow\infty$ (which correspond
 	\label{eq:2-IntEner-PressureAlpha-Limit}
 \end{equation}
 The same argument then holds true for the density given by equation~\eqref{eq:2-IntEner-DensityAlpha} and since
-\[
+\begin{equation}
 	\lim\limits_{\alpha\to0}\left[1+\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right] = 3
-\]
+	\label{eq:2-IntEner-Limit-Alpha}
+\end{equation}
 we have
-\[
+\begin{equation}
 	\lim\limits_{\alpha\to0}\left(\frac{\rho(\alpha)}{Cmc^2}\right) = \frac{3}{2\e^2} \approx 0.203003.
-\]
+	\label{eq:2-IntEner-Limit-Alpha-2}
+\end{equation}
 %
 %
 \begin{theorem}
 	The mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ written down in equation~\eqref{eq:2-IntEner-PressureAlpha} is a bijection for any $N,m,c,C\neq0$.
-	\[
+	\begin{equation}
 		p = \frac{Nk_B T}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)
-	\]
+		\label{eq:2-IntEner-Pressure-Alpha-Dependence}
+	\end{equation}
 \end{theorem}
 \begin{proof}
 	For this proof it suffices to show that the function $p(\alpha)$ has a strictly monotonous behaviour.
@@ -179,22 +186,26 @@ we have
 		&= -\alpha + \alpha\frac{K_1^2}{K_2^2} - 4\frac{K_1}{K_2}
 	\end{align}
 	thus, it is sufficient to show that
-	\[
+	\begin{equation}
 		\alpha\frac{K_1^2}{K_2^2}  < \alpha + 4\frac{K_1}{K_2}.
-	\]
+		\label{eq:2-IntEner-BesselK-Ineq-K1-over-K2}
+	\end{equation}
 	We quickly prove the more general result $K_\nu<K_{\nu+1}$.
 	One possible definition~\cite{abramowitzPocketbookMathematicalFunctions1984} for the Bessel function $K_\nu$ is given by
-	\[
+	\begin{equation}
 		K_\nu \coloneqq \frac{\sqrt{\pi}}{\left(\nu-\frac{1}{2}\right)!}\left(\frac{1}{2}z\right)^\nu\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu-\frac{1}{2}}\diff t
-	\]
+		\label{eq:2-IntEner-BesselK-Def}
+	\end{equation}
 	We inspect the ratio
-	\[
+	\begin{equation}
 		\frac{K_\nu}{K_{\nu+1}} = \frac{1}{\left(\nu+\frac{1}{2}\right)\left(\frac{1}{2}z\right)}\frac{\int\e^{-tz}\left(t^2-1\right)^{\nu-1/2}\diff t}{\int\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t}
-	\]
+		\label{eq:2-IntEner-BesselK-Ratio}
+	\end{equation}
 	and rewrite the denominator with partial integration
-	\[
+	\begin{equation}
 		 \frac{1}{2}z\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t = \left(\nu+\frac{1}{2}\right)\int\limits_1^\infty \e^{-tz}t\left(t^2-1\right)^{\nu-1/2}\diff t.
-	\]
+		 \label{eq:2-IntEner-BesselK-Integral-Evaluation}
+	\end{equation}
 	Now it is obvious that $K_{\nu+1}>K_\nu$.
 	Thus in total, the function given by equation~\eqref{eq:2-IntEner-FinalEOS} can be inverted.
 \end{proof}%
@@ -213,9 +224,10 @@ The constant factor
 \end{equation}
 is substituted to obtain independence of $p_0$\footnote{This will be the starting value for the pressure in the \acl{TOV} equation. Since the pressure decreases from the inside a star to the outside, this resembles our highest value of $p$.}.
 Furthermore the graphs of the plotted \ac{eos} are normalised such that
-\[
+\begin{equation}
 	\rho_{i}(p_0)=\rho_{0,i}
-\]
+	\label{eq:2-IntEner-Plt-Initial-Val-Def}
+\end{equation}
 and thus can be compared with each other.
 Note that the $\rho_0$ of the plot is not a universal value but rather each function has been scaled individually and $\rho_0$ is a placeholder for the corresponding $\rho_{0,i}$.
 The polytropic \ac{eos} $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before, the equation is independent of $A$ and can be uniquely characterised by $n$. % TODO is this comma right?
