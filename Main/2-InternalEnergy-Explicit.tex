@@ -2,22 +2,23 @@
 % TODO Make clear what I have done and what is from other sources
 This chapter aims at developing a fully special relativistic \ac{eos} of a non-interacting gas.
 We briefly summarise important concepts necessary for the derivation.
-In the canonical ensemble, for which an introduction can be found in \cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
+In the canonical ensemble, for which an introduction can be found in~\cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
 Microscopically, the partition function is given by the behaviour of the $N$ particles determined by the Hamiltonian $H$.
-Concepts and definitions of Hamilton Mechanics can be found in \cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010}.
+Concepts and definitions of Hamilton Mechanics can be found in~\cite{eschrigTopologyGeometryPhysics2011, fliessbachMechanikLehrbuchZur2020, spivakPhysicsMathematiciansMechanics2010}.
 In general we assume $H:\R^{3N}\times\R^{3N}\rightarrow\R$ to be a positive smooth function that assigns an energy to the positions and momenta of $N$ particles.
 This explicitly takes form in the well known equations
 \begin{align}
-	\Z(T,V,N) 	&= \int\limits_{\mathcal{V}\times\R^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_BT}\right)\frac{\diff x_1\diff p_1\dots \diff x_N\diff p_N}{N!h^{3N}}\\
-	\F(T,V,N) 	&= - k_BT\log\left(\Z(T,V,N)\right)\label{2-IntEner-FreeEnerDef}\\
-	\U(T,V,N) 	&= \F + T \Ent \hspace{0.2cm}=\hspace{0.2cm} \F - T\frac{\partial\F}{\partial T} \hspace{0.2cm}=\hspace{0.2cm} k_BT^2\frac{1}{\Z}\frac{\partial\Z}{\partial T}\label{2-IntEner-Def}
+	\Z(T,V,N) 	&= \int\limits_{\mathcal{V}\times\R^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_B T}\right)\frac{\diff x_1\diff p_1\dots \diff x_N\diff p_N}{N!h^{3N}}\\
+	\F(T,V,N) 	&= - k_B T\log\left(\Z(T,V,N)\right)\label{2-IntEner-FreeEnerDef}\\
+	\U(T,V,N) 	&= \F + T \Ent \hspace{0.2cm}=\hspace{0.2cm} \F - T\frac{\partial\F}{\partial T} \hspace{0.2cm}=\hspace{0.2cm} k_B T^2\frac{1}{\Z}\frac{\partial\Z}{\partial T}\label{2-IntEner-Def}
 \end{align}
-where $x_i\in \mathcal{V}\subset\R^3$  and $p_i\in \R^3$. The relation $V=\text{vol}(\mathcal{V})$ describes the total volume occupied by the medium while $T$ and $N$ are its temperature and particle number respectively.
+where $x_i\in \mathcal{V}\subset\R^3$  and $p_i\in \R^3$.
+The relation $V=\text{vol}(\mathcal{V})$ describes the total volume occupied by the medium while $T$ and $N$ are its temperature and particle number respectively.
 To fully calculate $U$ it is necessary to obtain the partition function $\Z$.
 From there $\U/V$ as the energy density can be compared to the pressure defined by
 \begin{equation}
 	p=\frac{\diff\F}{\diff V}
-	\label{2-IntEner-pressureDef}
+	\label{eq:2-IntEner-pressureDef}
 \end{equation}
 to yield an \ac{eos}.
 %
@@ -26,24 +27,24 @@ to yield an \ac{eos}.
 \begin{subsection}{The Ultra-Relativistic Internal Energy}
 The ultra-relativistic case is a textbook example and well known limit that we will use in order to verify our later calculated results. 
 First we write down the ultra-relativistic Hamiltonian given by 
-\begin{equation}
+\[
 	H(x,p)=||p||c.
-\end{equation}
-The corresponding partition function for a $N$ particle system then reads ($\beta=(k_BT)^{-1}$)
+\]
+The corresponding partition function for a $N$ particle system then reads ($\beta=(k_B T)^{-1}$)
 \begin{align}
-	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \beta H(p)\right)\diff^3p\right]^N\\
+	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \beta H(p)\right)\diff^3 p\right]^N\\
 		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty4\pi p^2\exp(-\beta pc) \diff p\right]^N\\
 		&= \frac{V^N}{N!h^{3N}}\frac{(4\pi)^N}{(\beta c)^{3N}}\left[\int\limits_0^\infty x^2\exp(-x) \diff x\right]^N\label{2-IntEner-UltraRelZ-Int-eq}\\
-	\Z	&= \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^3\right)^N
-	\label{2-IntEner-UltraRelZ}
+	\Z	&= \frac{1}{N!}\left(8\pi V\left(\frac{k_B T}{hc}\right)^3\right)^N
+	\label{eq:2-IntEner-UltraRelZ}
 \end{align}
 where from the first to second line we used usual spherical coordinates and afterwards the integral transformation $x=\beta cp$.
-The integral in equation \eqref{2-IntEner-UltraRelZ-Int-eq} can be solved exactly with value $2$. 
-In the last line $\beta=(k_BT)^{-1}$ was used for visual clarity.
-With equation \eqref{2-IntEner-Def} the internal energy $\U = 3Nk_BT$ and with equation \eqref{2-IntEner-pressureDef} the \ac{eos} can now be written down
+The integral in equation~\eqref{2-IntEner-UltraRelZ-Int-eq} can be solved exactly with value $2$.
+In the last line $\beta=(k_B T)^{-1}$ was used for visual clarity.
+With equation~\eqref{2-IntEner-Def} the internal energy $\U = 3Nk_B T$ and with equation~\eqref{eq:2-IntEner-pressureDef} the \ac{eos} can now be written down
 \begin{equation}
-	p = \frac{Nk_BT}{V} = \frac{1}{3}\frac{\U}{V} = \frac{1}{3}\rho.
-	\label{2-IntEner-eos-nonrel}
+	p = \frac{Nk_B T}{V} = \frac{1}{3}\frac{\U}{V} = \frac{1}{3}\rho.
+	\label{eq:2-IntEner-eos-nonrel}
 \end{equation}
 \end{subsection}
 %
@@ -53,39 +54,39 @@ With equation \eqref{2-IntEner-Def} the internal energy $\U = 3Nk_BT$ and with e
 % We will now turn our attention to the fully special-relativistic case.
 A source for the following calculations could not be found and were thus carried out by the author solely.
 The special relativistic Hamiltonian is given by
-\begin{equation}
-	H=mc^2\sqrt{1+\frac{p^2}{m^2c^2}}.
-\end{equation}
+\[
+	H=mc^2\sqrt{1+\frac{p^2}{m^2 c^2}}.
+\]
 The ultra-relativistic limit can be obtained by letting $m\rightarrow0$.
-In this limiting case we should be able to recover the results from equation \eqref{2-IntEner-UltraRelZ}.
+In this limiting case we should be able to recover the results from equation~\eqref{eq:2-IntEner-UltraRelZ}.
 \begin{align}
-	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \frac{mc^2\sqrt{1+\frac{p^2}{m^2c^2}}}{k_BT}\right)\diff^3p\right]^N\label{2-IntEner-EQ1}\\
-		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty 4\pi p^2\exp\left(-\beta mc^2\sqrt{1+\frac{p^2}{m^2c^2}} \right)\diff p\right]^N\\
+	\Z 	&= \frac{V^N}{N!h^{3N}}\left[\int\limits_{\R^3}\exp\left(- \frac{mc^2\sqrt{1+\frac{p^2}{m^2 c^2}}}{k_B T}\right)\diff^3 p\right]^N\label{2-IntEner-EQ1}\\
+		&= \frac{V^N}{N!h^{3N}}\left[\int\limits_0^\infty 4\pi p^2\exp\left(-\beta mc^2\sqrt{1+\frac{p^2}{m^2 c^2}} \right)\diff p\right]^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\left[\int\limits_0^\infty q^2\exp\left(-\alpha\sqrt{1+q^2}\right)\diff q\right]^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\left(\int\limits_0^\infty\sinh(x)^2\cosh(x)\exp(-\alpha\cosh(x))\diff x \right)^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\left(\int\limits_0^\infty\frac{\sinh(2x)}{2}\sinh(x)\exp(-\alpha\cosh(x))\diff x \right)^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\Biggl(\left.-\frac{\sinh(2x)}{2\alpha}\exp(-\alpha\cosh(x))\right|_0^\infty\\
 		&\hspace{12em} + \frac{1}{\alpha}\int\limits_0^\infty\cosh(2x)\exp(-\alpha\cosh(x))\diff x  \Biggr)^N\\
 		&= \frac{(4\pi V)^N}{N!}\left(\frac{mc}{h}\right)^{3N}\left(\frac{1}{\alpha}\int\limits_0^\infty\cosh(2x)\exp(-\alpha\cosh(x))\diff x  \right)^N\\
-		&= \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^{3}\frac{\alpha^2K_2(\alpha)}{2}\right)^N
+		&= \frac{1}{N!}\left(8\pi V\left(\frac{k_B T}{hc}\right)^{3}\frac{\alpha^2 K_2(\alpha)}{2}\right)^N
 		\label{2-IntEner-PartFunc}
 \end{align}
-In the first step we used spherical coordinates followed by the substitution $qmc=p$ and $\alpha=\beta mc^2=mc^2/k_BT$.
+In the first step we used spherical coordinates followed by the substitution $qmc=p$ and $\alpha=\beta mc^2=mc^2/k_B T$.
 Afterwards we substituted $q=\sinh(x)$ and used the identity $\cosh(x)\sinh(x)=\sinh(2x)/2$.
-Partial integration then leads to the last integral which can be identified as the modified Bessel function of the 2nd kind $K_2(\alpha)$ \cite{abramowitzPocketbookMathematicalFunctions1984}.
+Partial integration then leads to the last integral which can be identified as the modified Bessel function of the 2nd kind $K_2(\alpha)$~\cite{abramowitzPocketbookMathematicalFunctions1984}.
 The equation is then rewritten such that the ultra-relativistic limit can be read off upon letting $\alpha\rightarrow0$.\\
-We can now calculate the internal energy $\U$ from $\Z$ via equation \eqref{2-IntEner-Def}
+We can now calculate the internal energy $\U$ from $\Z$ via equation~\eqref{2-IntEner-Def}
 \begin{align}
-    \U &= 3Nk_BT - Nk_BT\alpha\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}+2\right)\\
-    \U &= 3Nk_BT - mc^2\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}+2\right).
+    \U &= 3Nk_B T - Nk_B T\alpha\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}+2\right)\\
+    \U &= 3Nk_B T - mc^2\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}+2\right).
     \label{2-IntEner-InternelEnergyExplicit}
 \end{align}
 Again, it can be seen that the ultra-relativistic limit can be obtained by letting $\alpha\rightarrow0$, since the term written in parenthesis vanishes.
 It becomes immediately clear that the ultra-relativistic \ac{eos} is $\rho=3p$ which is equivalent to a traceless energy momentum tensor.\\
-From equation \eqref{2-IntEner-PartFunc} and \eqref{2-IntEner-FreeEnerDef}, we immediately derive the ideal gas equation via the definition of pressure (see equation \eqref{2-IntEner-pressureDef} in the canonical ensemble
+From equation~\eqref{2-IntEner-PartFunc} and~\eqref{2-IntEner-FreeEnerDef}, we immediately derive the ideal gas equation via the definition of pressure (see equation~\eqref{eq:2-IntEner-pressureDef} in the canonical ensemble
 \begin{equation}
     p=\frac{\partial\F}{\partial V} = \frac{Nk_ BT}{V}.
-    \label{2-IntEner-IdealGasEq}
+    \label{eq:2-IntEner-IdealGasEq}
 \end{equation}
 Note that in the case of the Hamiltonian $H$ having a non-trivial dependence on the coordinates $x_i$, the partition function would differ by a factor involving $V$ and $T$.
 This more general scenario does not yield the ideal gas law and would thus need to be treated separately.
@@ -95,135 +96,136 @@ This more general scenario does not yield the ideal gas law and would thus need 
 %
 \begin{subsection}{The Special-Relativistic Equation of State}
 \label{2-IntEner-SR-EOS-Derivation}
-This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation \eqref{2-IntEner-pressureDef}.
+This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation~\eqref{eq:2-IntEner-pressureDef}.
 We assume an additional constraint namely adiabaticity and thus further reduce the degrees of freedom of the thermodynamic system.\\ % TODO maybe different term for adiabaticity
-When assuming an adiabatic condition $\updelta Q=0$ and using the First Law of Thermodynamics \cite{fliessbachStatistischePhysikLehrbuch2018} $\diff U =\updelta Q + \updelta W$, where $\updelta W=-p\diff V$ and $\diff U=C_V\diff T$, we can relate pressure and temperature. 
-This adiabatic condition is quite well satisfied since the timescale of radiational and other losses compared to the timescale of thermodynamic events is negligible \cite{noerdlingerSolarMassLoss2008, vinkMassLossStellar2017}.
-Using equation \eqref{2-IntEner-InternelEnergyExplicit} and \eqref{2-IntEner-pressureDef}, we obtain
+When assuming an adiabatic condition $\updelta Q=0$ and using the First Law of Thermodynamics~\cite{fliessbachStatistischePhysikLehrbuch2018} $\diff U =\updelta Q + \updelta W$, where $\updelta W=-p\diff V$ and $\diff U=C_V\diff T$, we can relate pressure and temperature. 
+This adiabatic condition is quite well satisfied since the timescale of radiational and other losses compared to the timescale of thermodynamic events is negligible~\cite{noerdlingerSolarMassLoss2008, vinkMassLossStellar2017}.
+Using equation~\eqref{2-IntEner-InternelEnergyExplicit} and~\eqref{eq:2-IntEner-pressureDef}, we obtain
 \begin{alignat}{3}
     -p\diff V &= C_V\diff T\\
-    -\frac{Nk_BT}{V}\diff V &= Nk_B &\Biggl[1 + &\alpha^2\left(\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)^2 - \frac{\partial^2_\alpha K_2(\alpha)}{K_2(\alpha)}\right)\Biggr]\diff T\\
+    -\frac{Nk_B T}{V}\diff V &= Nk_B &\Biggl[1 + &\alpha^2\left(\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)^2 - \frac{\partial^2_\alpha K_2(\alpha)}{K_2(\alpha)}\right)\Biggr]\diff T\\
     - \frac{\diff V}{V} &= &\Biggl[1 - &\alpha^2\partial_\alpha\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)\Biggr]\frac{\diff T}{T}\\
     &= &\Bigl[1 - &\alpha^2\partial_\alpha^2\left(\log K_2(\alpha)\right)\Bigr]\frac{\diff T}{T}
 \end{alignat}
 This equation also shows explicitly the $T$ dependence of the specific heat $C_V$ for the general case.
 Again, taking the ultra-relativistic limit by letting $\alpha\rightarrow0$, the right-hand term in the first equation converges to $-2Nk_B$.
 This agrees with the expected specific heat for an ultra-relativistic gas $C_{V,\text{ur}}=3Nk_B$.
-With the identity $\diff\alpha/\alpha = -\diff T/T$ (using $\alpha=mc^2/k_BT$), we can transform the equation and integrate it.
+With the identity $\diff\alpha/\alpha = -\diff T/T$ (using $\alpha=mc^2/k_B T$), we can transform the equation and integrate it.
 After applying partial integration, the result is
 \begin{align}
 	\frac{\diff V}{V} &= \left(1-\alpha^2\partial_\alpha^2\log K_2(\alpha)\right)\frac{\diff\alpha}{\alpha}\\
     \log\left(\frac{V}{V_0}\right) &= \log\left(\frac{\alpha}{\alpha_0}\right) - \int\limits_{\alpha_0}^\alpha \alpha\frac{\partial^2}{\partial \alpha^2}\log(K_2(\alpha'))\diff\alpha'\\
     &=\log\left(\frac{\alpha}{\alpha_0}\right) + \log\left(\frac{K_2(\alpha)}{K_2(\alpha_0)}\right) - \Bigl[\alpha\frac{\partial_\alpha K_2}{K_2}\Bigr]_{\alpha_0}^\alpha
 \end{align}
-This equation enables us to write down a relation between volume and temperature (encapsulated in $\alpha=mc^2/k_BT$)
-\begin{equation}
+This equation enables us to write down a relation between volume and temperature (encapsulated in $\alpha=mc^2/k_B T$)
+\[
 	V(\alpha) = \frac{\alpha K_2(\alpha)}{C}\exp\left(\alpha\frac{K_3(\alpha)+K_1(\alpha)}{2K_2(\alpha)}\right)
-\end{equation}
-where the constant $C$ is defined by the equation beforehand and only depends on the integration boundaries $\alpha_0$ and $V_0$. It is given by
-\begin{equation}
+\]
+where the constant $C$ is defined by the equation beforehand and only depends on the integration boundaries $\alpha_0$ and $V_0$.
+It is given by
+\[
 	C = \frac{\alpha_0 K_2(\alpha_0)}{V_0}\exp\left(\alpha_0\frac{K_1(\alpha_0)+K_3(\alpha_0)}{2K_2(\alpha_0)}\right).
-\end{equation}
+\]
 Since the goal of this section is to obtain a readable output for an \ac{eos}, it is necessary to construct a bijection relating $p$ and $T$.
 This becomes clear when writing down the energy density % TODO think about that formulation
 \begin{equation}
-	\rho = \frac{\U}{V} = \frac{Nk_BT}{V} - \frac{Nk_BT}{V}\left(\alpha\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)
-	\label{2-IntEner-DensityAlpha}
+	\rho = \frac{\U}{V} = \frac{Nk_B T}{V} - \frac{Nk_B T}{V}\left(\alpha\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)
+	\label{eq:2-IntEner-DensityAlpha}
 \end{equation}
-where $p=Nk_BT/V$ can be easily identified but the $T$ dependence via $\alpha$ is not solved yet.\\
+where $p=Nk_B T/V$ can be easily identified but the $T$ dependence via $\alpha$ is not solved yet.\\
 The pressure $p$ can be rewritten to take the form
 \begin{equation}
-	p = \frac{Nk_BT}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right).
-	\label{2-IntEner-PressureAlpha}
+	p = \frac{Nk_B T}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right).
+	\label{eq:2-IntEner-PressureAlpha}
 \end{equation}
 At this point it is not reasonable to ask what happens in the ultra-relativistic limit since $C$ depends non-trivially on $m$ and thus $m$ is not fully substituted in $\alpha$.\\
 Interestingly, the pressure seems to be constant for very high temperatures.
 The limiting case is obtained when taking $T\rightarrow\infty$ (which corresponds to $\alpha\rightarrow0$)
 \begin{equation}
 	\lim\limits_{\alpha\to0}\left[\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)\right] = \frac{1}{2\e^2} \approx 0.006767.
-	\label{2-IntEner-PressureAlpha-Limit}
+	\label{eq:2-IntEner-PressureAlpha-Limit}
 \end{equation}
-The same argument then holds true for the density given by equation \eqref{2-IntEner-DensityAlpha} and since 
-\begin{equation}
+The same argument then holds true for the density given by equation~\eqref{eq:2-IntEner-DensityAlpha} and since
+\[
 	\lim\limits_{\alpha\to0}\left[1+\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right] = 3
-\end{equation}
+\]
 we have
-\begin{equation}
+\[
 	\lim\limits_{\alpha\to0}\left(\frac{\rho(\alpha)}{Cmc^2}\right) = \frac{3}{2\e^2} \approx 0.203003.
-\end{equation}
+\]
 %
 %
 \begin{theorem}
-	The mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ written down in equation \eqref{2-IntEner-PressureAlpha} is a bijection for any $N,m,c,C\neq0$.
-	\begin{equation}
-		p = \frac{Nk_BT}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)
-	\end{equation}
+	The mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ written down in equation~\eqref{eq:2-IntEner-PressureAlpha} is a bijection for any $N,m,c,C\neq0$.
+	\[
+		p = \frac{Nk_B T}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)
+	\]
 \end{theorem}
 \begin{proof}
 	For this proof it suffices to show that the function $p(\alpha)$ has a strictly monotonous behaviour.
 	Without loss of generality, we assume $N,m,c,C>0$.
 	Now it is obvious that the first two terms $Nmc^2/CK_2(\alpha)$ and $\alpha^{-2}$ are strictly decreasing.
-	This is easy to see when using \cite{abramowitzPocketbookMathematicalFunctions1984}
+	This is easy to see when using~\cite{abramowitzPocketbookMathematicalFunctions1984}
 	\begin{equation}
 		\frac{\partial K_n}{\partial\alpha} = \frac{n}{\alpha}K_n-K_{n+1} = -\frac{K_{n-1}+K_{n+1}}{2}.
-		\label{2-IntEner-BesselDerivative}
+		\label{eq:2-IntEner-BesselDerivative}
 	\end{equation}
 	We then calculate the derivative of the third term and divide by the exponential (since it is positive)
 	\begin{align}
 		&\hspace{1em} \frac{1}{\exp(\alpha\partial_\alpha\log(K_2))}\frac{\partial}{\partial\alpha}\exp(\alpha\partial_\alpha\log(K_2))\\
 		&= \hspace{1em} \partial_\alpha\log(K_2) + \alpha\partial^2_\alpha\log(K_2)\\
 		&= \hspace{1em} \frac{\partial_\alpha K_2}{K_2} + \alpha\frac{\partial^2_\alpha K_2}{K_2} + \alpha\left(\frac{\partial_\alpha K_2}{K_2}\right)^2\\
-		&= \hspace{1em} \frac{K_1-\frac{2}{\alpha}K_2}{K_2} + \alpha\frac{\frac{1}{\alpha}K_1-K_2-\frac{2}{\alpha}\left(K_1-\frac{2}{\alpha}K_2\right)+\frac{2}{\alpha^2}K_2}{K_2^2} + \alpha\frac{K_1^2-\frac{1}{\alpha}K_1K_2-\frac{4}{\alpha^2}K_2^2}{K_2^2}\\
+		&= \hspace{1em} \frac{K_1-\frac{2}{\alpha}K_2}{K_2} + \alpha\frac{\frac{1}{\alpha}K_1-K_2-\frac{2}{\alpha}\left(K_1-\frac{2}{\alpha}K_2\right)+\frac{2}{\alpha^2}K_2}{K_2^2} + \alpha\frac{K_1^2-\frac{1}{\alpha}K_1 K_2-\frac{4}{\alpha^2}K_2^2}{K_2^2}\\
 		&= -\alpha + \alpha\frac{K_1^2}{K_2^2} - 4\frac{K_1}{K_2}
 	\end{align}
 	thus, it is sufficient to show that
-	\begin{equation}
+	\[
 		\alpha\frac{K_1^2}{K_2^2}  < \alpha + 4\frac{K_1}{K_2}.
-	\end{equation}
+	\]
 	We quickly prove the more general result $K_\nu<K_{\nu+1}$.
-	One possible definition \cite{abramowitzPocketbookMathematicalFunctions1984} for the Bessel function $K_\nu$ is given by
-	\begin{equation}
-		K_\nu := \frac{\sqrt{\pi}}{\left(\nu-\frac{1}{2}\right)!}\left(\frac{1}{2}z\right)^\nu\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu-\frac{1}{2}}\diff t
-	\end{equation}
+	One possible definition~\cite{abramowitzPocketbookMathematicalFunctions1984} for the Bessel function $K_\nu$ is given by
+	\[
+		K_\nu \coloneqq \frac{\sqrt{\pi}}{\left(\nu-\frac{1}{2}\right)!}\left(\frac{1}{2}z\right)^\nu\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu-\frac{1}{2}}\diff t
+	\]
 	We inspect the ratio
-	\begin{equation}
+	\[
 		\frac{K_\nu}{K_{\nu+1}} = \frac{1}{\left(\nu+\frac{1}{2}\right)\left(\frac{1}{2}z\right)}\frac{\int\e^{-tz}\left(t^2-1\right)^{\nu-1/2}\diff t}{\int\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t}
-	\end{equation}
+	\]
 	and rewrite the denominator with partial integration
-	\begin{equation}
+	\[
 		 \frac{1}{2}z\int\limits_1^\infty\e^{-tz}\left(t^2-1\right)^{\nu+1/2}\diff t = \left(\nu+\frac{1}{2}\right)\int\limits_1^\infty \e^{-tz}t\left(t^2-1\right)^{\nu-1/2}\diff t.
-	\end{equation}
+	\]
 	Now it is obvious that $K_{\nu+1}>K_\nu$.
-	Thus in total, the function given by equation \eqref{2-IntEner-FinalEOS} can be inverted.
+	Thus in total, the function given by equation~\eqref{eq:2-IntEner-FinalEOS} can be inverted.
 \end{proof}%
 %
 %
-\noindent With this mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ and its inverse $\alpha:\R_{>0}\rightarrow \R_{>0},p\mapsto \alpha(p)$, we can use \eqref{2-IntEner-DensityAlpha} and finally write down the \ac{eos} 
+\noindent With this mapping $p:\R_{>0}\rightarrow \R_{>0},\alpha\mapsto p(\alpha)$ and its inverse $\alpha:\R_{>0}\rightarrow \R_{>0},p\mapsto \alpha(p)$, we can use~\eqref{eq:2-IntEner-DensityAlpha} and finally write down the \ac{eos}
 \begin{equation}
-	\rho = \frac{\U}{V} = p\left(1+\alpha(p)\frac{K_1(\alpha(p))+K_3(\alpha(p))}{2K_2(\alpha(p))}\right).
-	\label{2-IntEner-FinalEOS}
+	\rho = \frac{\U}{V} = p\left(1+\alpha(p)\frac{K_1 (\alpha(p))+K_3(\alpha(p))}{2K_2 (\alpha(p))}\right).
+	\label{eq:2-IntEner-FinalEOS}
 \end{equation}
-Figure \ref{2-IntEner-RelEOSPlot} is obtained by choosing numerical values and then interpolating and inverting equation \eqref{2-IntEner-PressureAlpha}.
+Figure~\ref{fig:2-IntEner-RelEOSPlot} is obtained by choosing numerical values and then interpolating and inverting equation~\eqref{eq:2-IntEner-PressureAlpha}.
 The constant factor
 \begin{equation}
-	B:=CNmc^2/p_0
-	\label{2-IntEner-FactorExplanation}
+	B\coloneqq CNmc^2/p_0
+	\label{eq:2-IntEner-FactorExplanation}
 \end{equation}
 is substituted to obtain independence of $p_0$\footnote{This will be the starting value for the pressure in the \acl{TOV} equation. Since the pressure decreases from the inside a star to the outside, this resembles our highest value of $p$.}.
 Furthermore the graphs of the plotted \ac{eos} are normalised such that
-\begin{equation}
+\[
 	\rho_{i}(p_0)=\rho_{0,i}
-\end{equation}
+\]
 and thus can be compared with each other.
 Note that the $\rho_0$ of the plot is not a universal value but rather each function has been scaled individually and $\rho_0$ is a placeholder for the corresponding $\rho_{0,i}$.
 The polytropic \ac{eos} $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before, the equation is independent of $A$ and can be uniquely characterised by $n$. % TODO is this comma right?
-For further details, the interested reader is referred to \cite{pleyerGithubRepositoryJonas2021}.
+For further details, the interested reader is referred to~\cite{pleyerGithubRepositoryJonas2021}.
 \begin{figure}[H]
 	{\centering
 	\import{pictures/2-InternalEnergy-Explicit/}{RelEOS.pgf}
 	}
 	\caption{Relativistic \acl{eos}}
-	\label{2-IntEner-RelEOSPlot}
+	\label{fig:2-IntEner-RelEOSPlot}
 	\small
 	The relativistic \ac{eos} $\rho(p)$ is normalised such that values can be compared with a polytropic \ac{eos}.
 	Graphs for the relativistic version are independent of the exponent $n$ which is a degree of freedom intrinsic to the polytropic \ac{eos}.

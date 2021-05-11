@@ -123,18 +123,18 @@ The plot displays nicely that by lowering the integration stepsize, the maximum 
 \label{4-NumSol-Sec-RelEOS}
 In the previous discussion, we relied on the \ac{eos} given in Table~\ref{4-NumSol-Tbl-TOVParameters}.
 This is a versatile assumption, but one could ask what would happen to a star in which the particles have no interaction but are close to relativistic speed.
-The resulting \ac{eos} was calculated in the beginning (see equation~\eqref{2-IntEner-FinalEOS}) although not written down explicitly.
+The resulting \ac{eos} was calculated in the beginning (see equation~\eqref{eq:2-IntEner-FinalEOS}) although not written down explicitly.
 Since explicit inversion of the given function is complicated, we rely on numerical methods for calculation.
-Section~\ref{2-IntEner-SR-EOS-Derivation} showed that the function given in equation~\eqref{2-IntEner-PressureAlpha}
+Section~\ref{2-IntEner-SR-EOS-Derivation} showed that the function given in equation~\eqref{eq:2-IntEner-PressureAlpha}
 \begin{equation}
 	p(\alpha) = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right).
 \end{equation}
 explicitly has a non-positive slope. 
 When calculating an inverse function the values $C,N,m$ need to be chosen high enough in order to reach sufficiently high values for $p$.
-By knowing the initial value $p_0$ and by the fact that the pressure of the \ac{TOV} solution~\eqref{3-Mass-Equ-TOV-Eq-1} has a non-positive slope and with equation~\eqref{2-IntEner-PressureAlpha-Limit}, it is sufficient to choose $Bp_0=CNmc^2>2/\e^2$.
+By knowing the initial value $p_0$ and by the fact that the pressure of the \ac{TOV} solution~\eqref{3-Mass-Equ-TOV-Eq-1} has a non-positive slope and with equation~\eqref{eq:2-IntEner-PressureAlpha-Limit}, it is sufficient to choose $Bp_0=CNmc^2>2/\e^2$.
 On the other hand it is also important to choose high enough values for $\alpha$ for numerical inversion since otherwise functions can not be displayed if they reach small enough values for $p$.
 The limit for $\alpha$ is chosen such that values as low as $0.001p_0$ can be evaluated.
-Afterwards the function over the given interval is inverted by a polynomial fit and then used in equation~\eqref{2-IntEner-DensityAlpha} to obtain the \ac{eos}.\\
+Afterwards the function over the given interval is inverted by a polynomial fit and then used in equation~\eqref{eq:2-IntEner-DensityAlpha} to obtain the \ac{eos}.\\
 Figure~\ref{4-NumSol-Plt-RelEOS-TOV-Comparison} is an example which shows a clear difference between the polytropic and relativistic \ac{eos}.
 The values used are $B=20$, $p_0=0.4$, $dr=0.001$, $n=1$.
 The correct prefactor $A$ of the polytropic \ac{eos} is chosen after numerical calulation of the relativistic \ac{eos}.
