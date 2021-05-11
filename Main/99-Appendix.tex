@@ -284,14 +284,14 @@ This means any effort to parallelise the given task must focus on distributing t
 With this first consideration at hand a server with high number of processing units may come into mind to then speed up the calculation.
 However in the situation of section~\ref{4-NumSol-Sec-TOV-Exponents} this would only allow us to calculate more results in parallel but not speed up the individual solving routines.
 And this is exactly the bottleneck in our case.
-When looking at figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo} it is clear that higher values for $r_0$ are of interest where the curves reach the current maximum limit.
+When looking at figure~\ref{fig:4-NumSol-Plt-TOV-Exponents-Combo} it is clear that higher values for $r_0$ are of interest where the curves reach the current maximum limit.
 From this figure it is also clear that the effort will increase exponentially since we are bound to a single thread for individual solving routines.
 Hence parallel computation of this problem would not help in this case especially considering that server processing units typically have lower single threaded performance than consumer chips.\\
 Explicit parallelisation is achieved by distributing different values of $n$ to different threads. 
 More efficient distribution of those calculations can make a difference but effects discussed above and below have more impact.
 Furthermore in order to fully understand how to improve for this distribution it is partly necessary to calculate the results which is then even less of an issue afterwards.\\
 Another optimisation evolved around not computing unnecessary cases.
-Consider again figure~\ref{4-NumSol-Plt-TOV-Exponents-Combo}.
+Consider again figure~\ref{fig:4-NumSol-Plt-TOV-Exponents-Combo}.
 It is clear (however not proven until now) that for each combination $A,p_0$ at some value $n_0(A,p_0)$ values for $r_0$ will reach the numerical upper limit of the routine.
 For other solving routines with $n\geq n_0$ the same will happen which makes it unnecessary to even begin to compute them since they will not be shown in the graph anyways.
 This behaviour has been verified for a number of numerical combinations of parameters before beeing utilised in the final version.
@@ -312,7 +312,7 @@ This means if a thread started by the program finished and another is still runn
 This is a possibility for future tweaks.\\
 So far the previous discussion evolved around a fixed stepsize.
 Since in this case the 4th order Runge Kutta solving method was implemented by hand, it is possible to use variable stepsizes for solving.
-From figure~\ref{4-NumSol-Plt-ValidateLEResults} we can see that the largest errors occur in the first step of integration. 
+From figure~\ref{fig:4-NumSol-Plt-ValidateLEResults} we can see that the largest errors occur in the first step of integration.
 This means in the beginning a small stepsize is desirable to retain accuracy while later it can be increased. 
 These settings were experimented with but since the author had already achieved numerous results with a constant stepsize were not committed to the final version.
 It is however believed to yield a significant advantage if one would want to calculate higher values of $r_0$.\\
