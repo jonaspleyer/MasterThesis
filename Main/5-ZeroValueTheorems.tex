@@ -40,7 +40,7 @@ In order to follow this approach, we examine some properties that solutions of t
 \end{lemma}
 \begin{proof}
 	The first and second initial conditions of equations~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} and~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-2} are true by assumption.
-	The third condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated when once integrating the \ac{LE} equation
+	The third condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated by integrating the \ac{LE} equation once
 	\begin{equation}
 		\frac{d\theta}{d\xi} = -\int\limits_0^\xi \frac{t^{l-1}}{\xi^{l-1}}\theta^n \diff t
 		\label{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1}
@@ -137,7 +137,7 @@ The following theorem makes use of that fact and of a different representation o
 %
 \subsection{\texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} Equation}
 \label{subsec:5-Zeroes-TOV-Equ}
-% TODO write something about this proof.
+Motivated by the previous section about numerical solutions, we state the following hypothesis.
 \begin{hypothesis}[\acrNoHyperlink{\acs}{TOV} Zero Value Hypothesis]
 	Given the \ac{TOV} differential equation with $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
 	\begin{alignat}{3}
@@ -145,8 +145,12 @@ The following theorem makes use of that fact and of a different representation o
 		\frac{\partial p}{\partial r} &= -&&\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3 p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
 		\label{5-Zeroes-Equ-TOV-Equ}
 	\end{alignat}
-	and initial values $m_0=0,p_0\geq0$ there exists a $n_0\geq0$ such that all solutions with same parameters $A,p_0$ and smaller exponent $n<n_0$ have a $p(r_0)$ for some $r_0>0$.
+	and initial values $m_0=0,p_0\geq0$ there exists a $n_0\geq0$ such that all solutions with same parameters $A,p_0$ and smaller exponent $0\leq n<n_0$ have $p(r_0)$ for some $r_0>0$.
 \end{hypothesis}
+% TODO write something about this proof.
+\begin{lemma}[\acrNoHyperlink{\acs}{TOV} Local existence]
+	The \ac{TOV} equation~\ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing continuous \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
+\end{lemma}
 \begin{lemma}
 	\label{5-Zeroes-Lem-TOV-Conditions}
 	Let $(m,p):\R\rightarrow\R^2$ be a \ac{TOV} solution with initial values $m_0=0$ and $p_0>0$.
@@ -182,9 +186,6 @@ The following theorem makes use of that fact and of a different representation o
 	Condition~\eqref{5-Zeroes-Equ-TOV-Conditions-6} can be shown when inspecting $m$ and $p$ individually.
 	\begin{align}
 		|m(x)-m(y)|&=\left|\int\limits_x^y 4\pi\rho r'^2 dr'\right|\leq|x-y|\frac{4\pi\rho_0\epsilon^3}{3}\\
-%		|p(x)-p(y)|&=\left|\int\limits_x^y \frac{\rho+p}{r'^2}(4\pi r'^3 p + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right|\\
-%		&\leq2(\rho_0+p_0)\left|\int\limits_x^y \left(4\pi r' p+\frac{m}{r'^2}\right)dr'\right|\\
-%		&\leq2(\rho_0+p_0)\left(p_0\epsilon+\frac{4\pi\epsilon\rho_0}{3}\right)|x-y|
 		|p(x)-p(y)|&\leq8\epsilon\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)|x-y|
 	\end{align}
 	For the first equation we used the decreasing monotonous behaviour of $p$ and increasing behaviour of $\rho$.
