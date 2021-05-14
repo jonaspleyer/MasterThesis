@@ -211,36 +211,49 @@ We will now call $K$ the space of functions $f:[0,\epsilon]\rightarrow\R_{\geq0}
 	By condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1} and $r\in[0,\epsilon]$ it is clear that all functions $f\in K$ are bounded.
 	To show equicontinuity, we can apply the exact same argument as in lemma~\ref{5-Zeroes-Lem-LE-Compact} with condition~\eqref{5-Zeroes-Equ-TOV-Conditions-6} to obtain the desired result.
 \end{proof}
-% TODO continue from here on
-\begin{lemma}[\acrNoHyperlink{\acs}{TOV} Local existence]
-	The \ac{TOV} equation~\ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing continuous \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
-\end{lemma}
-\begin{proof}
-	The proof follows the same principles as previously done in lemma~\ref{5-Zeroes-Lem-Lane-Emden-Local-Existence}.
-	By lemma~\ref{5-Zeroes-Lem-K-Complete-Convex} the space $K$ is complete, convex and compact.
-	Thus, we can again apply the Schauder fixed-point theorem
-	Let $T:K\rightarrow K$ be defined by the \ac{TOV} equation~\eqref{3-Mass-Equ-TOV-Eq-1}
-	\[
-		T((m,p))(r)=\left(\int\limits_0^r 4\pi\rho r'^2 dr',-\int\limits_0^r\frac{p+\rho}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}dr'\right).
-	\]
-	We want to prove that $T$ is continuous.
-	For the first component of $T$ this statement is clearly true since $\rho$ is monotonously increasing and $p\in[p_0/2,p_0]$ is bound by assumption~\eqref{5-Zeroes-Equ-TOV-Conditions-3}.
-	For the second integrand together with restriction~\eqref{5-Zeroes-Equ-TOV-Conditions-1} we observe that
-	\[
-		(p+\rho)\frac{4\pi\rho r'^3+m}{r^2}\left(1-\frac{2 m}{r}\right)^{-1} \leq2(p_0+\rho_0)\left(4\pi\rho r'+\frac{m}{r}\right).
-	\]
-	The first resulting term is again Lipschitz in $p$ by the same argument.
-	For the second term we can use restriction~\eqref{5-Zeroes-Equ-TOV-Conditions-2}.
-	For the second term we look at $(m,p),(u,q)\in K$ with $0<\delta<1$
-	Then for $r\geq\delta$ it is clear that
-	\[
-		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty}\leq\frac{1}{\delta^2}\left|\left|m-u\right|\right|_{\infty}
-	\]
-	At $r=0$ the expression clearly vanishes due to constraint~\eqref{5-Zeroes-Equ-TOV-Conditions-1}.
-	Here any Lipschitz constant can be chosen.
-	For $0<r<\delta$ we readily see that
-	\[
-		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty}\leq\frac{1}{\delta^2}\left|\left|m-u\right|\right|_{\infty}
-	\]
-	which finishes the proof.
-\end{proof}
+\begin{proof}[Proof \acrNoHyperlink{\acl}{TOV} Existence]
+	To show that local solutions of the \ac{TOV} equation exist, it remains to be proven that $U:K\rightarrow K$ defined by
+	\begin{equation}
+		U((m,p))(r)=\left(\int\limits_0^r 4\pi\rho(p) r'^2 \diff r',-\int\limits_0^r\frac{p+\rho(p)}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}\diff r'\right).
+		\label{eq:5-Zeroes-TOV-Operator-Def}
+	\end{equation}
+	is continuous.
+	For $(m,p),(u,q)\in K$ we respectively inspect the first and second component.
+	By continuity of $\rho$, we have $|\rho(p)-\rho(q)|<\varepsilon$.
+	Since by condition~\eqref{5-Zeroes-Equ-TOV-Conditions-0} and~\eqref{5-Zeroes-Equ-TOV-Conditions-3}, we know that we only need to consider $\rho$ on a compact interval $[p_0,p_0/2]$, it is clear that by choosing $||p-q||<\delta$ small enough the term in equation~\eqref{eq:5-Zeroes-TOV-Ineq-1} shrinks arbitrarily.
+	\begin{equation}
+		\left|\left|\int\limits_0^r 4\pi(\rho(p)-\rho(q))r'^2\diff r\right|\right|_\infty\leq \frac{4\pi r^3}{3}||\rho(p)-\rho(q)||_\infty.
+		%\left|\left|U((m,p))-U((u,q))\right|\right|_{\infty} \leq
+		\label{eq:5-Zeroes-TOV-Ineq-1}
+	\end{equation}
+	For the second component, we make use of condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1} to again restrict $r\in[0,\epsilon]$ such that $(1-2m/r)^{-1}\leq2$.
+	\begin{align}
+		\left|\left|m-u\right|\right|_\infty &\leq \int\limits_0^r(p_0+\rho_0)\left|\left|\left(4\pi r'(\rho(p))-\rho(q))+\frac{m-u}{r'^2}\right)\right|\right|_\infty\diff r'\\
+		&\leq (p_0+\rho_0)M\left|\left|p-q\right|\right|_\infty + 8\pi\rho_0\epsilon(p_0+\rho_0)\left|\left|\frac{m-u}{r^2}\right|\right|_\infty
+		\label{eq:5-Zeroes-TOV-Ineq-2}
+	\end{align}
+	By condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} we see that the term
+	\begin{equation}
+		\frac{m-u}{r^2}\rightarrow0
+		\label{eq:5-Zeroes-TOV-Limit-UM-Div-R2}
+	\end{equation}
+	in the limit $r\rightarrow0$ and in general is bound by $8\pi\epsilon\rho_0/3$.
+	This shows that for every $m,u$ there must exist a $\tau_0>0$ such that~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} has its maximum value, or it is identically $0$.
+	\begin{equation}
+		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty} = \frac{1}{\tau_0^2}||m-u||_{\infty}
+		\label{eq:5-Zeroes-TOV-Last-Term}
+	\end{equation}
+	Let $m_k\rightarrow m$ be a series in $(K.||\cdot||_\infty)$.
+	% Suppose that for only finite elements of this series the maximum is $0$ and remove them from this series.
+	Without loss of generality, we can remove all elements of the series for which the maximum is identically $0$ and still have more than finite elements left.
+	Otherwise, the statement would be proven.
+	One can obtain another series $\tau_k$ by selecting the point at which equation~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} has its maximum.
+	This series is bound by assumption in $[0,\epsilon]$ and has a convergent subsequence.
+	Consider $\tau_k\rightarrow\tau>0$.
+	Now we can approximate equation~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} by taking the smallest $\tau_j$ of the series and the result is proven again.
+	If however $\tau_k\rightarrow0$, we know by condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} that the limit is identically $0$.
+	This proves continuity of $T$ which in turn shows local existence of \ac{TOV} solutions.
+\end{proof}\noindent
+While it was not possible in the scope of this work to proof the completeness of theorem~\ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary}, there have been some attempts to do so.
+A few promising ones will now be explained.
+In~\cite{walterOrdinaryDifferentialEquations1998}, the author states a theorem which gives a criterion for
