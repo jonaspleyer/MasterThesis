@@ -76,9 +76,10 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 	It is clear that conditions~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to~\eqref{5-Zeroes-Equ-LE-Conditions-4} are conserved.
 	Generally speaking Lipschitz continuous functions need not be complete under $||\cdot||_\infty$.
 	However, since we had chosen $L$ to be independent of $\theta$ for $||f_m-f||_\infty\rightarrow0$ we can write
-	\[
+	\begin{equation}
 		|f(x)-f(y)|=|f(x)-f_m(x)+f_m(x)-f_m(y)+f_m(y)-f(y)|\leq 2\epsilon+L|x-y|
-	\]
+		\label{eq:5-Zeroes-LE-Equicontinuity-Proof}
+	\end{equation}
 	which proves the statement in the limit $\epsilon\rightarrow0$.
 	Convexity for conditions~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} to~\eqref{5-Zeroes-Equ-LE-Conditions-4} is also clear.
 	Let $f,g\in C^*$ and $h\in[0,1]$.
@@ -139,7 +140,7 @@ The following theorem makes use of that fact and of a different representation o
 \label{subsec:5-Zeroes-TOV-Equ}
 Motivated by the previous section about numerical solutions, we state the following hypothesis.
 \begin{hypothesis}[\acrNoHyperlink{\acs}{TOV} Zero Value Hypothesis]
-	Given the \ac{TOV} differential equation with $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
+	Given the \ac{TOV} differential equation with polytropic \ac{eos} $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
 	\begin{alignat}{3}
 		\frac{\partial m}{\partial r} &= &&4\pi\rho r^2\\
 		\frac{\partial p}{\partial r} &= -&&\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3 p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
@@ -149,13 +150,13 @@ Motivated by the previous section about numerical solutions, we state the follow
 \end{hypothesis}
 % TODO write something about this proof.
 \begin{lemma}[\acrNoHyperlink{\acs}{TOV} Local existence]
-	The \ac{TOV} equation~\ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing continuous \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
+	The \ac{TOV} equation~\ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing continuous \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ with $\rho(0)=0$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
 \end{lemma}
 \begin{lemma}
 	\label{5-Zeroes-Lem-TOV-Conditions}
 	Let $(m,p):\R\rightarrow\R^2$ be a \ac{TOV} solution with initial values $m_0=0$ and $p_0>0$.
 	Also let $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ be the polytropic \ac{eos}.
-	Then for a small enough $\epsilon$ Interval $[0,\epsilon]$ the solution $f$ satisfies the following conditions.
+	Then for a small enough $\epsilon$ Interval $[0,\epsilon]$ the solution $(m,p)$ satisfies the following conditions.
 	\begin{align}
 		p(0)=p_0>0 &\mathrm{\ and\ } m(0)=m_0=0\label{5-Zeroes-Equ-TOV-Conditions-0}\\
 		m(r) &\leq \frac{4\pi\rho_0 r^3}{3}\label{5-Zeroes-Equ-TOV-Conditions-1}\\
