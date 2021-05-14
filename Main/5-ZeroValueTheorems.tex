@@ -170,23 +170,24 @@ Motivated by the previous section about numerical solutions, we state the follow
 \begin{proof}
 	Conditions~\eqref{5-Zeroes-Equ-TOV-Conditions-0},\eqref{5-Zeroes-Equ-TOV-Conditions-4} and~\eqref{5-Zeroes-Equ-TOV-Conditions-5} are clear by looking at equation~\eqref{5-Zeroes-Equ-TOV-Equ}.
 	To prove condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1}, we inspect that with the initial value $m_0=0$ we can write
-	\[
-		m = \int\limits_0^r 4\pi\rho r'^2 dr'\leq4\pi\rho_0\int\limits_0^r r'^2 dr'=\frac{4\pi\rho_0 r^3}{3}
-	\]
+	\begin{equation}
+		m = \int\limits_0^r 4\pi\rho r'^2 \diff r'\leq4\pi\rho_0\int\limits_0^r r'^2 \diff r'=\frac{4\pi\rho_0 r^3}{3}
+		\label{eq:5-Zeroes-TOv-Conditions-Proof-Intermed-1}
+	\end{equation}
 	where in the second step we used that $\rho$ is monotonously increasing and positive solutions of the \ac{TOV} equation have non-positive slope in the pressure $p$ component.\\
 	The third condition is obtained when applying L'Hosptial's Rule as was done in the beginning of section~\ref{4-NumSol-Sec-Comp-TOV-LE}.
 	For the third condition we first inspect that condition~\ref{5-Zeroes-Equ-TOV-Conditions-1} lets us choose $(1-2m/r)^{-1}\leq 2$.
 	\begin{align}
-		p_0 - p &=\int\limits_0^r\frac{1}{r'^2}\left(p+\rho\right)\left(4\pi pr'^3+m\right)\left(1-\frac{2m}{r'}\right)^{-1}dr'\label{5-Zeroes-Equ-TOV-Conditions-Proof-1}\\
-				&\leq2\left(p_0+\rho_0\right)\int\limits_0^r\frac{4\pi pr'^3+m}{r'^2}dr'\label{5-Zeroes-Equ-TOV-Conditions-Proof-2}\\
-				&\leq2(p_0+\rho_0)\int\limits_0^r\left(4\pi p_0 r' + \frac{4\pi\rho_0 r'}{3}\right)dr'\label{5-Zeroes-Equ-TOV-Conditions-Proof-3}\\
+		p_0 - p &=\int\limits_0^r\frac{1}{r'^2}\left(p+\rho\right)\left(4\pi pr'^3+m\right)\left(1-\frac{2m}{r'}\right)^{-1}\diff r'\label{5-Zeroes-Equ-TOV-Conditions-Proof-1}\\
+				&\leq2\left(p_0+\rho_0\right)\int\limits_0^r\frac{4\pi pr'^3+m}{r'^2}\diff r'\label{5-Zeroes-Equ-TOV-Conditions-Proof-2}\\
+				&\leq2(p_0+\rho_0)\int\limits_0^r\left(4\pi p_0 r' + \frac{4\pi\rho_0 r'}{3}\right)\diff r'\label{5-Zeroes-Equ-TOV-Conditions-Proof-3}\\
 				&=4\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)r^2\label{5-Zeroes-Equ-TOV-Conditions-Proof-4}
 	\end{align}
 	In the first step we used that $p$ is a \ac{TOV} solution while in the second step the aforementioned inequality and just as in the last step the non-positive slope of $p$ with the monotonicity of $\rho$ came into play.
-	Afterwards we used the first condition~\ref{5-Zeroes-Equ-TOV-Conditions-1} and integrated the result.
+	Next we used the condition~\ref{5-Zeroes-Equ-TOV-Conditions-1} to restrict $r\in[0,\epsilon]$ such that $(1-2m/r)^{-1}\leq2$ and integrated the result.
 	Condition~\eqref{5-Zeroes-Equ-TOV-Conditions-6} can be shown when inspecting $m$ and $p$ individually.
 	\begin{align}
-		|m(x)-m(y)|&=\left|\int\limits_x^y 4\pi\rho r'^2 dr'\right|\leq|x-y|\frac{4\pi\rho_0\epsilon^3}{3}\\
+		|m(x)-m(y)|&=\left|\int\limits_x^y 4\pi\rho r'^2 \diff r'\right|\leq4\pi\rho_0\epsilon^2|x-y|\\
 		|p(x)-p(y)|&\leq8\epsilon\pi(p_0+\rho_0)\left(p_0+\frac{\rho_0}{3}\right)|x-y|
 	\end{align}
 	For the first equation we used the decreasing monotonous behaviour of $p$ and increasing behaviour of $\rho$.
