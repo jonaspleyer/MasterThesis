@@ -18,7 +18,7 @@ Motivated by the preceding sections, the aim now is to prove the following theor
 	For every $n\geq0$, the Lane-Emden equation~\ref{eq:5-Zeroes-Equ-LEeq} with initial values defined as above has a unique solution in an $\epsilon$ Ball around $\xi=0$.
 \end{lemma}\noindent
 The procedure for proving existence is similar for both equations.
-Although the author in~\cite[p.~50]{quittnerSuperlinearParabolicProblems2007} expects to be able to solve this problem with the standard Banach fixed-point theorem, we want to use the Schauder fixed-point theorem~\cite{schauderFixpunktsatzFunktionalraumen1930}, which is a variation the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
+In a similar approach given by the author in~\cite[p.~50]{quittnerSuperlinearParabolicProblems2007}, we want to use the Schauder fixed-point theorem~\cite{schauderFixpunktsatzFunktionalraumen1930}, which is a variation the Banach fixed-point theorem to show that over a suitably chosen space of functions we obtain a unique solution to the differential equation.
 The statement as formulated in~\cite{minazzoTheoremesPointFixe2007} reads
 \begin{theorem}
 	Every continuous function from a convex compact subset K of a Banach space to K itself has a fixed point.
@@ -35,40 +35,39 @@ In order to follow this approach, we examine some properties that solutions of t
 		|\theta(x)-\theta(y)|		&\leq L|x-y|\label{5-Zeroes-Equ-LE-Conditions-5}
 	\end{align}
 	where $L$ is independent of $\theta$.
-	The statements above are true for every $x,y\in[0,\lambda]$.
 	We will call $C^*\subseteq C^0$ the space of all continuous functions $f:[0,\lambda]\rightarrow\R$ that satisfy those conditions.
 \end{lemma}
 \begin{proof}
 	The first and second initial conditions of equations~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1} and~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-2} are true by assumption.
-	The third condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} can be motivated by integrating the \ac{LE} equation once
+	The third condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} can be obtained by integrating the \ac{LE} equation once
 	\begin{equation}
 		\frac{d\theta}{d\xi} = -\int\limits_0^\xi \frac{t^{l-1}}{\xi^{l-1}}\theta^n \diff t
 		\label{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1}
 	\end{equation}
 	where we not yet needed any of the above criteria except positivity of $\theta$.
-	From this expression condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} is derived immediately.
+	% From this expression, condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} is derived immediately.
 	When integrating equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1} once more and using the initial value of condition~\eqref{5-Zeroes-Equ-LE-Conditions-Initial-1}, we obtain
 	\begin{equation}
-		\theta = \theta_0 -\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s.
+		\theta(\xi) = \theta_0 -\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n(t) \diff t \diff s.
 		\label{eq:5-Zeroes-LE-Equation-Rewritten-Integration-2}
 	\end{equation}
 	We combine this statement with the previously shown condition of equation~\eqref{5-Zeroes-Equ-LE-Conditions-3}.
 	Then it is clear that
 	\begin{equation}
-		\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s \leq \theta_0^n\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1} \diff t \diff s \leq \theta_0^n\frac{\xi^2}{2l}
+		\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n(t) \diff t \diff s \leq \theta_0^n\int\limits_0^\xi\int\limits_0^s \left(\frac{t}{s}\right)^{l-1} \diff t \diff s \leq \theta_0^n\frac{\xi^2}{2l}
 		\label{eq:5-Zeroes-LE-Equation-Rewritten-Inequality}
 	\end{equation}
 	and thus $\xi\leq\lambda$ can be chosen suitably small to satisfy condition~\eqref{5-Zeroes-Equ-LE-Conditions-4}.
-	For the last condition we again observe that from equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-2} follows promptly that
+	For the last condition we derive from equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-2} that
 	\begin{equation}
-		|\theta(x)-\theta(y)| = \left|\int\limits_x^y\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n \diff t \diff s\right| \leq \theta^n_0\frac{|x^2-y^2|}{2l} \leq \theta^n_0\frac{\lambda}{l}|x-y|
+		|\theta(x)-\theta(y)| = \left|\int\limits_x^y\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\theta^n(t) \diff t \diff s\right| \leq \theta^n_0\frac{|x^2-y^2|}{2l} \leq \theta^n_0\frac{\lambda}{l}|x-y|
 		\label{eq:5-Zeroes-LE-Equation-Rewritten-Inequality-2}
 	\end{equation}
 \end{proof}\noindent
 The now introduced function space $C^*$ contains all functions that are possible solutions for the \ac{LE} equation.
 In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is compact and convex which we will show in the next two lemmata.
 \begin{lemma}
-	The space $C^*$ defined in lemma~\ref{5-Zeroes-Lem-LE-Conditions} with the norm $||\cdot||_\infty$is complete and convex.
+	The space $C^*$ defined in lemma~\ref{5-Zeroes-Lem-LE-Conditions} with the norm $||\cdot||_\infty$ is complete and convex.
 	\label{5-Zeroes-Lem-LE-Convex-Complete}
 \end{lemma}
 \begin{proof}
@@ -96,7 +95,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 	\label{5-Zeroes-Lem-LE-Compact}
 \end{lemma}
 \begin{proof}
-	To prove this statement we use the Arzela-Ascoli theorem.
+	To prove part of this statement we use the Arzela-Ascoli theorem.
 	Since $C^*$ is a function space over a compact set $[0,\lambda]$ we only need to show that it is bounded and equicontinuous.
 	For every function $f\in C^*$ we know by condition~\eqref{5-Zeroes-Equ-LE-Conditions-3} and~\eqref{5-Zeroes-Equ-LE-Conditions-4} that $\theta/2\leq f\leq\theta_0$ which shows boundedness.
 	Since with condition~\eqref{5-Zeroes-Equ-LE-Conditions-5} every function $f\in C^*$ is especially Lipschitz, we can clearly see that equicontinuity hols.
@@ -114,7 +113,7 @@ In order to use the Schauder fixed-point theorem, we have to show that $C^*$ is 
 		||T(f)-T(g)||_{\infty} &= ||\int\limits_0^x\int\limits_0^s \left(\frac{t}{s}\right)^{l-1}\left[f^n(t)-g^n(t)\right]\diff t\diff s\\
 		&\leq \frac{x^2}{2l}||f^n-g^n||_{\infty}.
 	\end{align}
-	Since $z\mapsto z^n$ is continuous for $z\geq0$ and $n\geq0$ the statement follows directly.
+	Since $z\mapsto z^n$ is continuous for $z\geq0$ and $n\geq0$ with $\mathrm{img}(f)\subseteq[\theta_0/2,\theta_0]$ for each $f\in C^*$ by condition~\eqref{5-Zeroes-Equ-LE-Conditions-4} the statement follows directly.
 \end{proof}\noindent
 Equation~\eqref{eq:5-Zeroes-LE-Equation-Rewritten-Integration-1} shows that non-negative solutions must have non-positive slope.
 The following theorem makes use of that fact and of a different representation of the \ac{LE} equation to show that solutions can be extended until they reach zero.
@@ -140,6 +139,7 @@ The following theorem makes use of that fact and of a different representation o
 \label{subsec:5-Zeroes-TOV-Equ}
 Motivated by the previous section about numerical solutions, we state the following hypothesis.
 \begin{hypothesis}[\acrNoHyperlink{\acs}{TOV} Zero Value Hypothesis]
+	\label{theo:5-Zeroes-TOV-Zero-Value-Hypothesis}
 	Given the \ac{TOV} differential equation with polytropic \ac{eos} $\rho=Ap^{\frac{n}{n+1}}$ and $p_0,A>0$
 	\begin{alignat}{3}
 		\frac{\partial m}{\partial r} &= &&4\pi\rho r^2\\
@@ -148,7 +148,7 @@ Motivated by the previous section about numerical solutions, we state the follow
 	\end{alignat}
 	and initial values $m_0=0,p_0\geq0$ there exists a $n_0\geq0$ such that all solutions with same parameters $A,p_0$ and smaller exponent $0\leq n<n_0$ have $p(r_0)$ for some $r_0>0$.
 \end{hypothesis}
-% TODO write something about this proof.
+% TODO write something about this proof. First look at the proof given in quittner
 \begin{lemma}[\acrNoHyperlink{\acs}{TOV} Local existence]
 	The \ac{TOV} equation~\ref{5-Zeroes-Equ-TOV-Equ} with initial values $m_0=0$ and $p_0\geq0$ and monotonously increasing continuous \ac{eos} $\rho:\R_{\geq0}\rightarrow\R_{\geq0}$ with $\rho(0)=0$ has a local solution for $r\in[0,\epsilon]$ with some $\epsilon>0$.
 \end{lemma}
@@ -228,7 +228,7 @@ We will now call $K$ the space of functions $f:[0,\epsilon]\rightarrow\R_{\geq0}
 	\end{equation}
 	For the second component, we make use of condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1} to again restrict $r\in[0,\epsilon]$ such that $(1-2m/r)^{-1}\leq2$.
 	\begin{align}
-		\left|\left|m-u\right|\right|_\infty &\leq \int\limits_0^r(p_0+\rho_0)\left|\left|\left(4\pi r'(\rho(p))-\rho(q))+\frac{m-u}{r'^2}\right)\right|\right|_\infty\diff r'\\
+		\left|\left|U_2(m,p)-U_2(u,q)\right|\right|_\infty &\leq \int\limits_0^r(p_0+\rho_0)\left|\left|\left(4\pi r'(\rho(p))-\rho(q))+\frac{m-u}{r'^2}\right)\right|\right|_\infty\diff r'\\
 		&\leq (p_0+\rho_0)M\left|\left|p-q\right|\right|_\infty + 8\pi\rho_0\epsilon(p_0+\rho_0)\left|\left|\frac{m-u}{r^2}\right|\right|_\infty
 		\label{eq:5-Zeroes-TOV-Ineq-2}
 	\end{align}
@@ -243,16 +243,25 @@ We will now call $K$ the space of functions $f:[0,\epsilon]\rightarrow\R_{\geq0}
 		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty} = \frac{1}{\tau_0^2}||m-u||_{\infty}
 		\label{eq:5-Zeroes-TOV-Last-Term}
 	\end{equation}
-	Let $m_k\rightarrow m$ be a series in $(K.||\cdot||_\infty)$.
+	Let $m_k\rightarrow u$ be a series in $(K.||\cdot||_\infty)$.
 	% Suppose that for only finite elements of this series the maximum is $0$ and remove them from this series.
 	Without loss of generality, we can remove all elements of the series for which the maximum is identically $0$ and still have more than finite elements left.
-	Otherwise, the statement would be proven.
-	One can obtain another series $\tau_k$ by selecting the point at which equation~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} has its maximum.
-	This series is bound by assumption in $[0,\epsilon]$ and has a convergent subsequence.
-	Consider $\tau_k\rightarrow\tau>0$.
-	Now we can approximate equation~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} by taking the smallest $\tau_j$ of the series and the result is proven again.
-	If however $\tau_k\rightarrow0$, we know by condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} that the limit is identically $0$.
+	Otherwise, there would exist a subsequence with
+	\begin{equation}
+		\left|\left|\frac{m_{k_i}-u}{r^2}\right|\right|_{\infty}=0
+		\label{eq:5-Zeroes-TOV-Last-Term-Series}
+	\end{equation}
+	for more than finite $k_i\in\mathbb{N}$ and the statement would be proven.
+	One can obtain another series $\tau_k$ by selecting the maximum point as done in equation~\eqref{eq:5-Zeroes-TOV-Last-Term}.
+	This series is bound by assumption in $[0,\epsilon]$ and thus has a convergent subsequence.
+	Consider $\tau_k\rightarrow\tau$.
+	Then by definition we have
+	\begin{equation}
+		\left|\left|\frac{m_k-u}{r^2}\right|\right|_{\infty} = \frac{1}{\tau_k^2}\left|m_k(\tau_k)-u(\tau_k)\right| \leq \frac{1}{\tau_k^2} \left|\left|m_k-u\right|\right|_{\infty}.
+		\label{eq:5-Zeroes-TOV-Last-Term-Series-2}
+	\end{equation}
+	If $\tau=0$, condition~\eqref{5-Zeroes-Equ-TOV-Conditions-2} implies that equation~\eqref{eq:5-Zeroes-TOV-Last-Term-Series-2} vanishes in the limit.
+	In the case $\tau>0$, we can approximate equation~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} by taking the smallest $\tau_{j}>0$ of the series and the result is proven again.
 	This proves continuity of $T$ which in turn shows local existence of \ac{TOV} solutions.
 \end{proof}\noindent
-While it was not possible in the scope of this work to proof the complete statement of theorem~\ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary}, there have been some attempts to do so.
-A few promising ones will be explained in the next section.
+% Constructing a proof of~\ref{theo:5-Zeroes-TOV-Zero-Value-Hypothesis}.
