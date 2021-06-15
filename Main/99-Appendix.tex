@@ -1,10 +1,10 @@
-\begin{appendix}
+\appendix
 \pagenumbering{roman}
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\thesubsection}{\Alph{subsection}}
 \renewcommand\thetheorem{\thesubsection.\arabic{theorem}}
 
-\begin{section}*{Appendix}
+\section*{Appendix}
 \addcontentsline{toc}{section}{Appendix}
 %
 %
@@ -176,7 +176,7 @@ Since the series is absolut convergent, we can plug it into the \ac{LE} equation
 	\end{equation}
 	It is clear that in the summation odd and even coefficients get paired and will thus
 	vanish completely.
-\end{proof}\noindent
+\end{proof}
 This proof shows that we can restrict ourselves to the subsequence $b_m=a_{2m}$ and the subseries with initial values given by
 \begin{equation}
 	\theta = \sum\limits_{m=0}^\infty b_m\xi^{2m} \hspace{1cm} b_{m+1} =
@@ -353,7 +353,155 @@ These calls could be forwarded to a different handler in order to possibly paral
 %
 \subsection{Nonexistence of Global \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} Solutions}
 \label{subsec:99-App-NoGlobalLE}
-We present a variation of the proof given in~\cite[p.~36]{quittnerSuperlinearParabolicProblems2007} to conclusively show theorem~\ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary}.
-% TODO reformulate proof to show what we want to show.
-\end{section}
-\end{appendix}
+We sketch the most important steps of the proof to theorem (8.1) part i) in~\cite[p.~36]{quittnerSuperlinearParabolicProblems2007} to show theorem~\ref{5-Zeroes-Theo-Lane-EmdenFiniteBoundary}.
+\begin{lemma}
+	\label{lem:99-App-NoGlobalLE-Lemm8-1}
+	Non-negative solutions $u:\R^n\rightarrow\R$ of the differential equation
+	\begin{equation}
+		-\Delta u=u^p
+		\label{eq:99-App-NoGlobalLE-LE-Equation}
+	\end{equation}
+	do not exist if $1<p<p_S$ where $p_S$ is the critical Sobolev-Exponent defined as
+	\begin{equation}
+		p_S=\begin{cases}
+				\frac{n+2}{n-2} &\text{ if } n>2\\
+				\infty &\text{ if } n\leq2
+			\end{cases}
+		\label{eq:99-App-NoGlobalLE-LE-Sobolev-Exponent}
+	\end{equation}
+	where $n$ is the dimension.
+\end{lemma}
+The following theorem can be used directly to prove the preceding one.
+\begin{lemma}
+	\label{lem:99-App-NoGlobalLE-Lemm8-6}
+	Let $1<p<p_S$ and let $B_1$ be the unit ball in $\R^n$.
+	There exists $r=r(n,p)>\max{(n(p-1)/2,p)}$ such that if $0<u\in C^2(B_1)$ is a solution of equation~\eqref{eq:99-App-NoGlobalLE-LE-Equation} in $B_1$, then
+	\begin{equation}
+		\int\limits_{|x|<1/2}u^r\leq C(n,p).
+		\label{eq:99-App-NoGlobalLE-LE-Inequality}
+	\end{equation}
+\end{lemma}
+To proof this theorem, a gradient estimate for a local solution of equation~\eqref{eq:99-App-NoGlobalLE-LE-Equation} was applied.
+The following theorems are auxiliary in this task.
+\begin{lemma}
+	\label{lem:99-App-NoGlobalLE-Lemma1}
+	Let $\Omega\subseteq\R^n$ and $0\leq\varphi$ be a test function in $C_c^\infty(\Omega)$ with $0\leq u\in C^2(\Omega)$.
+	Then we fix $q\in R$ and define
+	\begin{equation}
+		I=\int\varphi u^{q-2}\left|\nabla u\right|^4, \hspace{1cm} J=\int\varphi u^{q-1}\left|\nabla u\right|^2\Delta u, \hspace{1cm} K=\int \varphi u^q(\Delta u)^2.
+		\label{eq:99-App-NoGlobalLE-Def-IJK}
+	\end{equation}
+	For any $k\in\R$ with $k\neq -1$ we have
+	\begin{equation}
+		\alpha I + \beta J + \gamma K \leq \frac{1}{2}\int u^q\left|\nabla u\right|^2\Delta\varphi + \int u^q\left[\Delta u + (q-k)u^{-1}\left|\nabla u\right|^2\right]\nabla u\cdot\nabla\varphi
+		\label{eq:99-App-NoGlobalLE-Ineq-IJK}
+	\end{equation}
+	where the parameters $\alpha, \beta, \gamma$ are defined as
+	\begin{equation}
+		\alpha=-\frac{n-1}{n}k^2 + (q-1)k-\frac{q(q-1)}{2}, \hspace{1cm} \beta=\frac{n+2}{n}k-\frac{3q}{2}, \hspace{1cm} \gamma = -\frac{n-1}{n}.
+		\label{eq:99-App-NoGlobalLE-Def-Alph-Bet-Gam}
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	The proof to this theorem relies on the Bochner identity
+	\begin{equation}
+		\frac{1}{2}\Delta |\nabla v|^2 = \nabla (\Delta v)\cdot \nabla v + |D^{2}v|^2
+		\label{eq:99-App-NoGlobalLE-Bochner-Identity}
+	\end{equation}
+	where $|D^2 v|^2=\sum\limits_{i,j}(\partial_i\partial_j v)^2$.
+	In the first step, equation~\eqref{eq:99-App-NoGlobalLE-Bochner-Identity} is multiplied by $\varphi v^m$ and integrated.
+	Afterwards the Cauchy-Schwarz inequality applied on the inner product of two matrices $\left<A,B\right>=\mathrm{tr}(AB^*)$, results in
+	\begin{equation}
+		(\Delta v)^2 = (\mathrm{tr}(D^2 v))^2 \leq \mathrm{tr}\left[(D^2 v)(D^2 v)^*\right]\mathrm{tr}(I_n)=n|D^2 v|^2.
+		\label{eq:99-App-NoGlobalLE-Step1-Result}
+	\end{equation}
+	When rearranging terms of equation~\eqref{eq:99-App-NoGlobalLE-Bochner-Identity}, the first result is obtained.
+	\begin{alignat}{1}
+		\frac{m(1-m)}{2} \int \varphi v^{m-2}|\nabla v|^{4}-\frac{3 m}{2} \int \varphi v^{m-1}|\nabla v|^{2} \Delta v-\frac{n-1}{n} \int \varphi v^{m}(\Delta v)^{2} \\
+		\leq \frac{1}{2} \int v^{m}|\nabla v|^{2} \Delta \varphi+\int\left[v^{m} \Delta v+m v^{m-1}|\nabla v|^{2}\right] \nabla v \cdot \nabla \varphi
+	\end{alignat}
+	In the second part, we set $v=u^{k+1},m=(k+1)^{-1}(q-2k)$ and start by computing the respective terms of equation~\eqref{eq:99-App-NoGlobalLE-Step1-Result}.
+	Combining them yields
+	\begin{alignat}{1}
+			{\left[\frac{m(1-m)}{2}(k+1)^{2}-\frac{3 m}{2} k(k+1)-\frac{n-1}{n} k^{2}\right] I+\left[-\frac{3 m}{2}(k+1)-2 k \frac{n-1}{n}\right] J} \\
+			-\frac{n-1}{n} K \leq \frac{1}{2} \int u^{q}|\nabla u|^{2} \Delta \varphi+\int u^{q}\left[\Delta u+(k+m(k+1)) u^{-1}|\nabla u|^{2}\right] \nabla u \cdot \nabla \varphi,
+	\end{alignat}
+	which proves the lemma.
+\end{proof}
+\begin{lemma}
+	\label{lem:99-App-NoGlobalLE-Lemm8-10}
+	(i) Let $\Omega,\varphi,u$ be as in lemma~\ref{lem:99-App-NoGlobalLE-Lemma1} and $u$ additionally satisfies equation~\eqref{eq:99-App-NoGlobalLE-LE-Equation}.
+	Fix $q,k\in\R$ with $q>-p,k\neq-1$ and define $I$ as in equation~\eqref{eq:99-App-NoGlobalLE-Def-IJK} with
+	\begin{equation}
+		K = \int\varphi u^{2p+q}.
+		\label{eq:99-App-NoGlobalLE-K-NewDef}
+	\end{equation}
+	The it holds
+	\begin{equation}
+		\alpha I + \delta K \leq \frac{1}{2}\int u^q |\nabla u|^2\Delta \varphi + C\int\left[u^{p+q} +u^{q-1}|\nabla u|^2\right]|\nabla u\cdot \nabla\varphi|
+		\label{eq:99-App-NoGlobalLE-lemma2-statement}
+	\end{equation}
+	where $C=C(n,p,q,k)>0$ and $\alpha$ as in equation~\eqref{eq:99-App-NoGlobalLE-Def-Alph-Bet-Gam} and
+	\begin{equation}
+		\delta=\frac{1}{p+q}\left(\frac{3q}{2}-\frac{n+2}{n}k\right)-\frac{n-1}{n}.
+		\label{eq:99-App-NoGlobalLE-Def-Delt}
+	\end{equation}
+	(ii) Assume $1<p<p_S$.
+	Then there exist $q,k\in\R$ with $q\neq -p,k\neq-1$ such that the constants $\alpha,\delta$ satisfy
+	\begin{equation}
+		\alpha,\delta>0\hspace{1cm}2p+q>n(p-1)/2.
+		\label{eq:99-App-NoGlobalLE-Lem3-Ineq-Alph-Delt}
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	(i) With $\Delta u+u^p=0$ and $J$ from equation~\eqref{eq:99-App-NoGlobalLE-Def-IJK} we obtain
+	\begin{equation}
+		(p+q)J = -\int\varphi u^{2p+q}+\int(\nabla\varphi\cdot\nabla u)u^{q+p}.
+		\label{eq:99-App-NoGlobalLE-Lem3-Proof-i}
+	\end{equation}
+	(ii) In order to fulfill equation~\eqref{eq:99-App-NoGlobalLE-Lem3-Ineq-Alph-Delt} we rewrite the conditions.
+	In the case for $\delta>0$ we obtain a polynomial in $q$ with discriminant
+	\begin{equation}
+		D=\frac{p^{2}+n(n+2) p-(n-1)^{2} p^{2}}{(n+2)^{2}}=\frac{n p[(n+2)-(n-2) p]}{(n+2)^{2}}>0.
+		\label{eq:99-App-NoGlobalLE-Lem3-Proof-ii-Discriminant}
+	\end{equation}
+	Now we can simply choose
+	\begin{equation}
+		q=\frac{2p}{n+2}\hspace{1cm} k=k_0(q)^{-}=\left(-\frac{np}{n+2}\right)^- \hspace{1cm}\text{with} k\neq-1
+		\label{eq:99-App-NoGlobalLE-Lem3-Proof-ii}
+	\end{equation}
+	where the superscript refers to the lower result of the quadratic polynomial in $q$ of equation~\eqref{eq:99-App-NoGlobalLE-Lem3-Proof-ii-Discriminant}.
+\end{proof}
+\begin{proof}[Proof of lemma~\ref{lem:99-App-NoGlobalLE-Lemm8-6}]
+	With $k,q$ from lemma~\ref{lem:99-App-NoGlobalLE-Lemm8-10} (ii) and $\Omega=B_1$, we want to further develop estimates to the RHS of equation~\eqref{eq:99-App-NoGlobalLE-Lem3-Ineq-Alph-Delt}.
+	Let $\xi$ be a testfunction on $\Omega$ with $\xi=1$ for $|x|\leq 1/2$ and $0\leq\xi\leq1$. Then we define $\theta=(3p+1+2q)/(2(2p+q))\in(0,1)$ and let $\varphi=\xi^m$ where $m=2/(1-\theta)$. Then
+	\begin{equation}
+		\left|\nabla\varphi\right|\leq C\xi^{m-1}\leq C\varphi^{\theta},\hspace{1cm}|\Delta\varphi|\leq C\xi^{m-2}\leq C\varphi^{\theta}.
+		\label{eq:99-App-NoGlobalLE-Lem4-Proof-i}
+	\end{equation}
+	With Young's Inequality of the form
+	\begin{equation}
+		xyz\leq\epsilon x^a+\epsilon y^b+ C(\epsilon)z^c,\hspace{1cm}a^{-1}+b{-1}+c^{-1}=1
+		\label{eq:99-App-NoGlobalLE-Lem4-Proof-ii}
+	\end{equation}
+	we get
+	\begin{equation}
+		\begin{gathered}
+		\int u^{q}|\nabla u|^{2} \Delta \varphi=\int\left(\varphi^{1 / 2} u^{(q-2) / 2}|\nabla u|^{2}\right)\left(\varphi^{(q+2) / 2(2 p+q)} u^{(q+2) / 2}\right) \\
+		\times\left(\varphi^{-(p+1+q) /(2 p+q)} \Delta \varphi\right) \leq \varepsilon \int \varphi u^{q-2}|\nabla u|^{4}+\varepsilon \int \varphi u^{2 p+q}+C(\varepsilon)
+		\end{gathered}
+		\label{eq:99-App-NoGlobalLE-Lem4-Proofiii-1}
+	\end{equation}
+	and
+	$C \int u^{q-1}|\nabla u|^{2}|\nabla u \cdot \nabla \varphi| \leq \int\left(\varphi^{3 / 4} u^{3(q-2) / 4}|\nabla u|^{3}\right)\left(\varphi^{(q+2) / 4(2 p+q)} u^{(q+2) / 4}\right)$
+	\begin{equation}
+	\times\left(\varphi^{-(3 p+1+2 q) / 2(2 p+q)}|\nabla \varphi|\right) \leq \varepsilon \int \varphi u^{q-2}|\nabla u|^{4}+\varepsilon \int \varphi u^{q+2 p}+C(\varepsilon)
+	\label{eq:99-App-NoGlobalLE-Lem4-Proofiii-2}
+	\end{equation}
+	Combining this with equation~\eqref{eq:99-App-NoGlobalLE-lemma2-statement}, we obtain
+	\begin{equation}
+		\alpha I+\delta K \leq C(n, p, q, k) \varepsilon(I+K)+C(\varepsilon).
+		\label{eq:99-App-NoGlobalLE-Lem4-Proofiii-3}
+	\end{equation}
+	By choosing $\epsilon$ small enough, we obtain the desired result of lemma~\ref{lem:99-App-NoGlobalLE-Lemm8-6}.
+\end{proof}
