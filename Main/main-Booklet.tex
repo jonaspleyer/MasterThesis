@@ -1,0 +1,52 @@
+\input{../Header-Booklet}
+
+\input{../CustomCommands}
+
+\begin{document}
+\input{../Titlepage}
+\tableofcontents
+\pagenumbering{Roman}
+\newpage
+\input{00-ListOfAbbrev}
+% \newpage
+% \input{0-Abstract}
+
+% List of figures and tables
+% \newpage
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+% Main Part of the thesis
+\newpage
+\pagenumbering{arabic}
+% \input{1-GeneralDefinitions}
+\input{01-Introduction}
+\newpage
+\input{2-InternalEnergy-Explicit}
+\newpage
+\input{3-MassOfStar}
+\newpage
+\input{4-NumericalSolutions}
+\newpage
+\input{5-ZeroValueTheorems}
+\newpage
+\input{90-Ideas}
+\newpage
+\input{80-Outlook}
+
+% Appendix
+\newpage
+\input{99-Appendix}
+
+% Bibliography
+\pagebreak
+\addcontentsline{toc}{section}{References}
+\pagenumbering{alph}
+% Try to let Biblatex format more sloppyly to account for line breaks etc.
+\sloppy
+\printbibliography
+
+\includepdf{../ErklaerungZurMasterarbeit.pdf}
+\end{document}

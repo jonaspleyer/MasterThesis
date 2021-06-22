@@ -1,0 +1,51 @@
+\documentclass[a4paper,12pt, twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage [printonlyused, withpage]{acronym}
+\usepackage {amsmath}
+\usepackage {amssymb}
+\usepackage {amsthm}
+\usepackage [url=true, backend=biber, style=alphabetic, citestyle=alphabetic]
+			{biblatex}
+\usepackage {booktabs}
+\usepackage {caption}
+% \usepackage {faktor}
+\usepackage {float}
+\usepackage {geometry}
+% \usepackage {graphicx}
+\usepackage {hyperref}
+\usepackage {import}
+\usepackage {mathtools}
+\usepackage {pdfpages}
+\usepackage {pgf}
+\usepackage {subcaption}
+\usepackage {upgreek}
+\usepackage {url}
+
+% Define Data about the Document
+\makeatletter
+\title{Zero Values of the TOV Equation}\let\Title\@title
+\author{Jonas Pleyer}\let\Author\@author
+\date{30.06.2021}\let\Date\@date
+\makeatother
+
+% Set the geometry of the paper
+\geometry{a4paper, top=25mm, left=17mm, right=33mm, bottom=30mm,
+headsep=10mm, footskip=12mm, twoside}
+
+% Set the numbering of equations to be referenced to their subsection
+\numberwithin{equation}{subsection}
+
+% Add the bibliography for the project
+\addbibresource{98-literature.bib}
+
+% Add Large and small letters to be breakable in urls and DOIs in biblatex
+\setcounter{biburllcpenalty}{9999}% Kleinbuchstaben
+\setcounter{biburlucpenalty}{9999}% Großbuchstaben
+
+% Sets linebreaking in names - Higher value = Dislikes such breaks
+\setcounter{highnamepenalty}{9999}
+\setcounter{lownamepenalty}{9999}
+
+% Specify TopRule and Bottomrule Thickness for booktabs usepackage
+\renewcommand{\heavyrulewidth}{2pt}
