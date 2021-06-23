@@ -211,13 +211,15 @@ We will now call $K$ the space of functions $f:[0,\epsilon]\rightarrow\R_{\geq0}
 	By condition~\eqref{5-Zeroes-Equ-TOV-Conditions-1} and $r\in[0,\epsilon]$ it is clear that all functions $f\in K$ are bounded.
 	To show equicontinuity, we can apply the exact same argument as in lemma~\ref{5-Zeroes-Lem-LE-Compact} with condition~\eqref{5-Zeroes-Equ-TOV-Conditions-6} to obtain the desired result.
 \end{proof}
-\begin{proof}[Proof \acrNoHyperlink{\acl}{TOV} Existence]
+\begin{proof}[Proof \acrNoHyperlink{\ac}{TOV} Existence]
 	To show that local solutions of the \ac{TOV} equation exist, it remains to be proven that $U:K\rightarrow K$ defined by
-	\begin{equation}
-		U((m,p))(r)=\left(\int\limits_0^r 4\pi\rho(p) r'^2 \diff r',-\int\limits_0^r\frac{p+\rho(p)}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}\diff r'\right).
+	\begin{align}
+		U_1((m,p))(r) &= \int\limits_0^r 4\pi\rho(p) r'^2 \diff r'
+		\label{eq:5-Zeroes-TOV-Operator-Def-1}\\
+		U_2((m,p))(r) &= -\int\limits_0^r\frac{p+\rho(p)}{r'^2}(4\pi\rho r'^3 + m)\left(1-\frac{2m}{r'}\right)^{-1}\diff r'
 		% TODO This equation has overfull hbox. Fix it!
-		\label{eq:5-Zeroes-TOV-Operator-Def}
-	\end{equation}
+		\label{eq:5-Zeroes-TOV-Operator-Def-2}.
+	\end{align}
 	is continuous.
 	For $(m,p),(u,q)\in K$ we respectively inspect the first and second component.
 	By continuity of $\rho$, we have $|\rho(p)-\rho(q)|<\varepsilon$.
@@ -241,18 +243,18 @@ We will now call $K$ the space of functions $f:[0,\epsilon]\rightarrow\R_{\geq0}
 	in the limit $r\rightarrow0$ and in general is bound by $8\pi\epsilon\rho_0/3$.
 	This shows that for every $m,u$ there must exist a $\tau_0>0$ such that~\eqref{eq:5-Zeroes-TOV-Limit-UM-Div-R2} has its maximum value, or it is identically $0$.
 	\begin{equation}
-		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty} = \frac{1}{\tau_0^2}||m-u||_{\infty}
+		\left|\left|\frac{m-u}{r^2}\right|\right|_{\infty} = \frac{1}{\tau_0^2}|m(\tau_0)-u(\tau_0)|\leq\frac{1}{\tau_0^2}||m-u||_{\infty}
 		\label{eq:5-Zeroes-TOV-Last-Term}
 	\end{equation}
 	Let $m_k\rightarrow u$ be a series in $(K.||\cdot||_\infty)$.
 	% Suppose that for only finite elements of this series the maximum is $0$ and remove them from this series.
 	Without loss of generality, we can remove all elements of the series for which the maximum is identically $0$ and still have more than finite elements left.
-	Otherwise, there would exist a subsequence with
-	\begin{equation}
-		\left|\left|\frac{m_{k_i}-u}{r^2}\right|\right|_{\infty}=0
-		\label{eq:5-Zeroes-TOV-Last-Term-Series}
-	\end{equation}
-	for more than finite $k_i\in\mathbb{N}$ and the statement would be proven.
+	% Otherwise, there would exist a subsequence with
+	% \begin{equation}
+	% 	\left|\left|\frac{m_{k_i}-u}{r^2}\right|\right|_{\infty}=0
+	% 	\label{eq:5-Zeroes-TOV-Last-Term-Series}
+	% \end{equation}
+	% for more than finite $k_i\in\mathbb{N}$ and the statement would be proven.
 	One can obtain another series $\tau_k$ by selecting the maximum point as done in equation~\eqref{eq:5-Zeroes-TOV-Last-Term}.
 	This series is bound by assumption in $[0,\epsilon]$ and thus has a convergent subsequence.
 	Consider $\tau_k\rightarrow\tau$.
