@@ -136,7 +136,7 @@ considering a series expansion of $\theta$ around the point $\xi=0$ with initial
 	\hspace{1cm} a_1=\left.\frac{d\theta}{d\xi}\right|_{\xi=0}=0
 	\label{eq:99-App-LEN2-Series-Initial-Conditions}
 \end{equation}
-Since the series is absolut convergent, we can plug it into the \ac{LE} equation~\ref{3-Mass-Equ-Lane-Emden-Eq} and use the Cauchy Product formula.
+Since the series is absolut convergent, we can plug it into the \ac{LE} equation~\ref{eq:3-Mass-Equ-Lane-Emden-Eq} and use the Cauchy Product formula.
 \begin{equation}
 	\sum\limits_{m=2}^\infty m(m-1)a_m\xi^{m-2}+\sum\limits_{m=1}^\infty (2m)a_m\xi^{m-2} +
 	\sum\limits_{m=0}^\infty\sum\limits_{k=0}^m a_{m-k}a_k\xi^m = 0
@@ -241,7 +241,7 @@ Also in order to achieve sufficient numerical precision, we would need to calcul
 \subsection{Exact \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} Solution in Absence of Mass}
 \label{subsec:99-App-TOV-No-Mass}
 \begin{theorem}[TOV Exact Solution]
-	The TOV equation~\ref{4-NumSol-Equ-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
+	The TOV equation~\ref{eq:4-NumSol-Equ-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
 	\begin{equation}
 		p = \frac{p_0}{2\pi rp_0+1}
 		\label{eq:99-App-TOV-No-Mass-Sol}
@@ -309,7 +309,7 @@ When solving the \ac{TOV} or \ac{LE} equation numerically calculations for the n
 This simple fact which is integral to the concept of an \ac{ODE} means that numerics is single thread \footnote{Thread refers to a sequence of instructions given to a processing unit.} bound which already puts one at a systematic disadvantage.
 This means any effort to parallelise the given task must focus on distributing the individual solving routines to respective threads.
 With this first consideration at hand a server with high number of processing units may come into mind to then speed up the calculation.
-However in the situation of section~\ref{4-NumSol-Sec-TOV-Exponents} this would only allow us to calculate more results in parallel but not speed up the individual solving routines.
+However in the situation of section~\ref{subsec:4-NumSol-Sec-TOV-Exponents} this would only allow us to calculate more results in parallel but not speed up the individual solving routines.
 And this is exactly the bottleneck in our case.
 When looking at figure~\ref{fig:4-NumSol-Plt-TOV-Exponents-Combo} it is clear that higher values for $r_0$ are of interest where the curves reach the current maximum limit.
 From this figure it is also clear that the effort will increase exponentially since we are bound to a single thread for individual solving routines.

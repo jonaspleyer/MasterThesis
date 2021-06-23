@@ -1,12 +1,12 @@
 \begin{section}{Calculating the Mass of a Star with an \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \begin{subsection}{Deriving the \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV}-Equation}
-\label{3-Mass-Sec-TOVDerivation}
-This chapter derives the \ac{TOV} equation which was introduced earlier in %TODO reference section 01-Introduction with GR references.
-Information about \ac{gr} can be found in \cite{choquet-bruhatAnalysisManifoldsPhysics2000, choquet-bruhatGeneralRelativityEinstein2009, choquet-bruhatIntroductionGeneralRelativity2015, waldGeneralRelativity1984}.
+\label{sec:3-Mass-Sec-TOVDerivation}
+This chapter derives the \ac{TOV} equation which was introduced earlier in section~\ref{sec:01-Introduction}.
+Information about \ac{gr} can be found in~\cite{choquet-bruhatAnalysisManifoldsPhysics2000, choquet-bruhatGeneralRelativityEinstein2009, choquet-bruhatIntroductionGeneralRelativity2015, waldGeneralRelativity1984}.
 We follow the derivation of Wald.
 We consider a spherical-symmetric static Lorentz-Manifold $(V,g)$ with charts such that the metric $g$ can be written as
 \begin{equation}
-	g=-\e^\nu dt^2+\e^\lambda dr^2 + r^2(d\theta^2+\sin^2\theta d\phi^2).
+	g=-\e^\nu \diff t^2+\e^\lambda \diff r^2 + r^2(\diff\theta^2+\sin^2\theta \diff\phi^2).
 \end{equation}
 The stress-energy tensor of an ideal fluid with density $\rho$ and pressure $p$ is given by
 \begin{equation}
@@ -53,20 +53,20 @@ From these, the non-zero components of the Ricci-Tensor can be calculated
 \end{align}
 and with $R_{\mu\nu}-g_{\mu\nu}R/2=G_{\mu\nu}=8\pi T_{\mu\nu}$ we ultimately receive the following field equations.
 \begin{align}
-	-8\pi T_0^0 = 8\pi\rho &= \frac{\lambda'\e^{-\lambda}}{r}+\frac{1-\e^{-\lambda}}{r^2}\label{3-Mass-Equ-EinstEqu-1}\\
-	8\pi T_1^1 = 8\pi p &= \nu'\frac{\e^{-\lambda}}{r} - \frac{1-\e^{-\lambda}}{r^2}\label{3-Mass-Equ-EinstEqu-2}\\
-	8\pi T_2^2 = 8\pi p &= \frac{\e^{-\lambda}}{2}\left[\nu''+\left(\frac{\nu'}{2} + \frac{1}{r}\right)\left(\nu'-\lambda'\right) \right]\label{3-Mass-Equ-EinstEqu-3}
+	-8\pi T_0^0 = 8\pi\rho &= \frac{\lambda'\e^{-\lambda}}{r}+\frac{1-\e^{-\lambda}}{r^2}\label{eq:3-Mass-Equ-EinstEqu-1}\\
+	8\pi T_1^1 = 8\pi p &= \nu'\frac{\e^{-\lambda}}{r} - \frac{1-\e^{-\lambda}}{r^2}\label{eq:3-Mass-Equ-EinstEqu-2}\\
+	8\pi T_2^2 = 8\pi p &= \frac{\e^{-\lambda}}{2}\left[\nu''+\left(\frac{\nu'}{2} + \frac{1}{r}\right)\left(\nu'-\lambda'\right) \right]\label{eq:3-Mass-Equ-EinstEqu-3}
 \end{align}
 Since $R_4^4=R_3^3$, we omitted the last equation.
-From equation \eqref{3-Mass-Equ-EinstEqu-1} we infer the relation.
+From equation \eqref{eq:3-Mass-Equ-EinstEqu-1} we infer the relation.
 \begin{equation}
-	\e^{-\lambda} = 1 - \frac{2}{r}\int\limits_0^r 4\pi\rho(r') r'^2dr' = 1 - \frac{2m(r)}{r}.
-	\label{3-Mass-Equ-MassDepOnr}
+	\e^{-\lambda} = 1 - \frac{2}{r}\int\limits_0^r 4\pi\rho(r') r'^2\diff r' = 1 - \frac{2m(r)}{r}.
+	\label{eq:3-Mass-Equ-MassDepOnr}
 \end{equation}
-The metric needs to be defined at every point in space and thus can not have any additional integration constant in equation \eqref{3-Mass-Equ-MassDepOnr}, since otherwise we would obtain a term $a/r$ which is not defined for $r\rightarrow0$.\\
-The property $m(r)$ can be recognised as the Newtonian mass of the star (which is different to the proper mass \cite{waldGeneralRelativity1984}).
+The metric needs to be defined at every point in space and thus can not have any additional integration constant in equation~\eqref{eq:3-Mass-Equ-MassDepOnr}, since otherwise we would obtain a term $a/r$ which is not defined for $r\rightarrow0$.\\
+The property $m(r)$ can be recognised as the Newtonian mass of the star (which is different to the proper mass~\cite{waldGeneralRelativity1984}).
 Since $\e^{-\lambda}>0$, we immediately see that $m(r)<r/2$.\\
-In addition to the Field equations \eqref{3-Mass-Equ-EinstEqu-1} through \eqref{3-Mass-Equ-EinstEqu-3} the divergence of the Stress-Energy Tensor yields more information
+In addition to the Field equations \eqref{eq:3-Mass-Equ-EinstEqu-1} through~\eqref{eq:3-Mass-Equ-EinstEqu-3} the divergence of the Stress-Energy Tensor yields more information
 \begin{equation}
 	\nabla_\mu T^{\mu\nu}=0.
 \end{equation}
@@ -77,18 +77,19 @@ The following explicit calculation, which again assumes spherical symmetry, show
 							&= \frac{\partial p}{\partial r} + p\left(\frac{\nu'+\lambda'}{2} + \frac{2}{r}\right) + \rho\frac{\nu'}{2} - p\frac{\lambda'}{2} - p\frac{2}{r}\\
 	\frac{\partial p}{\partial r} &= -\frac{p+\rho}{2}\nu'
 \end{align}
-Together with equation \eqref{3-Mass-Equ-EinstEqu-2} and the definition \eqref{3-Mass-Equ-MassDepOnr}, we can write
+Together with equation~\eqref{eq:3-Mass-Equ-EinstEqu-2} and the definition~\eqref{eq:3-Mass-Equ-MassDepOnr}, we can write
 \begin{align}
 	\frac{\partial p}{\partial r} 	&= -\frac{p+\rho}{2}\left(\frac{8\pi pr + \frac{1-\e^{-\lambda}}{r}}{\e^{-\lambda}} \right)\\
 									&= -\frac{p+\rho}{2r}\left(\frac{8\pi pr+ \frac{2m}{r^2}}{1-\frac{2m}{r}} \right)\\
-									&= -\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}\\
-	\frac{\partial p}{\partial r} 	&= -\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
-	\label{3-Mass-Equ-TOV-Eq-1}
+									&= -\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3 p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}\\
+	\frac{\partial p}{\partial r} 	&= -\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3 p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
+	\label{eq:3-Mass-Equ-TOV-Eq-1}
 \end{align}
-where in the last step the constants $c=G=1$ were put back in. Equation \eqref{3-Mass-Equ-TOV-Eq-1} together with \eqref{3-Mass-Equ-MassDepOnr} yields the \ac{TOV} differential equations
+where in the last step the constants $c=G=1$ were put back in.
+Equation~\eqref{eq:3-Mass-Equ-TOV-Eq-1} together with~\eqref{eq:3-Mass-Equ-MassDepOnr} yields the \ac{TOV} differential equations
 \begin{alignat}{3}
 	\frac{\partial m}{\partial r} &= &&4\pi\rho(r)r^2\\
-	\frac{\partial p}{\partial r} &= -&&\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
+	\frac{\partial p}{\partial r} &= -&&\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3 p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
 	\label{3-Mass-TOV-Eq}
 \end{alignat}
 \end{subsection}
@@ -97,22 +98,24 @@ where in the last step the constants $c=G=1$ were put back in. Equation \eqref{3
 %
 \pagebreak
 \begin{subsection}{Newtonian Limit}
-\label{3-Mass-Sec-LEDerivation}
-This section follows \cite{weissteinLaneEmdenDifferentialEquation2020} and \cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}.
+\label{sec:3-Mass-Sec-LEDerivation}
+This section follows~\cite{weissteinLaneEmdenDifferentialEquation2020} and~\cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}.
 Together with a polytropic \ac{eos} $p=K\rho^{1+1/n}$ and the definition $\rho=\lambda\theta^n$, we expect to obtain the Newtonian behavior in the non-relativistic limit in the form of the \ac{LE} equation
 \begin{equation}
 	\frac{K(n+1)\lambda^{1/n-1}}{4\pi}\Delta\theta+\theta^n=0.
 \end{equation}
-The usual non-relativistic limit is obtained from a Taylor expansion of equation \eqref{3-Mass-TOV-Eq} around $1/c^2$ in lowest order. The resulting equation then reads
+The usual non-relativistic limit is obtained from a Taylor expansion of equation \eqref{3-Mass-TOV-Eq} around $1/c^2$ in lowest order.
+The resulting equation then reads
 \begin{equation}
 	\frac{\partial p}{\partial r} = -\frac{Gm\rho}{r^2} + \mathcal{O}\left(\frac{1}{c^2}\right).
-	\label{3-Mass-Equ-TOVNonRel-Limit}
+	\label{eq:3-Mass-Equ-TOVNonRel-Limit}
 \end{equation}
 One could be tempted to make the assumption that $\frac{\partial p_{\text{TOV}}}{dr} \leq \frac{\partial p_{\text{LE}}}{dr}.$ However this equation fails since the mass given in equation \eqref{3-Mass-TOV-Eq} is not the same as the one given in the \ac{LE} equation. Using the previous relations for $\rho$ and $p$ and again setting $G=c=1$ , we can calculate
 \begin{equation}
 	\frac{\partial p}{\partial r} = \frac{\partial}{\partial r}\left(K\rho^{1+1/n}\right)= K\lambda^{1+1/n}(n+1)\theta^n\frac{\partial\theta}{\partial r} = -\frac{m\lambda\theta^n}{r^2}
 \end{equation}
-by using the definition of our polytropic \ac{eos} and equation \eqref{3-Mass-Equ-TOVNonRel-Limit}. Rearranging and taking the derivative of this equation and using $\partial m/\partial r = 4\pi\rho r^2$, we obtain
+by using the definition of our polytropic \ac{eos} and equation \eqref{eq:3-Mass-Equ-TOVNonRel-Limit}.
+Rearranging and taking the derivative of this equation and using $\partial m/\partial r = 4\pi\rho r^2$, we obtain
 \begin{equation}
 	- \frac{\partial m}{\partial r} = K\lambda^{1/n}(n+1)\frac{\partial}{\partial r}\left(r^2\frac{\partial\theta}{\partial r}\right) = -4\pi r^2\lambda\theta^n
 \end{equation}
@@ -121,9 +124,13 @@ by using the definition of our polytropic \ac{eos} and equation \eqref{3-Mass-Eq
 % \end{equation}
 Upon redefining $\xi=r/\kappa$ where $4\pi\kappa^2=(n+1)K\lambda^{1/n-1}$, one can obtain the mathematically cleaner looking equation
 \begin{equation}
-	\frac{1}{\xi^2}\frac{\partial}{\partial\xi}\left(\xi^2\frac{\partial\theta}{\partial\xi}\right) + \theta^n=0 \label{3-Mass-Equ-Lane-Emden-Eq}
+	\frac{1}{\xi^2}\frac{\partial}{\partial\xi}\left(\xi^2\frac{\partial\theta}{\partial\xi}\right) + \theta^n=0
+	\label{eq:3-Mass-Equ-Lane-Emden-Eq}
 \end{equation}
-Exact solutions are known for the cases $n=0,1,5$. The derivation can be found in appendix \ref{99-App-A-Exact-LE-Solutions}. Figure \ref{3-Mass-Plt-LE-Exact-Results-Plots} and Table \ref{3-Mass-Tbl-LE-Exact-Results} summarise them. Together with equation \eqref{3-Mass-Equ-Lane-Emden-Eq}, we can already suspect that for values $n\geq5$, the equation does not yield solutions with a zero value.\\
+Exact solutions are known for the cases $n=0,1,5$.
+The derivation can be found in appendix~\ref{99-App-A-Exact-LE-Solutions}.
+Figure~\ref{fig:3-Mass-Plt-LE-Exact-Results-Plots} and Table~\ref{fig:3-Mass-Tbl-LE-Exact-Results} summarise them.
+Together with equation~\eqref{eq:3-Mass-Equ-Lane-Emden-Eq}, we can already suspect that for values $n\geq5$, the equation does not yield solutions with a zero value.\\
 % \begin{figure}[H]
 % 	\centering
 % 	\begin{tabular}{p{\dimexpr 8cm}p{\dimexpr \linewidth-4\tabcolsep-8cm}}
@@ -166,13 +173,13 @@ Exact solutions are known for the cases $n=0,1,5$. The derivation can be found i
 \begin{minipage}[t]{0.5\textwidth}
 	\begin{figure}[H]
 		\caption[Graph of exact Lane Emden Solutions]{Graph of exact \ac{LE} solutions.}
-		\label{3-Mass-Plt-LE-Exact-Results-Plots}
+		\label{fig:3-Mass-Plt-LE-Exact-Results-Plots}
 	\end{figure}
 \end{minipage}\hfill%
 \begin{minipage}[t]{0.45\textwidth}
 	\begin{figure}[H]
 		\captionof{table}[Lane Emden exact Solutions]{\ac{LE} exact Solutions and their zero value.}
-		\label{3-Mass-Tbl-LE-Exact-Results}
+		\label{fig:3-Mass-Tbl-LE-Exact-Results}
 	\end{figure}
 \end{minipage}
 %
@@ -210,13 +217,13 @@ We first state a useful Lemma for the proof of our next theorem.
 	Given $\rho\in C^1(\R_{\geq0})$ is monotonously decreasing, the function $\rho_{av}=m/r^3$ has negative slope.
 \end{lemma}
 \begin{proof}
-	Taking the derivative of $\rho_{av}$ and applying equation \eqref{3-Mass-Equ-MassDepOnr}, we obtain 
+	Taking the derivative of $\rho_{av}$ and applying equation~\eqref{eq:3-Mass-Equ-MassDepOnr}, we obtain
 	\begin{equation}
 		\frac{\partial}{\partial r}\left(\frac{m}{r^3}\right) = -3\frac{m}{r^4} + \frac{4\pi\rho}{r}.
 	\end{equation}
-	By equation \eqref{3-Mass-TOV-Eq} we know that $p$ has negative slope and since $\rho$ is monotonously increasing, we have
+	By equation~\eqref{3-Mass-TOV-Eq} we know that $p$ has negative slope and since $\rho$ is monotonously increasing, we have
 	\begin{equation}
-		m = \int\limits_0^r 4\pi\rho r^2 dr \geq \rho\int\limits_0^r4\pi r^2 = \frac{4\pi r^3\rho}{3}
+		m = \int\limits_0^r 4\pi\rho r^2 \diff r \geq \rho\int\limits_0^r4\pi r^2 \diff r= \frac{4\pi r^3\rho}{3}
 	\end{equation}
 	which shows that $\frac{4\pi\rho r^3}{3}\leq m$ and completes the proof.
 \end{proof}\noindent
@@ -227,7 +234,7 @@ We first state a useful Lemma for the proof of our next theorem.
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	In our attempt to obtain an upper limit for the mass of a spherically symmetric star, we start by taking the difference of equation \eqref{3-Mass-Equ-EinstEqu-2} and \eqref{3-Mass-Equ-EinstEqu-3}, we obtain 
+	In our attempt to obtain an upper limit for the mass of a spherically symmetric star, we start by taking the difference of equation \eqref{eq:3-Mass-Equ-EinstEqu-2} and \eqref{eq:3-Mass-Equ-EinstEqu-3}, we obtain
 	\begin{align}
 		0 &= \nu'\frac{\e^{-\lambda}}{r} - \frac{1-\e^{-\lambda}}{r^2} - \frac{\e^{-\lambda}}{2}\left[\nu''+\left(\frac{\nu'}{2} + \frac{1}{r}\right)\left(\nu'-\lambda'\right) \right]\\
 		&= - \frac{2m(r)}{r^3} + \frac{\lambda'\e^{-\lambda}}{2r} -  \frac{\e^{-\lambda}}{2}\left[\nu''+ \frac{\nu'^2}{2} - \frac{\nu'}{r} -\frac{\lambda'\nu'}{2}\right]\\
@@ -235,7 +242,8 @@ We first state a useful Lemma for the proof of our next theorem.
 		0 &= \frac{\partial}{\partial r}\left(\frac{m(r)}{r^3}\right) - \frac{\e^{-\lambda}}{2}\left[\frac{\nu''}{r}+ \frac{\nu'^2}{2r} - \frac{\nu'}{r^2} -\frac{\lambda'\nu'}{2r}\right]\\
 		&= \frac{\partial}{\partial r}\left(\frac{m(r)}{r^3}\right) - \frac{1}{2}\e^{-\frac{\lambda+\nu}{2}}\frac{\partial}{\partial r}\left[\frac{1}{r}\nu'\e^{\frac{\nu-\lambda}{2}}\right].
 	\end{align}
-	Since $\partial_r\rho\leq0$, also the average density $m(r)/r^3$ decreases with $r$. Thus we obtain
+	Since $\partial_r\rho\leq0$, also the average density $m(r)/r^3$ decreases with $r$.
+	Thus we obtain
 	\begin{equation}
 		\frac{\partial}{\partial r}\left[\frac{1}{r}\nu'\exp\left(\frac{\nu-\lambda}{2}\right) \right] \leq 0.
 	\end{equation}
@@ -248,13 +256,13 @@ We first state a useful Lemma for the proof of our next theorem.
 	By continuity of the metric on every point of space, we can match 
 	\begin{equation}
 		\left.\e^{-\lambda(r)}\right|_R=\left[1-\frac{2M}{r}\right]_R=\left.\e^{\nu(r)}\right|_R
-		\label{3-Mass-Equ-MassLimitApprox1}
+		\label{eq:3-Mass-Equ-MassLimitApprox1}
 	\end{equation}
 	and with the explicit solution for $\e^{-\lambda}$, we obtain
 	\begin{equation}
 		\left.\frac{2m(r)}{r}\right|_R = \frac{2M}{R}.
 	\end{equation}
-	When plugging this into equation \eqref{3-Mass-Equ-MassLimitApprox1}, the result is
+	When plugging this into equation~\eqref{eq:3-Mass-Equ-MassLimitApprox1}, the result is
 	\begin{equation}
 		\frac{\nu'}{2r}\exp\left(\frac{\nu-\lambda}{2}\right)\geq\frac{(1-2M/R)^{1/2}}{R}\left.\frac{\partial}{\partial r}\left(1-\frac{2M}{r}\right)^{1/2}\right|_{r=R} = \frac{M}{R^3}.
 	\end{equation}
@@ -264,8 +272,8 @@ We first state a useful Lemma for the proof of our next theorem.
 	\end{equation}
 	and integrate again this time from $0$ to $R$
 	\begin{equation}
-		\e^{\nu(0)/2}\leq\left(1-\frac{2M}{R}\right)^{1/2}-\frac{M}{R^3}\int\limits_0^R\left[1-\frac{2m(r)}{r} \right]^{-1/2}rdr.
-		\label{3-Mass-Equ-MassLimitNuApprox}
+		\e^{\nu(0)/2}\leq\left(1-\frac{2M}{R}\right)^{1/2}-\frac{M}{R^3}\int\limits_0^R\left[1-\frac{2m(r)}{r} \right]^{-1/2}r\diff r.
+		\label{eq:3-Mass-Equ-MassLimitNuApprox}
 	\end{equation}
 	As we have already noted, the average density $m(r)/r^3$ decreases, meaning explicitly $m(r)/r^3\geq M/R^3$ and thus the integral with the previous equation can be written as
 	\begin{equation}
