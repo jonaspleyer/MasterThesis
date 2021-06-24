@@ -65,15 +65,14 @@ The partition function $\mathcal{Z}$ can then be used to calculate properties su
 Together with an adiabatic condition one would hope to find a relation between energy density and pressure to derive a \acp{eos}.
 In many examples, a polytropic \ac{eos} between pressure $p$ and density $\rho$ is assumed
 \begin{equation}
-	\rho = Ap^{1/\gamma}
+	\rho = Ap^{1+1/n}
 	\label{eq:01-Intr-Poly-EOS}
 \end{equation}
-where $A$ is a constant and the exponent $\gamma$ can be related to the adiabatic index of a thermodynamic process.
-This equation is derived by using the ideal gas equation $pV=Nk_B T$ and adiabaticity.
-While there exist more recent examples of more complex \ac{eos} models~\cite{hummerEquationStateStellar1988}, this equation already covers a wide range of cases.
-The index $\gamma$ is typically defined by the adiabatic condition $pV^\gamma=\text{const}$ and thus directly related to the previous assumption.
+where $A$ is a constant.
+The exponent $n=1/(\gamma-1)$ can in a special case be related to the adiabatic index $\gamma$ of a thermodynamic process.
+In this case, equation~\ref{eq:01-Intr-Poly-EOS} is derived using the ideal gas equation $pV=Nk_B T$ and adiabaticity $\updelta Q=0$.
 Another important relation is between $\gamma$ and degrees of freedom.
 For an ideal gas, the index can be given by $\gamma=1+2/f$, where $f$ is the degrees of freedom.
-This quantity directly yields information about the underlying microscopic behaviour of the gas.
-A polytropic \ac{eos} describes many systems and is a good enough assumption in many cases.
-The first part of this thesis will be concerned with deriving a fully special relativistic \ac{eos} and applying it in the context of the \ac{TOV} equation.
+In this case, $\gamma$ directly yields information about the underlying microscopic behaviour of the gas.
+While there exist more recent examples of more complex \ac{eos} models~\cite{hummerEquationStateStellar1988}, this equation already covers a wide range of cases~\cite{horedtPolytropesApplicationsAstrophysics2004}.
+The first part of this thesis will be concerned with deriving a fully special relativistic \ac{eos} of a non-interacting gas that will later be used in numerical solutions of the \ac{TOV} equation.
