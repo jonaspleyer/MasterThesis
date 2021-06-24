@@ -1,6 +1,7 @@
-\begin{section}{Calculating the Mass of a Star with an \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
-\begin{subsection}{Deriving the \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV}-Equation}
-\label{sec:3-Mass-Sec-TOVDerivation}
+\section{Calculating the Mass of a Star with an \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
+\label{sec:3-Mass}
+\subsection{Deriving the \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV}-Equation}
+\label{subsec:3-Mass-Sec-TOVDerivation}
 This chapter derives the \ac{TOV} equation which was introduced earlier in section~\ref{sec:01-Introduction}.
 Information about \ac{gr} can be found in~\cite{choquet-bruhatAnalysisManifoldsPhysics2000, choquet-bruhatGeneralRelativityEinstein2009, choquet-bruhatIntroductionGeneralRelativity2015, waldGeneralRelativity1984}.
 We follow the derivation of Wald.
@@ -92,13 +93,12 @@ Equation~\eqref{eq:3-Mass-Equ-TOV-Eq-1} together with~\eqref{eq:3-Mass-Equ-MassD
 	\frac{\partial p}{\partial r} &= -&&\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3 p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
 	\label{3-Mass-TOV-Eq}
 \end{alignat}
-\end{subsection}
 %
 %
 %
 \pagebreak
-\begin{subsection}{Newtonian Limit}
-\label{sec:3-Mass-Sec-LEDerivation}
+\subsection{Newtonian Limit}
+\label{subsec:3-Mass-Sec-LEDerivation}
 This section follows~\cite{weissteinLaneEmdenDifferentialEquation2020} and~\cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}.
 Together with a polytropic \ac{eos} $p=K\rho^{1+1/n}$ and the definition $\rho=\lambda\theta^n$, we expect to obtain the Newtonian behavior in the non-relativistic limit in the form of the \ac{LE} equation
 \begin{equation}
@@ -184,11 +184,10 @@ Together with equation~\eqref{eq:3-Mass-Equ-Lane-Emden-Eq}, we can already suspe
 \end{minipage}
 %
 %
-\end{subsection}
 %
 %
-%
-\begin{subsection}{Mass Bounds}
+\subsection{Mass Bounds}
+\label{subsec:3-Mass-Mass-Bounds}
 %The aim of this section is to derive an upper limit for the mass of a spherically symmetric stellar object which obeys an local \ac{eos} $f(p,\rho)=0$. 
 We will first follow the approach given in \cite{waldGeneralRelativity1984}. 
 The first assumptions will be $d\rho/dr<0$ and $\rho\geq0$. 
@@ -288,7 +287,8 @@ We first state a useful Lemma for the proof of our next theorem.
 		M< \frac{4R}{9}.
 	\end{equation}
 \end{proof}\noindent
-This shows that the mass of star has an upper limit under the assumptions $\rho\geq0$, $\partial_r\rho\leq0$ and $\rho(R)=0$ for some $R\geq0$. 
+This shows that the mass of star has an upper limit under the assumptions $\rho\geq0$, $\partial_r\rho\leq0$ and $\rho(R)=0$ for some $R\geq0$.
+In particular by restraining the total radius of the stellar object one can immediately find mass limits.
 % The case in which $M=4R/9$ would be achieved by using a constant density of 
 % \begin{equation}
 % 	\rho = \frac{1}{4\pi}\frac{M}{R^3}
@@ -299,8 +299,3 @@ This shows that the mass of star has an upper limit under the assumptions $\rho\
 % \end{equation}
 % However this case is actually forbidden as was just shown. 
 % Physically, the assumption that $\rho(R)=0$ defines a radius for the stellar object since it limits the physical dimension. In general stellar objects need not to fulfill this condition. Physically it is however necessary to have $p(R)=0$ while the density may have discontinuities at this point.
-\end{subsection}
-%
-%
-\end{section}
- 
