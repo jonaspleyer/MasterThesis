@@ -5,54 +5,74 @@ From its emergence in 1916~\cite{einsteinGrundlageAllgemeinenRelativitaetstheori
 Most objects studied in this framework are typically very heavy or close to the speed of light and thus describes the large scale structure of our observable universe.
 \ac{gr} is formulated in a geometric context by regarding space and time itself as a Lorentz-Manifold called spacetime with a non-semi-definite scalar product called the metric.
 This small difference has non-trivial implications when comparing Riemannian and Lorentzian geometry although we will not make any further effort to properly explain them in detail.
-A curvature can be introduced that depends on mass and energy present at the respective points in spacetime, and the Einstein equations~\cite{einsteinFeldgleichungenGravitation1915} complete the theoretic description.
+The curvature of this Lorentz-Manifold depends on mass and energy present at the respective points in spacetime which is reflected in the Einstein equations~\cite{einsteinFeldgleichungenGravitation1915}.
 \begin{equation}
 	G_{\mu\nu}+\Lambda g_{\mu\nu} = R_{\mu\nu} + \left(\frac{1}{2}R+\Lambda\right)g_{\mu\nu}=8\pi T_{\mu\nu}
 	\label{eq:01-Intr-Einstein-Equ}
 \end{equation}
-The left hand side of equation~\ref{eq:01-Intr-Einstein-Equ} contains the Einstein Tensor $G_{\mu\nu}=R_{\mu\nu}+1/2Rg_{\mu\nu}$ which is defined in terms of the Ricci $R_{\mu\nu}$ and metric tensor $g_{\mu\nu}$ and the Ricci scalar $R$.
-These quantities carry information about the curvature of space which can be completely described by the Riemann tensor $R_{\mu\nu\sigma}^\lambda$.
+These quantities carry information about the curvature of space which can be completely described by the Riemann tensor $R_{\mu \nu}{ }^{\sigma}{ }_{\lambda}$.
+The left hand side of equation~\ref{eq:01-Intr-Einstein-Equ} contains the Einstein Tensor $G_{\mu\nu}=R_{\mu\nu}+1/2Rg_{\mu\nu}$ which is defined in terms of the Ricci $R_{\mu \nu}=R_{\lambda\mu}{}^{\lambda}{}_\nu$ and metric tensor $g_{\mu\nu}$ and the Ricci scalar $R=g^{\mu\nu}R_{\mu\nu}$.
 The Energy Momentum tensor on the right-hand side contains information about mass and energy present at different points of space and time.
 With the Levi-Civita connection on spacetime we can write the Riemann tensor as derivatives of the metric tensor which means the left-hand side of the Einstein equations~\ref{eq:01-Intr-Einstein-Equ} contains non-linear derivatives of $g_{\mu\nu}$.
-\begin{align}
-	\Gamma_{\mu\nu}^{\lambda} &= \frac{1}{2} g^{\lambda\sigma}\left(\partial_{\nu} g_{\sigma\mu}+\partial_{\mu} g_{\sigma\nu}-\partial_{\sigma} g_{\mu \nu}\right)
-	\label{eq:01-Intr-Riemann-Tensor-Levi-Civita-Metric-Derivatives-1}\\
-	R_{\mu\nu\lambda}^{\sigma} &=\partial_\nu \Gamma_{\mu\lambda}^{\sigma}-\partial_\mu \Gamma_{\nu\lambda}^{\sigma}+\left(\Gamma_{\mu\lambda}^{\alpha} \Gamma_{\nu \alpha}^{\sigma}-\Gamma_{\nu\lambda}^{\alpha} \Gamma_{\mu \alpha}^{\sigma}\right)
-	\label{eq:01-Intr-Riemann-Tensor-Levi-Civita-Metric-Derivatives-2}
-\end{align}
+% \begin{align}
+%	\Gamma_{\mu\nu}^{\lambda} &= \frac{1}{2} g^{\lambda\sigma}\left(\partial_{\nu} g_{\sigma\mu}+\partial_{\mu} g_{\sigma\nu}-\partial_{\sigma} g_{\mu \nu}\right)
+%	\label{eq:01-Intr-Riemann-Tensor-Levi-Civita-Metric-Derivatives-1}\\
+%	R_{\mu \nu}{ }^{\sigma}{ }_{\lambda} &= \partial_{\mu} \Gamma_{\nu}^{\sigma}-\partial_{\nu} \Gamma_{\mu \lambda}^{\sigma}+\Gamma_{\mu \rho}^{\sigma} \Gamma_{\nu \lambda}^{\rho}-\Gamma_{\nu \rho}^{\sigma} \Gamma_{\mu \lambda}^{\rho}
+%	\label{eq:01-Intr-Riemann-Tensor-Levi-Civita-Metric-Derivatives-2}
+% \end{align}
 This non-linearity is one of the key distinctions to other fundamental theories such as a Quantum Theory of Fields and is one of the reasons why few exact solutions of Einsteins equations exist.
 In addition, the derivatives of $g_{\mu\nu}$ are also partial which means this theory in general has to deal with non-linear partial differential equations.
-This behaviour can in general not be altered by simply changing variables.
-While these statements might sound demotivating, a lot of methods to linearize or obtain \acp{ODE} have been developed.
+A behaviour that can not be altered by simply changing variables.
+While these statements might sound demotivating, lots of methods to linearize or obtain \acp{ODE} have been developed.
 In particular this thesis will use suitable chosen assumptions to derive a famous \ac{ODE}, the \ac{TOV} equation and analyse its properties.\\
-%
-Of the plentiful present problems one in particular of significant importance has been to describe the macroscopic properties of stellar objects which in practice are often spherically symmetrical.
+Of the plentiful present problems one in particular of significant importance has been to describe the macroscopic properties of stellar objects which in practice are often spherically or cylindrically symmetrical.
 Stars, black holes, galaxies and galaxy clusters are just a few examples of this category.
-The \ac{TOV} equation relates pressure, density and mass inside a spherically symmetric object and given an \ac{eos} one can solve the differential equation and thus obtain parameters such as the mass and total radius of said stellar object.
-The outside solution of the \ac{TOV} equation is characterised by the well known Schwarzschild solution~\cite{schwarzschildUberGravitationsfeldMassenpunktes1916} which is also applied in the context of black holes.\\
-As was explained just before, an additional piece of information, the \ac{eos} needs to added to the \ac{TOV} equation in order to obtain solutions.
-Together with non-negative initial values, we specifically prove, that solutions in general exist and are unique.
-From a Physics perspective, it is clear that thermodynamics has to play a role in the description of stars since one has to deal with large numbers of particles well in equilibrium.
-Thermodynamics is a statistical theory of nature and describes macroscopic phenomena by knowing microscopic behaviour of particles.
-Over the years, different ensembles have emerged and can equivalently, although sometimes in practice more easily done by a specific choice, describe the same physical system.
-The canonical ensemble is characterised by its partition function given by
+The \ac{TOV} equation~\cite{tolmanStaticSolutionsEinstein1939, oppenheimerMassiveNeutronCores1939} relates pressure, density and mass inside a spherically symmetric object
 \begin{equation}
-	\mathcal{Z}(T,V,N) = \int\exp\left(-\frac{H(x_1,\dots,p_N)}{k_B T}\right)\frac{dx_1\dots dp_N}{N!h^{3N}}.
+	\begin{aligned}
+			\frac{\partial m}{\partial r} &= &&4\pi\rho(r)r^2\\
+			\frac{\partial p}{\partial r} &= -&&\frac{Gm\rho}{r^2}\left(1+\frac{p}{\rho c^2}\right)\left(\frac{4\pi r^3 p}{mc^2}+1\right)\left(1-\frac{2Gm}{rc^2}\right)^{-1}
+			\label{eq:01-Intr-TOV-Equation}
+	\end{aligned}
+\end{equation}
+and given an \ac{eos} $\rho(p)$ one can solve the differential equation and thus obtain parameters such as the mass and total radius of said stellar object.
+Together with non-negative initial values, we specifically prove, that solutions in general exist and are unique.
+The non-relativisitc limit of the \ac{TOV} equation is the \ac{LE} equation~\cite{laneTheoreticalTemperatureSun1870, emdenGaskugeln1907} which can be derived in the Newtonian theory of motion when applying the condition of hydrostatic equilibrium
+\begin{equation}
+	\frac{\partial \Phi}{\partial r} = - \frac{1}{\rho}\frac{\partial p}{\partial r}
+	\label{eq:01-Intr-Hydrostatic-Equilibrium}
+\end{equation}
+The outside solution of the \ac{TOV} equation is characterised by the well known Schwarzschild solution~\cite{schwarzschildUberGravitationsfeldMassenpunktes1916} which is also the outside solution of black holes
+\begin{equation}
+	g=-\left(1-\frac{r_{\mathrm{s}}}{r}\right) c^{2} \diff t^{2}+\left(1-\frac{r_{\mathrm{s}}}{r}\right)^{-1} \diff r^{2}+r^{2}\left( \diff\theta^2+\sin^2\theta \diff\phi^2\right)
+	\label{eq:01-Intr-Schwarzschild-Metric}
+\end{equation}
+and where $r_\mathrm{s}=2GM/c^2$ is the Schwarzschild radius.
+% As was explained just before, an additional piece of information, the \ac{eos} needs to added to the \ac{TOV} equation in order to obtain solutions.
+From a Physics perspective, it is clear that Thermodynamics has to play a role in the description of stars since one has to deal with large numbers of particles well in equilibrium.
+Thermodynamics is a statistical theory of nature and describes macroscopic phenomena by knowing microscopic behaviour of particles.
+Carnot~\cite{carnotReflexionsPuissanceMotrice1824} outlined the first relations between a thermodynamic processes an engine and motive power.
+Following in his steps many researchers such as Thomson (Lord Kelvin)~\cite{thomsonABSOLUTETHERMOMETRICSCALE2011}, Clausius~\cite{clausiusMechanischeWaermetheorie1876}, Maxwell~\cite{maxwellScientificLettersPapers2002}, Boltzmann~\cite{boltzmannUberMechanischeBedeutung1866} and Gibbs~\cite{gibbsElementaryPrinciplesStatistical2010} greatly impacted the development of Thermodynamics.
+Over the years, different ensembles have emerged which can equivalently, although in practice often simplified by a specific choice, describe the same physical system.
+The canonical ensemble was first described by Ludwig Boltzmann~\cite{boltzmannUeberEigenschaftenMonocyclischer1885a}.
+Its corresponding partition function is given by
+\begin{equation}
+	\mathcal{Z}(T,V,N) = \int\exp\left(-\frac{H(x_1,\dots,p_N)}{k_B T}\right)\frac{\diff x_1\dots \diff p_N}{N!h^{3N}}.
 	\label{eq:01-Intr-Canocnical-Ens-Part-Funct}
 \end{equation}
 The partition function $\mathcal{Z}$ can then be used to calculate properties such as pressure $p$, internal energy $\mathcal{U}$ and thus also the energy density $\mathcal{U}/V$.
-Together with an adiabatic condition one would hope to be able to derive a \acp{eos}.
+Together with an adiabatic condition one would hope to find a relation between energy density and pressure to derive a \acp{eos}.
 In many examples, a polytropic \ac{eos} between pressure $p$ and density $\rho$ is assumed
 \begin{equation}
 	\rho = Ap^{1/\gamma}
 	\label{eq:01-Intr-Poly-EOS}
 \end{equation}
 where $A$ is a constant and the exponent $\gamma$ can be related to the adiabatic index of a thermodynamic process.
-This equation is derived by using the ideal gas equation $pv=Nk_B T$ and adiabaticity.
-While there exist more recent examples of more complex \ac{eos} models~\cite{hummerEquationStateStellar1988}, this equation already covers a wide range of examples.
+This equation is derived by using the ideal gas equation $pV=Nk_B T$ and adiabaticity.
+While there exist more recent examples of more complex \ac{eos} models~\cite{hummerEquationStateStellar1988}, this equation already covers a wide range of cases.
 The index $\gamma$ is typically defined by the adiabatic condition $pV^\gamma=\text{const}$ and thus directly related to the previous assumption.
 Another important relation is between $\gamma$ and degrees of freedom.
 For an ideal gas, the index can be given by $\gamma=1+2/f$, where $f$ is the degrees of freedom.
 This quantity directly yields information about the underlying microscopic behaviour of the gas.
 A polytropic \ac{eos} describes many systems and is a good enough assumption in many cases.
-Part of this thesis will be concerned with deriving a fully special relativistic \ac{eos} and applying it in the context of the \ac{TOV} equation.
+The first part of this thesis will be concerned with deriving a fully special relativistic \ac{eos} and applying it in the context of the \ac{TOV} equation.
