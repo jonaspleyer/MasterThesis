@@ -8,7 +8,7 @@ Concepts and definitions of Hamilton Mechanics can be found in~\cite{eschrigTopo
 In general we assume $H:\R^{3N}\times\R^{3N}\rightarrow\R$ to be a positive smooth function that assigns an energy to the positions and momenta of $N$ particles.
 This explicitly takes form in the well known equations
 \begin{align}
-	\Z(T,V,N) 	&= \int\limits_{\mathcal{V}\times\R^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_B T}\right)\frac{\diff x_1\diff p_1\dots \diff x_N\diff p_N}{N!h^{3N}}\\
+	\Z(T,V,N) 	&= \int\limits_{\mathcal{V}^N\times\R^N}\exp\left(-\frac{H(x_1,\dots,x_N,p_1,\dots,p_N)}{k_B T}\right)\frac{\diff x_1\diff p_1\dots \diff x_N\diff p_N}{N!h^{3N}}\\
 	\F(T,V,N) 	&= - k_B T\log\left(\Z(T,V,N)\right)\label{2-IntEner-FreeEnerDef}\\
 	\U(T,V,N) 	&= \F + T \Ent \hspace{0.2cm}=\hspace{0.2cm} \F - T\frac{\partial\F}{\partial T} \hspace{0.2cm}=\hspace{0.2cm} k_B T^2\frac{1}{\Z}\frac{\partial\Z}{\partial T}\label{2-IntEner-Def}
 \end{align}
@@ -17,7 +17,7 @@ The relation $V=\text{vol}(\mathcal{V})$ describes the total volume occupied by 
 To fully calculate $U$ it is necessary to obtain the partition function $\Z$.
 From there $\U/V$ as the energy density can be compared to the pressure defined by
 \begin{equation}
-	p=\frac{\diff\F}{\diff V}
+	p=-\frac{\partial\F}{\partial V}
 	\label{eq:2-IntEner-pressureDef}
 \end{equation}
 to yield an \ac{eos}.
