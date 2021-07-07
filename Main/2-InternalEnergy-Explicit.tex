@@ -1,6 +1,5 @@
 \section{Thermodynamic Calculation of an \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \label{sec:2-Thermo}
-% TODO Make clear what I have done and what is from other sources
 This chapter aims at developing a fully special relativistic \ac{eos} of a non-interacting gas.
 We briefly summarise important concepts necessary for the derivation.
 In the canonical ensemble, for which an introduction can be found in~\cite{fliessbachStatistischePhysikLehrbuch2018}, the internal energy $\U$ is obtained by the relation $\U=\F-TS$ where the quantities $\F$ and $S$ can be derived by means of the partition function $\Z$ while $T$ is a variable.
@@ -100,7 +99,7 @@ This more general scenario does not yield the ideal gas law and would thus need 
 \begin{subsection}{The Special-Relativistic Equation of State}
 \label{2-IntEner-SR-EOS-Derivation}
 This section aims to develop an equation between the thermodynamic energy density $\rho=\U/V$ and the pressure $p$ of the gas given by the ideal gas equation~\eqref{eq:2-IntEner-pressureDef}.
-We assume an additional constraint namely adiabaticity and thus further reduce the degrees of freedom of the thermodynamic system.\\ % TODO maybe different term for adiabaticity
+We assume an additional constraint namely adiabaticity and thus further reduce the degrees of freedom of the thermodynamic system.\\
 When assuming an adiabatic condition $\updelta Q=0$ and using the First Law of Thermodynamics~\cite{fliessbachStatistischePhysikLehrbuch2018} $\diff U =\updelta Q + \updelta W$, where $\updelta W=-p\diff V$ and $\diff U=C_V\diff T$, we can relate pressure and temperature. 
 This adiabatic condition is quite well satisfied since the timescale of radiational and other losses compared to the timescale of thermodynamic events is negligible~\cite{noerdlingerSolarMassLoss2008, vinkMassLossStellar2017}.
 Using equation~\eqref{2-IntEner-InternelEnergyExplicit} and~\eqref{eq:2-IntEner-pressureDef}, we obtain
@@ -132,7 +131,7 @@ It is given by
 	\label{eq:2-IntEner-Parameter-Eos-Integration-Result}
 \end{equation}
 Since the goal of this section is to obtain a readable output for an \ac{eos}, it is necessary to construct a bijection relating $p$ and $T$.
-This becomes clear when writing down the energy density % TODO think about that formulation
+This becomes clear when writing down the energy density
 \begin{equation}
 	\rho = \frac{\U}{V} = \frac{Nk_B T}{V} - \frac{Nk_B T}{V}\left(\alpha\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)
 	\label{eq:2-IntEner-DensityAlpha}
@@ -232,7 +231,7 @@ Furthermore the graphs of the plotted \ac{eos} are normalised such that
 \end{equation}
 and thus can be compared with each other.
 Note that the $\rho_0$ of the plot is not a universal value but rather each function has been scaled individually and $\rho_0$ is a placeholder for the corresponding $\rho_{0,i}$.
-The polytropic \ac{eos} $\rho_{cla}(p)=Ap^{1/\gamma}$ when normalised as before, the equation is independent of $A$ and can be uniquely characterised by $n$. % TODO is this comma right?
+The graph of the polytropic \ac{eos} $\rho_{cla}(p)=Ap^{1/\gamma}$ in figure~\ref{fig:2-IntEner-RelEOSPlot} when normalised as before, is independent of $A$ and can be uniquely characterised by $n$.
 For further details, the interested reader is referred to~\cite{pleyerGithubRepositoryJonas2021}.
 \begin{figure}[H]
 	{\centering
