@@ -129,7 +129,7 @@ We see that this equation has no zero value and tends to $0$ as $\xi\rightarrow\
 %
 \subsection{New Exact \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} Series Solution at Index 2}
 \label{subsec:99-app-new-exact-le-sol-n2}
-One can derive another exact solution for the \ac{LE} equation at the exponent $n=2$ when
+Although not the primary concern of this thesis, the author was able to derive another exact solution for the \ac{LE} equation at the exponent $n=2$ when
 considering a series expansion of $\theta$ around the point $\xi=0$ with initial conditions
 \begin{equation}
 	\theta=\sum\limits_{m=0}^\infty a_m\xi^m \hspace{1cm} a_0=\left.\theta\right|_{\xi=0}=\theta_0
@@ -240,6 +240,7 @@ Also in order to achieve sufficient numerical precision, we would need to calcul
 %
 \subsection{Exact \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} Solution in Absence of Mass}
 \label{subsec:99-App-TOV-No-Mass}
+In addition to the explicit \ac{LE} solution for $n=2$, the author derived a limiting case for solutions of the \ac{TOV} equation.
 \begin{theorem}[TOV Exact Solution]
 	The TOV equation~\ref{eq:4-NumSol-Equ-TOVEqBasic1} with a polytropic EOS $\rho=Ap^{1/\gamma}$ has a well defined limiting case where $A\rightarrow0$ with $m=0$ and
 	\begin{equation}
@@ -305,6 +306,7 @@ Also in order to achieve sufficient numerical precision, we would need to calcul
 \subsection{Numerical Optimisations}
 \label{subsec:99-App-Numerical-Optimisations}
 % TODO write all the optimisations and why it is hard to do
+In his success to solve the differential equations, numerical optimisations of the solving routine have been gathered by the author.
 When solving the \ac{TOV} or \ac{LE} equation numerically calculations for the next step clearly depend on results from the before calculated one.
 This simple fact which is integral to the concept of an \ac{ODE} means that numerics is single thread \footnote{Thread refers to a sequence of instructions given to a processing unit.} bound which already puts one at a systematic disadvantage.
 This means any effort to parallelise the given task must focus on distributing the individual solving routines to respective threads.

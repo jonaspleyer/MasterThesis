@@ -1,13 +1,14 @@
 \begin{section}{Numerical Solutions}
 \begin{subsection}{Comparing \texorpdfstring{\acrNoHyperlink{\acs}{TOV}}{TOV} and \texorpdfstring{\acrNoHyperlink{\acs}{LE}}{LE} results with a polytropic \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
 \label{subsec:4-NumSol-Sec-Comp-TOV-LE}
-In this section the numerical solutions of the \ac{TOV} equation
+This section presents numerical solutions of the \ac{TOV} equation
 \begin{align}
 	\frac{\partial m}{\partial r} &= 4\pi\rho r^2\label{eq:4-NumSol-Equ-TOVEqBasic1}\\
 	\frac{\partial p}{\partial r} &=-\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3 p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
 	\label{eq:4-NumSol-Equ-TOVEqBasic2}
 \end{align}
-as derived previously in section~\ref{subsec:3-Mass-Sec-TOVDerivation} will be discussed.
+as derived previously in section~\ref{subsec:3-Mass-Sec-TOVDerivation}.
+Results in this section are implemented and carried out by the author.
 To obtain numerical solvability an \ac{eos} in the form $\rho(r,p)$ is supplied.
 In Figure~\ref{fig:4-NumSol-Plt-TOVEqEasyEOS}, a plot of such a solution is presented.
 The density $\rho$ is derived via the equation~\eqref{eq:4-NumSol-Equ-TOVEqBasic1} and the integration is done with a 4th order Runge-Kutta Method~\cite{rungeUeberNumerischeAufloesung1895, schlömilch1901zeitschrift, h.SimplifiedDerivationAnalysis2010}.
