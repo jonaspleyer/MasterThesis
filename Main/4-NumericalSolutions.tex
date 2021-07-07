@@ -102,13 +102,11 @@ The plot displays nicely that by lowering the integration stepsize, the maximum 
 \begin{figure}[H]
 	\centering
 	\import{pictures/4-NumericalSolutions/}{LE-ValidateSols-2.pgf}
-	% TODO If time left fix left axis of this plot
 	\caption{Validation of numerical LE results}
 	The first two plots show absolute and relative difference of known exact and numerically calculated results while the third plot shows the behaviour of the maximum value of $\Delta$ as the stepsize decreases.
 	\label{fig:4-NumSol-Plt-ValidateLEResults}
 \end{figure}\noindent
 %As can be seen in the last column of plots, the condition for convergence in this case is well fulfilled.
-% TODO TOV-Terms: Why do we do this? Explain it better.
 % Next, we wish to see how accurate numerical \ac{TOV} results are. This is not an easy task since no explicit solutions are known for the \ac{TOV} equation. However one way to at least get confident that solving was a success is by dropping terms from right to left in equation~\eqref{4-NumSol-Equ-TOVEqBasic2} and solving for these new differential equations. As we have seen in section~\ref{3-Mass-LEDerivation}, the last result should reproduce the \ac{LE} equation. These intermediate differential equations have been numerically solved and results can be seen in Figure~\ref{4-NumSol-TovTerms}.
 % \begin{figure}[H]
 % 	\centering
