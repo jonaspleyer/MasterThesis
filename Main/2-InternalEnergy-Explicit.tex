@@ -1,4 +1,5 @@
-\begin{section}{Thermodynamic Calculation of an \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
+\section{Thermodynamic Calculation of an \texorpdfstring{\acrNoHyperlink{\acs}{eos}}{EoS}}
+\label{sec:2-Thermo}
 % TODO Make clear what I have done and what is from other sources
 This chapter aims at developing a fully special relativistic \ac{eos} of a non-interacting gas.
 We briefly summarise important concepts necessary for the derivation.
@@ -180,9 +181,10 @@ we have
 	We then calculate the derivative of the third term and divide by the exponential (since it is positive)
 	\begin{align}
 		&\hspace{1em} \frac{1}{\exp(\alpha\partial_\alpha\log(K_2))}\frac{\partial}{\partial\alpha}\exp(\alpha\partial_\alpha\log(K_2))\\
-		&= \hspace{1em} \partial_\alpha\log(K_2) + \alpha\partial^2_\alpha\log(K_2)\\
-		&= \hspace{1em} \frac{\partial_\alpha K_2}{K_2} + \alpha\frac{\partial^2_\alpha K_2}{K_2} + \alpha\left(\frac{\partial_\alpha K_2}{K_2}\right)^2\\
-		&= \hspace{1em} \frac{K_1-\frac{2}{\alpha}K_2}{K_2} + \alpha\frac{\frac{1}{\alpha}K_1-K_2-\frac{2}{\alpha}\left(K_1-\frac{2}{\alpha}K_2\right)+\frac{2}{\alpha^2}K_2}{K_2^2} + \alpha\frac{K_1^2-\frac{1}{\alpha}K_1 K_2-\frac{4}{\alpha^2}K_2^2}{K_2^2}\\
+		&= \partial_\alpha\log(K_2) + \alpha\partial^2_\alpha\log(K_2)\\
+		&= \frac{\partial_\alpha K_2}{K_2} + \alpha\frac{\partial^2_\alpha K_2}{K_2} + \alpha\left(\frac{\partial_\alpha K_2}{K_2}\right)^2\\
+		&= \frac{K_1-\frac{2}{\alpha}K_2}{K_2} + \alpha\frac{\frac{1}{\alpha}K_1-K_2-\frac{2}{\alpha}\left(K_1-\frac{2}{\alpha}K_2\right)+\frac{2}{\alpha^2}K_2}{K_2^2}\\
+		&\hspace{5cm}+\alpha\frac{K_1^2-\frac{1}{\alpha}K_1 K_2-\frac{4}{\alpha^2}K_2^2}{K_2^2}\\
 		&= -\alpha + \alpha\frac{K_1^2}{K_2^2} - 4\frac{K_1}{K_2}
 	\end{align}
 	thus, it is sufficient to show that
@@ -244,13 +246,3 @@ For further details, the interested reader is referred to~\cite{pleyerGithubRepo
 	By normalisation, the graphs of the polytropic \ac{eos} are independent of the factor $A$.
 \end{figure}
 \end{subsection}
-%
-%
-%
-% \begin{subsection}
-% TODO Generalise the approach given above for an interacting gas under certain conditions.
-% \end{subsection}
-%
-%
-%
-\end{section}

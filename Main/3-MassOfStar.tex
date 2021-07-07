@@ -96,7 +96,6 @@ Equation~\eqref{eq:3-Mass-Equ-TOV-Eq-1} together with~\eqref{eq:3-Mass-Equ-MassD
 %
 %
 %
-\pagebreak
 \subsection{Newtonian Limit}
 \label{subsec:3-Mass-Sec-LEDerivation}
 This section follows~\cite{weissteinLaneEmdenDifferentialEquation2020} and~\cite[89\psqq]{chandrasekharChandrasekharAnIntroductionStudy1958}.
@@ -275,9 +274,10 @@ We first state a useful Lemma for the proof of our next theorem.
 		\label{eq:3-Mass-Equ-MassLimitNuApprox}
 	\end{equation}
 	As we have already noted, the average density $m(r)/r^3$ decreases, meaning explicitly $m(r)/r^3\geq M/R^3$ and thus the integral with the previous equation can be written as
-	\begin{equation}
-		\e^{\nu(0)/2}\leq\left(1-\frac{2M}{R}\right)^{1/2}+\frac{1}{2}\left.\left[1-\frac{2Mr^2}{R^3} \right]^{1/2}\right|^{r=R}_{r=0} = \frac{3}{2}\left(1-\frac{2M}{R}\right)^{1/2} - \frac{1}{2}.
-	\end{equation}
+	\begin{align}
+		\e^{\nu(0)/2}&\leq\left(1-\frac{2M}{R}\right)^{1/2}+\frac{1}{2}\left.\left[1-\frac{2Mr^2}{R^3} \right]^{1/2}\right|^{r=R}_{r=0}\\
+		&= \frac{3}{2}\left(1-\frac{2M}{R}\right)^{1/2} - \frac{1}{2}.
+	\end{align}
 	The simple fact that $\e^{\nu(0)/2}>0$ then implies
 	\begin{equation}
 		\left(1-\frac{2M}{R}\right)^{1/2} > \frac{1}{3}
