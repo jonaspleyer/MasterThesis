@@ -7,14 +7,14 @@ uni-logos/png
 Feedback
 
 # Ignore temporary files
-Main/BuildFiles
-Main/_minted-main
+BuildFiles
+_minted-main
 
 # Ignore Linkt to pdf
-Main/Thesis.pdf
+Thesis.pdf
 
 # Ignore kile viewing directory
-Main/.kile
+.kile
 
 # Ignore Intellij Files
 .idea
