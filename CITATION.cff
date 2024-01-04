@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Zero Values of the TOV Equation
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Jonas
+    family-names: Pleyer
+    email: jonas.pleyer@fdm.uni-freiburg.de
+    affiliation: >-
+      Freiburg Center for Data Analysis and Modeling (FDM),
+      University of Freiburg
+repository-code: 'https://github.com/jonaspleyer/masterthesis'
+keywords:
+  - General Relativity
+  - Lane-Emden
+  - Tolman-Oppenheimer-Volkoff
+license: CC-BY-4.0
+date-released: '2021-07-09'
+
