@@ -1,6 +1,6 @@
 # MasterThesis
 ## General
-[Shortcut to the current version](https://github.com/jonaspleyer/MasterThesis/blob/main/Main/BuildFiles/main.pdf)
+[Shortcut to the current version](https://github.com/jonaspleyer/MasterThesis/blob/main/BuildFiles/main.pdf)
 
 ## Structure
 
