@@ -4,9 +4,9 @@
 cff-version: 1.2.0
 title: Zero Values of the TOV Equation
 message: >-
-  If you use this software, please cite it using the
+  If you use this thesis, please cite it using the
   metadata from this file.
-type: software
+type: Master-Thesis
 authors:
   - given-names: Jonas
     family-names: Pleyer
