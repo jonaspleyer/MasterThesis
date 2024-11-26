@@ -1,6 +1,17 @@
 # MasterThesis
-## General
-[Shortcut to the current version](https://github.com/jonaspleyer/MasterThesis/blob/main/BuildFiles/main.pdf)
+## Citation
+
+```
+@misc{pleyer2024zerovaluestovequation,
+      title={Zero Values of the TOV Equation},
+      author={Jonas Pleyer},
+      year={2024},
+      eprint={2411.15264},
+      archivePrefix={arXiv},
+      primaryClass={gr-qc},
+      url={https://arxiv.org/abs/2411.15264},
+}
+```
 
 ## Structure
 
